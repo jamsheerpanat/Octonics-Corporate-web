@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: 🧩 Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: ⚙️ Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
@@ -27,13 +27,13 @@ jobs:
         run: pnpm run build
 
       - name: 🚀 Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        uses: SamKirkland/ftp-deploy-action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /public_html/
-          local-dir: ./dist/
           protocol: ftps
           port: 21
+          local-dir: ./dist/
+          server-dir: /public_html/
           timeout: 120000
