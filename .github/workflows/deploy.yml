@@ -1,4 +1,4 @@
-name: 🚀 Build & Deploy Astro to Hostinger
+name: Build and Deploy
 
 on:
   push:
@@ -19,21 +19,19 @@ jobs:
           node-version: 20
 
       - name: 📦 Install Dependencies
-        run: |
-          npm install -g pnpm
-          pnpm install
+        run: npm ci
 
       - name: 🏗️ Build Astro Project
-        run: pnpm run build
+        run: npm run build
 
-      - name: 🚀 Deploy to Hostinger via FTP
-        uses: SamKirkland/ftp-deploy-action@v4.3.4
+      - name: 🚀 Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.2
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
           port: 21
-          local-dir: ./dist/
-          server-dir: /public_html/
-          timeout: 120000
+          local-dir: ./dist
+          server-dir: /domains/octonics.net/public_html/
+          timeout: 60000
