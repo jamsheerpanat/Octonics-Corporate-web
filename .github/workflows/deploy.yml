@@ -1,43 +1,39 @@
-name: Build & Deploy Astro to Hostinger
+name: 🚀 Build & Deploy Astro to Hostinger
 
 on:
   push:
-    branches: [ "main" ]  # deploys when you push to main branch
-  workflow_dispatch:      # allow manual trigger from GitHub UI
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: 🧩 Checkout Repository
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
+      - name: 📦 Install Dependencies
+        run: |
+          npm install -g pnpm
+          pnpm install
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build Astro site
+      - name: 🏗️ Build Astro Project
         run: pnpm run build
 
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+      - name: 🚀 Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_DIR }}/
-          local-dir: dist/
-          exclude: |
-            **/.git*
-            **/.github*
-          dangerous-clean-slate: true
+          server-dir: /public_html/
+          local-dir: ./dist/
+          protocol: ftps
+          port: 21
+          timeout: 120000
