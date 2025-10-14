@@ -1,0 +1,116 @@
+<!-- ============================================================ -->
+<!-- SERVICES – “The 8 Intelligent Arms” (Next-Gen Version) -->
+<!-- ============================================================ -->
+<section
+  id="services"
+  class="relative mx-auto mt-28 max-w-7xl overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
+  data-animate
+>
+  <!-- Background Layers -->
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-sky-50 to-indigo-50"></div>
+  <div aria-hidden="true" class="absolute top-10 left-10 h-64 w-64 rounded-full bg-sky-200/40 blur-3xl"></div>
+  <div aria-hidden="true" class="absolute bottom-10 right-10 h-72 w-72 rounded-full bg-indigo-200/40 blur-3xl"></div>
+
+  <!-- Heading -->
+  <div class="text-center">
+    <span
+      class="inline-block rounded-full bg-gradient-to-r from-sky-100 to-indigo-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-sky-700 ring-1 ring-sky-200"
+    >
+      Our Expertise
+    </span>
+    <h2 class="mt-4 text-4xl font-extrabold text-slate-900 sm:text-5xl">
+      Our <span class="bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent">8 Intelligent Arms</span>
+    </h2>
+    <p class="mx-auto mt-3 max-w-2xl text-slate-600">
+      From <strong>automation to analytics</strong>, we engineer fully integrated ecosystems that connect, learn, and evolve —  
+      redefining intelligence for homes, enterprises, and cities.
+    </p>
+  </div>
+
+  <!-- Services Grid -->
+  <div
+    class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+  >
+    {[
+      {
+        title: "ERP & Business Software",
+        desc: "Cloud-based ERP solutions for finance, HR, inventory, and operations — designed for Kuwait’s business environment.",
+        icon: "💼",
+        link: "/services/erp-business-software",
+      },
+      {
+        title: "Smart Home & Building (KNX/DALI)",
+        desc: "KNX-certified automation for lighting, HVAC, and AV — plus Zigbee, Z-Wave, and Wi-Fi systems for wireless smart spaces.",
+        icon: "🏠",
+        link: "/services/smart-automation",
+      },
+      {
+        title: "IT Infrastructure",
+        desc: "High-performance data centers, structured cabling, and cloud networks — building the digital backbone for enterprises.",
+        icon: "🖥️",
+        link: "/services/it-infrastructure",
+      },
+      {
+        title: "Surveillance & Access Control",
+        desc: "AI-powered CCTV, face recognition, biometric access, and integrated monitoring for total site security.",
+        icon: "🎥",
+        link: "/services/surveillance-access-control",
+      },
+      {
+        title: "Data Analytics & AI Tools",
+        desc: "Predictive dashboards, AI-driven insights, and data automation to turn your business data into intelligence.",
+        icon: "📊",
+        link: "/services/data-analytics-ai",
+      },
+      {
+        title: "Web & App Development",
+        desc: "Next-gen web and mobile apps using Astro, React, and modern APIs — optimized for performance and SEO.",
+        icon: "🌐",
+        link: "/services/web-app-development",
+      },
+      {
+        title: "IT Governance & Cybersecurity",
+        desc: "Cyber defense, IT audit, compliance frameworks, and managed security services for digital resilience.",
+        icon: "🛡️",
+        link: "/services/it-governance-cybersecurity",
+      },
+      {
+        title: "IT Support & AMC Services",
+        desc: "Comprehensive annual maintenance contracts (AMC) and expert on-site IT support — ensuring zero downtime.",
+        icon: "🧰",
+        link: "/services/it-support",
+      },
+    ].map(({ title, desc, icon, link }) => (
+      <a
+        href={link}
+        class="group relative rounded-3xl bg-white/70 p-8 shadow-lg ring-1 ring-slate-200 backdrop-blur-lg transition-all hover:-translate-y-2 hover:shadow-2xl hover:ring-sky-300"
+      >
+        <!-- Accent Glow -->
+        <div class="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-r from-sky-200/20 to-indigo-200/20 opacity-0 transition group-hover:opacity-100"></div>
+
+        <!-- Icon -->
+        <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-100 to-indigo-100 text-3xl text-indigo-600 shadow-inner">
+          {icon}
+        </div>
+
+        <!-- Title -->
+        <h3 class="text-lg font-semibold text-slate-900 transition group-hover:text-sky-700">
+          {title}
+        </h3>
+
+        <!-- Description -->
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
+
+        <!-- Learn More -->
+        <span class="mt-4 inline-flex items-center text-sm font-medium text-sky-600 opacity-0 transition group-hover:opacity-100">
+          Learn More →
+        </span>
+      </a>
+    ))}
+  </div>
+
+  <!-- Decorative Bottom Glow -->
+  <div
+    class="absolute bottom-0 left-1/2 h-40 w-[90%] -translate-x-1/2 rounded-full bg-gradient-to-r from-sky-200/30 via-indigo-200/20 to-sky-200/30 blur-3xl"
+  ></div>
+</section>

@@ -1,0 +1,116 @@
+<!-- ============================================================ -->
+<!-- القسم التعريفي – تصميم عصري ومتجاوب -->
+<!-- ============================================================ -->
+<section
+  id="about"
+  dir="rtl"
+  class="relative mx-auto mt-32 max-w-7xl overflow-hidden px-4 py-24 sm:px-6 lg:px-8 text-right"
+  data-animate
+>
+  <!-- الخلفية -->
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-sky-50"></div>
+  <div aria-hidden="true" class="absolute top-20 right-16 h-80 w-80 rounded-full bg-sky-300/30 blur-3xl"></div>
+  <div aria-hidden="true" class="absolute bottom-20 left-16 h-80 w-80 rounded-full bg-indigo-300/30 blur-3xl"></div>
+
+  <div class="grid items-center gap-16 md:grid-cols-2">
+    <!-- المحتوى -->
+    <div class="relative order-2 md:order-1">
+      <span
+        class="inline-block rounded-full bg-gradient-to-r from-sky-500/10 to-indigo-500/10 px-4 py-1.5 text-xs font-semibold tracking-widest text-sky-700 ring-1 ring-sky-100"
+        >من نحن</span
+      >
+
+      <h2 class="mt-4 text-4xl font-extrabold text-slate-900 sm:text-5xl leading-snug">
+        ذكاء أعلى. راحة أكبر. استقرار يدوم.<br />
+        <span class="bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent">
+          هذا هو عالم أوكتونيكس.
+        </span>
+      </h2>
+
+      <p class="mt-5 text-base leading-relaxed text-slate-600">
+        <b>أوكتونيكس للابتكارات</b> هي شركة كويتية رائدة تجمع بين التكنولوجيا الحديثة
+        والأناقة الذكية في كل مشروع. مستوحاة من <b class="text-sky-700">الأخطبوط</b> – رمز
+        الذكاء والمرونة – نوفر حلولاً متكاملة تربط بين
+        <b>الأتمتة</b> و<b>الذكاء الاصطناعي</b> و<b>البرامج المؤسسية (ERP)</b> و<b>البنية
+        التحتية لتقنية المعلومات</b> و<b>الأمن السيبراني</b> في نظام واحد متناغم.
+        نحن <strong>شركة معتمدة من KNX</strong> في الكويت، نصمم منازل ومكاتب
+        تفكر وتتكيف وتعمل بانسجام مع أسلوب حياتك واحتياجاتك اليومية.
+      </p>
+
+      <!-- المزايا -->
+      <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {[
+          ["💡", "تحكم ذكي في الإضاءة والمناخ بمعيار KNX / DALI"],
+          ["📊", "تحليلات تنبؤية ولوحات ذكاء اصطناعي لحظية"],
+          ["🌐", "شبكات مؤسسية آمنة وبنية تحتية سحابية متقدمة"],
+          ["🛡️", "حوكمة تقنية المعلومات والأمن السيبراني الكامل"],
+        ].map(([icon, text]) => (
+          <div
+            class="group flex items-center gap-3 rounded-2xl bg-white/80 p-3 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:ring-sky-200"
+          >
+            <div
+              class="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-sky-100 to-indigo-100 text-indigo-600"
+            >
+              {icon}
+            </div>
+            <span class="text-sm font-medium text-slate-700">{text}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- الإحصائيات -->
+      <div
+        class="mt-10 grid grid-cols-3 divide-x divide-slate-200 rounded-2xl bg-white/70 p-4 shadow-sm ring-1 ring-slate-200 backdrop-blur-md"
+      >
+        <div class="text-center">
+          <p class="text-3xl font-bold text-slate-900">8+</p>
+          <p class="text-xs text-slate-500">مجالات تقنية متكاملة</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-slate-900">15+</p>
+          <p class="text-xs text-slate-500">مهندسين وفنيين معتمدين</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-slate-900">100%</p>
+          <p class="text-xs text-slate-500">رضا وثقة عملائنا</p>
+        </div>
+      </div>
+
+      <!-- زر -->
+      <div class="mt-8">
+        <a
+          href="/ar/about"
+          class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-sky-400/40"
+        >
+          تعرف أكثر على أوكتونيكس ←
+        </a>
+      </div>
+    </div>
+
+    <!-- الصورة -->
+    <div class="relative mx-auto w-full max-w-lg order-1 md:order-2" data-animate>
+      <div aria-hidden="true" class="absolute -top-10 -left-10 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl"></div>
+      <img
+        src="/images/hero-house.jpg"
+        alt="منزل ذكي بمعيار KNX في الكويت"
+        loading="lazy"
+        class="relative z-10 rounded-3xl shadow-2xl ring-1 ring-slate-200 transition hover:scale-[1.02]"
+      />
+      <div class="absolute inset-0 z-0 rounded-3xl bg-gradient-to-tr from-sky-100/30 to-indigo-100/20 blur-2xl"></div>
+      <figcaption class="mt-3 text-center text-xs text-slate-500">
+        منزل ذكي في الكويت – يعمل بمعيار KNX ويستخدم الذكاء الاصطناعي لإدارة الطاقة بكفاءة.
+      </figcaption>
+    </div>
+  </div>
+</section>
+
+<!-- الحركات -->
+<style>
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(8px); }
+}
+[data-animate] img:hover {
+  animation: float-soft 4s ease-in-out infinite;
+}
+</style>

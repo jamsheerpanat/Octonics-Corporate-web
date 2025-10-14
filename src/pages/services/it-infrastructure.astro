@@ -1,0 +1,211 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const currentYear = new Date().getFullYear();
+
+const brands = [
+  "/images/brands/cisco.png",
+  "/images/brands/hpe.png",
+  "/images/brands/dell.png",
+  "/images/brands/fortinet.png",
+  "/images/brands/paloalto.png",
+  "/images/brands/ubiquiti.png",
+  "/images/brands/mikrotik.png",
+];
+
+const solutions = [
+  {
+    title: "Enterprise LAN & Campus Networks",
+    desc: "High-availability Layer 2/3 switching, structured cabling, and PoE power management using Cisco, HPE Aruba, and Dell technologies.",
+    icon: `<svg xmlns='http://www.w3.org/2000/svg' class='h-7 w-7' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M13 5v6h6m-6 8h6m2 0a2 2 0 01-2 2H5a2 2 0 01-2-2v-4a2 2 0 012-2h16a2 2 0 012 2v4z' /></svg>`,
+    color: "from-sky-500 to-indigo-600",
+  },
+  {
+    title: "Wi-Fi 6/6E Design & Deployment",
+    desc: "Predictive RF planning, coverage optimization, and captive portal solutions built for Kuwait’s dense commercial environments.",
+    icon: `<svg xmlns='http://www.w3.org/2000/svg' class='h-7 w-7' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8.5 16.5a6 6 0 017 0M6 13a10 10 0 0112 0M3 9a14 14 0 0118 0' /></svg>`,
+    color: "from-teal-500 to-sky-500",
+  },
+  {
+    title: "Data Center Infrastructure",
+    desc: "Racks, cooling, servers, virtualization, SAN/NAS storage, and disaster recovery sites — optimized for reliability and uptime.",
+    icon: `<svg xmlns='http://www.w3.org/2000/svg' class='h-7 w-7' fill='none' viewBox='0 0 24 24' stroke='currentColor'><rect x='4' y='4' width='16' height='16' rx='2' /><path d='M8 8h8M8 12h8M8 16h8' /></svg>`,
+    color: "from-indigo-600 to-purple-600",
+  },
+  {
+    title: "SD-WAN & Cloud Connectivity",
+    desc: "Secure SD-WAN architectures combining MPLS, Internet, and 5G with application-aware routing and traffic shaping.",
+    icon: `<svg xmlns='http://www.w3.org/2000/svg' class='h-7 w-7' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 15a4 4 0 004 4h10a4 4 0 004-4 4 4 0 00-4-4h-1a4 4 0 00-8 0H7a4 4 0 00-4 4z' /></svg>`,
+    color: "from-blue-500 to-indigo-500",
+  },
+  {
+    title: "Cybersecure Edge & Zero Trust",
+    desc: "Firewalls, EDR/XDR, and Zero-Trust models that safeguard hybrid offices and distributed workforce environments.",
+    icon: `<svg xmlns='http://www.w3.org/2000/svg' class='h-7 w-7' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' /></svg>`,
+    color: "from-rose-500 to-pink-600",
+  },
+  {
+    title: "Managed IT & Monitoring",
+    desc: "24×7 NOC with proactive alerts, patch management, and SLA-based support to ensure continuous uptime and compliance.",
+    icon: `<svg xmlns='http://www.w3.org/2000/svg' class='h-7 w-7' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4l3 3m-6 0a9 9 0 1118 0 9 9 0 01-18 0z' /></svg>`,
+    color: "from-indigo-500 to-sky-600",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IT Infrastructure & Networking Kuwait | Octonics Innovations</title>
+    <meta
+      name="description"
+      content="Octonics Innovations provides enterprise-grade IT infrastructure, networking, Wi-Fi, SD-WAN, and data center solutions in Kuwait — with Cisco, HPE, and Fortinet technologies."
+    />
+    <meta
+      name="keywords"
+      content="IT Infrastructure Kuwait, Networking Kuwait, Cisco Kuwait, Fortinet Kuwait, Data Center Kuwait, Wi-Fi Kuwait, SD-WAN Kuwait, Servers Kuwait, Storage Kuwait, Managed IT Kuwait, Network Security Kuwait"
+    />
+    <meta property="og:title" content="IT Infrastructure & Networking Kuwait | Octonics Innovations" />
+    <meta
+      property="og:description"
+      content="Design, deploy, and manage next-gen IT infrastructure, networking, and cloud solutions in Kuwait with certified engineers."
+    />
+    <meta property="og:image" content="/images/infra/og-it.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+
+    <!-- HEADER -->
+    <Header />
+
+    <!-- HERO -->
+    <section id="hero" class="relative isolate min-h-[90vh] flex items-center justify-center text-center overflow-hidden text-white">
+      <img src="/images/infra/hero-datacenter.jpg" alt="Data Center Kuwait" class="absolute inset-0 h-full w-full object-cover opacity-80" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-indigo-900/70 to-slate-900/90"></div>
+      <div class="absolute -top-20 -left-20 h-60 w-60 bg-sky-400/25 blur-3xl rounded-full"></div>
+      <div class="absolute -bottom-20 -right-20 h-60 w-60 bg-indigo-500/25 blur-3xl rounded-full"></div>
+
+      <div class="relative z-10 px-4 sm:px-6 max-w-4xl" data-animate>
+        <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs ring-1 ring-white/20">
+          Enterprise Networking • Data Center • Wi-Fi • SD-WAN
+        </p>
+        <h1 class="mt-5 text-5xl font-extrabold leading-tight sm:text-6xl">
+          IT Infrastructure & Enterprise Networking in Kuwait
+        </h1>
+        <p class="mt-4 text-indigo-100">
+          Delivering secure, scalable, and high-performance infrastructure — from structured cabling to full data-center architecture.
+        </p>
+        <a href="/contact" class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105">
+          Request Proposal →
+        </a>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <h4 class="text-center text-xs font-semibold tracking-widest text-slate-500">
+        TRUSTED TECHNOLOGY PARTNERS
+      </h4>
+      <div class="relative mt-6 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200">
+        <div class="flex gap-10 whitespace-nowrap py-6 [animation:marquee_30s_linear_infinite] hover:[animation-play-state:paused]">
+          {[...brands, ...brands].map((src) => (
+            <img src={src} alt="Brand" loading="lazy" class="mx-8 inline-block h-10 w-auto opacity-70 hover:opacity-100 transition" />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section class="mx-auto max-w-6xl px-4 py-24 sm:px-6" data-animate>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+          Comprehensive IT Infrastructure Solutions
+        </h2>
+        <p class="mt-3 max-w-2xl mx-auto text-slate-600">
+          Designed to deliver reliability, performance, and cybersecurity across Kuwait’s most demanding enterprises.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {solutions.map((s) => (
+          <div class={`group relative rounded-3xl bg-gradient-to-br ${s.color} p-[1px] shadow-xl hover:shadow-2xl transition hover:-translate-y-1`}>
+            <div class="flex flex-col h-full rounded-3xl bg-white p-8 backdrop-blur-md">
+              <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-sky-100 to-indigo-100 text-indigo-700 shadow-inner mb-4" set:html={s.icon}></div>
+              <h4 class="text-xl font-semibold text-slate-900">{s.title}</h4>
+              <p class="mt-3 text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- WHY OCTONICS -->
+    <section id="why" class="mx-auto max-w-6xl px-4 py-24 sm:px-6" data-animate>
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+            Why Choose Octonics Kuwait
+          </h2>
+          <p class="mt-4 text-slate-600">
+            We combine global best practices with local expertise — ensuring reliability and innovation tailored to Kuwait’s infrastructure challenges.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-700">
+            <li>• Certified engineers for Cisco, Fortinet, and HPE solutions</li>
+            <li>• Kuwait data center experience with Tier 3+ designs</li>
+            <li>• Detailed documentation and SLA-backed support</li>
+            <li>• Integration with our Smart Automation & ERP platforms</li>
+          </ul>
+        </div>
+        <figure class="relative">
+          <img src="/images/infra/network-cabling.jpg" alt="Enterprise network setup in Kuwait" loading="lazy" class="rounded-3xl shadow-2xl ring-1 ring-slate-200" />
+          <figcaption class="mt-2 text-xs text-slate-500 text-center">
+            Enterprise-grade structured cabling and rack setup by Octonics Innovations.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative bg-gradient-to-r from-slate-900 to-indigo-950 py-20 text-white text-center" data-animate>
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2 class="text-3xl font-bold sm:text-4xl">
+          Start Your Infrastructure Modernization Journey
+        </h2>
+        <p class="mt-3 text-slate-300 max-w-2xl mx-auto">
+          Get a free network audit and architecture proposal for your facility in Kuwait.
+        </p>
+        <a href="/contact" class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-slate-900 shadow-lg transition hover:scale-105">
+          Book a Consultation →
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <Footer year={currentYear} />
+
+
+
+    <script is:inline>
+      const badge = document.getElementById("networkBadge");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          badge.style.opacity = "1";
+          badge.style.transform = "translateX(0)";
+        } else {
+          badge.style.opacity = "0";
+          badge.style.transform = "translateX(20px)";
+        }
+      });
+    </script>
+
+    <style>
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+---
+import {
+  Target,
+  Network,
+  Brain,
+  Smartphone,
+  Sparkles,
+} from "lucide-react";
+---
+
+<!-- ============================================================ -->
+<!-- SYSTEM INTEGRATION FLOW – Enhanced Octonics Edition -->
+<!-- ============================================================ -->
+<section
+  id="system-flow"
+  class="relative mx-auto max-w-6xl px-4 py-28 sm:px-6 lg:px-8"
+  data-animate
+>
+  <!-- Header -->
+  <div class="text-center mb-14">
+    <span class="inline-block rounded-full bg-gradient-to-r from-sky-100 to-indigo-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-sky-700 ring-1 ring-sky-200">
+      Integration Workflow
+    </span>
+
+    <h3 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">
+      How Octonics Smart Systems Work
+    </h3>
+
+    <p class="mt-3 max-w-2xl mx-auto text-slate-600 leading-relaxed">
+      Every Octonics smart home or building follows an intelligent workflow —
+      connecting sensors, control logic, visualization, and user experience into one seamless ecosystem.
+    </p>
+  </div>
+
+  <!-- Flow Grid -->
+  <div
+    class="relative flex flex-col items-center md:flex-row md:justify-between gap-10 md:gap-6 text-center md:text-left"
+  >
+    {[
+      {
+        step: 1,
+        title: "Sensors & Inputs",
+        desc: "Motion, light, temperature, weather, and occupancy sensors capture real-world data.",
+        icon: Target,
+        color: "from-sky-500 to-indigo-600",
+      },
+      {
+        step: 2,
+        title: "KNX / DALI Network",
+        desc: "The backbone that connects all devices with lightning-fast reliability using twisted-pair or IP bus.",
+        icon: Network,
+        color: "from-indigo-600 to-sky-500",
+      },
+      {
+        step: 3,
+        title: "Controllers & Logic",
+        desc: "RTI processors and KNX logic modules process automation rules, timings, and AI-based decisions.",
+        icon: Brain,
+        color: "from-teal-500 to-sky-500",
+      },
+      {
+        step: 4,
+        title: "User Interfaces",
+        desc: "Wall panels, mobile apps, voice assistants, and dashboards bring intuitive control to users.",
+        icon: Smartphone,
+        color: "from-indigo-500 to-purple-500",
+      },
+      {
+        step: 5,
+        title: "Smart Experience",
+        desc: "The result — intelligent lighting, comfort, and security that adapts to your lifestyle automatically.",
+        icon: Sparkles,
+        color: "from-sky-400 to-indigo-600",
+      },
+    ].map((stage, idx) => (
+      <div class="relative flex flex-col items-center text-center md:w-1/5">
+        <!-- Icon -->
+        <div
+          class={`flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${stage.color} shadow-lg mb-4 text-white`}
+        >
+          <stage.icon class="h-10 w-10 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]" />
+        </div>
+
+        <!-- Title -->
+        <h4 class="text-lg font-semibold text-slate-900">{stage.title}</h4>
+        <p class="mt-2 text-sm text-slate-600 leading-relaxed">{stage.desc}</p>
+
+        <!-- Connector Lines -->
+        {idx < 4 && (
+          <div
+            class="hidden md:block absolute top-10 right-[-50%] h-[2px] w-[100%] bg-gradient-to-r from-sky-400/40 to-indigo-400/40"
+          ></div>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <!-- Decorative glows -->
+  <div class="absolute -top-20 left-1/4 h-56 w-56 rounded-full bg-sky-300/20 blur-3xl"></div>
+  <div class="absolute bottom-0 right-1/3 h-56 w-56 rounded-full bg-indigo-300/20 blur-3xl"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- RESPONSIVE TWEAKS -->
+<!-- ============================================================ -->
+<style>
+@media (max-width: 768px) {
+  #system-flow .h-20 {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+  #system-flow h4 {
+    font-size: 1rem;
+  }
+}
+</style>

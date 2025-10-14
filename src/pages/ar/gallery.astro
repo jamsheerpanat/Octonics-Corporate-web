@@ -1,0 +1,131 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/HeaderAr.astro";
+import FooterAr from "../../components/FooterAr.astro";
+
+const currentYear = new Date().getFullYear();
+
+// ✅ معرض الصور
+const galleryImages = [
+  { src: "/images/gallery/villa-knx.jpg", alt: "إضاءة ذكية لفيلا بنظام KNX في الكويت" },
+  { src: "/images/gallery/office-automation.jpg", alt: "أتمتة مكاتب في الكويت" },
+  { src: "/images/gallery/dali-lighting.jpg", alt: "تكامل إضاءة DALI في الكويت" },
+  { src: "/images/gallery/rti-control-room.jpg", alt: "غرفة تحكم RTI وواجهة عرض تفاعلية" },
+  { src: "/images/gallery/server-room.jpg", alt: "غرفة سيرفرات ولوحات تحكم" },
+  { src: "/images/gallery/smart-panel.jpg", alt: "تصنيع لوحات KNX من أوكتونيكس" },
+  { src: "/images/gallery/automation-wall.jpg", alt: "شاشات تحكم ولوحات جدارية ذكية" },
+  { src: "/images/gallery/luxury-villa.jpg", alt: "أتمتة فيلا فاخرة في الكويت" },
+  { src: "/images/gallery/hotel-suite.jpg", alt: "إضاءة جناح فندقي ذكي في الكويت" },
+];
+---
+
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>معرض المشاريع | أوكتونيكس للأتمتة الذكية في الكويت</title>
+    <meta
+      name="description"
+      content="استعرض معرض مشاريع أوكتونيكس إنوفيشنز للأتمتة الذكية في الكويت — تشمل أنظمة KNX و DALI و RTI المدمجة بالذكاء الاصطناعي للفلل والمكاتب والمباني التجارية."
+    />
+    <meta
+      name="keywords"
+      content="أوكتونيكس الكويت, KNX الكويت, DALI الكويت, RTI الكويت, الأتمتة الذكية الكويت, مشاريع المنازل الذكية الكويت, التحكم بالإضاءة الكويت"
+    />
+    <meta property="og:title" content="معرض أوكتونيكس – المنازل والمباني الذكية في الكويت" />
+    <meta
+      property="og:description"
+      content="تصفح صور مشاريع الأتمتة الذكية من أوكتونيكس في الكويت باستخدام أنظمة KNX و DALI و RTI المتكاملة بالذكاء الاصطناعي."
+    />
+    <meta property="og:image" content="/images/og-gallery.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+    <!-- الهيدر -->
+    <Header />
+
+    <!-- البانر الرئيسي -->
+    <section
+      id="hero"
+      class="relative flex min-h-[70vh] items-center justify-center overflow-hidden text-white text-center"
+    >
+      <img
+        src="/images/gallery/villa-knx.jpg"
+        alt="مشاريع أوكتونيكس الذكية في الكويت"
+        class="absolute inset-0 h-full w-full object-cover opacity-70"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-indigo-950/70 to-sky-900/60"></div>
+
+      <div class="relative z-10 text-center px-6">
+        <h1 class="text-4xl sm:text-6xl font-extrabold">معرض مشاريعنا الذكية</h1>
+        <p class="mt-4 text-lg text-indigo-100 max-w-2xl mx-auto">
+          استكشف مجموعة مشاريعنا التي تضم أنظمة KNX و DALI و RTI المدمجة بالذكاء الاصطناعي في أبرز الفلل والمباني بالكويت.
+        </p>
+      </div>
+    </section>
+
+    <!-- شبكة الصور -->
+    <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" data-animate>
+      <h2 class="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-10">
+        معرض مشاريع أوكتونيكس
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-right">
+        {galleryImages.map((img) => (
+          <div
+            class="group relative overflow-hidden rounded-3xl shadow-md ring-1 ring-slate-200 transition hover:shadow-2xl hover:-translate-y-1"
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"
+            ></div>
+            <p
+              class="absolute bottom-4 right-4 text-sm font-medium text-white drop-shadow-lg opacity-0 group-hover:opacity-100 transition"
+            >
+              {img.alt}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- النص التعريفي SEO -->
+      <div class="mt-16 text-center max-w-3xl mx-auto text-slate-600 leading-relaxed">
+        <p>
+          تقدم <strong>أوكتونيكس إنوفيشنز</strong> أنظمة <strong>أتمتة منزلية وتجارية معتمدة من KNX</strong> في جميع أنحاء الكويت.
+          كل مشروع يتم تنفيذه بدقة عالية ويجمع بين <strong>إضاءة DALI</strong> و<strong>تحكم RTI</strong> و<strong>أنظمة جاهزة للذكاء الاصطناعي</strong> لتوفير أقصى درجات الراحة والذكاء.
+        </p>
+        <p class="mt-4">
+          سواء كنت تخطط لفيلا فاخرة في المسيلة أو مبنى تجاري في شرق، فإن فريق الأتمتة لدينا يضمن لك أعلى درجات
+          الموثوقية، الأداء، والراحة.
+        </p>
+      </div>
+    </section>
+
+    <!-- الفوتر -->
+    <FooterAr year={currentYear} />
+
+    <!-- سكريبت عرض الصور -->
+    <script is:inline>
+      document.querySelectorAll("img").forEach((img) => {
+        img.addEventListener("click", () => {
+          const lightbox = document.createElement("div");
+          lightbox.classList =
+            "fixed inset-0 bg-black/90 flex items-center justify-center z-50";
+          lightbox.innerHTML = `
+            <img src="${img.src}" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl" />
+            <button class='absolute top-6 left-6 text-white text-3xl font-bold'>×</button>
+          `;
+          document.body.appendChild(lightbox);
+          lightbox.querySelector("button").addEventListener("click", () =>
+            lightbox.remove()
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

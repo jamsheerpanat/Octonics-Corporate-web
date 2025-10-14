@@ -1,0 +1,220 @@
+---
+import "../../../styles/global.css";
+import Header from "../../../components/HeaderAr.astro";
+import FooterAr from "../../../components/FooterAr.astro";
+
+const currentYear = new Date().getFullYear();
+
+const brands = [
+  "/images/brands/dell.svg",
+  "/images/brands/hpe.svg",
+  "/images/brands/fortinet.svg",
+  "/images/brands/microsoft.svg",
+  "/images/brands/cisco.svg",
+  "/images/brands/ubiquiti.svg",
+];
+
+const services = [
+  {
+    icon: "🧰",
+    title: "عقود الصيانة السنوية (AMC)",
+    desc: "باقات مرنة للشركات الكبرى والمتوسطة وسلاسل التجزئة في الكويت، تشمل الخوادم والمبدلات وأجهزة المستخدم والطابعات وأنظمة UPS وشبكات Wi-Fi، مع صيانة استباقية وضمان توافر عبر اتفاقيات SLA.",
+  },
+  {
+    icon: "🖥️",
+    title: "دعم فني في الموقع",
+    desc: "نوفّر مهندسين معتمدين في موقعك للدعم الفني، وتركيب الكابلات، وصيانة العتاد، وتحليل الأعطال لضمان سير العمل دون انقطاع.",
+  },
+  {
+    icon: "🌐",
+    title: "مراقبة ودعم فني عن بُعد",
+    desc: "مركز عملياتنا (NOC) في الكويت يراقب أنظمتك على مدار الساعة باستخدام الذكاء الاصطناعي للتنبيهات، والتحديثات التلقائية، والمعالجة الفورية للمشكلات.",
+  },
+  {
+    icon: "🔄",
+    title: "صيانة وقائية مجدولة",
+    desc: "عمليات فحص ربع سنوية، تحديثات للبرمجيات الثابتة، تحسين الأداء، والتحقق من النسخ الاحتياطية لتقليل الأعطال وإطالة عمر المعدات.",
+  },
+  {
+    icon: "⚙️",
+    title: "إدارة الأنظمة والخوادم",
+    desc: "إدارة الخوادم، الافتراضية، تحسين التخزين، وإدارة المستخدمين عبر بيئات Windows وLinux والسحابة الهجينة.",
+  },
+  {
+    icon: "💡",
+    title: "الاستشارات والتحسين التقني",
+    desc: "يقوم مستشارونا بمراجعة بنيتك التحتية وتقديم توصيات للتحسين، والأمن السيبراني، والتحول السحابي بما يناسب طبيعة عملك.",
+  },
+];
+---
+
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>الدعم الفني وعقود الصيانة السنوية في الكويت | أوكتونيكس إنوفيشنز</title>
+    <meta
+      name="description"
+      content="توفر أوكتونيكس إنوفيشنز خدمات الدعم الفني وإدارة تقنية المعلومات في الكويت — مهندسون في الموقع، مركز مراقبة عن بُعد، وصيانة سنوية شاملة للشركات."
+    />
+    <meta
+      name="keywords"
+      content="دعم فني الكويت, صيانة تقنية المعلومات الكويت, عقد صيانة سنوية الكويت, AMC الكويت, دعم IT الكويت, مركز مراقبة NOC الكويت, صيانة الشبكات الكويت, خدمات IT الكويت"
+    />
+    <meta property="og:title" content="الدعم الفني وعقود الصيانة السنوية في الكويت | أوكتونيكس إنوفيشنز" />
+    <meta
+      property="og:description"
+      content="احصل على دعم فني متكامل من أوكتونيكس في الكويت — مهندسون معتمدون، مراقبة على مدار الساعة، وصيانة وقائية وفق أعلى المعايير."
+    />
+    <meta property="og:image" content="/images/it-support/og-itsupport.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+    <!-- ===== الهيدر ===== -->
+    <Header />
+
+    <!-- ===== البانر الرئيسي ===== -->
+    <section
+      id="hero"
+      class="relative isolate min-h-[90vh] flex items-center justify-center text-center overflow-hidden text-white"
+    >
+      <img
+        src="/images/it-support/hero-itteam.jpg"
+        alt="الدعم الفني في الكويت"
+        class="absolute inset-0 h-full w-full object-cover opacity-80"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-indigo-950/70 to-slate-900/90"></div>
+      <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-sky-400/25 blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-indigo-500/25 blur-3xl"></div>
+
+      <div class="relative z-10 max-w-4xl px-4 sm:px-6" data-animate>
+        <p
+          class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs ring-1 ring-white/20"
+        >
+          دعم في الموقع • دعم عن بُعد • إدارة IT • صيانة سنوية
+        </p>
+        <h1 class="mt-5 text-5xl font-extrabold leading-tight sm:text-6xl">
+          خدمات الدعم الفني والصيانة في الكويت
+        </h1>
+        <p class="mt-4 text-indigo-100">
+          حافظ على سير عملك دون انقطاع — مع مهندسين متخصصين، مراقبة استباقية، وعقود صيانة سنوية مصممة للشركات الكويتية.
+        </p>
+        <a
+          href="/ar/contact"
+          class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105"
+        >
+          اطلب عرض صيانة سنوية →
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== العلامات التجارية ===== -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <h4 class="text-center text-xs font-semibold tracking-widest text-slate-500">
+        شركاؤنا المعتمدون والعلامات المدعومة
+      </h4>
+      <div class="relative mt-6 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200">
+        <div
+          class="flex gap-10 whitespace-nowrap py-6 [animation:marquee_30s_linear_infinite] hover:[animation-play-state:paused]"
+        >
+          {[...brands, ...brands].map((src) => (
+            <img
+              src={src}
+              alt="Brand"
+              loading="lazy"
+              class="mx-8 inline-block h-9 w-auto opacity-70 hover:opacity-100 transition"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== الخدمات ===== -->
+    <section id="services" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 text-right" data-animate>
+      <h2 class="text-center text-3xl font-bold text-slate-900 sm:text-4xl">
+        حلول شاملة للدعم الفني وعقود الصيانة السنوية
+      </h2>
+      <p class="mx-auto mt-3 max-w-2xl text-center text-slate-600">
+        إدارة شاملة لدورة حياة تقنية المعلومات للشركات الكويتية.
+      </p>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {services.map((s) => (
+          <article
+            class="group rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <div
+              class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 text-indigo-600 ring-1 ring-slate-100"
+            >
+              {s.icon}
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900">{s.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{s.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== لماذا أوكتونيكس ===== -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+            لماذا تختار دعم أوكتونيكس؟
+          </h2>
+          <p class="mt-4 text-slate-600">
+            تقدم أوكتونيكس دعمًا فنيًا استباقيًا وشفافًا وقابلًا للقياس، مصممًا لتحقيق الاستقرار والاستمرارية. نحن لا نُصلح فقط — بل نمنع الأعطال قبل حدوثها.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-700">
+            <li>• مهندسون مخصصون في الموقع مع تقارير شهرية</li>
+            <li>• مركز مراقبة في الكويت يعمل على مدار الساعة</li>
+            <li>• تحديثات وتصحيحات أمنية استباقية</li>
+            <li>• إدارة الأصول والتراخيص</li>
+            <li>• دعم أولوية مع آلية تصعيد منظمة</li>
+          </ul>
+        </div>
+        <figure class="relative">
+          <img
+            src="/images/it-support/tech-engineer.jpg"
+            alt="مهندس دعم فني في الكويت"
+            loading="lazy"
+            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
+          />
+          <figcaption class="mt-2 text-xs text-slate-500 text-center">
+            مهندسون معتمدون يقدمون صيانة استباقية للأنظمة المؤسسية.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== الدعوة للتواصل ===== -->
+    <section
+      class="relative bg-gradient-to-r from-indigo-600 to-sky-600 py-20 text-white text-center"
+      data-animate
+    >
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2 class="text-3xl font-bold sm:text-4xl">احصل على خطة صيانة تقنية مخصصة</h2>
+        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
+          سنقوم بمراجعة بنيتك التحتية وتقديم عرض صيانة سنوي يتضمن تفاصيل اتفاقيات SLA.
+        </p>
+        <a
+          href="/ar/contact"
+          class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-indigo-700 shadow-lg transition hover:scale-105"
+        >
+          تحدث إلى خبرائنا →
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== الفوتر ===== -->
+    <FooterAr year={currentYear} />
+
+    <style>
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+  </body>
+</html>

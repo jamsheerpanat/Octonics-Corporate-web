@@ -1,11 +1,45 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import KnxSection from "../components/KnxSection.astro";
+import Brands from "../components/Brands.astro";
+import Services from "../components/Services.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const services = [
+  ["ERP & Business Software", "Cloud-based ERP systems for finance, HR, inventory, and operations — customized for Kuwait’s enterprises."],
+  ["Smart Automation (KNX/DALI)", "Lighting, HVAC, and shading automation designed with KNX reliability and DALI precision."],
+  ["Secure IT Infrastructure", "Networks, servers, and cloud systems built with zero-trust security and high uptime for business continuity."],
+  ["Surveillance & Access Control", "AI-powered CCTV, facial recognition, LPR, and biometric access for total site control and safety."],
+  ["AI & Data Analytics", "Dashboards and predictive analytics that turn data into intelligent business decisions."],
+  ["Web & App Development", "Fast, SEO-optimized web and mobile apps crafted with modern UI/UX and high performance."],
+  ["IT Governance & Cybersecurity", "Frameworks, audits, and security controls aligned with compliance and Kuwait’s data protection standards."],
+  ["Smart Homes", "Luxury home automation — multi-room audio, lighting, climate control, and energy optimization for villas."],
+];
+
+const brands = [
+  "/images/brands/knx.svg",
+  "/images/brands/dali.svg",
+  "/images/brands/siemens.svg",
+  "/images/brands/schneider.svg",
+  "/images/brands/hpe.svg",
+  "/images/brands/ubiquiti.svg",
+  "/images/brands/axis.svg",
+  "/images/brands/dahua.svg",
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Octonics Innovations | Smart Automation, ERP & IT Solutions in Kuwait" description="Kuwait’s next-generation fusion of Automation, AI, and IT Infrastructure. KNX Certified.">
+  <Header />
+  <Hero />
+  <About />
+  <KnxSection />
+  <Brands />
+  <Services />
+  <Contact />
+  <Footer />
 </Layout>

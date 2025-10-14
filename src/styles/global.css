@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource/tajawal/400.css";
+@import "@fontsource/tajawal/600.css";
+@import "@fontsource/tajawal/700.css";
+
+/* ============================================================ */
+/* Global Defaults */
+/* ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+  font-feature-settings: "ss01", "ss02", "cv01";
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ============================================================ */
+/* Glass Utility */
+/* ============================================================ */
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-lg;
+}
+
+/* ============================================================ */
+/* Scrollbar Hiding Utility */
+/* ============================================================ */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================================ */
+/* Marquee Animation */
+/* ============================================================ */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ============================================================ */
+/* Fade-up Animation */
+/* ============================================================ */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-animate],
+.animate-fadeUp {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* ============================================================ */
+/* Prose Defaults (Light & Dark) */
+/* ============================================================ */
+.prose {
+  @apply prose-slate max-w-none leading-relaxed;
+}
+
+/* Headings */
+.prose :where(h1):not(:where(.not-prose *)) {
+  @apply text-3xl sm:text-4xl font-extrabold text-slate-900;
+}
+.prose :where(h2):not(:where(.not-prose *)) {
+  @apply text-2xl sm:text-3xl font-bold mt-12 text-slate-900;
+}
+.prose :where(h3):not(:where(.not-prose *)) {
+  @apply text-xl sm:text-2xl font-semibold mt-8 text-slate-900;
+}
+
+/* Paragraphs & Lists */
+.prose :where(p, li):not(:where(.not-prose *)) {
+  @apply text-slate-700;
+}
+
+/* Links */
+.prose :where(a):not(:where(.not-prose *)) {
+  @apply text-sky-600 font-medium no-underline hover:underline hover:text-indigo-600 transition;
+}
+
+/* Blockquotes */
+.prose :where(blockquote):not(:where(.not-prose *)) {
+  @apply border-l-4 border-sky-300 bg-sky-50/70 p-4 rounded-lg text-slate-700 italic;
+}
+
+/* Inline Code */
+.prose :where(code):not(:where(.not-prose *)) {
+  @apply rounded bg-slate-100 px-1.5 py-0.5 text-slate-800;
+}
+
+/* Code Blocks */
+.prose :where(pre):not(:where(.not-prose *)) {
+  @apply bg-slate-900 text-slate-100 rounded-xl p-4 ring-1 ring-slate-800 overflow-x-auto;
+}
+
+/* Images */
+.prose :where(img):not(:where(.not-prose *)) {
+  @apply rounded-2xl shadow-lg ring-1 ring-slate-200;
+}
+
+/* Figures */
+.prose :where(figure):not(:where(.not-prose *)) {
+  @apply my-8;
+}
+.prose :where(figcaption):not(:where(.not-prose *)) {
+  @apply mt-2 text-center text-sm text-slate-500;
+}
+
+/* ============================================================ */
+/* Utility: Article Shell */
+/* ============================================================ */
+.article-shell {
+  @apply mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-4xl;
+}
+
+/* ============================================================ */
+/* Callout Cards */
+/* ============================================================ */
+.callout {
+  @apply rounded-2xl bg-white shadow-md ring-1 ring-slate-200 p-6;
+}
+.callout--soft {
+  @apply bg-gradient-to-br from-slate-50 to-white;
+}
+
+/* ============================================================ */
+/* Dark Mode Support */
+/* ============================================================ */
+:root.dark .prose {
+  @apply prose-invert;
+}
+:root.dark .prose :where(blockquote):not(:where(.not-prose *)) {
+  @apply border-sky-500/40 bg-slate-800/60;
+}
+
+/* RTL Layout Overrides */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+[dir="rtl"] .prose {
+  text-align: right;
+}
+[dir="rtl"] ul, [dir="rtl"] ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}

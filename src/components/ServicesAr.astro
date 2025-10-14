@@ -1,0 +1,118 @@
+<!-- ============================================================ -->
+<!-- الخدمات – "الأذرع الثمانية الذكية" (النسخة الكويتية التسويقية) -->
+<!-- ============================================================ -->
+<section
+  id="services"
+  dir="rtl"
+  class="relative mx-auto mt-28 max-w-7xl overflow-hidden px-4 py-24 sm:px-6 lg:px-8 text-right"
+  data-animate
+>
+  <!-- الخلفية -->
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-sky-50 to-indigo-50"></div>
+  <div aria-hidden="true" class="absolute top-10 right-10 h-64 w-64 rounded-full bg-sky-200/40 blur-3xl"></div>
+  <div aria-hidden="true" class="absolute bottom-10 left-10 h-72 w-72 rounded-full bg-indigo-200/40 blur-3xl"></div>
+
+  <!-- العنوان -->
+  <div class="text-center">
+    <span
+      class="inline-block rounded-full bg-gradient-to-r from-sky-100 to-indigo-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-sky-700 ring-1 ring-sky-200"
+    >
+      خبراتنا
+    </span>
+    <h2 class="mt-4 text-4xl font-extrabold text-slate-900 sm:text-5xl">
+      <span class="bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent">
+        الأذرع الثمانية الذكية
+      </span>
+      من أوكتونيكس
+    </h2>
+    <p class="mx-auto mt-3 max-w-2xl text-slate-600 leading-relaxed">
+      من <strong>التحكم الذكي إلى التحليل الذكي</strong>، نوصل بين التقنية والإبداع لتصميم أنظمة تفكر، تتعلم، وتتكيف مع أسلوب حياتك — 
+      لأن <b>الذكاء الحقيقي يبدأ من التفاصيل</b> في كل منزل، شركة، أو مشروع بالكويت.
+    </p>
+  </div>
+
+  <!-- الشبكة -->
+  <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    {[
+      {
+        title: "نظام ERP وبرامج الأعمال",
+        desc: "حلول ERP ذكية وسحابية لإدارة الموارد المالية والبشرية والمخزون — مصممة خصيصًا لتناسب السوق الكويتي وتساعدك تتابع كل شيء في لحظة.",
+        icon: "💼",
+        link: "/ar/services/erp-business-software",
+      },
+      {
+        title: "التحكم الذكي بالمنازل والمباني (KNX / DALI)",
+        desc: "أنظمة أتمتة معتمدة من KNX لإدارة الإضاءة، التكييف، والستائر — بجودة أوروبية ومتكاملة مع أحدث بروتوكولات Zigbee وZ-Wave.",
+        icon: "🏠",
+        link: "/ar/services/smart-home-building",
+      },
+      {
+        title: "البنية التحتية لتقنية المعلومات",
+        desc: "نصمم بنية رقمية متكاملة تشمل الشبكات، الخوادم، ومراكز البيانات — تضمن سرعة، استقرار، وأمان للمؤسسات في الكويت.",
+        icon: "🖥️",
+        link: "/ar/services/it-infrastructure",
+      },
+      {
+        title: "أنظمة المراقبة والتحكم بالدخول",
+        desc: "حلول مراقبة تعتمد على الذكاء الاصطناعي والتعرف على الوجه، بصمة الدخول، وكاميرات عالية الدقة لتأمين المنشآت بأعلى معايير الأمان.",
+        icon: "🎥",
+        link: "/ar/services/surveillance-access-control",
+      },
+      {
+        title: "تحليلات البيانات والذكاء الاصطناعي",
+        desc: "نحوّل بياناتك إلى قرارات من خلال لوحات ذكاء تنبؤية مدعومة بالذكاء الاصطناعي — لتتحرك بخطوة أذكى من المنافسين.",
+        icon: "📊",
+        link: "/ar/services/data-analytics-ai",
+      },
+      {
+        title: "تطوير المواقع والتطبيقات",
+        desc: "نطوّر مواقع وتطبيقات حديثة وسريعة بأحدث التقنيات (Astro، React) – محسّنة للـSEO وتجربة المستخدم، لأن أول انطباع لا يتكرر.",
+        icon: "🌐",
+        link: "/ar/services/web-app-development",
+      },
+      {
+        title: "حوكمة تقنية المعلومات والأمن السيبراني",
+        desc: "نوفّر حماية رقمية متكاملة تشمل التدقيق، السياسات، والمعايير الأمنية – لحماية بياناتك وضمان استمرارية أعمالك بثقة.",
+        icon: "🛡️",
+        link: "/ar/services/it-governance-cybersecurity",
+      },
+      {
+        title: "الدعم الفني وخدمات الصيانة",
+        desc: "خدمة دعم فني سريعة وميدانية من فريق مهندسين متخصصين، مع عقود صيانة سنوية تضمن تشغيل دائم بدون انقطاع.",
+        icon: "🧰",
+        link: "/ar/services/it-support",
+      },
+    ].map(({ title, desc, icon, link }) => (
+      <a
+        href={link}
+        class="group relative rounded-3xl bg-white/70 p-8 shadow-lg ring-1 ring-slate-200 backdrop-blur-lg transition-all hover:-translate-y-2 hover:shadow-2xl hover:ring-sky-300"
+      >
+        <!-- تأثير التوهج -->
+        <div class="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-r from-sky-200/20 to-indigo-200/20 opacity-0 transition group-hover:opacity-100"></div>
+
+        <!-- الأيقونة -->
+        <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-100 to-indigo-100 text-3xl text-indigo-600 shadow-inner">
+          {icon}
+        </div>
+
+        <!-- العنوان -->
+        <h3 class="text-lg font-semibold text-slate-900 transition group-hover:text-sky-700">
+          {title}
+        </h3>
+
+        <!-- الوصف -->
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
+
+        <!-- زر القراءة -->
+        <span class="mt-4 inline-flex items-center text-sm font-medium text-sky-600 opacity-0 transition group-hover:opacity-100">
+          اقرأ المزيد ←
+        </span>
+      </a>
+    ))}
+  </div>
+
+  <!-- التوهج السفلي -->
+  <div
+    class="absolute bottom-0 right-1/2 h-40 w-[90%] translate-x-1/2 rounded-full bg-gradient-to-r from-sky-200/30 via-indigo-200/20 to-sky-200/30 blur-3xl"
+  ></div>
+</section>

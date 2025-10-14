@@ -1,0 +1,52 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+if (!post) {
+  throw new Error("Post not found");
+}
+
+const rendered = await post.render();
+const Content = rendered?.Content;
+const data = rendered?.data ?? {};
+---
+
+<Layout
+  title={`${data.title ?? "Octonics Blog"}`}
+  description={data.summary ?? "Explore smart automation insights from Octonics Innovations in Kuwait."}
+  image={data.cover ?? "/images/og-default.jpg"}
+>
+  <article class="article-shell prose prose-slate py-20" data-animate>
+    <header class="mb-10 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold">{data.title ?? "Untitled Post"}</h1>
+      {data.pubDate && (
+        <p class="text-sm text-slate-500">
+          {new Date(data.pubDate).toLocaleDateString("en-KW", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </p>
+      )}
+      {data.author && <p class="mt-1 text-sm text-slate-600">By {data.author}</p>}
+      {data.cover && (
+        <img
+          src={data.cover}
+          alt={data.title ?? ""}
+          class="mt-8 w-full max-h-[480px] object-cover rounded-3xl shadow-lg ring-1 ring-slate-200"
+        />
+      )}
+    </header>
+
+    <Content />
+  </article>
+</Layout>

@@ -1,0 +1,187 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KNX & RTI Certified Smart Automation Experts in Kuwait | Octonics Innovations</title>
+    <meta
+      name="description"
+      content="Octonics Innovations is a KNX and RTI Certified Smart Automation company in Kuwait. We deliver intelligent home and building automation using global standards for lighting, HVAC, audio, and energy management."
+    />
+    <meta
+      name="keywords"
+      content="KNX Certified Kuwait, RTI Certified Kuwait, Smart Home Kuwait, KNX Automation Kuwait, RTI Control Kuwait, KNX Partner Kuwait, DALI Lighting Kuwait, Smart Building Kuwait, Home Automation Kuwait"
+    />
+    <meta property="og:title" content="KNX & RTI Certified Smart Automation Experts in Kuwait | Octonics Innovations" />
+    <meta
+      property="og:description"
+      content="KNX & RTI Certified Smart Automation company in Kuwait — delivering reliable, future-proof systems for homes, villas, and commercial buildings."
+    />
+    <meta property="og:image" content="/images/knx/og-knx.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+    <!-- HEADER -->
+    <Header />
+
+    <!-- HERO -->
+    <section id="hero" class="relative isolate flex min-h-[90vh] items-center justify-center text-center overflow-hidden">
+      <img
+        src="/images/knx/hero-knx.jpg"
+        alt="KNX Certified Automation Kuwait"
+        class="absolute inset-0 h-full w-full object-cover opacity-80"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-indigo-950/70 to-slate-900/90"></div>
+      <div class="absolute -top-24 -left-24 h-64 w-64 rounded-full bg-sky-400/20 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-indigo-500/20 blur-3xl"></div>
+
+      <div class="relative z-10 max-w-4xl px-4 text-white sm:px-6" data-animate>
+        <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs ring-1 ring-white/20">
+          KNX Certified • RTI Certified • Smart Home Experts
+        </p>
+        <h1 class="mt-5 text-5xl font-extrabold leading-tight sm:text-6xl">
+          KNX & RTI Certified Smart Automation in Kuwait
+        </h1>
+        <p class="mt-4 text-slate-200">
+          We design and implement high-end automation solutions for villas, buildings, and commercial spaces using
+          <strong>KNX</strong> and <strong>RTI</strong> — the world’s most reliable standards in intelligent control.
+        </p>
+      </div>
+    </section>
+
+    <!-- KNX SECTION -->
+    <section class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8" data-animate>
+      <div class="grid items-center gap-14 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">KNX – The Global Standard for Smart Buildings</h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            Octonics Innovations is a <strong>KNX Certified Partner</strong> — delivering the most stable and scalable wired automation systems for lighting, HVAC, shading, and energy management in Kuwait.
+          </p>
+          <p class="mt-4 text-slate-600">
+            KNX is not a brand — it’s an open global protocol trusted by over 500 manufacturers and installed in more than
+            190 countries. It allows seamless interoperability between brands like <strong>Theben</strong>, <strong>ABB</strong>, <strong>Jung</strong>, and <strong>Gira</strong>.
+          </p>
+          <ul class="mt-6 space-y-2 text-sm text-slate-700">
+            <li>• <strong>Interoperable:</strong> Works with 500+ manufacturers worldwide.</li>
+            <li>• <strong>Reliable:</strong> Wired bus system immune to Wi-Fi or signal drops.</li>
+            <li>• <strong>Future-proof:</strong> Scalable and compatible with DALI2 lighting.</li>
+            <li>• <strong>Energy-efficient:</strong> Intelligent control for sustainable buildings.</li>
+          </ul>
+        </div>
+        <figure class="relative">
+          <img
+            src="/images/knx/knx-system.jpg"
+            alt="KNX Partner Kuwait"
+            loading="lazy"
+            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
+          />
+          <figcaption class="mt-2 text-xs text-slate-500 text-center">
+            Certified KNX Integration by Octonics – “Install & Forget” Reliability.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- RTI SECTION -->
+    <section class="relative bg-gradient-to-r from-indigo-600 to-sky-600 py-24 text-white" data-animate>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-14 md:grid-cols-2 items-center">
+        <figure class="order-2 md:order-1">
+          <img
+            src="/images/knx/rti-controller.jpg"
+            alt="RTI Control Kuwait"
+            loading="lazy"
+            class="rounded-3xl shadow-2xl ring-1 ring-white/10"
+          />
+          <figcaption class="mt-2 text-xs text-indigo-200 text-center">
+            RTI Control Systems – Unified Command for Smart Homes & Commercial Spaces.
+          </figcaption>
+        </figure>
+        <div class="order-1 md:order-2">
+          <h2 class="text-3xl font-bold sm:text-4xl">RTI Certified – Visualization & Control Expertise</h2>
+          <p class="mt-4 text-indigo-100 leading-relaxed">
+            Octonics is an <strong>RTI Certified Integrator</strong> — specializing in control system design and custom visualization.  
+            RTI (Remote Technologies Inc.) provides enterprise-grade control interfaces that combine lighting, audio, video, and automation into a single intuitive platform.
+          </p>
+          <ul class="mt-6 space-y-2 text-sm text-indigo-100">
+            <li>• <strong>Custom UI Design</strong> for iPad, Android, and Wall Panels</li>
+            <li>• <strong>Integration</strong> with KNX, DALI, and AV Matrix Systems</li>
+            <li>• <strong>Secure Remote Access</strong> with encrypted gateways</li>
+            <li>• <strong>Luxury Experience</strong> for Villas, Showrooms, and Hospitality</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND GRID -->
+    <section class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 text-center" data-animate>
+      <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Certified Technology Stack</h2>
+      <p class="mx-auto mt-3 max-w-2xl text-slate-600">
+        Our certified systems are built on the world’s most trusted automation brands.
+      </p>
+      <div class="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+        {[
+          "/images/brands/knx.png",
+          "/images/brands/theben.png",
+          "/images/brands/abb.png",
+          "/images/brands/rti.png",
+          "/images/brands/gira.png",
+          "/images/brands/jung.png",
+        ].map((b) => (
+          <div class="flex items-center justify-center rounded-2xl bg-white p-4 shadow-md ring-1 ring-slate-200 hover:scale-105 transition">
+            <img src={b} alt="Brand" loading="lazy" class="h-10 w-auto opacity-80 hover:opacity-100" />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8" data-animate>
+      <div class="rounded-3xl bg-gradient-to-br from-indigo-600 to-sky-600 p-10 text-white shadow-2xl text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl">Build a Certified Smart Home with Octonics</h2>
+        <p class="mt-3 text-indigo-100">
+          Experience true comfort, control, and stability — designed by KNX & RTI certified professionals in Kuwait.
+        </p>
+        <a href="/contact" class="mt-6 inline-flex rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 transition hover:scale-105">
+          Get a Free Consultation
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <Footer year={currentYear} />
+
+    <!-- FLOATING CERTIFICATION RIBBON -->
+    <div
+      id="certBadge"
+      class="fixed right-6 top-1/3 z-50 hidden flex-col items-center gap-3 rounded-2xl bg-white/80 px-4 py-3 text-center shadow-2xl ring-1 ring-slate-200 backdrop-blur-xl opacity-0 translate-x-8 transition-all duration-700 md:flex"
+    >
+      <img src="/images/brands/knx.png" alt="KNX Certified" class="h-8 w-auto drop-shadow-md" loading="lazy" />
+      <img src="/images/brands/rti.png" alt="RTI Certified" class="h-8 w-auto drop-shadow-md" loading="lazy" />
+      <p class="text-[10px] font-semibold text-slate-600 tracking-wide uppercase">
+        Certified Partner
+      </p>
+    </div>
+
+    <script is:inline>
+      const badge = document.getElementById("certBadge");
+      window.addEventListener("scroll", () => {
+        const showAt = 200;
+        if (window.scrollY > showAt) {
+          badge.style.opacity = "1";
+          badge.style.transform = "translateX(0)";
+        } else {
+          badge.style.opacity = "0";
+          badge.style.transform = "translateX(20px)";
+        }
+      });
+    </script>
+  </body>
+</html>

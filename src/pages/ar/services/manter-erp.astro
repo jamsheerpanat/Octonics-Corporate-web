@@ -1,0 +1,199 @@
+---
+import "../../../styles/global.css";
+import Header from "../../../components/HeaderAr.astro";
+import FooterAr from "../../../components/FooterAr.astro";
+
+const currentYear = new Date().getFullYear();
+
+const service = {
+  title: "مانتر ERP – نظام إدارة أعمال ذكي بالذكاء الاصطناعي في الكويت",
+  subtitle:
+    "اكتشف أقوى نظام ERP في الكويت — مدعوم بالذكاء الاصطناعي والأتمتة من أوكتونيكس.",
+  image: "/images/manter-hero.jpg",
+  keywords: [
+    "مانتر ERP الكويت",
+    "ذكاء اصطناعي ERP الكويت",
+    "نظام ERP ذكي الكويت",
+    "Octonics مانتر ERP",
+    "بديل Odoo الكويت",
+    "نظام أعمال ذكي الكويت",
+    "نظام ERP بالذكاء الاصطناعي",
+    "ERP أوتوماتيكي الكويت",
+  ],
+};
+---
+
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{service.title} | أوكتونيكس إنوفيشنز الكويت</title>
+    <meta
+      name="description"
+      content="مانتر ERP من أوكتونيكس إنوفيشنز — أول نظام ERP في الكويت يعتمد على الذكاء الاصطناعي، يقدم تحليلات تنبؤية ولوحات ذكية لأتمتة قرارات الإدارة الحديثة."
+    />
+    <meta name="keywords" content={service.keywords.join(", ")} />
+    <meta property="og:title" content={service.title} />
+    <meta property="og:image" content={service.image} />
+    <meta
+      property="og:description"
+      content="نظام ERP ذكي يعتمد على الذكاء الاصطناعي — لتحسين الكفاءة التشغيلية واتخاذ القرارات تلقائيًا من خلال الأتمتة والتحليلات الذكية."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "Manter ERP",
+        operatingSystem: "Web, Cloud, Mobile",
+        applicationCategory: "BusinessApplication",
+        offers: { "@type": "Offer", priceCurrency: "KWD" },
+        provider: {
+          "@type": "Organization",
+          name: "Octonics Innovations",
+          url: "https://octonics.com",
+        },
+        description:
+          "مانتر ERP هو نظام إدارة أعمال ذكي تم تطويره في الكويت بواسطة أوكتونيكس إنوفيشنز، يجمع بين الأتمتة والتحليلات والذكاء الاصطناعي لتمكين قرارات أسرع وأكثر دقة.",
+      })}
+    </script>
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+    <!-- ===== الهيدر ===== -->
+    <Header />
+
+    <!-- ===== البانر الرئيسي ===== -->
+    <section
+      id="hero"
+      class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-center text-white"
+    >
+      <div class="absolute inset-0">
+        <img
+          src={service.image}
+          alt={service.title}
+          loading="lazy"
+          class="h-full w-full object-cover opacity-70"
+        />
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-900/80 to-sky-900/70"></div>
+      </div>
+
+      <div class="relative z-10 mx-auto max-w-3xl px-4" data-animate>
+        <h1 class="text-5xl font-extrabold leading-tight sm:text-7xl">
+          مانتر ERP
+        </h1>
+        <p class="mt-4 text-lg text-indigo-100">
+          <strong>منصة ERP بالذكاء الاصطناعي</strong> من الجيل القادم في الكويت — مصممة للشركات التي
+          تبحث عن السرعة، الذكاء، والدقة.
+        </p>
+        <a
+          href="/ar/contact"
+          class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105"
+          >اطلب عرضًا تجريبيًا →</a
+        >
+      </div>
+    </section>
+
+    <!-- ===== المقدمة ===== -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+            تعرف على مانتر ERP — منصة ذكية لإدارة الأعمال
+          </h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            مانتر ERP هو نظام سحابي شامل يدمج الأتمتة والتحليلات والذكاء الاصطناعي ليمنحك رؤية
+            شاملة لعملياتك. إنه ليس مجرد برنامج — بل شريك رقمي يواكب قراراتك.
+          </p>
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li>⚙️ بنية مرنة — قابلة للتوسع من 5 إلى 5000 مستخدم</li>
+            <li>🤖 أتمتة ذكية مدعومة بالذكاء الاصطناعي لكل قسم</li>
+            <li>📊 لوحات تحكم لحظية لقرارات الإدارة التنفيذية</li>
+            <li>🔐 أمان مؤسسي بتشفير 256-بت</li>
+          </ul>
+        </div>
+        <figure>
+          <img
+            src="/images/manter-dashboard.jpg"
+            alt="لوحة تحكم مانتر ERP"
+            loading="lazy"
+            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== الوحدات الذكية ===== -->
+    <section class="relative bg-gradient-to-r from-indigo-600 to-sky-600 py-24 text-white" data-animate>
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 text-center">
+        <h3 class="text-3xl font-bold sm:text-4xl">الوحدات المدعومة بالذكاء الاصطناعي</h3>
+        <p class="mt-3 max-w-2xl mx-auto text-indigo-100">
+          كل وحدة في مانتر ERP تتعلم وتتنبأ وتتطور — لتمنحك نظام أعمال حي وذكي.
+        </p>
+
+        <div class="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["المالية الذكية", "تسوية تلقائية للحسابات، وتنبؤ بالتدفقات النقدية، وكشف الانحرافات المالية."],
+            ["ذكاء الموارد البشرية", "مراقبة الأداء، التنبؤ بالاستقالات، وأتمتة الرواتب."],
+            ["مبيعات ذكية", "توقع الإيرادات وتحسين التسعير في الوقت الفعلي."],
+            ["المشتريات الآلية", "توصيات شراء ذكية وتقييم مخاطر الموردين."],
+            ["كفاءة العمليات", "مراقبة الإنتاج والتنبؤ بفترات التوقف وتحليل الكفاءة."],
+            ["مركز الرؤى", "تقارير موحدة مع ملخصات توليدية للإدارة التنفيذية."],
+          ].map(([title, desc]) => (
+            <div class="group rounded-3xl bg-white/10 p-8 shadow-lg ring-1 ring-white/10 backdrop-blur-md transition hover:-translate-y-2 hover:bg-white/20">
+              <h4 class="text-xl font-semibold text-white">{title}</h4>
+              <p class="mt-2 text-sm text-indigo-100">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== المميزات ===== -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <figure>
+          <img
+            src="/images/ai-reports.jpg"
+            alt="تقارير الذكاء الاصطناعي في ERP"
+            loading="lazy"
+            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
+          />
+        </figure>
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+            منصة تفكر من أجلك
+          </h2>
+          <p class="mt-4 text-slate-600">
+            يدمج مانتر ERP بين <strong>التحليل الذكي وصنع القرار الآلي</strong> باستخدام لغة طبيعية تمنحك
+            فهمًا فوريًا للمبيعات والعمليات والأداء العام.
+          </p>
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li>💬 تقارير ذكية تفاعلية — اسأل مثلًا: “اعرض الإيرادات للربع الرابع حسب الأقسام.”</li>
+            <li>📈 تنبيهات تنبؤية قبل انخفاض الإيرادات أو ارتفاع التكاليف</li>
+            <li>🌐 تكامل مع أنظمة IoT وKNX والمنشآت الذكية</li>
+            <li>🚀 نظام سحابي متكامل ومتوافق مع الأجهزة المحمولة وواجهات API</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== الدعوة للتجربة ===== -->
+    <section class="relative bg-gradient-to-r from-sky-500 to-indigo-600 py-16 text-white text-center">
+      <div class="mx-auto max-w-4xl px-4" data-animate>
+        <h3 class="text-3xl font-bold sm:text-4xl">اكتشف مستقبل أنظمة ERP</h3>
+        <p class="mt-3 text-indigo-100">
+          انضم إلى الثورة الرقمية في الكويت مع <strong>مانتر ERP من أوكتونيكس</strong> — النظام الذي لا
+          يدير عملك فقط، بل <em>يفهمه</em>.
+        </p>
+        <a
+          href="/ar/contact"
+          class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-indigo-700 shadow-lg transition hover:scale-105"
+          >احجز تجربة مباشرة →</a
+        >
+      </div>
+    </section>
+
+    <!-- ===== الفوتر ===== -->
+    <FooterAr year={currentYear} />
+  </body>
+</html>

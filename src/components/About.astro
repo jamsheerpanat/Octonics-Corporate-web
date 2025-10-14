@@ -1,0 +1,113 @@
+<!-- ============================================================ -->
+<!-- ABOUT SECTION – NEXT-GEN DESIGN -->
+<!-- ============================================================ -->
+<section
+  id="about"
+  class="relative mx-auto mt-32 max-w-7xl overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
+  data-animate
+>
+  <!-- Background layers -->
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-sky-50"></div>
+  <div aria-hidden="true" class="absolute top-20 left-16 h-80 w-80 rounded-full bg-sky-300/30 blur-3xl"></div>
+  <div aria-hidden="true" class="absolute bottom-20 right-16 h-80 w-80 rounded-full bg-indigo-300/30 blur-3xl"></div>
+
+  <div class="grid items-center gap-16 md:grid-cols-2">
+    <!-- LEFT: Content -->
+    <div class="relative">
+      <span
+        class="inline-block rounded-full bg-gradient-to-r from-sky-500/10 to-indigo-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-sky-700 ring-1 ring-sky-100"
+        >Who We Are</span
+      >
+
+      <h2 class="mt-4 text-4xl font-extrabold text-slate-900 sm:text-5xl">
+        Smart. Secure. Scalable.<br />
+        <span class="bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent">
+          That’s Octonics.
+        </span>
+      </h2>
+
+      <p class="mt-5 text-base leading-relaxed text-slate-600">
+        Inspired by the <b class="text-sky-700">octopus</b> — a creature of intelligence and adaptability —
+        <b>Octonics Innovations</b> unites eight verticals of technology under one ecosystem:
+        <b>Automation</b>, <b>AI</b>, <b>ERP</b>, <b>IT Infrastructure</b>, and <b>Cybersecurity</b>.
+        We are a <strong>KNX-Certified Smart Automation Company</strong> in Kuwait, crafting connected environments
+        that think, adapt, and evolve with your lifestyle.
+      </p>
+
+      <!-- Key Features -->
+      <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {[
+          ["💡", "KNX / DALI Lighting & Climate"],
+          ["📊", "AI Dashboards & Predictive Analytics"],
+          ["🌐", "Enterprise Networks & Cloud Infrastructure"],
+          ["🛡️", "Cybersecurity & IT Governance"],
+        ].map(([icon, text]) => (
+          <div
+            class="group flex items-center gap-3 rounded-2xl bg-white/80 p-3 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:ring-sky-200"
+          >
+            <div
+              class="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-sky-100 to-indigo-100 text-indigo-600"
+            >
+              {icon}
+            </div>
+            <span class="text-sm font-medium text-slate-700">{text}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Quick stats -->
+      <div
+        class="mt-10 grid grid-cols-3 divide-x divide-slate-200 rounded-2xl bg-white/70 p-4 shadow-sm ring-1 ring-slate-200 backdrop-blur-md"
+      >
+        <div class="text-center">
+          <p class="text-3xl font-bold text-slate-900">8+</p>
+          <p class="text-xs uppercase text-slate-500">Tech Verticals</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-slate-900">15+</p>
+          <p class="text-xs uppercase text-slate-500">Certified Engineers</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-slate-900">100%</p>
+          <p class="text-xs uppercase text-slate-500">Client Satisfaction</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-8">
+        <a
+          href="/about"
+          class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-sky-400/40"
+        >
+          Learn More About Us →
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: Image with glow -->
+    <div class="relative mx-auto w-full max-w-lg" data-animate>
+      <div aria-hidden="true" class="absolute -top-10 -right-10 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl"></div>
+      <img
+        src="/images/hero-house.jpg"
+        alt="Smart Villa KNX Kuwait"
+        loading="lazy"
+        class="relative z-10 rounded-3xl shadow-2xl ring-1 ring-slate-200 transition hover:scale-[1.02]"
+      />
+      <div class="absolute inset-0 z-0 rounded-3xl bg-gradient-to-tr from-sky-100/30 to-indigo-100/20 blur-2xl"></div>
+      <figcaption class="mt-3 text-center text-xs text-slate-500">
+        Smart villa in Kuwait — automated with KNX and AI energy management.
+      </figcaption>
+    </div>
+  </div>
+</section>
+
+<!-- ANIMATIONS -->
+<style>
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(8px); }
+}
+[data-animate] img:hover {
+  animation: float-soft 4s ease-in-out infinite;
+}
+</style>

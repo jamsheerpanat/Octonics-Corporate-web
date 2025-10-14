@@ -1,0 +1,197 @@
+---
+const {
+  title = "Next-Gen Technology for Smarter Living",
+  subtitle = "Octonics Innovations — Kuwait’s fusion of Automation, AI, and IT Infrastructure.",
+  bg = "/images/default-bg.jpg",
+  gradient = "from-slate-950/90 via-indigo-950/80 to-slate-900/85",
+  cta1 = { text: "", link: "" },
+  cta2 = { text: "", link: "" },
+} = Astro.props;
+---
+
+<section
+  id="hero"
+  class="relative isolate flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-slate-950 text-white"
+>
+  <!-- Background Grid -->
+  <canvas id="hero-grid" class="absolute inset-0 -z-20 opacity-40"></canvas>
+
+  <!-- Background -->
+  <div
+    id="hero-bg"
+    class="absolute inset-0 -z-10 transition-transform duration-[800ms] ease-out will-change-transform"
+  >
+    <img
+      src={bg}
+      alt="Background"
+      class="h-full w-full object-cover opacity-60"
+      loading="lazy"
+    />
+    <div class={`absolute inset-0 bg-gradient-to-br ${gradient}`}></div>
+
+    <!-- Glows -->
+    <div class="absolute -top-32 left-10 h-80 w-80 rounded-full bg-sky-400/25 blur-3xl animate-orb-slow"></div>
+    <div class="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-indigo-600/30 blur-[150px] animate-orb-slow-rev"></div>
+  </div>
+
+  <!-- Floating Octopus -->
+  <img
+    src="/images/octopus-silhouette.svg"
+    alt="Octonics Octopus"
+    class="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[90%] max-w-[900px] opacity-10 blur-sm animate-float-soft"
+    loading="lazy"
+  />
+
+  <!-- HERO CONTENT -->
+  <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 text-center">
+    <h1
+      id="hero-title"
+      class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight bg-gradient-to-r from-sky-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,255,255,0.15)]"
+    >
+      {title}
+    </h1>
+
+    <p
+      id="hero-sub"
+      class="hero-fade mt-6 max-w-2xl mx-auto text-slate-200/90 leading-relaxed text-base sm:text-lg md:text-xl opacity-0"
+    >
+      {subtitle}
+    </p>
+
+    <!-- Morph Text -->
+    <div class="relative mt-8 h-8 sm:h-10">
+      <h2
+        id="morph-text"
+        class="text-xl sm:text-2xl font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-sky-400 to-indigo-400 opacity-0"
+      >
+        Innovation
+      </h2>
+    </div>
+
+    <!-- CTAs -->
+    <div
+      class="mt-10 flex flex-col sm:flex-row justify-center gap-4 opacity-0 hero-fade"
+    >
+      {cta1.text && (
+        <a
+          href={cta1.link}
+          class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white shadow-xl transition hover:scale-105"
+        >
+          <span>{cta1.text}</span>
+          <span
+            class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 bg-gradient-to-r from-sky-300/40 to-indigo-400/40 blur-xl transition duration-700"
+          ></span>
+        </a>
+      )}
+      {cta2.text && (
+        <a
+          href={cta2.link}
+          class="rounded-full border border-white/20 px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white/90 backdrop-blur-md transition hover:bg-white/10 hover:text-white"
+        >
+          {cta2.text}
+        </a>
+      )}
+    </div>
+  </div>
+
+  <!-- Scroll Cue -->
+  <div
+    class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/80 animate-fade-in"
+  >
+    <span class="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.3em] mb-1">
+      Scroll to Begin
+    </span>
+    <div
+      class="h-6 sm:h-7 w-1.5 rounded-full bg-gradient-to-b from-sky-400 to-indigo-600 animate-bounce"
+    ></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- STYLES -->
+<!-- ============================================================ -->
+<style>
+@keyframes orb-slow {
+  0%,100% { transform: scale(1) translate(0,0); }
+  50% { transform: scale(1.15) translate(20px, -20px); }
+}
+@keyframes orb-slow-rev {
+  0%,100% { transform: scale(1) translate(0,0); }
+  50% { transform: scale(1.2) translate(-20px, 20px); }
+}
+@keyframes float-soft {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-orb-slow { animation: orb-slow 14s ease-in-out infinite; }
+.animate-orb-slow-rev { animation: orb-slow-rev 18s ease-in-out infinite; }
+.animate-float-soft { animation: float-soft 16s ease-in-out infinite; }
+.animate-fade-in { animation: fade-in 2s ease 2.5s forwards; }
+
+.hero-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fade-up 0.8s ease forwards;
+}
+.hero-fade { animation: fade-up 1s ease forwards; }
+
+/* Responsive Title Reveal */
+.hero-title span:nth-child(1) { animation-delay: 0.1s; }
+.hero-title span:nth-child(2) { animation-delay: 0.2s; }
+.hero-title span:nth-child(3) { animation-delay: 0.3s; }
+.hero-title span:nth-child(4) { animation-delay: 0.4s; }
+.hero-title span:nth-child(5) { animation-delay: 0.5s; }
+.hero-title span:nth-child(6) { animation-delay: 0.6s; }
+.hero-title span:nth-child(7) { animation-delay: 0.7s; }
+.hero-title span:nth-child(8) { animation-delay: 0.8s; }
+
+/* Ultra responsive scaling */
+@media (max-width: 640px) {
+  #hero-title { font-size: 2.3rem; }
+  #hero-sub { font-size: 0.9rem; }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  #hero-title { font-size: 3.5rem; }
+}
+</style>
+
+<!-- ============================================================ -->
+<!-- SCRIPT -->
+<!-- ============================================================ -->
+<script is:inline>
+  // Split title letters
+  const title = document.getElementById("hero-title");
+  title.innerHTML = title.textContent
+    .split("")
+    .map((char) => `<span>${char === " " ? "&nbsp;" : char}</span>`)
+    .join("");
+
+  // Morph text
+  const morphText = document.getElementById("morph-text");
+  const words = ["Innovation", "Intelligence", "Connectivity", "Automation", "Convergence"];
+  let i = 0;
+  setInterval(() => {
+    morphText.style.opacity = 0;
+    setTimeout(() => {
+      morphText.textContent = words[i++ % words.length];
+      morphText.style.opacity = 1;
+    }, 400);
+  }, 2200);
+
+  // Parallax
+  const bg = document.getElementById("hero-bg");
+  document.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 25;
+    const y = (e.clientY / window.innerHeight - 0.5) * 25;
+    bg.style.transform = `translate(${x * -1.2}px, ${y * -1.2}px) scale(1.05)`;
+  });
+</script>

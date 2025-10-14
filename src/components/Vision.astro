@@ -1,0 +1,32 @@
+---
+const values = [
+  { title: "Innovation", description: "Relentless pursuit of smarter, faster, and more efficient technology solutions that redefine possibilities." },
+  { title: "Integrity", description: "Building lasting trust through absolute transparency, unwavering ethics, and complete accountability." },
+  { title: "Excellence", description: "A commitment to delivering measurable impact and superior value that exceeds expectations every time." }
+];
+---
+<section id="vision" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14" data-animate>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+        Our Vision & Values
+      </h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+        We envision a Kuwait where technology blends seamlessly into daily life—powering businesses, securing homes, and simplifying living through intelligent, unified systems.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {values.map((value, index) => (
+        <div 
+          class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-indigo-200 hover:-translate-y-1" 
+          data-animate
+          style={`--delay: ${index * 0.15}s;`}
+        >
+          <h3 class="text-2xl font-semibold text-indigo-600 mb-3">{value.title}</h3>
+          <p class="text-slate-600 leading-relaxed">{value.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

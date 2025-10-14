@@ -1,0 +1,48 @@
+---
+import "../../styles/global.css";
+import LayoutAr from "../../layouts/Layout-ar.astro";
+import HeaderAr from "../../components/HeaderAr.astro";
+import HeroAr from "../../components/HeroAr.astro";
+import FooterAr from "../../components/FooterAr.astro";
+import AboutAr from "../../components/AboutAr.astro";
+import KnxSectionAr from "../../components/KnxSectionAr.astro";
+import BrandsAr from "../../components/BrandsAr.astro";
+import ServicesAr from "../../components/ServicesAr.astro";
+import ContactAr from "../../components/ContactAr.astro";
+
+const services = [
+  ["برمجيات تخطيط موارد المؤسسات (ERP)", "نظام ERP سحابي لإدارة المالية والموارد البشرية والمخزون وسير العمل، مصمم خصيصًا للشركات في الكويت."],
+  ["الأتمتة الذكية (KNX / DALI)", "تحكم كامل بالإضاءة والتكييف والستائر والمشاهد – معتمد على معيار KNX لضمان الثبات والموثوقية."],
+  ["البنية التحتية لتقنية المعلومات", "شبكات وخوادم وحلول سحابية مبنية على مبدأ الثقة الصفرية، مع المراقبة العالية والتوافر الدائم."],
+  ["أنظمة المراقبة والدخول", "كاميرات مراقبة مدعومة بالذكاء الاصطناعي، والتعرف على لوحات السيارات، وأنظمة البصمة مع سياسات وصول موحدة."],
+  ["الذكاء الاصطناعي والتحليلات", "لوحات تحكم ونماذج تنبؤية لتحويل بيانات التشغيل والطاقة إلى قرارات استراتيجية."],
+  ["المواقع والتطبيقات", "تجارب رقمية حديثة وسريعة متوافقة مع محركات البحث، مع تصميم تجربة مستخدم مذهلة وأداء قوي."],
+  ["حوكمة تقنية المعلومات", "سياسات وتدقيقات وإطارات عمل تضمن الامتثال وتقلل من مخاطر الأمن السيبراني."],
+  ["المنازل الذكية", "أتمتة فاخرة للمنازل تتضمن أنظمة الصوت المتعدد المناطق، والإضاءة، والمناخ، وتحسين الطاقة."]
+];
+
+const brands = [
+  "/images/brands/knx.svg",
+  "/images/brands/dali.svg",
+  "/images/brands/siemens.svg",
+  "/images/brands/schneider.svg",
+  "/images/brands/hpe.svg",
+  "/images/brands/ubiquiti.svg",
+  "/images/brands/axis.svg",
+  "/images/brands/dahua.svg",
+];
+---
+
+<LayoutAr
+  title="أوكتونيكس للابتكارات | الأتمتة الذكية وتقنية المعلومات في الكويت"
+  description="أوكتونيكس – الدمج المتكامل بين الأتمتة والذكاء الاصطناعي والبنية التحتية لتقنية المعلومات في الكويت. معتمدون من KNX."
+>
+  <HeaderAr />
+  <HeroAr />
+  <AboutAr />
+  <KnxSectionAr />
+  <BrandsAr />
+  <ServicesAr services={services} />
+  <ContactAr />
+  <FooterAr />
+</LayoutAr>

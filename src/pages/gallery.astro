@@ -1,0 +1,135 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const currentYear = new Date().getFullYear();
+
+// ✅ Gallery Images
+const galleryImages = [
+  { src: "/images/gallery/villa-knx.jpg", alt: "KNX Smart Villa Lighting Kuwait" },
+  { src: "/images/gallery/office-automation.jpg", alt: "Office Automation Kuwait" },
+  { src: "/images/gallery/dali-lighting.jpg", alt: "DALI Lighting Integration Kuwait" },
+  { src: "/images/gallery/rti-control-room.jpg", alt: "RTI Control Room Visualization" },
+  { src: "/images/gallery/server-room.jpg", alt: "Data Rack & Control Cabinet" },
+  { src: "/images/gallery/smart-panel.jpg", alt: "KNX Panel Fabrication by Octonics" },
+  { src: "/images/gallery/automation-wall.jpg", alt: "Touch Panel & Wall Switches" },
+  { src: "/images/gallery/luxury-villa.jpg", alt: "Luxury Villa Automation Kuwait" },
+  { src: "/images/gallery/hotel-suite.jpg", alt: "Smart Hotel Suite Lighting Kuwait" },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gallery | Octonics Smart Automation Projects in Kuwait</title>
+    <meta
+      name="description"
+      content="Explore Octonics Innovations’ gallery of smart automation projects across Kuwait — featuring KNX, DALI, RTI, and AI-integrated solutions for villas, offices, and commercial buildings."
+    />
+    <meta
+      name="keywords"
+      content="KNX Kuwait, DALI Kuwait, Smart Home Kuwait, Automation Kuwait, RTI Kuwait, Octonics Projects, Smart Building Kuwait, Lighting Control Kuwait"
+    />
+    <meta property="og:title" content="Octonics Automation Gallery – Smart Homes & Buildings in Kuwait" />
+    <meta
+      property="og:description"
+      content="Browse photos of Octonics smart automation projects featuring KNX, DALI, and AI-integrated systems in Kuwait."
+    />
+    <meta property="og:image" content="/images/og-gallery.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+    <!-- HEADER -->
+    <Header />
+
+    <!-- HERO -->
+    <section
+      id="hero"
+      class="relative flex min-h-[70vh] items-center justify-center overflow-hidden text-white"
+    >
+      <img
+        src="/images/gallery/villa-knx.jpg"
+        alt="Octonics Smart Projects Kuwait"
+        class="absolute inset-0 h-full w-full object-cover opacity-70"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-indigo-950/70 to-sky-900/60"
+      ></div>
+
+      <div class="relative z-10 text-center px-6">
+        <h1 class="text-4xl sm:text-6xl font-extrabold">Our Smart Projects</h1>
+        <p class="mt-4 text-lg text-indigo-100 max-w-2xl mx-auto">
+          Explore our gallery of KNX, DALI, and AI-integrated automation systems across Kuwait’s most iconic villas and buildings.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY GRID -->
+    <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" data-animate>
+      <h2 class="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-10">
+        Octonics Project Gallery
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {galleryImages.map((img) => (
+          <div
+            class="group relative overflow-hidden rounded-3xl shadow-md ring-1 ring-slate-200 transition hover:shadow-2xl hover:-translate-y-1"
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"
+            ></div>
+            <p
+              class="absolute bottom-4 left-4 text-sm font-medium text-white drop-shadow-lg opacity-0 group-hover:opacity-100 transition"
+            >
+              {img.alt}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- SEO Text Block -->
+      <div class="mt-16 text-center max-w-3xl mx-auto text-slate-600 leading-relaxed">
+        <p>
+          Octonics Innovations proudly delivers <strong>KNX-certified home and building automation</strong> systems across Kuwait.
+          Each project is engineered with precision, integrating <strong>DALI lighting</strong>,
+          <strong>RTI visualization</strong>, and <strong>AI-ready control</strong> for villas,
+          offices, and commercial spaces.
+        </p>
+        <p class="mt-4">
+          Whether you’re planning a luxury residence in Messila or an enterprise building in Sharq,
+          our automation team ensures unmatched reliability, performance, and comfort.
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <Footer year={currentYear} />
+
+    <!-- LIGHTBOX SCRIPT -->
+    <script is:inline>
+      document.querySelectorAll("img").forEach((img) => {
+        img.addEventListener("click", () => {
+          const lightbox = document.createElement("div");
+          lightbox.classList =
+            "fixed inset-0 bg-black/90 flex items-center justify-center z-50";
+          lightbox.innerHTML = `
+            <img src="${img.src}" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl" />
+            <button class='absolute top-6 right-6 text-white text-3xl font-bold'>×</button>
+          `;
+          document.body.appendChild(lightbox);
+          lightbox.querySelector("button").addEventListener("click", () =>
+            lightbox.remove()
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+---
+/**
+ * OCTONICS HERO – النسخة الكويتية السينمائية
+ * ------------------------------------------
+ * ✦ نبرة تسويقية راقية تناسب السوق الكويتي
+ * ✦ دون أي تغيير في البنية أو الكود
+ */
+
+const {
+  title = "الذكاء يبدأ من التفاصيل",
+  subtitle = "أوكتونيكس تجمع بين الأتمتة، الذكاء الاصطناعي، وتقنيات المعلومات لتقدّم حلول ذكية تناسب المنازل والشركات في الكويت — أداء راقٍ، دقة، وأناقة تكنولوجية.",
+  bg = "/images/dark-octopus.jpg",
+  overlay = "/images/fade-texture.png",
+  cta1 = { text: "شوف حلولنا الذكية", link: "/ar/#services" },
+  cta2 = { text: "تواصل مع مهندس", link: "/ar/contact" },
+} = Astro.props;
+---
+
+<section
+  id="hero"
+  dir="rtl"
+  class="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden bg-[#030617] text-white text-center"
+>
+  <!-- الخلفية -->
+  <div id="hero-bg" class="absolute inset-0 -z-10 transition-transform duration-[800ms] ease-out will-change-transform">
+    <img
+      src={bg}
+      alt="خلفية أوكتونيكس الذكية"
+      class="absolute inset-0 h-full w-full object-cover opacity-70"
+      loading="eager"
+      decoding="async"
+    />
+    <img
+      src={overlay}
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-25 mix-blend-overlay"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-900/85 to-[#030617]/95"></div>
+
+    <!-- كرات الإضاءة المتحركة -->
+    <div class="absolute -top-20 right-0 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-sky-400/20 blur-3xl motion-safe:animate-orb-a"></div>
+    <div class="absolute bottom-0 left-0 h-[22rem] w-[22rem] sm:h-[30rem] sm:w-[30rem] rounded-full bg-indigo-600/30 blur-[130px] motion-safe:animate-orb-b"></div>
+  </div>
+
+  <!-- ظل الأخطبوط -->
+  <img
+    src="/images/octopus-silhouette.svg"
+    alt=""
+    aria-hidden="true"
+    class="pointer-events-none absolute bottom-0 right-1/2 translate-x-1/2 w-[130%] sm:w-[90%] max-w-[1200px] opacity-[0.08] blur-[2px] motion-safe:animate-float-soft"
+  />
+
+  <!-- وهج المؤشر -->
+  <div
+    id="cursor-glow"
+    class="pointer-events-none absolute h-[600px] w-[600px] rounded-full bg-gradient-to-r from-sky-400/10 to-indigo-600/10 blur-[120px] opacity-0 transition duration-500"
+  ></div>
+
+  <!-- المحتوى -->
+  <div class="relative z-10 mx-auto max-w-[92%] sm:max-w-4xl md:max-w-5xl px-3 sm:px-6">
+    <h1
+      class="font-extrabold leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-indigo-300 to-pink-300 drop-shadow-[0_0_40px_rgba(255,255,255,0.25)]"
+      style="font-size:clamp(2.2rem,6vw,5.2rem)"
+    >
+      {title}
+    </h1>
+
+    <p
+      class="mt-5 mx-auto max-w-2xl text-slate-200/90 leading-relaxed"
+      style="font-size:clamp(0.9rem,1.4vw,1.25rem)"
+    >
+      {subtitle}
+    </p>
+
+    <!-- الكلمات المتغيرة -->
+    <div class="relative mt-8 h-7 sm:h-9">
+      <span
+        id="morph-text"
+        class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-sky-400 to-indigo-400 font-semibold opacity-0 transition-opacity duration-500"
+        style="font-size:clamp(1rem,2vw,1.6rem)"
+      >
+        الإبداع
+      </span>
+    </div>
+
+    <!-- الأزرار -->
+    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+      <a
+        href={cta1.link}
+        class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white shadow-lg transition hover:scale-[1.03]"
+      >
+        <span>{cta1.text}</span>
+        <span class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-sky-300/40 to-indigo-400/40 blur-xl transition duration-700"></span>
+      </a>
+
+      <a
+        href={cta2.link}
+        class="rounded-full border border-white/20 px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white/90 backdrop-blur-md transition hover:bg-white/10"
+      >
+        {cta2.text}
+      </a>
+    </div>
+  </div>
+
+  <!-- مؤشر التمرير -->
+  <div class="absolute bottom-8 right-1/2 translate-x-1/2 flex flex-col items-center text-white/80 animate-fade-in">
+    <span class="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.35em] mb-1">
+      مرّر للأسفل
+    </span>
+    <div class="h-6 sm:h-7 w-1.5 rounded-full bg-gradient-to-b from-sky-400 to-indigo-600 animate-bounce"></div>
+  </div>
+</section>
+
+<!-- الأنماط -->
+<style>
+@keyframes orb-a { 0%,100% {transform:scale(1) translate(0,0);} 50% {transform:scale(1.12) translate(-20px,-15px);} }
+@keyframes orb-b { 0%,100% {transform:scale(1) translate(0,0);} 50% {transform:scale(1.15) translate(25px,18px);} }
+@keyframes float-soft { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+@keyframes fade-in { from {opacity:0;} to {opacity:1;} }
+
+.motion-safe\:animate-orb-a {animation:orb-a 14s ease-in-out infinite;}
+.motion-safe\:animate-orb-b {animation:orb-b 18s ease-in-out infinite;}
+.motion-safe\:animate-float-soft {animation:float-soft 16s ease-in-out infinite;}
+.animate-fade-in {animation:fade-in 2s ease 2s forwards;}
+
+@media (max-width:480px){
+  h1{line-height:1.2;}
+}
+</style>
+
+<!-- السكريبت -->
+<script is:inline>
+  // تغيير الكلمات المتحركة
+  const morph = document.getElementById("morph-text");
+  const words = ["الإبداع", "الذكاء", "الراحة", "التحكم", "الاستقرار"];
+  let idx = 0;
+  if (morph) {
+    setInterval(() => {
+      morph.style.opacity = 0;
+      setTimeout(() => {
+        morph.textContent = words[idx = (idx + 1) % words.length];
+        morph.style.opacity = 1;
+      }, 250);
+    }, 2200);
+  }
+
+  // تأثير تتبع الضوء بالمؤشر (لأجهزة الكمبيوتر فقط)
+  const glow = document.getElementById("cursor-glow");
+  const bg = document.getElementById("hero-bg");
+  const isDesktop = () => window.innerWidth >= 768;
+  let active = false;
+
+  document.addEventListener("mousemove", (e) => {
+    if (!isDesktop()) return;
+    const { clientX: x, clientY: y } = e;
+    bg.style.transform = `translate(${(x / window.innerWidth - 0.5) * 30}px, ${(y / window.innerHeight - 0.5) * 30}px) scale(1.05)`;
+    glow.style.left = `${x - 300}px`;
+    glow.style.top = `${y - 300}px`;
+    if (!active) { glow.style.opacity = 1; active = true; }
+  });
+  document.addEventListener("mouseleave", () => {
+    bg.style.transform = "translate(0,0) scale(1)";
+    glow.style.opacity = 0;
+    active = false;
+  });
+</script>

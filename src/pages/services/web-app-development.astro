@@ -1,0 +1,206 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const currentYear = new Date().getFullYear();
+
+const page = {
+  title: "Web & App Development in Kuwait | Ultra-Fast, Modern Websites & Applications | Octonics Innovations",
+  description:
+    "Octonics Innovations builds next-gen, high-performance websites and web apps in Kuwait using Astro, Tailwind CSS, and modern frameworks. Blazing-fast, SEO-optimized, responsive, and intelligent digital experiences for enterprises and startups.",
+  image: "/images/web-dev-hero.jpg",
+  keywords: [
+    "Web Development Kuwait",
+    "App Development Kuwait",
+    "Astro Websites Kuwait",
+    "Tailwind CSS Kuwait",
+    "Next.js Kuwait",
+    "Modern Web Design Kuwait",
+    "Responsive Website Kuwait",
+    "SEO Optimized Website Kuwait",
+    "Progressive Web Apps Kuwait",
+    "UI UX Kuwait",
+    "Web Performance Kuwait",
+    "Octonics Innovations Kuwait",
+  ],
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{page.title}</title>
+    <meta name="description" content={page.description} />
+    <meta name="keywords" content={page.keywords.join(", ")} />
+    <meta property="og:title" content={page.title} />
+    <meta property="og:description" content={page.description} />
+    <meta property="og:image" content={page.image} />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Web & App Development",
+        description:
+          "Modern web and app development in Kuwait — ultra-fast Astro + Tailwind websites, PWA apps, and enterprise dashboards by Octonics Innovations.",
+        areaServed: "Kuwait",
+        provider: {
+          "@type": "Organization",
+          name: "Octonics Innovations",
+          url: "https://octonics.com",
+        },
+        serviceType: "Web Development, App Development, SEO Optimization",
+      })}
+    </script>
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+    <!-- HEADER -->
+    <Header />
+
+    <!-- HERO -->
+    <section
+      id="hero"
+      class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-center text-white"
+    >
+      <div class="absolute inset-0">
+        <img src={page.image} alt="Modern Web Development Kuwait" loading="lazy"
+          class="h-full w-full object-cover opacity-80" />
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-900/80 to-sky-900/70"></div>
+      </div>
+
+      <div class="relative z-10 mx-auto max-w-4xl px-4" data-animate>
+        <h1 class="text-5xl font-extrabold leading-tight sm:text-7xl">
+          Modern Web & App Development in Kuwait
+        </h1>
+        <p class="mt-4 text-lg text-indigo-100">
+          We don’t just build websites — we <strong>engineer digital experiences</strong> that load lightning-fast, rank higher, and convert better.
+        </p>
+        <a href="/contact"
+          class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105">
+          Build Your Dream Website →
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT OUR STACK -->
+    <section class="mx-auto max-w-6xl px-4 py-24 sm:px-6" data-animate>
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+            Engineered for Performance. Designed for Impact.
+          </h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            At <strong>Octonics Innovations</strong>, every line of code and pixel is built for perfection.
+            We combine <strong>Astro</strong>’s blazing-fast static-first architecture,
+            <strong>Tailwind CSS</strong>’s precision, and <strong>Next.js</strong> scalability
+            to create intelligent web systems that deliver real results.
+          </p>
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li>• Astro + Tailwind for speed & aesthetics</li>
+            <li>• Next.js & React for scalable interactivity</li>
+            <li>• Edge-optimized SEO architecture</li>
+            <li>• Multilingual, accessible, and mobile-first</li>
+          </ul>
+        </div>
+        <figure>
+          <img src="/images/web-stack.jpg" alt="Astro Tailwind Kuwait" loading="lazy"
+            class="rounded-3xl shadow-2xl ring-1 ring-slate-200" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- PERFORMANCE HIGHLIGHTS -->
+    <section class="relative bg-gradient-to-r from-indigo-700 to-sky-700 py-24 text-white" data-animate>
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h3 class="text-3xl font-bold sm:text-4xl">Performance That Speaks for Itself</h3>
+        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
+          Our websites are not just visually stunning — they outperform 99% of sites globally.
+        </p>
+        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-8">
+          {[
+            ["⚡", "Load Time", "< 1s Avg"],
+            ["🚀", "Google Lighthouse", "99+ Score"],
+            ["📈", "SEO Performance", "Top 3 in SERP"],
+            ["🔒", "Security", "A+ SSL / CSP Compliant"],
+          ].map(([icon, title, value]) => (
+            <div class="flex flex-col items-center rounded-3xl bg-white/10 p-6 backdrop-blur-md ring-1 ring-white/10 transition hover:bg-white/20">
+              <div class="text-4xl">{icon}</div>
+              <h4 class="mt-2 text-lg font-semibold">{title}</h4>
+              <p class="mt-1 text-indigo-100 text-sm">{value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR SOLUTIONS -->
+    <section class="mx-auto max-w-6xl px-4 py-24 sm:px-6" data-animate>
+      <h3 class="text-3xl font-bold text-slate-900 sm:text-4xl text-center">
+        Complete Web & App Solutions
+      </h3>
+      <p class="mx-auto mt-3 max-w-3xl text-center text-slate-600">
+        From corporate websites to enterprise platforms — we deliver future-proof digital ecosystems.
+      </p>
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          ["Corporate Websites", "Elegant, SEO-optimized sites built with Astro & Tailwind."],
+          ["Progressive Web Apps (PWA)", "Offline-ready, installable web apps that behave like native."],
+          ["E-Commerce Platforms", "High-speed storefronts integrated with payment & ERP systems."],
+          ["Custom Dashboards", "Data-driven tools built on React & Node APIs."],
+          ["Mobile App Development", "Cross-platform apps with React Native & Flutter."],
+          ["Headless CMS", "Flexible, enterprise-grade content systems using Strapi or Sanity."],
+        ].map(([t, d]) => (
+          <div class="rounded-3xl bg-white p-8 shadow-lg ring-1 ring-slate-200 hover:-translate-y-1 hover:shadow-2xl transition">
+            <h4 class="text-lg font-semibold text-indigo-700">{t}</h4>
+            <p class="mt-2 text-sm text-slate-600">{d}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- DEVELOPMENT PROCESS -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-sky-900 py-24 text-white" data-animate>
+      <div class="mx-auto max-w-6xl px-4 text-center">
+        <h3 class="text-3xl font-bold sm:text-4xl">Our Development Process</h3>
+        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
+          Transparent, efficient, and collaborative — every project follows a clear workflow.
+        </p>
+        <div class="mt-12 flex flex-col md:flex-row justify-center items-start md:items-center gap-10 text-left md:text-center">
+          {[
+            ["🧭", "1. Strategy & Planning", "Understanding goals, audience, and success metrics."],
+            ["🎨", "2. Design & Prototype", "Wireframes, mockups, and UI systems built in Figma."],
+            ["⚙️", "3. Development", "Coding with Astro, Tailwind, React, and Node."],
+            ["🚀", "4. Deployment", "Optimized hosting on Vercel, Netlify, or Hostinger."],
+            ["📈", "5. Growth & SEO", "Post-launch optimization and analytics tracking."],
+          ].map(([icon, title, desc]) => (
+            <div class="flex-1 rounded-3xl bg-white/10 p-6 backdrop-blur-md ring-1 ring-white/10 hover:bg-white/20 transition">
+              <div class="text-3xl mb-2">{icon}</div>
+              <h4 class="text-lg font-semibold">{title}</h4>
+              <p class="mt-1 text-indigo-100 text-sm">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative bg-gradient-to-r from-sky-500 to-indigo-600 py-20 text-white text-center">
+      <div class="mx-auto max-w-4xl px-4" data-animate>
+        <h3 class="text-3xl font-bold sm:text-4xl">Let’s Build the Future of the Web</h3>
+        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
+          Your business deserves more than a website — it deserves a <strong>digital engine</strong> built for speed, precision, and intelligence.
+        </p>
+        <a href="/contact" class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-indigo-700 shadow-lg hover:scale-105 transition">
+          Start Your Project →
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <Footer year={currentYear} />
+  </body>
+</html>

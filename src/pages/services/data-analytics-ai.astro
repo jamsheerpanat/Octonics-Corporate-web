@@ -1,0 +1,244 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const currentYear = new Date().getFullYear();
+
+const page = {
+  title:
+    "Data Analytics & AI Tools in Kuwait | Business Intelligence, Dashboards & Predictive Analytics | Octonics Innovations",
+  description:
+    "Octonics Innovations helps Kuwaiti enterprises transform data into intelligence through AI-powered dashboards, predictive analytics, and business automation. From ERP data insights to machine learning forecasting — we make your data think.",
+  image: "/images/data-analytics-hero.jpg",
+  keywords: [
+    "Data Analytics Kuwait",
+    "AI Tools Kuwait",
+    "Business Intelligence Kuwait",
+    "Predictive Analytics Kuwait",
+    "Machine Learning Kuwait",
+    "ERP Analytics Kuwait",
+    "AI Software Kuwait",
+    "Data Dashboard Kuwait",
+    "Octonics Innovations",
+    "Artificial Intelligence Kuwait",
+    "Data Science Kuwait",
+    "Business Insights Kuwait",
+  ],
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{page.title}</title>
+    <meta name="description" content={page.description} />
+    <meta name="keywords" content={page.keywords.join(", ")} />
+    <meta property="og:title" content={page.title} />
+    <meta property="og:description" content={page.description} />
+    <meta property="og:image" content={page.image} />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+    <!-- HEADER -->
+    <Header />
+
+    <!-- HERO -->
+    <section class="relative flex min-h-[90vh] flex-col items-center justify-center text-center text-white overflow-hidden">
+      <div class="absolute inset-0 -z-10">
+        <img src={page.image} alt="AI Data Analytics Kuwait" loading="lazy" class="w-full h-full object-cover opacity-80" />
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-900/80 to-sky-900/70"></div>
+      </div>
+
+      <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-sky-400/25 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-indigo-500/25 blur-3xl"></div>
+
+      <div class="relative z-10 px-4 max-w-4xl mx-auto" data-animate>
+        <h1 class="text-5xl font-extrabold leading-tight sm:text-6xl">
+          Data Analytics & AI Tools in Kuwait
+        </h1>
+        <p class="mt-4 text-lg text-indigo-100">
+          Turn your business data into actionable intelligence.  
+          From <strong>real-time dashboards</strong> to <strong>AI-powered forecasting</strong>,  
+          Octonics delivers end-to-end analytics solutions built for Kuwait’s enterprises.
+        </p>
+        <a
+          href="/contact"
+          class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105"
+        >
+          Request a Demo →
+        </a>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8" data-animate>
+      <div class="grid items-center gap-14 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+            Empowering Kuwaiti Businesses with Artificial Intelligence
+          </h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            In today’s data-driven world, intuition alone isn’t enough.  
+            At <strong>Octonics Innovations</strong>, we help enterprises in Kuwait unlock  
+            the potential of <strong>AI analytics, predictive insights</strong>, and  
+            <strong>intelligent dashboards</strong>.
+          </p>
+          <p class="mt-4 text-slate-600">
+            Whether your data comes from ERP, CRM, or IoT systems,  
+            we unify it into a single platform that reveals opportunities,  
+            predicts outcomes, and optimizes every process.
+          </p>
+        </div>
+        <figure>
+          <img src="/images/ai-dashboard.jpg" alt="AI Dashboard Kuwait" loading="lazy"
+               class="rounded-3xl shadow-2xl ring-1 ring-slate-200" />
+          <figcaption class="mt-2 text-xs text-slate-500 text-center">
+            Real-time analytics dashboard crafted for Kuwait enterprises.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="bg-gradient-to-r from-indigo-700 to-sky-700 py-24 text-white" data-animate>
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h3 class="text-3xl font-bold sm:text-4xl">Our Analytics Capabilities</h3>
+        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
+          Designed for business transformation — powered by AI, automation, and actionable insights.
+        </p>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            ["Business Intelligence Dashboards", "Interactive dashboards powered by Power BI, Looker Studio, or custom Octonics BI solutions."],
+            ["Predictive Analytics", "Machine learning models forecasting sales, demand, and risk — tuned for Kuwait’s business environment."],
+            ["AI Automation", "Smart data pipelines that detect anomalies, optimize operations, and trigger business actions automatically."],
+            ["ERP & CRM Integration", "We connect to Odoo, SAP, or Oracle systems to deliver unified real-time insights."],
+            ["Natural Language Reports", "Ask in English or Arabic and get instant analytics from AI chat interfaces."],
+            ["Cloud & On-prem Deployment", "Deploy securely on AWS, Azure, or your own Kuwaiti data center."],
+          ].map(([t, d]) => (
+            <article class="rounded-3xl bg-white/10 p-8 backdrop-blur-md ring-1 ring-white/10 transition hover:-translate-y-2 hover:bg-white/20">
+              <h4 class="text-xl font-semibold mb-2">{t}</h4>
+              <p class="text-sm text-indigo-100">{d}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8" data-animate>
+      <h3 class="text-3xl font-bold text-slate-900 sm:text-4xl text-center">Our AI-Driven Data Solutions</h3>
+      <p class="mx-auto mt-3 max-w-3xl text-center text-slate-600">
+        Modular and scalable analytics for Kuwait’s major sectors —  
+        from industrial intelligence to retail demand prediction.
+      </p>
+
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          ["Operational Analytics", "Monitor production, downtime, and KPIs using AI-driven anomaly detection."],
+          ["Financial Intelligence", "Automate profit tracking, cost optimization, and cashflow forecasts."],
+          ["Customer & Marketing Analytics", "Segment audiences and improve ROI with machine learning models."],
+          ["Supply Chain Optimization", "Forecast demand, track logistics, and optimize routes using AI."],
+          ["HR Analytics", "Predict attrition, track performance, and plan workforce capacity."],
+          ["Energy & Sustainability", "AI-powered monitoring of energy use and ESG performance metrics."],
+        ].map(([t, d]) => (
+          <div class="rounded-3xl bg-white p-8 shadow-lg ring-1 ring-slate-200 hover:-translate-y-1 hover:shadow-2xl transition">
+            <h4 class="text-lg font-semibold text-indigo-700">{t}</h4>
+            <p class="mt-2 text-sm text-slate-600">{d}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY STACK -->
+    <section class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8" data-animate>
+      <h4 class="text-center text-sm font-semibold tracking-wider text-slate-500">TECH STACK WE USE</h4>
+      <div class="relative mt-6 overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200">
+        <div class="no-scrollbar flex gap-12 whitespace-nowrap py-6 [animation:marquee_30s_linear_infinite] hover:[animation-play-state:paused]">
+          {[
+            "/images/brands/python.svg",
+            "/images/brands/powerbi.svg",
+            "/images/brands/odoo.svg",
+            "/images/brands/azure.svg",
+            "/images/brands/aws.svg",
+            "/images/brands/looker.svg",
+            "/images/brands/mysql.svg",
+            "/images/brands/postgresql.svg",
+            "/images/brands/knime.svg",
+          ].map(src => (
+            <img src={src} alt="Brand" loading="lazy" class="mx-8 inline-block h-10 w-auto opacity-70 hover:opacity-100 transition" />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY OCTONICS -->
+    <section class="bg-gradient-to-br from-slate-900 via-indigo-900 to-sky-900 py-24 text-white" data-animate>
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h3 class="text-3xl font-bold sm:text-4xl">Why Choose Octonics for AI & Analytics</h3>
+        <p class="mt-4 text-indigo-100 max-w-3xl mx-auto">
+          Kuwait’s enterprises trust Octonics Innovations for secure, scalable, and intelligent analytics infrastructure.
+        </p>
+
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+          {[
+            ["End-to-End Expertise", "From data integration to visualization — we handle the complete analytics journey."],
+            ["AI-Powered ERP Insights", "Exclusive integration with Octonics ERP for predictive business intelligence."],
+            ["Cloud or On-Premise", "Your data, your rules. Hosted securely in Kuwait or global cloud providers."],
+            ["Localization", "Arabic + English dashboards, Kuwaiti fiscal logic, and GCC data models."],
+            ["Compliance", "GDPR, ISO 27001, and local data governance best practices."],
+            ["Training & Support", "Hands-on workshops for your team to master their own analytics."],
+          ].map(([t, d]) => (
+            <div class="rounded-3xl bg-white/10 p-8 backdrop-blur-md ring-1 ring-white/10 hover:bg-white/20 transition">
+              <h4 class="text-xl font-semibold mb-2">{t}</h4>
+              <p class="text-sm text-indigo-100">{d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative bg-gradient-to-r from-sky-500 to-indigo-600 py-20 text-white text-center" data-animate>
+      <div class="mx-auto max-w-4xl px-4">
+        <h3 class="text-3xl font-bold sm:text-4xl">Turn Your Data Into Intelligence</h3>
+        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
+          Let’s build Kuwait’s most advanced AI-powered analytics ecosystem —  
+          where your data predicts, automates, and transforms your business.
+        </p>
+        <a href="/contact"
+           class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-indigo-700 shadow-lg hover:scale-105 transition">
+          Schedule Your Free AI Consultation →
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <Footer year={currentYear} />
+
+    <!-- FLOATING AI RIBBON -->
+ 
+
+    <script is:inline>
+      const badge = document.getElementById("aiBadge");
+      window.addEventListener("scroll", () => {
+        const showAt = 200;
+        if (window.scrollY > showAt) {
+          badge.style.opacity = "1";
+          badge.style.transform = "translateX(0)";
+        } else {
+          badge.style.opacity = "0";
+          badge.style.transform = "translateX(20px)";
+        }
+      });
+    </script>
+
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    </style>
+  </body>
+</html>

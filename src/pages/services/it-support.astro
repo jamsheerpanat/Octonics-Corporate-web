@@ -1,0 +1,249 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const currentYear = new Date().getFullYear();
+
+const brands = [
+  "/images/brands/dell.svg",
+  "/images/brands/hpe.svg",
+  "/images/brands/fortinet.svg",
+  "/images/brands/microsoft.svg",
+  "/images/brands/cisco.svg",
+  "/images/brands/ubiquiti.svg",
+];
+
+const services = [
+  {
+    icon: "🧰",
+    title: "Annual Maintenance Contracts (AMC)",
+    desc: "Flexible AMC packages for enterprises, SMEs, and retail chains in Kuwait. Covering servers, switches, endpoints, printers, UPS, and Wi-Fi infrastructure with proactive maintenance and guaranteed uptime SLAs.",
+  },
+  {
+    icon: "🖥️",
+    title: "On-Site IT Support",
+    desc: "Deploy certified engineers at your location for end-user and network support, structured cabling, hardware troubleshooting, and preventive maintenance — ensuring smooth daily operations.",
+  },
+  {
+    icon: "🌐",
+    title: "Remote IT Monitoring & Helpdesk",
+    desc: "Our Kuwait-based NOC monitors your systems 24×7 using AI-driven alerting, automated patching, and remote troubleshooting for instant problem resolution.",
+  },
+  {
+    icon: "🔄",
+    title: "Preventive Maintenance",
+    desc: "Scheduled quarterly inspections, firmware updates, performance tuning, and backup verification to reduce downtime and extend your IT asset lifespan.",
+  },
+  {
+    icon: "⚙️",
+    title: "System Administration",
+    desc: "Server management, virtualization, storage optimization, and user administration across Windows, Linux, and hybrid cloud environments.",
+  },
+  {
+    icon: "💡",
+    title: "Consulting & Optimization",
+    desc: "Our IT advisors audit your infrastructure and propose upgrades, security measures, and cloud migrations tailored to your business model.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IT Support & Annual Maintenance Contracts Kuwait | Octonics Innovations</title>
+    <meta
+      name="description"
+      content="Octonics Innovations provides expert IT support and annual maintenance contracts (AMC) in Kuwait. On-site engineers, remote helpdesk, network monitoring, and proactive IT care for your business."
+    />
+    <meta
+      name="keywords"
+      content="IT Support Kuwait, Annual Maintenance Contract Kuwait, AMC Kuwait, Managed IT Kuwait, IT Outsourcing Kuwait, Remote IT Support Kuwait, IT Technicians Kuwait, Network Maintenance Kuwait, IT Services Kuwait"
+    />
+    <meta property="og:title" content="IT Support & Annual Maintenance Contracts Kuwait | Octonics Innovations" />
+    <meta
+      property="og:description"
+      content="Hire expert IT professionals for complete on-site and remote IT support. Annual maintenance, helpdesk, and proactive monitoring by Octonics Innovations in Kuwait."
+    />
+    <meta property="og:image" content="/images/it-support/og-itsupport.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "IT Support & Annual Maintenance Contracts",
+        description:
+          "IT support, helpdesk, and AMC solutions for Kuwait’s businesses — with on-site and remote maintenance.",
+        provider: {
+          "@type": "Organization",
+          name: "Octonics Innovations",
+          url: "https://octonics.com",
+        },
+        areaServed: "Kuwait",
+      })}
+    </script>
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+    <!-- ===== HEADER ===== -->
+    <Header />
+
+    <!-- ===== HERO ===== -->
+    <section
+      id="hero"
+      class="relative isolate min-h-[90vh] flex items-center justify-center text-center overflow-hidden text-white"
+    >
+      <img
+        src="/images/it-support/hero-itteam.jpg"
+        alt="IT Support Kuwait"
+        class="absolute inset-0 h-full w-full object-cover opacity-80"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-indigo-950/70 to-slate-900/90"></div>
+      <div class="absolute -top-24 -left-24 h-64 w-64 rounded-full bg-sky-400/25 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-indigo-500/25 blur-3xl"></div>
+
+      <div class="relative z-10 max-w-4xl px-4 sm:px-6" data-animate>
+        <p
+          class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs ring-1 ring-white/20"
+        >
+          On-Site • Remote • Managed • AMC Kuwait
+        </p>
+        <h1 class="mt-5 text-5xl font-extrabold leading-tight sm:text-6xl">
+          IT Support & Maintenance Services in Kuwait
+        </h1>
+        <p class="mt-4 text-indigo-100">
+          Keep your business running without interruptions — with dedicated IT engineers, proactive monitoring, and annual maintenance contracts designed for Kuwait’s enterprises.
+        </p>
+        <a
+          href="/contact"
+          class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105"
+        >
+          Request AMC Proposal →
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== BRANDS ===== -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <h4 class="text-center text-xs font-semibold tracking-widest text-slate-500">
+        AUTHORIZED PARTNERS & SUPPORTED BRANDS
+      </h4>
+      <div class="relative mt-6 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200">
+        <div
+          class="flex gap-10 whitespace-nowrap py-6 [animation:marquee_30s_linear_infinite] hover:[animation-play-state:paused]"
+        >
+          {[...brands, ...brands].map((src) => (
+            <img
+              src={src}
+              alt="Brand"
+              loading="lazy"
+              class="mx-8 inline-block h-9 w-auto opacity-70 hover:opacity-100 transition"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES GRID ===== -->
+    <section id="services" class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <h2 class="text-center text-3xl font-bold text-slate-900 sm:text-4xl">
+        Comprehensive IT Support & AMC Solutions
+      </h2>
+      <p class="mx-auto mt-3 max-w-2xl text-center text-slate-600">
+        End-to-end IT lifecycle management for Kuwait’s growing businesses.
+      </p>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {services.map((s) => (
+          <article
+            class="group rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <div
+              class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 text-indigo-600 ring-1 ring-slate-100"
+            >
+              {s.icon}
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900">{s.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{s.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE OCTONICS ===== -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+            Why Choose Octonics IT Support
+          </h2>
+          <p class="mt-4 text-slate-600">
+            Octonics delivers proactive, transparent, and measurable IT support designed for uptime and reliability. We don’t just fix problems — we prevent them.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-700">
+            <li>• Dedicated on-site engineers with monthly reports</li>
+            <li>• Kuwait-based NOC with real-time monitoring</li>
+            <li>• Proactive patching and firmware updates</li>
+            <li>• Asset & license inventory management</li>
+            <li>• Priority support and escalation matrix</li>
+          </ul>
+        </div>
+        <figure class="relative">
+          <img
+            src="/images/it-support/tech-engineer.jpg"
+            alt="IT Engineer in Kuwait"
+            loading="lazy"
+            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
+          />
+          <figcaption class="mt-2 text-xs text-slate-500 text-center">
+            Certified engineers providing proactive maintenance for enterprise systems.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section
+      class="relative bg-gradient-to-r from-indigo-600 to-sky-600 py-20 text-white text-center"
+      data-animate
+    >
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2 class="text-3xl font-bold sm:text-4xl">Get a Tailored IT Maintenance Plan</h2>
+        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
+          We’ll audit your infrastructure and provide an annual maintenance proposal with detailed SLAs.
+        </p>
+        <a
+          href="/contact"
+          class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-indigo-700 shadow-lg transition hover:scale-105"
+        >
+          Talk to Our IT Experts →
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <Footer year={currentYear} />
+
+
+    <script is:inline>
+      const badge = document.getElementById("itBadge");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          badge.style.opacity = "1";
+          badge.style.transform = "translateX(0)";
+        } else {
+          badge.style.opacity = "0";
+          badge.style.transform = "translateX(20px)";
+        }
+      });
+    </script>
+
+    <style>
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+  </body>
+</html>

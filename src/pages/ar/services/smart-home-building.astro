@@ -1,0 +1,213 @@
+---
+import "../../../styles/global.css";
+import Header from "../../../components/HeaderAr.astro";
+
+import FooterAr from "../../../components/FooterAr.astro";
+
+const currentYear = new Date().getFullYear();
+
+const hero = {
+  title: "الأتمتة الذكية للمنازل والمباني بنظام KNX وDALI في الكويت",
+  subtitle:
+    "حلول أوروبية معتمدة للتحكم في الإضاءة، التكييف، الستائر، وأجهزة الاستشعار — أنظمة KNX + DALI للمنازل والفيلات والمباني التجارية.",
+  image: "/images/services/knx-dali-hero.jpg",
+};
+---
+
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>الأتمتة الذكية KNX وDALI في الكويت | Octonics Innovations</title>
+    <meta
+      name="description"
+      content="أنظمة KNX وDALI معتمدة لتوفير حلول أتمتة متكاملة للمنازل والمباني التجارية في الكويت — تحكم ذكي بالإضاءة، التكييف، والطاقة بمعايير أوروبية."
+    />
+    <meta
+      name="keywords"
+      content="الأتمتة الذكية الكويت, KNX الكويت, DALI الكويت, المنزل الذكي الكويت, المبنى الذكي الكويت, أنظمة الإضاءة الكويت, أكتونيكس الكويت"
+    />
+    <meta property="og:title" content="الأتمتة الذكية KNX وDALI في الكويت | Octonics Innovations" />
+    <meta
+      property="og:description"
+      content="تصميم وتنفيذ أنظمة KNX + DALI في الكويت للفيلات والمكاتب — تحكم متكامل بالإضاءة والتكييف والطاقة."
+    />
+    <meta property="og:image" content="/images/services/knx-dali-hero.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body id="page-root" class="bg-slate-50 text-slate-900 antialiased relative">
+    <Header />
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================ -->
+    <section
+      id="hero"
+      class="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 text-white"
+    >
+      <img
+        src={hero.image}
+        alt="الأتمتة الذكية KNX DALI الكويت"
+        class="absolute inset-0 h-full w-full object-cover object-center opacity-60"
+        loading="eager"
+      />
+
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-indigo-950/80 to-sky-900/70"
+      ></div>
+
+      <div class="relative z-10 mx-auto max-w-5xl px-6 text-center">
+        <p
+          class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-[11px] uppercase tracking-wider text-sky-100 ring-1 ring-white/20 backdrop-blur-sm"
+        >
+          KNX • DALI • Lighting • HVAC • Automation • Kuwait
+        </p>
+
+        <h1
+          class="mt-6 font-extrabold leading-tight text-white drop-shadow-sm"
+          style="font-size: clamp(2rem, 5vw + 0.5rem, 4.5rem);"
+        >
+          {hero.title}
+        </h1>
+
+        <p
+          class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-indigo-100 md:text-xl"
+        >
+          {hero.subtitle}
+        </p>
+
+        <div
+          class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
+        >
+          <a
+            href="/ar/contact"
+            class="rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-sky-500/30"
+          >
+            احجز زيارة ميدانية →
+          </a>
+          <a
+            href="/ar/case-studies"
+            class="rounded-full border border-white/30 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20"
+          >
+            شاهد المشاريع السابقة
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- VALUE PROPS -->
+    <!-- ============================================ -->
+    <section class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 text-right" dir="rtl">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold">
+          أنظمة مفتوحة بمعايير أوروبية موثوقة
+        </h2>
+        <p class="mx-auto mt-3 max-w-2xl text-slate-600">
+          تجمع أوكتونيكس بين KNX (ذكاء النظام) وDALI2 (دقة الإضاءة) لتقديم أتمتة مستقرة وآمنة وقابلة للتوسع في الكويت.
+        </p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl">
+          <h3 class="text-lg font-semibold text-slate-900">
+            معايير مفتوحة بدون قيود شركات
+          </h3>
+          <p class="mt-2 text-sm text-slate-600">
+            KNX وDALI مدعومان من أكثر من 500 شركة حول العالم لضمان مرونة دائمة.
+          </p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl">
+          <h3 class="text-lg font-semibold text-slate-900">تحكم مثالي بالإضاءة</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            DALI2 يتيح تعتيمًا دقيقًا، مشاهد إضاءة، وتغذية راجعة لحالة المصابيح.
+          </p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl">
+          <h3 class="text-lg font-semibold text-slate-900">
+            ذكاء شامل للمبنى
+          </h3>
+          <p class="mt-2 text-sm text-slate-600">
+            KNX يربط الإضاءة والتكييف والستائر وأجهزة الاستشعار بمنظومة موحدة.
+          </p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl">
+          <h3 class="text-lg font-semibold text-slate-900">
+            كفاءة طاقة عالية
+          </h3>
+          <p class="mt-2 text-sm text-slate-600">
+            تحكم ذكي في الإضاءة وفق الإشغال والضوء الطبيعي لتقليل استهلاك الطاقة.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- KNX + DALI COMPARISON -->
+    <!-- ============================================ -->
+    <section class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 py-24" dir="rtl">
+      <div class="mx-auto max-w-7xl px-6 text-center">
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          KNX وDALI — معًا أكثر ذكاءً
+        </h3>
+        <p class="mx-auto mt-4 max-w-2xl text-slate-600">
+          KNX هو دماغ المبنى، وDALI هو قلب الإضاءة — تكامل مثالي يوفر أداءً احترافيًا في مشاريع الكويت.
+        </p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto max-w-7xl">
+        <div class="rounded-3xl bg-gradient-to-br from-indigo-600 to-sky-500 p-[2px] shadow-lg">
+          <div class="rounded-3xl bg-white p-8 text-right">
+            <h4 class="text-2xl font-bold text-slate-900 mb-2">KNX — ذكاء المباني</h4>
+            <p class="text-slate-600">
+              نظام مفتوح للتحكم الكامل بالإضاءة، التكييف، الحساسات، الستائر والمنطق.
+            </p>
+          </div>
+        </div>
+        <div class="rounded-3xl bg-gradient-to-br from-sky-500 to-indigo-600 p-[2px] shadow-lg">
+          <div class="rounded-3xl bg-white p-8 text-right">
+            <h4 class="text-2xl font-bold text-slate-900 mb-2">DALI — دقة الإضاءة</h4>
+            <p class="text-slate-600">
+              بروتوكول عالمي للإضاءة يقدم تحكمًا ناعمًا وتشخيصًا فوريًا للأعطال.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA -->
+    <!-- ============================================ -->
+    <section
+      id="cta"
+      class="relative isolate overflow-hidden bg-gradient-to-br from-sky-700 via-indigo-700 to-slate-900 py-24 text-white text-center"
+    >
+      <div class="relative mx-auto max-w-4xl px-6">
+        <h3 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+          جاهز لتصميم نظام KNX + DALI الخاص بك؟
+        </h3>
+        <p class="mx-auto mt-5 max-w-2xl text-indigo-100 text-lg leading-relaxed">
+          سواء كانت فيلا فاخرة أو برجًا تجاريًا، تقدم أوكتونيكس التصميم، التصنيع، البرمجة والدعم مدى الحياة — معتمدة من KNX International.
+        </p>
+        <div
+          class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
+        >
+          <a
+            href="/ar/contact"
+            class="rounded-full bg-white px-8 py-3 font-semibold text-indigo-700 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-sky-300/40"
+          >
+            احجز استشارة مجانية →
+          </a>
+          <a
+            href="/ar/case-studies"
+            class="rounded-full border border-white/40 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20"
+          >
+            عرض المشاريع السابقة
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <FooterAr year={currentYear} />
+  </body>
+</html>

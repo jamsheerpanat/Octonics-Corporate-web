@@ -1,0 +1,656 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const currentYear = new Date().getFullYear();
+
+/* ---------- DATA (unchanged) ---------- */
+const hero = {
+  title:
+    "KNX & DALI Smart Home & Building Automation in Kuwait",
+  subtitle:
+    "Certified European automation for villas and commercial buildings — lighting, HVAC, shading, sensors, and energy management with KNX + DALI.",
+  image: "/images/services/knx-dali-hero.jpg",
+};
+
+const sellingPoints = [
+  {
+    title: "Open Standards, No Lock-In",
+    desc: "KNX & DALI are global, vendor-agnostic standards supported by 500+ manufacturers.",
+    icon: "shield",
+  },
+  {
+    title: "Lighting Perfection",
+    desc: "DALI2 delivers precise dimming, groups, scenes, tunable white, and feedback diagnostics.",
+    icon: "sun",
+  },
+  {
+    title: "Whole-Building Intelligence",
+    desc: "KNX links lighting, HVAC, blinds, sensors, and logic — scalable from apartments to towers.",
+    icon: "chip",
+  },
+  {
+    title: "Energy Efficiency",
+    desc: "Occupancy & daylight control, schedules, and analytics to reduce energy costs in Kuwait.",
+    icon: "bolt",
+  },
+];
+
+const comparison = [
+  { label: "Tech Type", knx: "Open wired protocol (TP/IP) for total automation", dali: "Digital addressable bus for lighting" },
+  { label: "Primary Scope", knx: "Lighting, HVAC, blinds, sensors, security, logic", dali: "Lighting control: dimming, scenes, tunable white" },
+  { label: "Topology", knx: "Lines/areas, IP backbones, virtually unlimited scale", dali: "Up to 64 devices per line; scalable via gateways" },
+  { label: "Feedback", knx: "Two-way device status/diagnostics", dali: "Luminaire status & fault feedback (DALI2)" },
+  { label: "Interfaces", knx: "Touch panels, mobile apps, voice, RTI, BMS", dali: "Lighting controllers or via KNX–DALI gateways" },
+  { label: "Best Fit", knx: "Villas, offices, towers, hospitals, airports", dali: "Retail, malls, hospitals, schools, open offices" },
+];
+
+const villaBenefits = [
+  "Scene-based lighting with curtain & HVAC synergy",
+  "Silent, reliable, maintenance-friendly operation",
+  "Works offline — no dependency on cloud/internet",
+  "Future-proof & expandable (open standard)",
+  "Arabic/English control interfaces and voice",
+  "Boosts property value with premium automation",
+];
+
+const commercialBenefits = [
+  "Centralized floors & zones with dashboards",
+  "Occupancy/daylight harvesting lowers bills",
+  "DALI fault diagnostics for quick maintenance",
+  "Integrates with BMS, access & fire systems",
+  "Standards-ready (LEED, WELL, BREEAM)",
+  "Enterprise-grade reliability at scale",
+];
+
+const architecture = [
+  {
+    title: "Sensors & Inputs",
+    desc: "Occupancy, lux, temperature, CO₂, weather stations feed real-time data.",
+    icon: "target",
+  },
+  {
+    title: "KNX Backbone",
+    desc: "Secure two-wire / IP bus connecting devices across floors and areas.",
+    icon: "network",
+  },
+  {
+    title: "DALI Lighting",
+    desc: "Addressable groups/scenes per area with diagnostics and smooth dimming.",
+    icon: "bulb",
+  },
+  {
+    title: "Control & Logic",
+    desc: "KNX logic, schedulers, and scene engines; RTI visualization and apps.",
+    icon: "cpu",
+  },
+  {
+    title: "Experience Layer",
+    desc: "Touch panels, wall keypads, mobile, voice; multi-language UI (EN/AR).",
+    icon: "devices",
+  },
+];
+
+const process = [
+  { step: "01", title: "Consultation & Site Walk", text: "Requirements mapping for villa or commercial space, power/lighting review." },
+  { step: "02", title: "Design & BOM", text: "KNX/DALI schematics, panel layouts, line topology, and device schedules." },
+  { step: "03", title: "Installation & Commissioning", text: "Panel build, addressing, scenes, safety testing, and documentation." },
+  { step: "04", title: "Handover & Training", text: "User training, UI personalisation, and operations manual." },
+  { step: "05", title: "Support & Optimization", text: "SLA options, seasonal tuning, and performance reporting." },
+];
+
+const faqs = [
+  {
+    q: "Why choose KNX + DALI over Wi-Fi solutions?",
+    a: "Wired KNX/DALI systems deliver superior reliability, noise immunity, fast response, and professional diagnostic feedback — essential for Kuwait’s luxury villas and commercial buildings.",
+  },
+  {
+    q: "Can KNX control DALI lights?",
+    a: "Yes. A KNX–DALI gateway maps DALI groups/scenes to KNX, so lighting integrates with HVAC, blinds, sensors, and logic.",
+  },
+  {
+    q: "Is it possible to retrofit?",
+    a: "For new builds we recommend wired KNX/DALI. For retrofits we offer hybrid designs using wireless endpoints with KNX bridge strategies.",
+  },
+  {
+    q: "Do you support Arabic interfaces?",
+    a: "Absolutely. We design bilingual (EN/AR) UIs and supply keypads with Arabic legends where needed.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KNX & DALI Smart Home & Building Automation Kuwait | Octonics Innovations</title>
+    <meta name="description" content="Certified KNX & DALI automation for villas and commercial buildings in Kuwait. Lighting, HVAC, shading, sensors, and energy management with European standards." />
+    <meta name="keywords" content="KNX Kuwait, DALI Kuwait, Smart Home Kuwait, Smart Building Kuwait, Building Automation Kuwait, KNX DALI Integration Kuwait, Smart Lighting Kuwait, RTI Kuwait, BMS Kuwait, Villa Automation Kuwait" />
+    <meta property="og:title" content="KNX & DALI Smart Home & Building Automation Kuwait | Octonics Innovations" />
+    <meta property="og:description" content="Design & integration of KNX + DALI automation for villas, offices, and towers in Kuwait. Scenes, diagnostics, energy savings, and premium UX." />
+    <meta property="og:image" content="/images/services/knx-dali-hero.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Octonics Innovations",
+            "url": "https://octonics.com",
+            "logo": "https://octonics.com/images/octonics-logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Hawally, Kuwait",
+              "addressCountry": "KW"
+            },
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "telephone": "+965-99240074",
+              "areaServed": "KW",
+              "availableLanguage": ["en","ar"]
+            }]
+          },
+          {
+            "@type": "Service",
+            "name": "KNX & DALI Smart Home and Building Automation",
+            "serviceType": "Building Automation",
+            "provider": { "@type": "Organization", "name": "Octonics Innovations" },
+            "areaServed": { "@type": "Place", "name": "Kuwait" },
+            "description": "Design, integration and commissioning of KNX + DALI systems for villas and commercial buildings in Kuwait."
+          }
+        ]
+      })}
+    </script>
+
+    <style>
+      /* Fixes & utilities to prevent layout glitches */
+      @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(8px) } }
+      .animate-float { animation: float 6s ease-in-out infinite; }
+
+      @keyframes marquee { 0% {transform: translateX(0)} 100% {transform: translateX(-50%)} }
+      .marquee { animation: marquee 35s linear infinite; }
+
+      /* Avoid summary arrow misalignment on Safari */
+      details > summary { list-style: none; }
+      details > summary::-webkit-details-marker { display: none; }
+
+      /* Prevent accidental horizontal scrollbars */
+      html, body { overflow-x: hidden; }
+
+      /* Ensure last section doesn’t create white gap after footer */
+      #page-root { display: contents; }
+    </style>
+  </head>
+
+  <body id="page-root" class="bg-slate-50 text-slate-900 antialiased relative">
+    <!-- HEADER -->
+    <Header />
+
+<!-- ============================================ -->
+<!-- HERO SECTION — KNX + DALI Automation Kuwait -->
+<!-- ============================================ -->
+<section
+  id="hero"
+  class="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 text-white"
+>
+  <!-- Background Image -->
+  <img
+    src={hero.image}
+    alt="KNX DALI Automation Kuwait"
+    class="absolute inset-0 h-full w-full object-cover object-center opacity-60"
+    loading="eager"
+  />
+
+  <!-- Gradient Overlay -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-indigo-950/80 to-sky-900/70"
+  ></div>
+
+  <!-- Decorative Glow Blobs -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-sky-400/30 blur-[120px] sm:-top-48"
+  ></div>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-indigo-500/30 blur-[100px]"
+  ></div>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute bottom-10 right-1/4 h-60 w-60 rounded-full bg-sky-600/25 blur-[100px]"
+  ></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 mx-auto max-w-5xl px-6 text-center">
+    <!-- Tagline -->
+    <p
+      class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-[11px] uppercase tracking-wider text-sky-100 ring-1 ring-white/20 backdrop-blur-sm"
+    >
+      KNX • DALI • Lighting • HVAC • Automation • Kuwait
+    </p>
+
+    <!-- Title -->
+    <h1
+      class="mt-6 text-balance font-extrabold leading-tight text-white drop-shadow-sm"
+      style="font-size: clamp(2rem, 5vw + 0.5rem, 4.5rem);"
+    >
+      {hero.title}
+    </h1>
+
+    <!-- Subtitle -->
+    <p
+      class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-indigo-100 md:text-xl"
+    >
+      {hero.subtitle}
+    </p>
+
+    <!-- CTA Buttons -->
+    <div
+      class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
+    >
+      <a
+        href="/contact"
+        class="rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-sky-500/30"
+      >
+        Request a Site Visit →
+      </a>
+      <a
+        href="/case-studies"
+        class="rounded-full border border-white/30 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20"
+      >
+        View Case Studies
+      </a>
+    </div>
+  </div>
+
+  <!-- Subtle bottom fade -->
+  <div
+    aria-hidden="true"
+    class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/80 to-transparent"
+  ></div>
+</section>
+
+    <!-- VALUE PROPS (no overflow, equal cards) -->
+    <section class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold">Built on Open European Standards</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-slate-600">
+          Octonics integrates KNX (system intelligence) with DALI2 (lighting precision) to deliver stable, secure, and scalable automation in Kuwait.
+        </p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {sellingPoints.map((item) => (
+          <article class="group h-full rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl">
+            <div class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-50 to-indigo-50 ring-1 ring-slate-100">
+              {item.icon === "shield" && (
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-indigo-600"><path fill="currentColor" d="M12 2l7 4v6c0 5-3.5 9-7 10c-3.5-1-7-5-7-10V6z"/></svg>
+              )}
+              {item.icon === "sun" && (
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-indigo-600"><path fill="currentColor" d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.8zM1 13h3v-2H1zm10-9h2V1h-2zm7.03 2.05l1.79-1.8l-1.79-1.79l-1.8 1.8zM20 11v2h3v-2zm-8 9h2v-3h-2zm-6.24-1.89l1.8 1.79l1.41-1.41l-1.79-1.8zM17.66 17.66l1.41 1.41l1.79-1.8l-1.41-1.4zM12 7a5 5 0 100 10a5 5 0 000-10z"/></svg>
+              )}
+              {item.icon === "chip" && (
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-indigo-600"><path fill="currentColor" d="M9 9h6v6H9zm-4 2H3v2h2zm16 0h-2v2h2zM11 3h2v2h-2zM11 19h2v2h-2zM4.22 5.64l1.41-1.41l1.41 1.41L5.64 7.05zM16.94 18.36l1.41-1.41l1.41 1.41l-1.41 1.41zM18.36 5.64l1.41-1.41l1.41 1.41l-1.41 1.41zM5.64 16.95l1.41-1.41l1.41 1.41l-1.41 1.41z"/></svg>
+              )}
+              {item.icon === "bolt" && (
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-indigo-600"><path fill="currentColor" d="M13 3L4 14h6l-1 7l9-11h-6z"/></svg>
+              )}
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900">{item.title}</h3>
+            <p class="mt-2 text-sm text-slate-600">{item.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+<!-- KNX vs DALI — Advanced Comparison Section -->
+<!-- ============================================================ -->
+<section id="comparison" class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 py-24 overflow-hidden">
+  <!-- Decorative background glow -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="absolute top-[-120px] left-[20%] h-[300px] w-[300px] rounded-full bg-sky-300/20 blur-[150px]"></div>
+    <div class="absolute bottom-[-120px] right-[15%] h-[300px] w-[300px] rounded-full bg-indigo-400/20 blur-[150px]"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-6 text-center">
+    <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+      KNX vs DALI — Smarter Together, Stronger Apart
+    </h3>
+    <p class="mx-auto mt-4 max-w-2xl text-slate-600 text-pretty">
+      KNX is the brain of your building; DALI is the heart of your lighting.  
+      Together, they deliver a complete automation ecosystem — trusted by engineers and architects in Kuwait.
+    </p>
+  </div>
+
+  <!-- Cards layout instead of table -->
+  <div class="relative mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2">
+    <!-- KNX Card -->
+    <div class="group relative rounded-3xl bg-gradient-to-br from-indigo-600 to-sky-500 p-[2px] shadow-xl transition hover:shadow-2xl hover:-translate-y-1">
+      <div class="h-full rounded-3xl bg-white p-8 text-left">
+        <div class="flex items-center gap-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-r from-sky-100 to-indigo-100 text-indigo-700 text-2xl shadow-inner">
+            🧠
+          </div>
+          <h4 class="text-2xl font-bold text-slate-900">KNX — The Building Intelligence</h4>
+        </div>
+        <p class="mt-3 text-slate-600">
+          A global open protocol for full building automation — connecting lighting, HVAC, sensors, blinds, and logic through a unified bus.
+        </p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-700">
+          <li class="flex items-start gap-2"><span class="text-sky-600">✓</span> Two-wire or IP-based, extremely stable and scalable</li>
+          <li class="flex items-start gap-2"><span class="text-sky-600">✓</span> Controls lighting, blinds, HVAC, sensors & logic</li>
+          <li class="flex items-start gap-2"><span class="text-sky-600">✓</span> Over 500 certified manufacturers worldwide</li>
+          <li class="flex items-start gap-2"><span class="text-sky-600">✓</span> Integrates easily with RTI, Crestron, or BMS systems</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DALI Card -->
+    <div class="group relative rounded-3xl bg-gradient-to-br from-sky-500 to-indigo-500 p-[2px] shadow-xl transition hover:shadow-2xl hover:-translate-y-1">
+      <div class="h-full rounded-3xl bg-white p-8 text-left">
+        <div class="flex items-center gap-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-r from-indigo-100 to-sky-100 text-indigo-700 text-2xl shadow-inner">
+            💡
+          </div>
+          <h4 class="text-2xl font-bold text-slate-900">DALI — The Lighting Precision</h4>
+        </div>
+        <p class="mt-3 text-slate-600">
+          The international digital lighting protocol offering smooth dimming, feedback diagnostics, and advanced scene control.
+        </p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-700">
+          <li class="flex items-start gap-2"><span class="text-indigo-600">✓</span> Supports DALI2 standard with feedback & fault data</li>
+          <li class="flex items-start gap-2"><span class="text-indigo-600">✓</span> 64 devices per line, expandable via gateways</li>
+          <li class="flex items-start gap-2"><span class="text-indigo-600">✓</span> Ideal for tunable white & dynamic scenes</li>
+          <li class="flex items-start gap-2"><span class="text-indigo-600">✓</span> Seamless integration with KNX backbone</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary comparison grid -->
+  <div class="relative mx-auto mt-16 max-w-7xl grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {[
+      {
+        title: "Topology & Communication",
+        knx: "Twisted-pair or IP backbone with line/area segmentation for scalability.",
+        dali: "Digital lighting bus with simple addressing and easy commissioning.",
+        icon: "🌐",
+      },
+      {
+        title: "Use Case",
+        knx: "Smart villas, commercial buildings, BMS integration, multi-zone control.",
+        dali: "Lighting networks for offices, malls, and energy-efficient retrofits.",
+        icon: "🏢",
+      },
+      {
+        title: "Strength",
+        knx: "Reliable, flexible, vendor-independent ecosystem with decades of support.",
+        dali: "Specialized for lighting — perfect color tuning, feedback, and groups.",
+        icon: "⚙️",
+      },
+    ].map((item) => (
+      <div class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-sky-100 to-indigo-100 text-lg text-indigo-700">
+            {item.icon}
+          </div>
+          <h5 class="text-lg font-semibold text-slate-900">{item.title}</h5>
+        </div>
+        <p class="text-sm text-slate-700"><strong class="text-indigo-600">KNX:</strong> {item.knx}</p>
+        <p class="mt-2 text-sm text-slate-700"><strong class="text-sky-600">DALI:</strong> {item.dali}</p>
+      </div>
+    ))}
+  </div>
+
+  <!-- Brand strip -->
+  <div class="relative mx-auto mt-20 max-w-7xl overflow-hidden rounded-3xl bg-white/60 backdrop-blur-md ring-1 ring-slate-200 shadow-inner">
+    <div class="flex min-w-[200%] whitespace-nowrap items-center gap-10 py-6 marquee hover:[animation-play-state:paused]">
+      {[
+        "/images/brands/knx.png",
+        "/images/brands/dali.png",
+        "/images/brands/theben.png",
+        "/images/brands/jung.png",
+        "/images/brands/abb.png",
+        "/images/brands/gira.png",
+        "/images/brands/rti.png",
+        "/images/brands/philips.png",
+        "/images/brands/somfy.png",
+      ].map((src) => (
+        <img
+          src={src}
+          alt="Automation Brand Logo"
+          loading="lazy"
+          class="mx-8 h-10 w-auto opacity-70 transition hover:opacity-100"
+        />
+      ))}
+      {[
+        "/images/brands/knx.png",
+        "/images/brands/dali.png",
+        "/images/brands/theben.png",
+        "/images/brands/jung.png",
+        "/images/brands/abb.png",
+        "/images/brands/gira.png",
+        "/images/brands/rti.png",
+        "/images/brands/philips.png",
+        "/images/brands/somfy.png",
+      ].map((src) => (
+        <img
+          src={src}
+          alt="Automation Brand Logo"
+          loading="lazy"
+          class="mx-8 h-10 w-auto opacity-70 transition hover:opacity-100"
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+    <!-- BENEFITS GRID -->
+    <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="grid items-start gap-12 md:grid-cols-2">
+        <div>
+          <h3 class="text-3xl font-bold">For Villas & Residences</h3>
+          <ul class="mt-6 space-y-3">
+            {villaBenefits.map((b) => (
+              <li class="flex gap-3">
+                <svg viewBox="0 0 24 24" class="mt-[2px] h-5 w-5 text-sky-600"><path fill="currentColor" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                <span class="text-slate-700">{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-3xl font-bold">For Commercial Buildings</h3>
+          <ul class="mt-6 space-y-3">
+            {commercialBenefits.map((b) => (
+              <li class="flex gap-3">
+                <svg viewBox="0 0 24 24" class="mt-[2px] h-5 w-5 text-indigo-600"><path fill="currentColor" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                <span class="text-slate-700">{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEM ARCHITECTURE CARDS (dark) -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 py-20 text-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h3 class="text-center text-3xl sm:text-4xl font-bold">How Your KNX + DALI System Works</h3>
+        <p class="mx-auto mt-3 max-w-2xl text-center text-indigo-200">
+          A clear, layered architecture that stays reliable for decades.
+        </p>
+
+        <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {architecture.map((a) => (
+            <article class="group h-full rounded-3xl bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/10">
+              <div class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
+                {a.icon === "target" && <svg viewBox="0 0 24 24" class="h-6 w-6 text-sky-300"><path fill="currentColor" d="M12 8a4 4 0 104 4a4 4 0 00-4-4m0-6a10 10 0 1010 10A10 10 0 0012 2m1 11h3v2h-5V7h2z"/></svg>}
+                {a.icon === "network" && <svg viewBox="0 0 24 24" class="h-6 w-6 text-sky-300"><path fill="currentColor" d="M12 3a4 4 0 00-4 4h2a2 2 0 114 0h2a4 4 0 00-4-4M6 9a3 3 0 100 6a3 3 0 000-6m12 0a3 3 0 100 6a3 3 0 000-6M6 17a4 4 0 00-4 4h2a2 2 0 114 0h2a4 4 0 00-4-4m12 0a4 4 0 00-4 4h2a2 2 0 114 0h2a4 4 0 00-4-4"/></svg>}
+                {a.icon === "bulb" && <svg viewBox="0 0 24 24" class="h-6 w-6 text-sky-300"><path fill="currentColor" d="M9 21h6v-1H9m0-2h6v-1H9m3-16A7 7 0 005 9a6.9 6.9 0 002.5 5.4A4.9 4.9 0 018 18h8a4.9 4.9 0 01.5-3.6A6.9 6.9 0 0019 9a7 7 0 00-7-7z"/></svg>}
+                {a.icon === "cpu" && <svg viewBox="0 0 24 24" class="h-6 w-6 text-sky-300"><path fill="currentColor" d="M9 9h6v6H9zM3 11h2v2H3zm16 0h2v2h-2zM11 3h2v2h-2zm0 16h2v2h-2zM5 5h2v2H5zm12 0h2v2h-2zM5 17h2v2H5zm12 0h2v2h-2z"/></svg>}
+                {a.icon === "devices" && <svg viewBox="0 0 24 24" class="h-6 w-6 text-sky-300"><path fill="currentColor" d="M2 7h14v10H2zM18 9h4v8h-4zM7 19h6v2H7z"/></svg>}
+              </div>
+              <h4 class="text-lg font-semibold">{a.title}</h4>
+              <p class="mt-2 text-sm text-indigo-100">{a.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS (equal-height) -->
+    <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <h3 class="text-center text-3xl sm:text-4xl font-bold">Our Kuwait-Ready Delivery Process</h3>
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-5">
+        {process.map((p) => (
+          <div class="h-full rounded-3xl bg-white p-6 text-center shadow-lg ring-1 ring-slate-200">
+            <div class="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-sky-100 to-indigo-100 font-semibold text-indigo-700">{p.step}</div>
+            <h4 class="text-base font-semibold text-slate-900">{p.title}</h4>
+            <p class="mt-2 text-sm text-slate-600">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+<!-- ============================================================ -->
+<!-- FAQ Section – KNX & DALI in Kuwait -->
+<!-- ============================================================ -->
+<section
+  id="faq"
+  class="relative mx-auto max-w-6xl px-6 py-24 sm:px-8"
+  data-animate
+>
+  <!-- Decorative background glow -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="absolute left-[10%] top-[5%] h-64 w-64 rounded-full bg-sky-400/20 blur-[100px]"></div>
+    <div class="absolute right-[5%] bottom-[-10%] h-64 w-64 rounded-full bg-indigo-500/20 blur-[120px]"></div>
+  </div>
+
+  <!-- Header -->
+  <div class="relative text-center mb-12">
+    <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+      Frequently Asked Questions
+    </h3>
+    <p class="mx-auto mt-4 max-w-2xl text-slate-600">
+      Explore the most common questions from clients across Kuwait — whether you're planning a luxury villa or a large-scale commercial building.
+    </p>
+  </div>
+
+  <!-- FAQ Grid -->
+  <div
+    class="relative grid grid-cols-1 md:grid-cols-2 gap-6"
+  >
+    {faqs.map((f, i) => (
+      <details
+        class="group rounded-3xl bg-white shadow-lg ring-1 ring-slate-200 p-6 transition hover:shadow-xl open:ring-2 open:ring-sky-400/30"
+      >
+        <summary
+          class="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-slate-900"
+        >
+          <span class="flex items-center gap-3">
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-sky-100 to-indigo-100 text-indigo-700 font-bold"
+            >
+              {(i + 1).toString().padStart(2, "0")}
+            </span>
+            {f.q}
+          </span>
+          <svg
+            viewBox="0 0 24 24"
+            class="h-5 w-5 text-slate-500 transition-transform duration-300 group-open:rotate-180"
+          >
+            <path fill="currentColor" d="M7 10l5 5 5-5z" />
+          </svg>
+        </summary>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          {f.a}
+        </p>
+      </details>
+    ))}
+  </div>
+
+  <!-- Subtext -->
+  <p class="relative mt-10 text-center text-sm text-slate-500">
+    Still have questions? <a href="/contact" class="text-sky-600 hover:underline font-medium">Talk to our KNX-certified experts →</a>
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<!-- CTA Section – Final Call to Action -->
+<!-- ============================================================ -->
+<section
+  id="cta"
+  class="relative isolate overflow-hidden bg-gradient-to-br from-sky-700 via-indigo-700 to-slate-900 py-24 text-white"
+  data-animate
+>
+  <!-- Background Orbs -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -top-20 left-1/3 h-96 w-96 rounded-full bg-sky-400/30 blur-[140px]"
+  ></div>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute bottom-0 right-1/3 h-80 w-80 rounded-full bg-indigo-400/30 blur-[120px]"
+  ></div>
+
+  <!-- Content -->
+  <div class="relative mx-auto max-w-4xl px-6 text-center">
+    <h3 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+      Ready to Design Your KNX + DALI Smart Building?
+    </h3>
+    <p class="mx-auto mt-5 max-w-2xl text-indigo-100 text-lg leading-relaxed">
+      Whether it’s a luxury villa or a corporate tower, Octonics delivers design, panel fabrication, programming, and lifelong support — certified by KNX International.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div
+      class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
+    >
+      <a
+        href="/contact"
+        class="rounded-full bg-white px-8 py-3 font-semibold text-indigo-700 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-sky-300/40"
+      >
+        Book a Free Consultation →
+      </a>
+      <a
+        href="/case-studies"
+        class="rounded-full border border-white/40 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20"
+      >
+        View Real Projects
+      </a>
+    </div>
+
+    <!-- Trust Bar -->
+    <div class="mt-12 flex flex-wrap justify-center gap-8 opacity-90">
+      <div class="flex flex-col items-center">
+        <img src="/images/brands/knx.png" alt="KNX Certified" class="h-8 w-auto" loading="lazy" />
+        <span class="mt-2 text-xs uppercase tracking-wide text-indigo-200">KNX Certified</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/images/brands/dali.png" alt="DALI Certified" class="h-8 w-auto" loading="lazy" />
+        <span class="mt-2 text-xs uppercase tracking-wide text-indigo-200">DALI2 Compliant</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/images/brands/theben.png" alt="Theben" class="h-8 w-auto" loading="lazy" />
+        <span class="mt-2 text-xs uppercase tracking-wide text-indigo-200">Theben Partner</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Glow Fade -->
+  <div
+    aria-hidden="true"
+    class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/10 to-transparent"
+  ></div>
+</section>
+
+    <!-- FOOTER -->
+    <Footer year={currentYear} />
+  </body>
+</html>

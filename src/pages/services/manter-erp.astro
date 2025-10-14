@@ -1,0 +1,212 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const currentYear = new Date().getFullYear();
+
+const service = {
+  title: "Manter ERP – AI-Powered Business Software in Kuwait",
+  subtitle:
+    "Experience Kuwait’s most intelligent ERP — powered by AI, automation, and Octonics innovation.",
+  image: "/images/manter-hero.jpg",
+  keywords: [
+    "Manter ERP Kuwait",
+    "AI ERP Kuwait",
+    "Smart ERP Software Kuwait",
+    "Octonics Manter ERP",
+    "Odoo Alternative Kuwait",
+    "AI Business Software Kuwait",
+    "Intelligent ERP System",
+    "ERP with AI Automation",
+  ],
+};
+---
+
+<html lang="en">
+  <head>
+     <meta charset="UTF-8" />
+    <title>{service.title} | Octonics Innovations Kuwait</title>
+    <meta
+      name="description"
+      content="Manter ERP by Octonics Innovations — Kuwait’s first AI-driven ERP system with automation, smart dashboards, and predictive analytics for modern enterprises."
+    />
+    <meta name="keywords" content={service.keywords.join(", ")} />
+    <meta property="og:title" content={service.title} />
+    <meta property="og:image" content={service.image} />
+    <meta
+      property="og:description"
+      content="AI-powered ERP built in Kuwait — streamlining operations, automating decisions, and visualizing intelligence."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "Manter ERP",
+        operatingSystem: "Web, Cloud, Mobile",
+        applicationCategory: "BusinessApplication",
+        offers: { "@type": "Offer", priceCurrency: "KWD" },
+        provider: {
+          "@type": "Organization",
+          name: "Octonics Innovations",
+          url: "https://octonics.com",
+        },
+        description:
+          "Manter ERP is an AI-powered business management platform designed in Kuwait by Octonics Innovations, integrating automation, analytics, and decision intelligence.",
+      })}
+    </script>
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+    <!-- HEADER -->
+    <Header />
+
+    <!-- HERO -->
+    <section
+      id="hero"
+      class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-center text-white"
+    >
+      <div class="absolute inset-0">
+        <img
+          src={service.image}
+          alt={service.title}
+          loading="lazy"
+          class="h-full w-full object-cover opacity-70"
+        />
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-900/80 to-sky-900/70"></div>
+      </div>
+
+      <div class="relative z-10 mx-auto max-w-3xl px-4" data-animate>
+        <h1 class="text-5xl font-extrabold leading-tight sm:text-7xl">
+          Manter ERP
+        </h1>
+        <p class="mt-4 text-lg text-indigo-100">
+          Kuwait’s next-generation <strong>AI ERP platform</strong> — designed for enterprises that demand
+          speed, intelligence, and precision.
+        </p>
+        <a
+          href="/contact"
+          class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105"
+          >Request a Demo →</a
+        >
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+            Meet Manter ERP — Built for Intelligent Business
+          </h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            Manter ERP is our proprietary cloud-based business suite that integrates automation, 
+            data analytics, and AI to provide complete visibility into your operations. 
+            It’s not just software — it’s your digital co-pilot.
+          </p>
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li>⚙️ Modular architecture — scalable from 5 users to 5,000</li>
+            <li>🤖 AI-driven automation across all business units</li>
+            <li>📊 Real-time dashboards for executive decisions</li>
+            <li>🔐 Enterprise security with 256-bit encryption</li>
+          </ul>
+        </div>
+        <figure>
+          <img
+            src="/images/manter-dashboard.jpg"
+            alt="Manter ERP Dashboard"
+            loading="lazy"
+            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <!-- AI MODULES GRID -->
+    <section class="relative bg-gradient-to-r from-indigo-600 to-sky-600 py-24 text-white" data-animate>
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 text-center">
+        <h3 class="text-3xl font-bold sm:text-4xl">AI-Driven Modules</h3>
+        <p class="mt-3 max-w-2xl mx-auto text-indigo-100">
+          Each module in Manter ERP learns, predicts, and adapts — giving you a living, intelligent
+          business system.
+        </p>
+
+        <div class="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["Smart Finance", "Auto-reconciles ledgers, predicts cash flow, and detects anomalies."],
+            ["HR Intelligence", "Monitors performance, predicts attrition, and automates payroll."],
+            ["Sales AI", "Forecasts revenue and optimizes pricing strategies in real time."],
+            ["Procurement Bot", "AI-assisted purchase recommendations and supplier risk scoring."],
+            ["Operations IQ", "Monitors production efficiency and predicts downtime."],
+            ["Insight Hub", "Unified reporting with generative summaries for management."],
+          ].map(([title, desc]) => (
+            <div class="group rounded-3xl bg-white/10 p-8 shadow-lg ring-1 ring-white/10 backdrop-blur-md transition hover:-translate-y-2 hover:bg-white/20">
+              <h4 class="text-xl font-semibold text-white">{title}</h4>
+              <p class="mt-2 text-sm text-indigo-100">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6" data-animate>
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <figure>
+          <img
+            src="/images/ai-reports.jpg"
+            alt="AI ERP Reports"
+            loading="lazy"
+            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
+          />
+        </figure>
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+            A Platform That Thinks For You
+          </h2>
+          <p class="mt-4 text-slate-600">
+            Manter ERP integrates <strong>AI-assisted decision-making</strong> with natural language insights, 
+            providing real-time understanding of sales, operations, and performance metrics.
+          </p>
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li>💬 AI Report Chat — ask questions like “Show Q4 revenue by department.”</li>
+            <li>📈 Predictive alerts before revenue dips or cost spikes</li>
+            <li>🌐 Integrates with IoT, KNX, and smart facilities</li>
+            <li>🚀 Cloud-native, mobile-ready, and API-connected</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative bg-gradient-to-r from-sky-500 to-indigo-600 py-16 text-white text-center">
+      <div class="mx-auto max-w-4xl px-4" data-animate>
+        <h3 class="text-3xl font-bold sm:text-4xl">Experience the Future of ERP</h3>
+        <p class="mt-3 text-indigo-100">
+          Join Kuwait’s digital revolution with <strong>Manter ERP by Octonics</strong> — a system that 
+          doesn’t just manage your business, it <em>understands</em> it.
+        </p>
+        <a
+          href="/contact"
+          class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-indigo-700 shadow-lg transition hover:scale-105"
+          >Schedule a Live Demo →</a
+        >
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <Footer year={currentYear} />
+
+    <!-- FLOATING AI ERP BADGE -->
+
+
+    <script is:inline>
+      const badge = document.getElementById("erpBadge");
+      window.addEventListener("scroll", () => {
+        badge.style.opacity = window.scrollY > 200 ? "1" : "0";
+        badge.style.transform = window.scrollY > 200 ? "translateX(0)" : "translateX(20px)";
+      });
+    </script>
+  </body>
+</html>
