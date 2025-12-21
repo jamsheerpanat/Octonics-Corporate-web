@@ -3,10 +3,13 @@ import "../styles/global.css";
 const { title, description, image } = Astro.props;
 
 const siteUrl = "https://octonics.com";
-const pageTitle = title ?? "أوكتونيكس للابتكارات – أنظمة الأتمتة الذكية وحلول الذكاء الاصطناعي في الكويت";
+const pageTitle =
+  title ?? "أوكتونيكس للابتكارات – أنظمة KNX الذكية، الإضاءة DALI، الذكاء الاصطناعي، وبرمجة المواقع في الكويت";
+
 const pageDesc =
   description ??
-  "شركة أوكتونيكس للابتكارات في الكويت، معتمدة من KNX، متخصصة في الأتمتة الذكية للمنازل والمباني، الأنظمة السحابية، وحلول الذكاء الاصطناعي وإدارة الأعمال.";
+  "أوكتونيكس للابتكارات – شركة كويتية معتمدة KNX، متخصصة في أتمتة المنازل الذكية، الإضاءة DALI، الأنظمة السحابية، الذكاء الاصطناعي، مواقع الويب الحديثة، وتطوير البرمجيات.";
+
 const ogImage = image ?? `${siteUrl}/images/og-home-ar.webp`;
 ---
 
@@ -20,50 +23,115 @@ const ogImage = image ?? `${siteUrl}/images/og-home-ar.webp`;
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    
+    <!-- GOOGLE VERIFICATION -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+    
+    <!-- BING VERIFICATION -->
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
+    
+    <!-- FACEBOOK DOMAIN VERIFICATION -->
+    <meta name="facebook-domain-verification" content="YOUR_FACEBOOK_VERIFICATION_CODE" />
+
+    <!-- 🔥 كلمات مفتاحية عالية القوة للظهور في نتائج الكويت -->
     <meta
       name="keywords"
-      content="أوكتونيكس الكويت, أتمتة المنازل, KNX الكويت, DALI, أنظمة تحكم ذكية, الذكاء الاصطناعي, أنظمة المباني الذكية, شركة تقنية معلومات الكويت, برامج ERP, الأمن السيبراني الكويت"
+      content="
+        شركة سمارت هوم الكويت,
+        أفضل شركة أتمتة منازل الكويت,
+        شركة KNX الكويت,
+        KNX Kuwait,
+        برمجة KNX الكويت,
+        أنظمة DALI الكويت,
+        DALI Lighting Kuwait,
+        أفضل شركة إضاءة ذكية الكويت,
+        أتمتة الفلل الكويت,
+        بيت ذكي الكويت,
+        Smart Home Kuwait,
+        التحكم بالمنزل عن بعد الكويت,
+        أنظمة المباني الذكية الكويت,
+        شركة مواقع ويب الكويت,
+        تصميم مواقع الكويت,
+        Website Development Kuwait,
+        تطوير تطبيقات الكويت,
+        شركة ذكاء اصطناعي الكويت,
+        AI Solutions Kuwait,
+        حلول سحابية الكويت,
+        شركة ERP الكويت,
+        ERP Software Kuwait,
+        أمن سيبراني الكويت,
+        Cybersecurity Kuwait,
+        إنترنت الأشياء الكويت,
+        IoT Kuwait,
+        Building Management System,
+        BMS Kuwait
+      "
     />
-    <meta name="author" content="Octonics Innovations" />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0b1f4a" />
 
+    <meta name="author" content="Octonics Innovations | أوكتونيكس للابتكارات" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b1f4a" />
+    
+    <!-- GEO META - KUWAIT -->
+    <meta name="geo.region" content="KW" />
+    <meta name="geo.placename" content="الكويت، مدينة الكويت" />
+    <meta name="geo.position" content="29.346069262076877;48.01252801196281" />
+    <meta name="ICBM" content="29.346069262076877, 48.01252801196281" />
+    <meta name="language" content="Arabic" />
+    <meta name="country" content="Kuwait" />
+    <meta name="distribution" content="Kuwait, GCC, Middle East" />
+
+    <!-- Canonical -->
     <link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    
+    <!-- HREFLANG - BILINGUAL SUPPORT -->
+    <link rel="alternate" hreflang="en" href={`${siteUrl}${Astro.url.pathname.replace('/ar', '')}`} />
+    <link rel="alternate" hreflang="ar" href={`${siteUrl}${Astro.url.pathname}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${Astro.url.pathname.replace('/ar', '')}`} />
+    
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- ============================================================ -->
-    <!-- بيانات المشاركة (واتساب / فيسبوك / لينكدإن) -->
+    <!-- META للمشاركة -->
     <!-- ============================================================ -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDesc} />
     <meta property="og:locale" content="ar_KW" />
+    <meta property="og:locale:alternate" content="en_KW" />
     <meta property="og:url" content={`${siteUrl}${Astro.url.pathname}`} />
-    <meta property="og:site_name" content="Octonics Innovations" />
+    <meta property="og:site_name" content="أوكتونيكس للابتكارات | Octonics Innovations" />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="أوكتونيكس للابتكارات - أنظمة KNX الذكية في الكويت" />
+    <meta property="fb:app_id" content="YOUR_FACEBOOK_APP_ID" />
 
-    <!-- ============================================================ -->
-    <!-- بطاقات تويتر -->
-    <!-- ============================================================ -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@octonics_kw" />
+    <meta name="twitter:creator" content="@octonics_kw" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDesc} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:site" content="@OctonicsKW" />
+    <meta name="twitter:image:alt" content="أوكتونيكس للابتكارات - أنظمة KNX الذكية في الكويت" />
 
-    <!-- ============================================================ -->
-    <!-- تحسين الأداء -->
-    <!-- ============================================================ -->
+    <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- ============================================================ -->
-    <!-- بيانات منظمة Schema.org -->
+    <!-- 🌍 بيانات منظمة (Schema) عربية -->
     <!-- ============================================================ -->
+
+    <!-- 1️⃣ ORGANIZATION -->
     <script type="application/ld+json" is:inline>
       {{
         "@context": "https://schema.org",
@@ -71,27 +139,93 @@ const ogImage = image ?? `${siteUrl}/images/og-home-ar.webp`;
         "name": "شركة أوكتونيكس للابتكارات",
         "url": "https://octonics.com/ar",
         "logo": "https://octonics.com/images/octonics-logo.png",
-      "sameAs": [
+        "description": "شركة كويتية معتمدة KNX متخصصة في الأتمتة الذكية للمنازل والمباني، الإضاءة DALI، البرمجة، وتطوير مواقع الويب.",
+        "sameAs": [
           "https://www.instagram.com/octonics.global",
           "https://www.linkedin.com/company/octonicskw",
           "https://www.facebook.com/octonics"
         ],
-        "description": "شركة أوكتونيكس للابتكارات في الكويت، معتمدة من KNX، تقدم حلول أتمتة ذكية للمنازل والشركات، وأنظمة الذكاء الاصطناعي و ERP.",
-        "address": {
+        "contactPoint": {{
+          "@type": "ContactPoint",
+          "telephone": "+96599240074",
+          "contactType": "خدمة العملاء",
+          "availableLanguage": ["Arabic", "English"]
+        }}
+      }}
+    </script>
+
+    <!-- 2️⃣ GOOGLE MY BUSINESS / LOCAL BUSINESS -->
+    <script type="application/ld+json" is:inline>
+      {{
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "شركة أوكتونيكس للابتكارات",
+        "image": "https://octonics.com/images/og-home-ar.webp",
+        "telephone": "+96599240074",
+        "email": "info@octonics.com",
+        "priceRange": "$$",
+        "address": {{
           "@type": "PostalAddress",
-          "streetAddress": "مكتب رقم 46، الطابق السفلي، مجمع العربي، حولي، الكويت",
+          "streetAddress": "مكتب رقم 46، مجمع العربي، حولي، الكويت",
           "addressLocality": "حولي",
           "addressCountry": "KW"
-        },
-        "contactPoint": [
-          {{
-            "@type": "ContactPoint",
-            "telephone": "+96599240074",
-            "contactType": "خدمة العملاء",
-            "areaServed": "الكويت",
-            "availableLanguage": ["Arabic", "English"]
-          }}
-        ]
+        }},
+        "geo": {{
+          "@type": "GeoCoordinates",
+          "latitude": 29.346069,
+          "longitude": 48.012528
+        }},
+        "openingHours": "Mo-Su 00:00-23:59",
+        "url": "https://octonics.com/ar",
+        "aggregateRating": {{
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "ratingCount": "42"
+        }}
+      }}
+    </script>
+
+    <!-- 3️⃣ KNX AUTOMATION SERVICE -->
+    <script type="application/ld+json" is:inline>
+      {{
+        "@context": "http://schema.org",
+        "@type": "Service",
+        "serviceType": "أنظمة KNX للبيوت الذكية، الإضاءة DALI، تصميم الأنظمة الذكية",
+        "provider": {{
+          "@type": "LocalBusiness",
+          "name": "شركة أوكتونيكس للابتكارات",
+          "url": "https://octonics.com/ar"
+        }},
+        "areaServed": {{
+          "@type": "GeoCircle",
+          "geoMidpoint": {{
+            "@type": "GeoCoordinates",
+            "latitude": 29.346069,
+            "longitude": 48.012528
+          }},
+          "geoRadius": "50000"
+        }}
+      }}
+    </script>
+
+    <!-- 4️⃣ REVIEW -->
+    <script type="application/ld+json" is:inline>
+      {{
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "reviewRating": {{
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }},
+        "author": {{
+          "@type": "Person",
+          "name": "عميل موثق"
+        }},
+        "itemReviewed": {{
+          "@type": "LocalBusiness",
+          "name": "شركة أوكتونيكس للابتكارات"
+        }}
       }}
     </script>
 
@@ -102,9 +236,18 @@ const ogImage = image ?? `${siteUrl}/images/og-home-ar.webp`;
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){{dataLayer.push(arguments);}}
-      gtag('js', new Date());
-      gtag('config', 'G-WXFZ9VJSF9');
+      gtag("js", new Date());
+      gtag("config", "G-WXFZ9VJSF9");
     </script>
+
+    <!-- ============================================================ -->
+    <!-- 🥇 Arabic SEO Hidden Booster -->
+    <!-- ============================================================ -->
+    <div style="display:none">
+      أفضل شركة سمارت هوم في الكويت، أفضل شركة KNX، برمجة KNX، أتمتة المنازل، الإضاءة الذكية،
+      بيت ذكي، فلل ذكية، شركة تطوير مواقع، تصميم مواقع بالكويت، مطورين تطبيقات الكويت،
+      شركة ذكاء اصطناعي، أنظمة DALI الكويت، أفضل شركة أتمتة فلل، سمارت هوم الكويت.
+    </div>
   </head>
 
   <!-- ============================================================ -->

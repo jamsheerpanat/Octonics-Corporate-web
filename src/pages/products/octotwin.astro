@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductHero from "../../components/products/ProductHero.astro";
+import ProductFeatures from "../../components/products/ProductFeatures.astro";
+import ProductHowItWorks from "../../components/products/ProductHowItWorks.astro";
+import ProductUseCases from "../../components/products/ProductUseCases.astro";
+import ProductSecurity from "../../components/products/ProductSecurity.astro";
+import ProductPricing from "../../components/products/ProductPricing.astro";
+import ProductTimeline from "../../components/products/ProductTimeline.astro";
+import ProductFAQ from "../../components/products/ProductFAQ.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="OctoTwin™ – Digital Twin for Businesses & Buildings"
+  description="A 3D live view of your business operations."
+>
+  <Header />
+
+  <Breadcrumb items={[{ href: "/", label: "Home" }, { href: "/products", label: "Products" }, { href: "/products/octotwin", label: "OctoTwin™" }]} />
+
+  <ProductHero
+    productName="OctoTwin™"
+    tagline="Digital Twin for Businesses & Buildings"
+    description="A 3D live view of your business operations."
+    stats={[{ value: "3D", label: "Model" }, { value: "IoT", label: "Sensors" }, { value: "Real‑Time", label: "Data" }, { value: "Kuwait", label: "Local" }]}
+    gradientFrom="cyan-500"
+    gradientTo="teal-600"
+    icon="🏢"
+  />
+
+  <section class="py-16 bg-white" id="pain-solution">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-500 to-teal-600 bg-clip-text text-transparent">The Problem & The Solution</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-cyan-600">Pain Points</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-600">
+            <li>Siloed systems make it hard to see the big picture.</li>
+            <li>No spatial context for operational data.</li>
+            <li>Reactive maintenance instead of predictive.</li>
+            <li>Difficult to plan changes or expansions.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-cyan-600">Solution</h3>
+          <p class="text-slate-600 leading-relaxed">OctoTwin™ creates a live 3D replica of your facility, overlaying IoT sensor data so you can monitor, simulate, and optimize operations in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProductFeatures features={[
+    { icon: "🗺️", title: "3D Visualization", description: "Interactive model of your building or factory floor." },
+    { icon: "📡", title: "IoT Integration", description: "Connect sensors for temperature, occupancy, energy, and more." },
+    { icon: "⚙️", title: "Simulation", description: "Test 'what‑if' scenarios before making changes." },
+    { icon: "🔔", title: "Alerts", description: "Real‑time notifications for threshold breaches." },
+    { icon: "📊", title: "Analytics", description: "Historical trends and predictive insights." },
+    { icon: "🔗", title: "BIM Import", description: "Import existing BIM models (IFC, Revit)." },
+  ]} />
+
+  <ProductHowItWorks steps={[
+    { number: 1, title: "Import Model", description: "Upload BIM files or use scanning to create a 3D twin." },
+    { number: 2, title: "Connect Sensors", description: "Link IoT devices to corresponding model elements." },
+    { number: 3, title: "Visualize Live Data", description: "See real‑time metrics overlaid on the 3D model." },
+    { number: 4, title: "Simulate & Optimize", description: "Run scenarios and apply changes with confidence." },
+  ]} />
+
+  <ProductUseCases useCases={[
+    { industry: "Smart Buildings", icon: "🏢", description: "Monitor HVAC, lighting, and occupancy in 3D." },
+    { industry: "Manufacturing", icon: "🏭", description: "Track production lines and equipment status." },
+    { industry: "Logistics", icon: "📦", description: "Visualize warehouse layout and inventory flow." },
+    { industry: "Retail", icon: "🛒", description: "Analyze foot traffic and optimize store layout." },
+  ]} />
+
+  <ProductSecurity items={[
+    { title: "RBAC", description: "Control who can view or edit the twin.", icon: "🛡️" },
+    { title: "Audit Logs", description: "Track all configuration changes.", icon: "📜" },
+    { title: "Encryption", description: "AES‑256 at rest, TLS in transit.", icon: "🔐" },
+    { title: "Backups", description: "Regular snapshots of model and data.", icon: "💾" },
+  ]} />
+
+  <ProductPricing />
+  <ProductTimeline />
+
+  <ProductFAQ faq={[
+    { q: "Do I need existing BIM files?", a: "No, we can create models from floor plans or laser scans." },
+    { q: "Which IoT protocols are supported?", a: "MQTT, Modbus, BACnet, and REST APIs." },
+    { q: "Can I embed the twin in my own portal?", a: "Yes, via iframe or API." },
+    { q: "What browsers are supported?", a: "All modern browsers with WebGL support." },
+    { q: "Is there VR/AR support?", a: "Experimental VR mode is available for select devices." },
+  ]} />
+
+  <section class="py-20 bg-slate-100" id="lead-form">
+    <div class="max-w-4xl mx-auto px-6">
+      <LeadForm product="OctoTwin™" />
+    </div>
+  </section>
+
+  <WhatsAppButton phone="+96599240074" />
+
+  <Footer />
+</Layout>

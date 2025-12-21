@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductHero from "../../components/products/ProductHero.astro";
+import ProductFeatures from "../../components/products/ProductFeatures.astro";
+import ProductHowItWorks from "../../components/products/ProductHowItWorks.astro";
+import ProductUseCases from "../../components/products/ProductUseCases.astro";
+import ProductSecurity from "../../components/products/ProductSecurity.astro";
+import ProductPricing from "../../components/products/ProductPricing.astro";
+import ProductTimeline from "../../components/products/ProductTimeline.astro";
+import ProductFAQ from "../../components/products/ProductFAQ.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="OctoHR™ – AI Workforce Intelligence Platform"
+  description="Measure productivity fairly and reduce attendance fraud."
+>
+  <Header />
+
+  <Breadcrumb items={[{ href: "/", label: "Home" }, { href: "/products", label: "Products" }, { href: "/products/octohr", label: "OctoHR™" }]} />
+
+  <ProductHero
+    productName="OctoHR™"
+    tagline="AI Workforce Intelligence Platform"
+    description="Measure productivity fairly and reduce attendance fraud."
+    stats={[{ value: "AI", label: "Analytics" }, { value: "Biometric", label: "Sync" }, { value: "Real‑Time", label: "Data" }, { value: "Kuwait", label: "Local" }]}
+    gradientFrom="violet-500"
+    gradientTo="purple-600"
+    icon="👥"
+  />
+
+  <section class="py-16 bg-white" id="pain-solution">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-violet-500 to-purple-600 bg-clip-text text-transparent">The Problem & The Solution</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-violet-600">Pain Points</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-600">
+            <li>Attendance fraud inflates payroll costs.</li>
+            <li>Manual time‑tracking is error‑prone.</li>
+            <li>No objective productivity metrics.</li>
+            <li>Hard to identify top performers or risks.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-violet-600">Solution</h3>
+          <p class="text-slate-600 leading-relaxed">OctoHR™ integrates with biometric devices and ERP, applies AI to detect anomalies, and provides fair productivity scores with actionable HR insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProductFeatures features={[
+    { icon: "⏰", title: "Smart Attendance", description: "Biometric sync with anomaly detection for buddy‑punching." },
+    { icon: "📊", title: "Productivity Scores", description: "Fair metrics based on role benchmarks." },
+    { icon: "🔔", title: "Alerts", description: "Notify HR of late arrivals, absences, or policy breaches." },
+    { icon: "📅", title: "Leave Management", description: "Self‑service portal with approval workflows." },
+    { icon: "📈", title: "Analytics", description: "Turnover prediction and engagement insights." },
+    { icon: "🔗", title: "ERP Sync", description: "Push payroll‑ready data to SAP, Oracle, or custom systems." },
+  ]} />
+
+  <ProductHowItWorks steps={[
+    { number: 1, title: "Connect Devices", description: "Integrate biometric terminals and access systems." },
+    { number: 2, title: "Define Policies", description: "Set shift patterns, grace periods, and leave rules." },
+    { number: 3, title: "AI Analysis", description: "Detect anomalies and compute productivity scores." },
+    { number: 4, title: "Report & Act", description: "Generate payroll data and HR action items." },
+  ]} />
+
+  <ProductUseCases useCases={[
+    { industry: "Manufacturing", icon: "🏭", description: "Track shift attendance across multiple plants." },
+    { industry: "Retail", icon: "🛒", description: "Manage flexible schedules for store staff." },
+    { industry: "Healthcare", icon: "🏥", description: "Ensure compliance with nurse‑to‑patient ratios." },
+    { industry: "Construction", icon: "🏗️", description: "Monitor field worker attendance on‑site." },
+  ]} />
+
+  <ProductSecurity items={[
+    { title: "RBAC", description: "HR managers see only their teams.", icon: "🛡️" },
+    { title: "Audit Logs", description: "Immutable record of all changes.", icon: "📜" },
+    { title: "Encryption", description: "AES‑256 at rest, TLS in transit.", icon: "🔐" },
+    { title: "Backups", description: "Daily snapshots with retention.", icon: "💾" },
+  ]} />
+
+  <ProductPricing />
+  <ProductTimeline />
+
+  <ProductFAQ faq={[
+    { q: "Which biometric devices are supported?", a: "ZKTeco, Hikvision, Suprema, and others via SDK." },
+    { q: "Can I customize productivity metrics?", a: "Yes, define KPIs per role or department." },
+    { q: "Is there a mobile app for employees?", a: "Employees can view attendance and request leave on mobile." },
+    { q: "How is data privacy handled?", a: "Biometric templates are encrypted; raw images are not stored." },
+    { q: "Does OctoHR support Kuwait Labor Law?", a: "Yes, leave policies and overtime rules are configurable." },
+  ]} />
+
+  <section class="py-20 bg-slate-100" id="lead-form">
+    <div class="max-w-4xl mx-auto px-6">
+      <LeadForm product="OctoHR™" />
+    </div>
+  </section>
+
+  <WhatsAppButton phone="+96599240074" />
+
+  <Footer />
+</Layout>

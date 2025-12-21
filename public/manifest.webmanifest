@@ -1,0 +1,29 @@
+{
+  "name": "Octonics Innovations – KNX Smart Home & AI Solutions in Kuwait",
+  "short_name": "Octonics",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#030617",
+  "theme_color": "#0b1f4a",
+  "description": "Octonics Innovations is Kuwait’s KNX-certified Smart Home, Smart Lighting, Software & AI development company.",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+---
+import LayoutAr from "../../../layouts/Layout-ar.astro";
+import HeaderAr from "../../../components/HeaderAr.astro";
+import FooterAr from "../../../components/FooterAr.astro";
+
+const products = [
+  {
+    name: "كيو آر الكويت",
+    tagline: "منصة الطلب الذكية",
+    desc: "نظام طلب ذكي للمطاعم والبقالات. بدون تطبيق.",
+    link: "/ar/products/qrkuwait",
+    icon: "📱",
+    color: "emerald",
+    category: "المطاعم / التجزئة",
+  },
+  {
+    name: "أوكتو براين",
+    tagline: "مركز ذكاء الأعمال",
+    desc: "شاشة قيادة واحدة لإدارة أعمالك بالذكاء الاصطناعي.",
+    link: "/ar/products/octobrain",
+    icon: "🧠",
+    color: "sky",
+    category: "ذكاء الأعمال",
+  },
+  {
+    name: "أوكتو فلو",
+    tagline: "أتمتة العمليات",
+    desc: "أتمت الموافقات والعمليات بدون فوضى.",
+    link: "/ar/products/octoflow",
+    icon: "⚡",
+    color: "emerald",
+    category: "العمليات",
+  },
+  {
+    name: "أوكتو جارد",
+    tagline: "المراقبة الذكية",
+    desc: "حوّل كاميراتك لنظام حماية ذكي.",
+    link: "/ar/products/octoguard",
+    icon: "🛡️",
+    color: "red",
+    category: "الأمن",
+  },
+  {
+    name: "أوكتو سينس",
+    tagline: "ذكاء الطاقة",
+    desc: "قلل هدر الطاقة بالذكاء الاصطناعي.",
+    link: "/ar/products/octosense",
+    icon: "💡",
+    color: "teal",
+    category: "المرافق",
+  },
+  {
+    name: "أوكتو ديسك",
+    tagline: "الدعم التقني الذكي",
+    desc: "دعم تقني أسرع وأكثر فعالية.",
+    link: "/ar/products/octodesk",
+    icon: "🎧",
+    color: "sky",
+    category: "الدعم التقني",
+  },
+  {
+    name: "أوكتو ريتيل",
+    tagline: "ذكاء التجزئة",
+    desc: "أوقف المخزون الميت وزد مبيعاتك.",
+    link: "/ar/products/octoretail",
+    icon: "🛒",
+    color: "pink",
+    category: "التجزئة",
+  },
+  {
+    name: "أوكتو إتش آر",
+    tagline: "إدارة الموارد البشرية",
+    desc: "قياس الإنتاجية بعدالة.",
+    link: "/ar/products/octohr",
+    icon: "👥",
+    color: "violet",
+    category: "الموارد البشرية",
+  },
+  {
+    name: "أوكتو فولت",
+    tagline: "إدارة المستندات",
+    desc: "لا تفوّت تجديداً ولا تفقد مستنداً.",
+    link: "/ar/products/octovault",
+    icon: "🔐",
+    color: "amber",
+    category: "الامتثال",
+  },
+  {
+    name: "أوكتو سيلز",
+    tagline: "ذكاء المبيعات",
+    desc: "حوّل العملاء المحتملين بسرعة.",
+    link: "/ar/products/octosales",
+    icon: "📈",
+    color: "indigo",
+    category: "المبيعات",
+  },
+  {
+    name: "أوكتو توين",
+    tagline: "التوأم الرقمي",
+    desc: "عرض ثلاثي الأبعاد لعملياتك.",
+    link: "/ar/products/octotwin",
+    icon: "🏢",
+    color: "cyan",
+    category: "التوأم الرقمي",
+  },
+];
+---
+
+<LayoutAr
+  title="منتجاتنا | أوكتونيكس للابتكارات"
+  description="اكتشف منتجاتنا المبتكرة المدعومة بالذكاء الاصطناعي للشركات في الكويت."
+>
+  <HeaderAr />
+
+  <section
+    dir="rtl"
+    class="relative py-32 bg-gradient-to-b from-slate-900 via-slate-950 to-black overflow-hidden"
+  >
+    <div class="absolute inset-0 opacity-30">
+      <div
+        class="absolute top-20 right-10 w-96 h-96 bg-emerald-500/20 rounded-full blur-[120px]"
+      >
+      </div>
+      <div
+        class="absolute bottom-20 left-10 w-80 h-80 bg-sky-500/20 rounded-full blur-[100px]"
+      >
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-wide text-emerald-400 mb-4"
+          >منتجاتنا</span
+        >
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+          ابتكارات <span
+            class="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent"
+            >صنع في الكويت</span
+          >
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+          منتجات مدعومة بالذكاء الاصطناعي لتحويل طريقة عمل الشركات.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          products.map((product: any) => (
+            <a
+              href={product.link}
+              class="group relative p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:-translate-y-2 hover:shadow-2xl"
+            >
+              <div class="flex items-center gap-4 mb-4">
+                <div
+                  class={`w-14 h-14 rounded-2xl bg-gradient-to-br from-${product.color}-500 to-${product.color}-600 flex items-center justify-center text-2xl shadow-lg`}
+                >
+                  {product.icon}
+                </div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                  {product.category}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                {product.name}
+              </h3>
+              <p class="text-sm text-slate-400 mb-3">{product.tagline}</p>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                {product.desc}
+              </p>
+              <div class="mt-4 flex items-center text-sm text-emerald-400 font-medium">
+                <span>اكتشف المزيد</span>
+                <svg
+                  class="w-4 h-4 mr-2 rotate-180 transition-transform group-hover:-translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="mt-16 text-center">
+        <a
+          href="/ar/contact"
+          class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold shadow-xl shadow-emerald-500/25 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        >
+          اطلب عرضاً توضيحياً
+          <svg
+            class="w-5 h-5 rotate-180"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+          >
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FooterAr />
+</LayoutAr>

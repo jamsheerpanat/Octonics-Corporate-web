@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductHero from "../../components/products/ProductHero.astro";
+import ProductFeatures from "../../components/products/ProductFeatures.astro";
+import ProductHowItWorks from "../../components/products/ProductHowItWorks.astro";
+import ProductUseCases from "../../components/products/ProductUseCases.astro";
+import ProductSecurity from "../../components/products/ProductSecurity.astro";
+import ProductPricing from "../../components/products/ProductPricing.astro";
+import ProductTimeline from "../../components/products/ProductTimeline.astro";
+import ProductFAQ from "../../components/products/ProductFAQ.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="OctoVault™ – Smart Document & Compliance System"
+  description="Never miss a renewal and never lose a document again."
+>
+  <Header />
+
+  <Breadcrumb items={[{ href: "/", label: "Home" }, { href: "/products", label: "Products" }, { href: "/products/octovault", label: "OctoVault™" }]} />
+
+  <ProductHero
+    productName="OctoVault™"
+    tagline="Smart Document & Compliance System"
+    description="Never miss a renewal and never lose a document again."
+    stats={[{ value: "AI", label: "OCR" }, { value: "Expiry", label: "Alerts" }, { value: "Secure", label: "Storage" }, { value: "Kuwait", label: "Local" }]}
+    gradientFrom="amber-500"
+    gradientTo="orange-600"
+    icon="🔐"
+  />
+
+  <section class="py-16 bg-white" id="pain-solution">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">The Problem & The Solution</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-amber-600">Pain Points</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-600">
+            <li>Critical documents are scattered across drives.</li>
+            <li>License and contract renewals are missed.</li>
+            <li>Manual filing wastes hours every week.</li>
+            <li>Compliance audits are stressful.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-amber-600">Solution</h3>
+          <p class="text-slate-600 leading-relaxed">OctoVault™ centralizes documents, uses AI OCR to extract metadata, and sends automatic reminders before expirations – keeping you audit‑ready at all times.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProductFeatures features={[
+    { icon: "📄", title: "AI OCR", description: "Automatically extract dates, names, and amounts from scans." },
+    { icon: "🔔", title: "Expiry Alerts", description: "Get notified 90/60/30 days before any renewal." },
+    { icon: "🗂️", title: "Smart Filing", description: "Auto‑categorize documents by type and entity." },
+    { icon: "🔍", title: "Full‑Text Search", description: "Find any document in seconds." },
+    { icon: "🔗", title: "ERP Sync", description: "Link documents to vendors, employees, or assets." },
+    { icon: "📊", title: "Compliance Dashboard", description: "Track renewal status across the organization." },
+  ]} />
+
+  <ProductHowItWorks steps={[
+    { number: 1, title: "Upload", description: "Drag & drop or scan documents into OctoVault." },
+    { number: 2, title: "AI Extract", description: "OCR pulls key data and suggests categories." },
+    { number: 3, title: "Set Alerts", description: "Define reminder schedules for each document type." },
+    { number: 4, title: "Stay Compliant", description: "Receive notifications and renew on time." },
+  ]} />
+
+  <ProductUseCases useCases={[
+    { industry: "Legal", icon: "⚖️", description: "Manage contracts and court deadlines." },
+    { industry: "HR", icon: "👥", description: "Track employee visas, licenses, and certifications." },
+    { industry: "Procurement", icon: "📦", description: "Monitor vendor agreements and AMCs." },
+    { industry: "Facilities", icon: "🏢", description: "Manage building permits and safety certificates." },
+  ]} />
+
+  <ProductSecurity items={[
+    { title: "RBAC", description: "Control who can view or edit each folder.", icon: "🛡️" },
+    { title: "Audit Logs", description: "Track every upload, view, and download.", icon: "📜" },
+    { title: "Encryption", description: "AES‑256 at rest, TLS in transit.", icon: "🔐" },
+    { title: "Backups", description: "Geo‑redundant storage with point‑in‑time restore.", icon: "💾" },
+  ]} />
+
+  <ProductPricing />
+  <ProductTimeline />
+
+  <ProductFAQ faq={[
+    { q: "Which file formats are supported?", a: "PDF, Word, Excel, images, and more." },
+    { q: "Can I bulk‑import existing documents?", a: "Yes, via folder upload or FTP sync." },
+    { q: "Is there a mobile app?", a: "Access via any mobile browser; native app coming soon." },
+    { q: "How accurate is the OCR?", a: "95%+ accuracy for standard printed documents." },
+    { q: "Can I set custom reminder schedules?", a: "Absolutely – define any number of reminder days." },
+  ]} />
+
+  <section class="py-20 bg-slate-100" id="lead-form">
+    <div class="max-w-4xl mx-auto px-6">
+      <LeadForm product="OctoVault™" />
+    </div>
+  </section>
+
+  <WhatsAppButton phone="+96599240074" />
+
+  <Footer />
+</Layout>

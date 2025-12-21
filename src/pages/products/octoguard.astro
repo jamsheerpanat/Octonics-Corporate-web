@@ -1,0 +1,258 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductHero from "../../components/products/ProductHero.astro";
+import ProductFeatures from "../../components/products/ProductFeatures.astro";
+import ProductHowItWorks from "../../components/products/ProductHowItWorks.astro";
+import ProductUseCases from "../../components/products/ProductUseCases.astro";
+import ProductIntegrations from "../../components/products/ProductIntegrations.astro";
+import ProductSecurity from "../../components/products/ProductSecurity.astro";
+import ProductPricing from "../../components/products/ProductPricing.astro";
+import ProductTimeline from "../../components/products/ProductTimeline.astro";
+import ProductFAQ from "../../components/products/ProductFAQ.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="OctoGuard™ – AI Surveillance & Loss Prevention Suite"
+  description="Turn your CCTV into a security and profit protection system."
+>
+  <Header />
+
+  <Breadcrumb
+    items={[
+      { href: "/", label: "Home" },
+      { href: "/products", label: "Products" },
+      { href: "/products/octoguard", label: "OctoGuard™" },
+    ]}
+  />
+
+  <ProductHero
+    productName="OctoGuard™"
+    tagline="AI Surveillance & Loss Prevention Suite"
+    description="Turn your CCTV into a security and profit protection system."
+    stats={[
+      { value: "AI", label: "Vision" },
+      { value: "5", label: "Modules" },
+      { value: "24/7", label: "Monitoring" },
+      { value: "Kuwait", label: "Local" },
+    ]}
+    gradientFrom="red-500"
+    gradientTo="rose-600"
+    icon="🛡️"
+  />
+
+  <section class="py-16 bg-white" id="pain-solution">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2
+        class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-red-500 to-rose-600 bg-clip-text text-transparent"
+      >
+        The Problem & The Solution
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-red-600">Pain Points</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-600">
+            <li>Shoplifting and internal theft go undetected.</li>
+            <li>Cashier mismatches cause revenue loss.</li>
+            <li>Manual video review is time‑consuming.</li>
+            <li>Lack of real‑time alerts for risky behavior.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-red-600">Solution</h3>
+          <p class="text-slate-600 leading-relaxed">
+            OctoGuard™ applies AI video analytics to detect shoplifting
+            patterns, staff misuse, and cash‑drawer anomalies, delivering
+            instant alerts and summarized incident reports.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProductFeatures
+    features={[
+      {
+        icon: "👁️",
+        title: "Behavior Detection",
+        description:
+          "AI recognises shoplifting, loitering, and suspicious gestures.",
+      },
+      {
+        icon: "💰",
+        title: "Cashier Mismatch",
+        description:
+          "Cross‑checks POS totals with video to flag discrepancies.",
+      },
+      {
+        icon: "📅",
+        title: "Incident Timeline",
+        description:
+          "Chronological view of events with auto‑generated summaries.",
+      },
+      {
+        icon: "⚙️",
+        title: "Restricted Zones",
+        description: "Define high‑risk areas and receive zone‑breach alerts.",
+      },
+      {
+        icon: "🔐",
+        title: "Privacy Controls",
+        description:
+          "Role‑based access, data retention policies, and GDPR‑compliant storage.",
+      },
+      {
+        icon: "🧩",
+        title: "Integrations",
+        description: "Connect to ERP, POS, access control, and BI tools.",
+      },
+    ]}
+  />
+
+  <ProductHowItWorks
+    steps={[
+      {
+        number: 1,
+        title: "Camera Ingestion",
+        description:
+          "Stream video from existing CCTV or IP cameras into the AI engine.",
+      },
+      {
+        number: 2,
+        title: "Define Zones & Rules",
+        description:
+          "Mark shop floor zones, set thresholds, and configure alerts.",
+      },
+      {
+        number: 3,
+        title: "AI Analysis",
+        description:
+          "Real‑time video analytics detect anomalies and generate alerts.",
+      },
+      {
+        number: 4,
+        title: "Review & Report",
+        description:
+          "Security team reviews incidents via dashboard; export PDF reports.",
+      },
+    ]}
+  />
+
+  <ProductUseCases
+    useCases={[
+      {
+        industry: "Retail",
+        icon: "🛍️",
+        description: "Detect shoplifting, staff misuse, and cash‑drawer fraud.",
+      },
+      {
+        industry: "Warehouse",
+        icon: "🏭",
+        description: "Monitor unauthorized access and unsafe behavior.",
+      },
+      {
+        industry: "Hospitality",
+        icon: "🏨",
+        description: "Prevent inventory theft and monitor guest safety.",
+      },
+      {
+        industry: "Banking",
+        icon: "🏦",
+        description: "Secure teller areas and detect suspicious activities.",
+      },
+    ]}
+  />
+
+  <ProductIntegrations
+    integrations={[
+      { name: "Milestone XProtect", src: "/images/integrations/milestone.svg" },
+      { name: "Axis Cameras", src: "/images/integrations/axis.svg" },
+      { name: "SAP ERP", src: "/images/integrations/sap.svg" },
+      { name: "Microsoft Dynamics", src: "/images/integrations/dynamics.svg" },
+    ]}
+  />
+
+  <ProductSecurity
+    items={[
+      {
+        title: "RBAC",
+        description: "Granular role‑based access to video feeds and reports.",
+        icon: "🛡️",
+      },
+      {
+        title: "Audit Logs",
+        description: "Immutable logs of all alerts and user actions.",
+        icon: "📜",
+      },
+      {
+        title: "Encryption",
+        description: "AES‑256 at rest, TLS‑1.3 in transit.",
+        icon: "🔐",
+      },
+      {
+        title: "Backups",
+        description: "Daily video archive backups with retention policies.",
+        icon: "💾",
+      },
+      {
+        title: "On‑Prem Option",
+        description: "Deploy AI engine on‑prem for ultra‑sensitive sites.",
+        icon: "🏢",
+      },
+    ]}
+  />
+
+  <ProductPricing />
+  <ProductTimeline />
+
+  <ProductFAQ
+    faq={[
+      {
+        q: "Can OctoGuard work with existing analog cameras?",
+        a: "Yes, via video capture devices or NVR conversion.",
+      },
+      {
+        q: "What is the latency of alerts?",
+        a: "Typically under 2 seconds from event detection to notification.",
+      },
+      {
+        q: "Is there a free trial?",
+        a: "A 30‑day sandbox with limited camera count is available.",
+      },
+      {
+        q: "How is video stored securely?",
+        a: "All footage is encrypted and stored according to retention policies you define.",
+      },
+      {
+        q: "Can I integrate with my POS system?",
+        a: "Out‑of‑the‑box connectors for major POS platforms are provided.",
+      },
+      {
+        q: "Do you support multi‑site deployments?",
+        a: "Yes, a central management console can monitor multiple locations.",
+      },
+      {
+        q: "Is there on‑site training?",
+        a: "Our professional services team offers on‑site or remote training sessions.",
+      },
+      {
+        q: "How are AI models updated?",
+        a: "Continuous learning pipeline updates models without downtime.",
+      },
+    ]}
+  />
+
+  <section class="py-20 bg-slate-100" id="lead-form">
+    <div class="max-w-4xl mx-auto px-6">
+      <LeadForm product="OctoGuard™" />
+    </div>
+  </section>
+
+  <WhatsAppButton phone="+96599240074" />
+
+  <Footer />
+</Layout>

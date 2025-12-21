@@ -1,0 +1,69 @@
+---
+import LayoutAr from "../../../layouts/Layout-ar.astro";
+import HeaderAr from "../../../components/HeaderAr.astro";
+import FooterAr from "../../../components/FooterAr.astro";
+import LeadForm from "../../../components/LeadForm.astro";
+import WhatsAppButton from "../../../components/WhatsAppButton.astro";
+---
+
+<LayoutAr title="أوكتو فلو™ – أتمتة العمليات الذكية" description="أتمت الموافقات والعمليات بدون فوضى.">
+  <HeaderAr />
+
+  <section dir="rtl" class="relative py-32 bg-gradient-to-b from-emerald-600 via-teal-700 to-slate-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-20 right-10 w-96 h-96 bg-emerald-500/30 rounded-full blur-[120px]"></div>
+    </div>
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl mb-8">
+        <span class="text-3xl">⚡</span>
+        <span class="text-sm font-semibold text-white/80">العمليات</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-black text-white mb-6">أوكتو فلو™</h1>
+      <p class="text-xl md:text-2xl text-emerald-200 mb-4">أتمتة العمليات الذكية</p>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto">أتمت الموافقات والعمليات بدون فوضى. وفر الوقت وقلل الأخطاء.</p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="#lead-form" class="px-8 py-4 rounded-full bg-white text-emerald-600 font-bold shadow-xl transition-all hover:scale-105">احصل على عرض توضيحي</a>
+        <a href="https://wa.me/96599240074" class="px-8 py-4 rounded-full border-2 border-white/30 text-white font-semibold transition-all hover:bg-white/10">تواصل عبر واتساب</a>
+      </div>
+    </div>
+  </section>
+
+  <section dir="rtl" class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">المشكلة والحل</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-emerald-600">نقاط الألم</h3>
+          <ul class="list-disc pr-5 space-y-2 text-slate-600">
+            <li>الموافقات اليدوية تستغرق أياماً.</li>
+            <li>لا يوجد تتبع أو شفافية في العمليات.</li>
+            <li>الاعتماد على الورق والإيميل.</li>
+            <li>صعوبة التصعيد والمتابعة.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-emerald-600">الحل</h3>
+          <p class="text-slate-600 leading-relaxed">أوكتو فلو™ يحول عملياتك إلى سير عمل رقمي ذكي مع موافقات تلقائية وتنبيهات وتتبع كامل.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section dir="rtl" class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 text-slate-900">المميزات الرئيسية</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm"><div class="text-3xl mb-4">📋</div><h3 class="text-lg font-bold text-slate-900 mb-2">منشئ النماذج</h3><p class="text-sm text-slate-600">أنشئ نماذج رقمية بسحب وإفلات.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm"><div class="text-3xl mb-4">🔄</div><h3 class="text-lg font-bold text-slate-900 mb-2">محركات سير العمل</h3><p class="text-sm text-slate-600">قواعد ذكية للموافقات التسلسلية والمتوازية.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm"><div class="text-3xl mb-4">📱</div><h3 class="text-lg font-bold text-slate-900 mb-2">تطبيق الجوال</h3><p class="text-sm text-slate-600">وافق من أي مكان عبر الهاتف.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm"><div class="text-3xl mb-4">⏰</div><h3 class="text-lg font-bold text-slate-900 mb-2">تذكيرات تلقائية</h3><p class="text-sm text-slate-600">تنبيهات للطلبات المعلقة.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm"><div class="text-3xl mb-4">📊</div><h3 class="text-lg font-bold text-slate-900 mb-2">لوحة التحليلات</h3><p class="text-sm text-slate-600">تقارير عن أوقات الموافقة والاختناقات.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm"><div class="text-3xl mb-4">🔗</div><h3 class="text-lg font-bold text-slate-900 mb-2">التكامل</h3><p class="text-sm text-slate-600">اتصال مع ERP والبريد والتقويم.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section dir="rtl" class="py-20 bg-white" id="lead-form"><div class="max-w-4xl mx-auto px-6"><LeadForm product="أوكتو فلو™" /></div></section>
+  <WhatsAppButton phone="+96599240074" />
+  <FooterAr />
+</LayoutAr>

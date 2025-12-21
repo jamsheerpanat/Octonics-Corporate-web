@@ -1,0 +1,265 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductHero from "../../components/products/ProductHero.astro";
+import ProductFeatures from "../../components/products/ProductFeatures.astro";
+import ProductHowItWorks from "../../components/products/ProductHowItWorks.astro";
+import ProductUseCases from "../../components/products/ProductUseCases.astro";
+import ProductIntegrations from "../../components/products/ProductIntegrations.astro";
+import ProductSecurity from "../../components/products/ProductSecurity.astro";
+import ProductPricing from "../../components/products/ProductPricing.astro";
+import ProductTimeline from "../../components/products/ProductTimeline.astro";
+import ProductFAQ from "../../components/products/ProductFAQ.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="OctoBrain™ – AI Business Intelligence Command Center"
+  description="A single command screen for owners to run the business using AI."
+>
+  <Header />
+
+  <Breadcrumb
+    items={[
+      { href: "/", label: "Home" },
+      { href: "/products", label: "Products" },
+      { href: "/products/octobrain", label: "OctoBrain™" },
+    ]}
+  />
+
+  <ProductHero
+    productName="OctoBrain™"
+    tagline="AI Business Intelligence Command Center"
+    description="A single command screen for owners to run the business using AI."
+    stats={[
+      { value: "AI", label: "Powered" },
+      { value: "8", label: "Modules" },
+      { value: "24/7", label: "Support" },
+      { value: "Kuwait", label: "Local" },
+    ]}
+    gradientFrom="sky-500"
+    gradientTo="indigo-600"
+    icon="🧠"
+  />
+
+  <!-- Pain → Solution -->
+  <section class="py-16 bg-white" id="pain-solution">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2
+        class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent"
+      >
+        The Problem & The Solution
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-sky-600">Pain Points</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-600">
+            <li>Scattered data across ERP, POS, spreadsheets.</li>
+            <li>Delayed decisions due to manual reporting.</li>
+            <li>No real‑time forecasting.</li>
+            <li>Time‑consuming board‑ready presentations.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-sky-600">Solution</h3>
+          <p class="text-slate-600 leading-relaxed">
+            OctoBrain™ aggregates all data sources, applies AI to generate
+            instant insights, predictive forecasts, and automatically creates
+            board‑ready PDF reports – all from a single dashboard.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProductFeatures
+    features={[
+      {
+        icon: "💡",
+        title: "Ask Your Business",
+        description:
+          "Natural‑language AI chat that answers any business question using live data.",
+      },
+      {
+        icon: "📊",
+        title: "KPI Dashboard",
+        description:
+          "Customizable visual KPIs across finance, sales, inventory, HR.",
+      },
+      {
+        icon: "🔮",
+        title: "Predictive Insights",
+        description: "AI forecasts demand, cash‑flow, and profit trends.",
+      },
+      {
+        icon: "⚠️",
+        title: "Anomaly Alerts",
+        description:
+          "Real‑time detection of out‑of‑range metrics with instant notifications.",
+      },
+      {
+        icon: "🗂️",
+        title: "Weekly CEO Report",
+        description:
+          "One‑click PDF generation for board meetings, fully branded.",
+      },
+      {
+        icon: "🔗",
+        title: "Data Connectors",
+        description:
+          "Seamless integration with ERP, accounting, POS, IoT, spreadsheets.",
+      },
+    ]}
+  />
+
+  <ProductHowItWorks
+    steps={[
+      {
+        number: 1,
+        title: "Connect Sources",
+        description:
+          "Link ERP, POS, HR, IoT, and spreadsheets via secure APIs or file uploads.",
+      },
+      {
+        number: 2,
+        title: "Map KPIs",
+        description:
+          "Define the metrics you care about – revenue, inventory turns, employee productivity, etc.",
+      },
+      {
+        number: 3,
+        title: "AI Layer",
+        description:
+          "OctoBrain’s AI engine cleans, enriches, and models the data for real‑time insights.",
+      },
+      {
+        number: 4,
+        title: "Dashboard & Training",
+        description:
+          "Explore the unified dashboard, set alerts, and train the AI with your business terminology.",
+      },
+    ]}
+  />
+
+  <ProductUseCases
+    useCases={[
+      {
+        industry: "Trading",
+        icon: "📈",
+        description: "Real‑time market analytics and profit‑leak detection.",
+      },
+      {
+        industry: "Manufacturing",
+        icon: "🏭",
+        description:
+          "Production line KPI monitoring and predictive maintenance.",
+      },
+      {
+        industry: "Retail",
+        icon: "🛍️",
+        description:
+          "Sales performance, stock‑turn, and staff productivity insights.",
+      },
+      {
+        industry: "Professional Services",
+        icon: "💼",
+        description:
+          "Project profitability and resource utilization dashboards.",
+      },
+    ]}
+  />
+
+  <ProductIntegrations
+    integrations={[
+      { name: "SAP ERP", src: "/images/integrations/sap.svg" },
+      { name: "Microsoft Dynamics", src: "/images/integrations/dynamics.svg" },
+      { name: "QuickBooks", src: "/images/integrations/quickbooks.svg" },
+      { name: "Google Sheets", src: "/images/integrations/google-sheets.svg" },
+      { name: "IoT Sensors", src: "/images/integrations/iot.svg" },
+    ]}
+  />
+
+  <ProductSecurity
+    items={[
+      {
+        title: "RBAC",
+        description: "Role‑based access control for granular permissions.",
+        icon: "🛡️",
+      },
+      {
+        title: "Audit Logs",
+        description: "Full immutable audit trail for compliance.",
+        icon: "📜",
+      },
+      {
+        title: "Encryption",
+        description: "At‑rest and in‑transit AES‑256 encryption.",
+        icon: "🔐",
+      },
+      {
+        title: "Backups",
+        description: "Automated daily backups with point‑in‑time restore.",
+        icon: "💾",
+      },
+      {
+        title: "On‑Prem Option",
+        description: "Deploy within your own data‑center for extra control.",
+        icon: "🏢",
+      },
+    ]}
+  />
+
+  <ProductPricing />
+
+  <ProductTimeline />
+
+  <ProductFAQ
+    faq={[
+      {
+        q: "Can OctoBrain connect to my legacy ERP?",
+        a: "Yes, we provide connectors for most major ERP systems and a generic CSV import for legacy solutions.",
+      },
+      {
+        q: "Is there a free trial?",
+        a: "We offer a 30‑day sandbox environment with limited data volume.",
+      },
+      {
+        q: "How is data security handled?",
+        a: "All data is encrypted, stored in ISO‑27001 compliant data centers, and access is controlled via RBAC.",
+      },
+      {
+        q: "Can I customize the dashboard layout?",
+        a: "Absolutely – drag‑and‑drop widgets and save multiple views.",
+      },
+      {
+        q: "What languages does the AI support?",
+        a: "English and Arabic out of the box, with multilingual extensions available.",
+      },
+      {
+        q: "Do you provide on‑site training?",
+        a: "Our professional services team can deliver on‑site or remote workshops.",
+      },
+      {
+        q: "How are updates delivered?",
+        a: "Continuous SaaS updates with zero‑downtime; on‑prem customers receive quarterly patches.",
+      },
+      {
+        q: "Is there an API for external apps?",
+        a: "Yes, a full REST API with OAuth2 authentication is available.",
+      },
+    ]}
+  />
+
+  <section class="py-20 bg-slate-100" id="lead-form">
+    <div class="max-w-4xl mx-auto px-6">
+      <LeadForm product="OctoBrain™" />
+    </div>
+  </section>
+
+  <WhatsAppButton phone="+96599240074" />
+
+  <Footer />
+</Layout>

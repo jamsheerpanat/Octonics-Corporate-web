@@ -12,10 +12,45 @@ export default defineConfig({
   output: "static", // ✅ built-in static output
   integrations: [
     tailwind({ applyBaseStyles: true }),
-    sitemap(),
-    robotsTxt(),
+    sitemap({
+      // Enhanced sitemap with priority pages
+      filter: (page) => !page.includes('/404'),
+      changefreq: 'weekly',
+      priority: 0.7,
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-KW',
+          ar: 'ar-KW',
+        },
+      },
+    }),
+    robotsTxt({
+      policy: [
+        {
+          userAgent: '*',
+          allow: '/',
+          disallow: ['/api/', '/_astro/'],
+        },
+        {
+          userAgent: 'Googlebot',
+          allow: '/',
+          crawlDelay: 1,
+        },
+        {
+          userAgent: 'Bingbot',
+          allow: '/',
+          crawlDelay: 1,
+        },
+      ],
+      sitemap: true,
+    }),
     mdx(),
-    partytown({}),
+    partytown({
+      config: {
+        forward: ['dataLayer.push'],
+      },
+    }),
     react(),
   ],
 });

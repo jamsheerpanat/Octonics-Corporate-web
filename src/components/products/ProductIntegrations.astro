@@ -1,0 +1,34 @@
+---
+/**
+ * ProductIntegrations – grid of integration logos
+ */
+interface Integration {
+  name: string;
+  src: string;
+}
+const { integrations, isRTL = false } = Astro.props;
+---
+
+<section class="py-12 bg-slate-50" dir={isRTL ? "rtl" : "ltr"}>
+  <div class="max-w-5xl mx-auto px-6">
+    <h2
+      class="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent"
+    >
+      Integrations
+    </h2>
+    <div
+      class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center"
+    >
+      {
+        integrations.map((i) => (
+          <img
+            src={i.src}
+            alt={i.name}
+            class="h-12 mx-auto grayscale hover:grayscale-0 transition"
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

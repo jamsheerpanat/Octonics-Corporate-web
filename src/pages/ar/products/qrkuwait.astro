@@ -1,0 +1,719 @@
+---
+import "../../../styles/global.css";
+import HeaderAr from "../../../components/HeaderAr.astro";
+import FooterAr from "../../../components/FooterAr.astro";
+
+const currentYear = new Date().getFullYear();
+
+/* ---------- DATA ---------- */
+const hero = {
+  title: "كيو آر الكويت — نظام الطلب الذكي بالـ QR",
+  subtitle: "غيّر طريقة طلب عملائك وإدارة عملياتك. سريع. عصري. احترافي.",
+  tagline: "منتج من أوكتونيكس للابتكارات",
+};
+
+const stats = [
+  { value: "100%", label: "بدون تطبيق" },
+  { value: "2x", label: "طلبات أسرع" },
+  { value: "0", label: "أخطاء بالطلب" },
+  { value: "24/7", label: "متاح دائماً" },
+];
+
+const problemsSolved = [
+  { icon: "❌", problem: "رسائل واتساب يدوية", solution: "ملخصات طلبات تلقائية ومنسقة" },
+  { icon: "❌", problem: "مكالمات هاتفية وأخطاء", solution: "طلبات رقمية واضحة بدون أخطاء" },
+  { icon: "❌", problem: "فواتير ورقية", solution: "لوحة تحكم رقمية وشاشة مطبخ" },
+  { icon: "❌", problem: "أنظمة كاشير منفصلة", solution: "نظام متكامل جاهز للكاشير" },
+];
+
+const howItWorks = [
+  { step: "01", title: "امسح الـ QR", desc: "الكود موجود على الطاولات أو الكاونتر أو الرفوف.", icon: "📱" },
+  { step: "02", title: "المنيو يفتح فوراً", desc: "قائمة المطعم أو منتجات البقالة تظهر بالمتصفح.", icon: "📋" },
+  { step: "03", title: "اطلب بسهولة", desc: "اختر الأصناف والكميات وأدخل بياناتك.", icon: "🛒" },
+  { step: "04", title: "الطلب يوصل", desc: "يظهر فوراً بالواتساب والكاشير والمطبخ.", icon: "✅" },
+];
+
+const restaurantFeatures = [
+  "طلب عبر QR من المنيو",
+  "طلبات طاولة وتوصيل واستلام",
+  "تأكيد الكاشير قبل المطبخ",
+  "شاشة عرض المطبخ (KDS)",
+  "إشعارات واتساب للطلبات",
+  "جاهز للربط مع الكاشير",
+  "دعم فروع متعددة",
+];
+
+const groceryFeatures = [
+  "كتالوج منتجات رقمي",
+  "أصناف بالوزن والكمية",
+  "سير عمل التجهيز (جُمع ← غُلف ← جاهز)",
+  "إدارة التوصيل والاستلام",
+  "ملخصات واضحة للواتساب",
+  "شاشة تجهيز للموظفين",
+  "تصدير جاهز للكاشير",
+];
+
+const customerFeatures = [
+  { title: "بدون تحميل", desc: "يشتغل على كل الجوالات فوراً", icon: "📱" },
+  { title: "سريع وسهل", desc: "اطلب بأقل من 30 ثانية", icon: "⚡" },
+  { title: "عربي وإنجليزي", desc: "دعم كامل للغتين", icon: "🌍" },
+  { title: "تصميم واضح", desc: "واجهة عصرية وسهلة", icon: "✨" },
+];
+
+const businessFeatures = [
+  { title: "لوحة تحكم حية", desc: "تتبع الطلبات بالوقت الحقيقي", icon: "📊" },
+  { title: "سير عمل الكاشير", desc: "تأكيد قبل المطبخ", icon: "💳" },
+  { title: "شاشة المطبخ", desc: "عرض واضح للطلبات", icon: "👨‍🍳" },
+  { title: "تقارير", desc: "تحليلات يومية وشهرية", icon: "📈" },
+];
+
+const whatsappFeatures = [
+  { title: "تنسيق تلقائي", desc: "ملخصات طلبات مرتبة", icon: "📝" },
+  { title: "بدون تكلفة API", desc: "صفر رسوم واتساب", icon: "💰" },
+  { title: "رقمك الحالي", desc: "استخدم رقم عملك الموجود", icon: "📞" },
+  { title: "بدون أخطاء", desc: "لا أخطاء بالرسائل", icon: "✅" },
+];
+
+const posFeatures = [
+  { title: "جاهز للطباعة", desc: "متوافق مع الطابعات الحرارية", icon: "🖨️" },
+  { title: "CSV و PDF", desc: "تصدير سهل", icon: "📄" },
+  { title: "API مستقبلي", desc: "جاهز للتطوير", icon: "🔌" },
+  { title: "قابل للتوسع", desc: "نمو بدون حدود", icon: "📈" },
+];
+
+const whyChoose = [
+  { title: "طلبات أسرع", desc: "عملية طلب رقمية سلسة" },
+  { title: "أخطاء أقل", desc: "تخلص من سوء الفهم" },
+  { title: "عبء أقل على الموظفين", desc: "إدارة طلبات تلقائية" },
+  { title: "صورة احترافية", desc: "حضور رقمي عصري" },
+  { title: "زبائن راضين", desc: "تجربة طلب أفضل" },
+  { title: "جاهز للمستقبل", desc: "قابل للتوسع والنمو" },
+];
+
+const faqs = [
+  { q: "هل الزبون يحتاج يحمّل تطبيق؟", a: "لا أبداً! كيو آر الكويت يشتغل بالكامل من المتصفح. الزبون يمسح الكود والمنيو يفتح فوراً — بدون أي تطبيق." },
+  { q: "يشتغل مع رقم الواتساب الحالي؟", a: "أكيد! الطلبات توصل مباشرة لرقم الواتساب التجاري الموجود عندك. بدون رسوم API أو تعقيدات." },
+  { q: "أقدر أستخدمه لأكثر من فرع؟", a: "طبعاً. كيو آر الكويت يدعم فروع متعددة بقوائم منفصلة وموظفين ولوحات تحكم لكل فرع." },
+  { q: "مناسب للبقالات؟", a: "نعم! النظام فيه مميزات خاصة للبقالات مثل الأصناف بالوزن وسير عمل التجهيز وإدارة التوصيل." },
+];
+---
+
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>كيو آر الكويت — نظام الطلب الذكي للمطاعم والبقالات | أوكتونيكس</title>
+
+  <!-- ARABIC SEO -->
+  <meta name="description" content="كيو آر الكويت — نظام طلب ذكي بالـ QR للمطاعم والبقالات في الكويت. بدون تطبيق. واتساب. شاشة مطبخ. جاهز للكاشير. سريع وعصري.">
+  <meta name="keywords" content="
+    نظام طلب QR الكويت,
+    نظام طلب للمطاعم الكويت,
+    منيو رقمي الكويت,
+    طلب واتساب الكويت,
+    مطعم ذكي الكويت,
+    نظام طلب بقالة الكويت,
+    تطبيق طلب طعام الكويت,
+    طلب طاولة الكويت,
+    شاشة مطبخ الكويت,
+    كاشير الكويت,
+    تكنولوجيا مطاعم الكويت,
+    كيو آر الكويت,
+    QRKuwait,
+    أوكتونيكس
+  ">
+
+  <!-- ENGLISH SEO -->
+  <meta name="description" lang="en" content="QRKuwait — Smart QR ordering system for restaurants and groceries in Kuwait. No app required. WhatsApp. Kitchen display. POS-ready.">
+
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="شركة أوكتونيكس للابتكارات" />
+  <meta name="theme-color" content="#059669" />
+
+  <!-- GEO TAGS -->
+  <meta name="geo.region" content="KW" />
+  <meta name="geo.position" content="29.346069262076877;48.01252801196281" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="كيو آر الكويت — نظام الطلب الذكي بالـ QR" />
+  <meta property="og:description" content="بدون تطبيق. واتساب. شاشة مطبخ. جاهز للكاشير. مصمم للأعمال الكويتية." />
+  <meta property="og:image" content="/images/products/qrkuwait-og.jpg" />
+  <meta property="og:locale" content="ar_KW" />
+  <meta property="og:locale:alternate" content="en_KW" />
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="كيو آر الكويت — نظام الطلب الذكي" />
+  <meta name="twitter:description" content="غيّر طريقة الطلب بمطعمك أو بقالتك. بدون تطبيق. واتساب. شاشة مطبخ." />
+  <meta name="twitter:image" content="/images/products/qrkuwait-og.jpg" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- JSON-LD SCHEMA -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "كيو آر الكويت",
+      "alternateName": "QRKuwait",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "نظام طلب ذكي بالـ QR للمطاعم والبقالات في الكويت",
+      "url": "https://www.qrkuwait.com",
+      "author": {
+        "@type": "Organization",
+        "name": "شركة أوكتونيكس للابتكارات",
+        "url": "https://octonics.com/ar"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KWD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "28"
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(8px) } }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    @keyframes pulse-glow { 0%,100% { opacity: 0.5 } 50% { opacity: 1 } }
+    .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    html, body { overflow-x: hidden; }
+    body { font-family: 'Tajawal', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased relative">
+  <!-- HEADER -->
+  <HeaderAr />
+
+  <!-- ============================================ -->
+  <!-- HERO SECTION -->
+  <!-- ============================================ -->
+  <section
+    id="hero"
+    class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-950 via-teal-900 to-slate-950 text-white"
+  >
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-emerald-950/60 via-teal-900/40 to-slate-950/90"></div>
+
+    <!-- Decorative Glow Blobs -->
+    <div aria-hidden="true" class="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-emerald-400/30 blur-[120px] pulse-glow"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-teal-500/30 blur-[100px]"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute bottom-10 left-1/4 h-60 w-60 rounded-full bg-emerald-600/25 blur-[100px]"></div>
+
+    <!-- QR Pattern Background -->
+    <div aria-hidden="true" class="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IndoaXRlIi8+PHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IndoaXRlIi8+PHJlY3QgeD0iMjAiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIzMCIgeT0iMTAiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0id2hpdGUiLz48cmVjdCB5PSIyMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjEwIiB5PSIzMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjMwIiB5PSIzMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==')]"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 mx-auto max-w-5xl px-6 text-center">
+      <!-- Badge -->
+      <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] uppercase tracking-wider text-emerald-100 ring-1 ring-white/20 backdrop-blur-sm">
+        <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        {hero.tagline}
+      </p>
+
+      <!-- Title -->
+      <h1
+        class="mt-6 text-balance font-extrabold leading-tight text-white drop-shadow-sm"
+        style="font-size: clamp(2rem, 5vw + 0.5rem, 4rem);"
+      >
+        {hero.title}
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-emerald-100 md:text-xl">
+        {hero.subtitle}
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+        <a
+          href="https://app.qrkuwait.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 px-8 py-3.5 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-emerald-500/30"
+        >
+          ← جرّب النسخة الحية
+        </a>
+        <a
+          href="/ar/contact"
+          class="rounded-full border border-white/30 bg-white/10 px-8 py-3.5 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20"
+        >
+          اطلب عرض توضيحي
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-8">
+        {stats.map((stat) => (
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 backdrop-blur-sm">
+            <p class="text-3xl font-bold text-emerald-300">{stat.value}</p>
+            <p class="mt-1 text-sm text-emerald-100">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom fade -->
+    <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-50 to-transparent"></div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- ABOUT QRKUWAIT -->
+  <!-- ============================================ -->
+  <section class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">شو هو كيو آر الكويت؟</h2>
+      <p class="mx-auto mt-4 max-w-3xl text-lg text-slate-600 leading-relaxed">
+        كيو آر الكويت هو نظام طلب ذكي جديد مصمم خصيصاً لـ<strong>المطاعم والبقالات في الكويت</strong>. 
+        يغيّر طريقة طلب العملاء وطريقة إدارتك للطلبات — كل شي يصير أسرع وأوضح وأكثر احترافية.
+      </p>
+    </div>
+
+    <div class="mt-12 rounded-3xl bg-gradient-to-br from-emerald-50 to-teal-50 p-8 ring-1 ring-emerald-100">
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="text-center">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-3xl shadow-lg">📱</div>
+          <h3 class="mt-4 font-semibold text-slate-900">امسح الكود</h3>
+          <p class="mt-2 text-sm text-slate-600">الزبون يمسح QR</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-3xl shadow-lg">🍽️</div>
+          <h3 class="mt-4 font-semibold text-slate-900">تصفح المنيو</h3>
+          <p class="mt-2 text-sm text-slate-600">الأصناف تظهر فوراً</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-3xl shadow-lg">🛒</div>
+          <h3 class="mt-4 font-semibold text-slate-900">اطلب</h3>
+          <p class="mt-2 text-sm text-slate-600">أضف وأرسل الطلب</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-3xl shadow-lg">✅</div>
+          <h3 class="mt-4 font-semibold text-slate-900">الطلب يوصل</h3>
+          <p class="mt-2 text-sm text-slate-600">واتساب، كاشير، مطبخ</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-8 text-center text-lg text-slate-700">
+      <strong class="text-emerald-600">بدون تطبيقات. بدون تعقيدات.</strong> بس طلب ذكي وبسيط وعصري.
+    </p>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- WHY QRKUWAIT WAS BUILT -->
+  <!-- ============================================ -->
+  <section class="relative bg-gradient-to-b from-white to-slate-100 py-20 overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+      <div class="absolute top-[-100px] right-[10%] h-[250px] w-[250px] rounded-full bg-red-300/10 blur-[120px]"></div>
+      <div class="absolute bottom-[-100px] left-[15%] h-[250px] w-[250px] rounded-full bg-emerald-400/15 blur-[120px]"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">ليش بنينا كيو آر الكويت؟</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-slate-600">
+          أغلب المطاعم والبقالات بالكويت لسه تعتمد على أنظمة قديمة. كيو آر الكويت يحل هالمشاكل.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        {problemsSolved.map((item) => (
+          <div class="group rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-xl">
+                  {item.icon}
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-slate-500 line-through">{item.problem}</p>
+                <div class="mt-2 flex items-center gap-2">
+                  <span class="text-emerald-500 text-lg">✓</span>
+                  <p class="font-semibold text-emerald-700">{item.solution}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- HOW IT WORKS -->
+  <!-- ============================================ -->
+  <section class="relative bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 py-24 text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold">كيف يشتغل كيو آر الكويت؟</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-emerald-200">
+          سهل على الزبون. قوي لعملك.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-8 md:grid-cols-4">
+        {howItWorks.map((item) => (
+          <div class="group relative text-center">
+            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 text-4xl shadow-lg transition group-hover:scale-110">
+              {item.icon}
+            </div>
+            <div class="mt-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-sm font-bold text-emerald-300">
+              {item.step}
+            </div>
+            <h3 class="mt-3 text-lg font-semibold">{item.title}</h3>
+            <p class="mt-2 text-sm text-emerald-100">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- TWO INDUSTRIES -->
+  <!-- ============================================ -->
+  <section class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">منصة وحدة. صناعتين.</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-slate-600">
+        مصممة خصيصاً للمطاعم والبقالات بمميزات مخصصة لكل واحد.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-2">
+      <!-- Restaurants -->
+      <div class="group relative rounded-3xl bg-gradient-to-br from-orange-500 to-red-600 p-[2px] shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="h-full rounded-3xl bg-white p-8">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-100 to-red-100 text-3xl">
+              🍽️
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">للمطاعم والكافيهات</h3>
+          </div>
+          <ul class="mt-6 space-y-3">
+            {restaurantFeatures.map((feature) => (
+              <li class="flex items-start gap-3">
+                <span class="text-orange-500">✓</span>
+                <span class="text-slate-700">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Grocery -->
+      <div class="group relative rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 p-[2px] shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="h-full rounded-3xl bg-white p-8">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-100 text-3xl">
+              🛒
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">للبقالات والمحلات</h3>
+          </div>
+          <ul class="mt-6 space-y-3">
+            {groceryFeatures.map((feature) => (
+              <li class="flex items-start gap-3">
+                <span class="text-emerald-500">✓</span>
+                <span class="text-slate-700">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- KEY FEATURES -->
+  <!-- ============================================ -->
+  <section class="relative bg-gradient-to-b from-slate-100 to-white py-24 overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">المميزات الرئيسية</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-slate-600">
+          كل شي تحتاجه لتحديث عمليات الطلب عندك.
+        </p>
+      </div>
+
+      <!-- Feature Grids -->
+      <div class="mt-16 space-y-12">
+        <!-- Customer Experience -->
+        <div>
+          <h3 class="text-xl font-semibold text-emerald-600 mb-6">تجربة العميل</h3>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {customerFeatures.map((f) => (
+              <div class="rounded-2xl bg-white p-5 shadow-md ring-1 ring-slate-100 transition hover:shadow-lg">
+                <div class="text-2xl mb-2">{f.icon}</div>
+                <h4 class="font-semibold text-slate-900">{f.title}</h4>
+                <p class="mt-1 text-sm text-slate-600">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Business Operations -->
+        <div>
+          <h3 class="text-xl font-semibold text-teal-600 mb-6">عمليات العمل</h3>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {businessFeatures.map((f) => (
+              <div class="rounded-2xl bg-white p-5 shadow-md ring-1 ring-slate-100 transition hover:shadow-lg">
+                <div class="text-2xl mb-2">{f.icon}</div>
+                <h4 class="font-semibold text-slate-900">{f.title}</h4>
+                <p class="mt-1 text-sm text-slate-600">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- WhatsApp-First -->
+        <div>
+          <h3 class="text-xl font-semibold text-green-600 mb-6">نظام واتساب أولاً</h3>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {whatsappFeatures.map((f) => (
+              <div class="rounded-2xl bg-white p-5 shadow-md ring-1 ring-slate-100 transition hover:shadow-lg">
+                <div class="text-2xl mb-2">{f.icon}</div>
+                <h4 class="font-semibold text-slate-900">{f.title}</h4>
+                <p class="mt-1 text-sm text-slate-600">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- POS-Ready -->
+        <div>
+          <h3 class="text-xl font-semibold text-indigo-600 mb-6">جاهز للكاشير</h3>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {posFeatures.map((f) => (
+              <div class="rounded-2xl bg-white p-5 shadow-md ring-1 ring-slate-100 transition hover:shadow-lg">
+                <div class="text-2xl mb-2">{f.icon}</div>
+                <h4 class="font-semibold text-slate-900">{f.title}</h4>
+                <p class="mt-1 text-sm text-slate-600">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DESIGNED FOR KUWAIT -->
+  <!-- ============================================ -->
+  <section class="relative bg-gradient-to-br from-emerald-700 via-teal-700 to-slate-900 py-24 text-white overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute -top-20 right-1/3 h-96 w-96 rounded-full bg-emerald-400/30 blur-[140px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold">مصمم للأعمال الكويتية</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-emerald-100">
+          كيو آر الكويت مبني خصيصاً للكويت — يراعي سير العمل المحلي واحتياجات اللغة وأنماط الأعمال.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { icon: "🇰🇼", title: "سير عمل محلي", desc: "مصمم حسب طريقة شغل الأعمال الكويتية" },
+          { icon: "🌐", title: "عربي وإنجليزي", desc: "دعم كامل للغتين للزبائن والموظفين" },
+          { icon: "💬", title: "واتساب أولاً", desc: "مبني على تواصل الواتساب اللي يستخدمه الكل" },
+          { icon: "🏢", title: "فروع متعددة", desc: "إدارة مجموعات مطاعم من لوحة واحدة" },
+          { icon: "🚚", title: "جاهز للتوصيل", desc: "محسّن لأنماط توصيل البقالات" },
+          { icon: "💰", title: "أسعار مناسبة", desc: "استضافة خفيفة وميزانية مريحة" },
+        ].map((item) => (
+          <div class="rounded-2xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur-sm transition hover:bg-white/15">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>
+            <p class="mt-2 text-sm text-emerald-100">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- WHY CHOOSE QRKUWAIT -->
+  <!-- ============================================ -->
+  <section class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">ليش تختار كيو آر الكويت؟</h2>
+    </div>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {whyChoose.map((item) => (
+        <div class="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50">
+            <svg class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">{item.title}</h3>
+          <p class="mt-2 text-slate-600">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FAQ -->
+  <!-- ============================================ -->
+  <section id="faq" class="relative mx-auto max-w-6xl px-6 py-24 sm:px-8">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+      <div class="absolute right-[10%] top-[5%] h-64 w-64 rounded-full bg-emerald-400/15 blur-[100px]"></div>
+      <div class="absolute left-[5%] bottom-[-10%] h-64 w-64 rounded-full bg-teal-500/15 blur-[120px]"></div>
+    </div>
+
+    <div class="relative text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">الأسئلة الشائعة</h2>
+    </div>
+
+    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6">
+      {faqs.map((f, i) => (
+        <details class="group rounded-3xl bg-white shadow-lg ring-1 ring-slate-200 p-6 transition hover:shadow-xl open:ring-2 open:ring-emerald-400/30">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-slate-900">
+            <span class="flex items-center gap-3">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-emerald-100 to-teal-100 text-emerald-700 font-bold">
+                {(i + 1).toString().padStart(2, "0")}
+              </span>
+              {f.q}
+            </span>
+            <svg viewBox="0 0 24 24" class="h-5 w-5 text-slate-500 transition-transform duration-300 group-open:rotate-180">
+              <path fill="currentColor" d="M7 10l5 5 5-5z" />
+            </svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-700">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CTA SECTION -->
+  <!-- ============================================ -->
+  <section class="relative isolate overflow-hidden bg-gradient-to-br from-emerald-700 via-teal-700 to-slate-900 py-24 text-white">
+    <div aria-hidden="true" class="pointer-events-none absolute -top-20 right-1/3 h-96 w-96 rounded-full bg-emerald-400/30 blur-[140px]"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-teal-400/30 blur-[120px]"></div>
+
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+        جاهز تطوّر نظام الطلب عندك؟
+      </h2>
+      <p class="mx-auto mt-5 max-w-2xl text-emerald-100 text-lg leading-relaxed">
+        سهّل العمليات. ظهر بشكل عصري. كبّر عملك مع كيو آر الكويت.
+      </p>
+
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+        <a
+          href="https://www.qrkuwait.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full bg-white px-8 py-3.5 font-semibold text-emerald-700 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-emerald-300/40"
+        >
+          ← اكتشف كيو آر الكويت
+        </a>
+        <a
+          href="https://app.qrkuwait.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full border border-white/40 bg-white/10 px-8 py-3.5 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20"
+        >
+          جرّب النسخة الحية
+        </a>
+      </div>
+
+      <!-- Octonics Badge -->
+      <div class="mt-12 inline-flex items-center gap-3 rounded-full bg-white/10 px-6 py-3 ring-1 ring-white/20 backdrop-blur-sm">
+        <img src="/images/octonics-logo.png" alt="أوكتونيكس" class="h-6 w-auto" loading="lazy" />
+        <span class="text-sm text-emerald-100">من إنتاج <strong>شركة أوكتونيكس للابتكارات</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SEO CONTENT BLOCK (ARABIC) -->
+  <!-- ============================================ -->
+  <section class="max-w-5xl mx-auto px-6 py-20 text-slate-700 leading-relaxed">
+    <h2 class="text-3xl font-bold mb-6">كيو آر الكويت — نظام الطلب الذكي للأعمال الكويتية</h2>
+
+    <p class="mb-4 text-lg">
+      <strong>كيو آر الكويت</strong> هو نظام طلب ذكي بالـ QR مصمم خصيصاً للمطاعم والكافيهات والبقالات 
+      في الكويت. مع كيو آر الكويت، الزبون يمسح كود الـ QR، يتصفح المنيو أو كتالوج المنتجات، ويطلب — كل هذا بدون تحميل أي تطبيق.
+    </p>
+
+    <p class="mb-4 text-lg">
+      الطلبات توصل فوراً للواتساب، لوحة الكاشير، شاشة المطبخ، وقائمة الطلبات الجاهزة للكاشير. هي الطريقة العصرية لإدارة الطلبات بالكويت.
+    </p>
+
+    <h3 class="text-2xl font-semibold mt-8 mb-4">مين يستخدم كيو آر الكويت؟</h3>
+    <ul class="list-disc pr-6 space-y-2 text-lg">
+      <li>مطاعم وكافيهات تبي منيو رقمي</li>
+      <li>مطابخ سحابية تحتاج إدارة طلبات فعالة</li>
+      <li>بقالات ومحلات عندها خدمة توصيل</li>
+      <li>فود كورت ومجموعات مطاعم متعددة الفروع</li>
+      <li>ستارت أب جديدة وعلامات تجارية كويتية راسخة</li>
+    </ul>
+
+    <p class="mt-8 text-lg">
+      <strong>الموقع:</strong> <a href="https://www.qrkuwait.com" class="text-emerald-600 hover:underline">www.qrkuwait.com</a><br />
+      <strong>النسخة التجريبية:</strong> <a href="https://app.qrkuwait.com" class="text-emerald-600 hover:underline">app.qrkuwait.com</a><br />
+      <strong>من إنتاج:</strong> شركة أوكتونيكس للابتكارات
+    </p>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- MARKETING ARABIC SECTION -->
+  <!-- ============================================ -->
+  <section class="bg-gradient-to-br from-emerald-50 to-teal-50 py-16">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-emerald-800 mb-6">🚀 وداعاً للفوضى... مرحباً بالاحترافية!</h2>
+      
+      <div class="text-lg text-slate-700 space-y-4 leading-relaxed">
+        <p>
+          <strong>خلاص انتهى زمن الأخطاء!</strong> 
+          لا مكالمات ضايعة، لا رسائل ناقصة، لا فواتير مبهدلة.
+        </p>
+        <p>
+          مع <strong class="text-emerald-600">كيو آر الكويت</strong>، الزبون يطلب بروحه، 
+          والطلب يوصلك منسق ومرتب على الواتساب والكاشير والمطبخ!
+        </p>
+        <p class="text-xl font-semibold text-teal-700">
+          ✨ بدون تطبيق ✨ بدون تعقيد ✨ بدون وجع راس ✨
+        </p>
+        <p>
+          <strong>شغّله الحين</strong> وخل عملك يطلع بصورة احترافية أمام الزبائن.
+          جربه مجاناً وشوف الفرق بعينك!
+        </p>
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a 
+          href="https://app.qrkuwait.com" 
+          target="_blank"
+          class="rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 px-8 py-4 font-bold text-white text-lg shadow-lg hover:scale-105 transition"
+        >
+          جرّب الحين مجاناً! 🎯
+        </a>
+        <a 
+          href="/ar/contact" 
+          class="rounded-full border-2 border-emerald-600 px-8 py-4 font-semibold text-emerald-700 hover:bg-emerald-50 transition"
+        >
+          تواصل معنا 📞
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <FooterAr year={currentYear} />
+</body>
+</html>

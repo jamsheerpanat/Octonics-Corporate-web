@@ -2,47 +2,1002 @@
 import "../../styles/global.css";
 import LayoutAr from "../../layouts/Layout-ar.astro";
 import HeaderAr from "../../components/HeaderAr.astro";
-import HeroAr from "../../components/HeroAr.astro";
 import FooterAr from "../../components/FooterAr.astro";
-import AboutAr from "../../components/AboutAr.astro";
-import KnxSectionAr from "../../components/KnxSectionAr.astro";
-import BrandsAr from "../../components/BrandsAr.astro";
-import ServicesAr from "../../components/ServicesAr.astro";
-import ContactAr from "../../components/ContactAr.astro";
 
+// SERVICES DATA - Arabic
 const services = [
-  ["برمجيات تخطيط موارد المؤسسات (ERP)", "نظام ERP سحابي لإدارة المالية والموارد البشرية والمخزون وسير العمل، مصمم خصيصًا للشركات في الكويت."],
-  ["الأتمتة الذكية (KNX / DALI)", "تحكم كامل بالإضاءة والتكييف والستائر والمشاهد – معتمد على معيار KNX لضمان الثبات والموثوقية."],
-  ["البنية التحتية لتقنية المعلومات", "شبكات وخوادم وحلول سحابية مبنية على مبدأ الثقة الصفرية، مع المراقبة العالية والتوافر الدائم."],
-  ["أنظمة المراقبة والدخول", "كاميرات مراقبة مدعومة بالذكاء الاصطناعي، والتعرف على لوحات السيارات، وأنظمة البصمة مع سياسات وصول موحدة."],
-  ["الذكاء الاصطناعي والتحليلات", "لوحات تحكم ونماذج تنبؤية لتحويل بيانات التشغيل والطاقة إلى قرارات استراتيجية."],
-  ["المواقع والتطبيقات", "تجارب رقمية حديثة وسريعة متوافقة مع محركات البحث، مع تصميم تجربة مستخدم مذهلة وأداء قوي."],
-  ["حوكمة تقنية المعلومات", "سياسات وتدقيقات وإطارات عمل تضمن الامتثال وتقلل من مخاطر الأمن السيبراني."],
-  ["المنازل الذكية", "أتمتة فاخرة للمنازل تتضمن أنظمة الصوت المتعدد المناطق، والإضاءة، والمناخ، وتحسين الطاقة."]
+  {
+    title: "أنظمة إدارة الأعمال ERP",
+    desc: "أنظمة سحابية متكاملة للمالية والموارد البشرية والمخزون.",
+    icon: "💼",
+    link: "/ar/services/erp-business-software",
+    gradient: "from-violet-500 to-purple-600",
+  },
+  {
+    title: "المنازل والمباني الذكية",
+    desc: "أتمتة معتمدة من KNX للإضاءة والتكييف والصوت.",
+    icon: "🏠",
+    link: "/ar/services/smart-home-building",
+    gradient: "from-sky-500 to-blue-600",
+  },
+  {
+    title: "شبكات المؤسسات",
+    desc: "بنية تحتية عالية الأداء مع حلول سحابية.",
+    icon: "🌐",
+    link: "/ar/services/it-infrastructure",
+    gradient: "from-cyan-500 to-teal-600",
+  },
+  {
+    title: "الذكاء الاصطناعي والتحليلات",
+    desc: "لوحات تحكم تنبؤية ورؤى تعتمد على AI.",
+    icon: "🧠",
+    link: "/ar/services/data-analytics-ai",
+    gradient: "from-pink-500 to-rose-600",
+  },
+  {
+    title: "المراقبة والأمن",
+    desc: "كاميرات ذكية وتحكم بالوصول البيومتري.",
+    icon: "🛡️",
+    link: "/ar/services/surveillance-access-control",
+    gradient: "from-amber-500 to-orange-600",
+  },
+  {
+    title: "تطوير المواقع والتطبيقات",
+    desc: "مواقع وتطبيقات حديثة بأداء خارق.",
+    icon: "⚡",
+    link: "/ar/services/web-app-development",
+    gradient: "from-emerald-500 to-green-600",
+  },
+  {
+    title: "الأمن السيبراني",
+    desc: "حماية رقمية وامتثال وخدمات أمنية.",
+    icon: "🔒",
+    link: "/ar/services/it-governance-cybersecurity",
+    gradient: "from-red-500 to-rose-600",
+  },
+  {
+    title: "دعم تقنية المعلومات",
+    desc: "دعم على مدار الساعة وصيانة سنوية.",
+    icon: "🔧",
+    link: "/ar/services/it-support",
+    gradient: "from-indigo-500 to-blue-600",
+  },
 ];
 
 const brands = [
-  "/images/brands/knx.svg",
-  "/images/brands/dali.svg",
-  "/images/brands/siemens.svg",
-  "/images/brands/schneider.svg",
-  "/images/brands/hpe.svg",
-  "/images/brands/ubiquiti.svg",
-  "/images/brands/axis.svg",
-  "/images/brands/dahua.svg",
+  { src: "/images/brands/knx.png", name: "KNX" },
+  { src: "/images/brands/dali.png", name: "DALI" },
+  { src: "/images/brands/gira.png", name: "GIRA" },
+  { src: "/images/brands/abb.png", name: "ABB" },
+  { src: "/images/brands/schneider.png", name: "Schneider" },
+  { src: "/images/brands/cisco.png", name: "Cisco" },
+  { src: "/images/brands/ubiquiti.png", name: "Ubiquiti" },
+  { src: "/images/brands/rti.png", name: "RTI" },
+];
+
+const products = [
+  {
+    name: "كيو آر الكويت",
+    tagline: "منصة الطلب الذكية",
+    desc: "نظام طلب ذكي للمطاعم والبقالات في الكويت.",
+    link: "/ar/products/qrkuwait",
+    color: "emerald",
+    icon: "📱",
+    category: "المطاعم / التجزئة",
+    featured: true,
+  },
+  {
+    name: "أوكتو براين",
+    tagline: "مركز ذكاء الأعمال",
+    desc: "شاشة قيادة واحدة لإدارة أعمالك بالذكاء الاصطناعي.",
+    link: "/products/octobrain",
+    color: "sky",
+    icon: "🧠",
+    category: "ذكاء الأعمال",
+  },
+  {
+    name: "أوكتو فلو",
+    tagline: "أتمتة العمليات الذكية",
+    desc: "أتمت الموافقات والعمليات بدون فوضى.",
+    link: "/products/octoflow",
+    color: "emerald",
+    icon: "⚡",
+    category: "العمليات",
+  },
+  {
+    name: "أوكتو جارد",
+    tagline: "المراقبة الذكية بالـ AI",
+    desc: "حوّل كاميراتك لنظام حماية ذكي.",
+    link: "/products/octoguard",
+    color: "red",
+    icon: "🛡️",
+    category: "الأمن",
+  },
+  {
+    name: "أوكتو سينس",
+    tagline: "ذكاء المرافق والطاقة",
+    desc: "قلل هدر الطاقة بالذكاء الاصطناعي.",
+    link: "/products/octosense",
+    color: "teal",
+    icon: "💡",
+    category: "المرافق",
+  },
+  {
+    name: "أوكتو ديسك",
+    tagline: "مركز الدعم التقني الذكي",
+    desc: "دعم تقني أسرع وأكثر فعالية.",
+    link: "/products/octodesk",
+    color: "sky",
+    icon: "🎧",
+    category: "الدعم التقني",
+  },
+  {
+    name: "أوكتو ريتيل",
+    tagline: "ذكاء التجزئة",
+    desc: "أوقف المخزون الميت وزد مبيعاتك.",
+    link: "/products/octoretail",
+    color: "pink",
+    icon: "🛒",
+    category: "التجزئة",
+  },
+  {
+    name: "أوكتو إتش آر",
+    tagline: "ذكاء إدارة الموارد البشرية",
+    desc: "قياس الإنتاجية بعدالة.",
+    link: "/products/octohr",
+    color: "violet",
+    icon: "👥",
+    category: "الموارد البشرية",
+  },
+  {
+    name: "أوكتو فولت",
+    tagline: "إدارة المستندات الذكية",
+    desc: "لا تفوّت تجديداً ولا تفقد مستنداً.",
+    link: "/products/octovault",
+    color: "amber",
+    icon: "🔐",
+    category: "الامتثال",
+  },
+  {
+    name: "أوكتو سيلز",
+    tagline: "ذكاء المبيعات",
+    desc: "حوّل العملاء المحتملين بسرعة.",
+    link: "/products/octosales",
+    color: "indigo",
+    icon: "📈",
+    category: "المبيعات",
+  },
+  {
+    name: "أوكتو توين",
+    tagline: "التوأم الرقمي",
+    desc: "عرض ثلاثي الأبعاد لعملياتك.",
+    link: "/products/octotwin",
+    color: "cyan",
+    icon: "🏢",
+    category: "التوأم الرقمي",
+  },
 ];
 ---
 
 <LayoutAr
-  title="أوكتونيكس للابتكارات | الأتمتة الذكية وتقنية المعلومات في الكويت"
-  description="أوكتونيكس – الدمج المتكامل بين الأتمتة والذكاء الاصطناعي والبنية التحتية لتقنية المعلومات في الكويت. معتمدون من KNX."
+  title="أوكتونيكس للابتكارات | الأتمتة الذكية والذكاء الاصطناعي في الكويت"
+  description="شريكك المعتمد من KNX في الكويت. أتمتة الفلل الفاخرة، إضاءة DALI، حلول الذكاء الاصطناعي، وأنظمة ERP."
 >
   <HeaderAr />
-  <HeroAr />
-  <AboutAr />
-  <KnxSectionAr />
-  <BrandsAr />
-  <ServicesAr services={services} />
-  <ContactAr />
+
+  <!-- HERO SECTION -->
+  <section
+    id="hero"
+    dir="rtl"
+    class="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-[#030712]"
+  >
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-[#0a0a1a] via-[#020617] to-[#0a0a0a]"
+      >
+      </div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="absolute inset-0 cyber-grid opacity-30"></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-radial from-cyan-500/15 via-indigo-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow"
+      >
+      </div>
+    </div>
+
+    <div class="floating-icon" style="top: 15%; right: 10%;">
+      <div class="icon-glow bg-cyan-500"></div><span class="text-4xl">🧠</span>
+    </div>
+    <div class="floating-icon" style="top: 25%; left: 15%;">
+      <div class="icon-glow bg-pink-500"></div><span class="text-4xl">🏠</span>
+    </div>
+    <div class="floating-icon" style="bottom: 30%; right: 8%;">
+      <div class="icon-glow bg-emerald-500"></div><span class="text-4xl"
+        >📡</span
+      >
+    </div>
+    <div class="floating-icon" style="bottom: 20%; left: 10%;">
+      <div class="icon-glow bg-amber-500"></div><span class="text-4xl">☁️</span>
+    </div>
+
+    <div class="particles">
+      <div class="particle"></div><div class="particle"></div><div
+        class="particle"
+      >
+      </div><div class="particle"></div><div class="particle"></div><div
+        class="particle"
+      >
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div
+        class="badge-glow inline-flex items-center gap-3 mb-8 px-6 py-2.5 rounded-full bg-white/5 border border-cyan-500/30 backdrop-blur-xl"
+      >
+        <span class="relative flex h-3 w-3"
+          ><span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"
+          ></span><span
+            class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"
+          ></span></span
+        >
+        <span
+          class="text-sm font-semibold text-cyan-300 uppercase tracking-wide"
+          >شريك KNX المعتمد في الكويت</span
+        >
+      </div>
+
+      <h1
+        class="hero-title text-white font-black leading-[1] tracking-tight mb-6"
+        style="font-size: clamp(3rem, 10vw, 7rem);"
+      >
+        <span class="block text-glow">تقنيات</span>
+        <span class="block hero-gradient-text glitch" data-text="المستقبل"
+          >المستقبل</span
+        >
+      </h1>
+
+      <p
+        class="mt-6 mx-auto max-w-3xl text-xl md:text-2xl text-slate-300 leading-relaxed font-light"
+      >
+        نبني <span class="text-cyan-400 font-semibold">مباني ذكية</span>، ونطوّر <span
+          class="text-pink-400 font-semibold">برمجيات بالذكاء الاصطناعي</span
+        >، ونصمم
+        <span class="text-emerald-400 font-semibold">أنظمة أتمتة متكاملة</span> تغيّر
+        طريقة عمل الكويت.
+      </p>
+
+      <!-- Terminal -->
+      <div class="mt-12 max-w-2xl mx-auto">
+        <div
+          class="terminal-window rounded-2xl overflow-hidden border border-white/10"
+        >
+          <div
+            class="terminal-header flex items-center gap-2 px-4 py-3 bg-slate-900/80"
+          >
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+            <span class="mr-4 text-xs text-slate-500 font-mono"
+              >octonics-innovations.sh</span
+            >
+          </div>
+          <div
+            class="terminal-body bg-slate-950/90 backdrop-blur-xl p-6 text-right font-mono text-sm"
+            dir="ltr"
+          >
+            <div class="terminal-line">
+              <span class="text-emerald-400">$</span><span
+                class="text-slate-300 ml-2">octonics</span
+              ><span class="text-cyan-400 ml-2">--deploy</span><span
+                class="text-pink-400 ml-2">"smart-building"</span
+              >
+            </div>
+            <div class="terminal-line mt-2 text-slate-500">
+              ✓ تفعيل نظام الأتمتة KNX...
+            </div>
+            <div class="terminal-line mt-1 text-slate-500">
+              ✓ توصيل وحدات الإضاءة DALI...
+            </div>
+            <div class="terminal-line mt-1 text-slate-500">
+              ✓ تشغيل محرك الذكاء الاصطناعي...
+            </div>
+            <div class="terminal-line mt-1 text-slate-500">
+              ✓ المزامنة مع البنية السحابية...
+            </div>
+            <div class="terminal-line mt-2 text-emerald-400 font-semibold">
+              🚀 النظام جاهز. مرحباً بالمستقبل.<span class="terminal-cursor"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div
+        class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+      >
+        <a
+          href="#services"
+          class="cta-primary group relative inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 text-white font-bold text-lg shadow-2xl shadow-cyan-500/30 transition-all duration-500 hover:shadow-cyan-500/50 hover:scale-105 overflow-hidden"
+        >
+          <span class="relative z-10">اكتشف قدراتنا</span>
+          <svg
+            class="w-6 h-6 relative z-10 rotate-180"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg
+          >
+        </a>
+        <a
+          href="/ar/contact"
+          class="inline-flex items-center gap-3 px-10 py-5 rounded-full border-2 border-white/20 text-white font-bold text-lg backdrop-blur-xl transition-all duration-500 hover:bg-white/10 hover:border-cyan-400/50"
+        >
+          <span>تحدث مع خبير</span>
+        </a>
+      </div>
+
+      <!-- Tech Pills -->
+      <div class="mt-16">
+        <p
+          class="text-center text-xs uppercase tracking-widest text-slate-600 mb-6"
+        >
+          تقنياتنا المتقدمة
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <div class="tech-pill">
+            <span class="tech-dot bg-cyan-500"></span>أتمتة KNX
+          </div>
+          <div class="tech-pill">
+            <span class="tech-dot bg-pink-500"></span>الذكاء الاصطناعي
+          </div>
+          <div class="tech-pill">
+            <span class="tech-dot bg-emerald-500"></span>إنترنت الأشياء
+          </div>
+          <div class="tech-pill">
+            <span class="tech-dot bg-violet-500"></span>الحوسبة السحابية
+          </div>
+          <div class="tech-pill">
+            <span class="tech-dot bg-amber-500"></span>إضاءة DALI
+          </div>
+          <div class="tech-pill">
+            <span class="tech-dot bg-rose-500"></span>الأمن السيبراني
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+    >
+      <span class="text-[10px] uppercase tracking-widest text-slate-600"
+        >مرر للأسفل</span
+      >
+      <div
+        class="scroll-indicator w-6 h-10 rounded-full border-2 border-cyan-500/30 flex items-start justify-center p-2"
+      >
+        <div class="w-1 h-3 rounded-full bg-cyan-400 animate-scroll-bounce">
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-slate-50 to-transparent"
+    >
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="py-12 bg-slate-50" dir="rtl">
+    <div class="max-w-7xl mx-auto px-6">
+      <p
+        class="text-center text-sm uppercase tracking-widest text-slate-500 mb-8"
+      >
+        شركاؤنا في التميز
+      </p>
+      <div class="flex overflow-hidden">
+        <div class="brand-scroll flex items-center gap-16 animate-scroll">
+          {
+            [...brands, ...brands].map((brand) => (
+              <img
+                src={brand.src}
+                alt={brand.name}
+                class="h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                loading="lazy"
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" dir="rtl" class="relative py-24 bg-white overflow-hidden">
+    <div
+      class="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-sky-50 to-transparent"
+    >
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-sky-100 to-indigo-100 text-xs font-semibold uppercase tracking-wide text-sky-700 mb-4"
+          >من نحن</span
+        >
+        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+          ثمانية أذرع من <span
+            class="bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent"
+            >التقنية الذكية</span
+          >
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          مستوحاة من الأخطبوط — كائن الذكاء والتكيف — <strong>أوكتونيكس</strong> توحّد
+          ثمانية قطاعات تقنية تحت منظومة واحدة.
+        </p>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px]"
+      >
+        <div
+          class="relative col-span-1 md:col-span-2 row-span-2 rounded-3xl p-8 bg-gradient-to-br from-sky-600 to-indigo-700 text-white overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-sky-900/80 to-transparent"
+          >
+          </div>
+          <div class="relative z-10 h-full flex flex-col justify-end">
+            <h3 class="text-2xl font-bold mb-2">أتمتة معتمدة من KNX</h3>
+            <p class="text-sky-100 text-sm leading-relaxed">
+              نصمم وننفذ أنظمة أتمتة KNX كاملة للفلل الفاخرة والمباني التجارية
+              في الكويت.
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-3xl p-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white flex flex-col justify-between"
+        >
+          <div class="text-4xl">🧠</div>
+          <div>
+            <div class="text-lg font-bold">الذكاء الاصطناعي</div><div
+              class="text-slate-400 text-sm"
+            >
+              التحليلات التنبؤية
+            </div>
+          </div>
+        </div>
+        <div
+          class="rounded-3xl p-6 bg-gradient-to-br from-pink-500 to-rose-600 text-white flex flex-col justify-between"
+        >
+          <div class="text-4xl">📡</div>
+          <div>
+            <div class="text-lg font-bold">إنترنت الأشياء</div><div
+              class="text-pink-100 text-sm"
+            >
+              بنية متصلة
+            </div>
+          </div>
+        </div>
+        <div
+          class="rounded-3xl p-6 bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex flex-col justify-between"
+        >
+          <div class="text-4xl">☁️</div>
+          <div>
+            <div class="text-lg font-bold">الحوسبة السحابية</div><div
+              class="text-emerald-100 text-sm"
+            >
+              بنية قابلة للتوسع
+            </div>
+          </div>
+        </div>
+        <div
+          class="rounded-3xl p-6 bg-gradient-to-br from-amber-500 to-orange-600 text-white flex flex-col justify-between"
+        >
+          <div class="text-4xl">🔐</div>
+          <div>
+            <div class="text-lg font-bold">الأمن السيبراني</div><div
+              class="text-amber-100 text-sm"
+            >
+              حماية المؤسسات
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-span-1 md:col-span-2 rounded-3xl p-8 bg-gradient-to-r from-slate-100 to-white border border-slate-200"
+        >
+          <div class="flex items-start gap-4">
+            <div
+              class="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-2xl"
+            >
+              🚀
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                الجيل القادم من الحوسبة
+              </h3>
+              <p class="text-slate-600 leading-relaxed">
+                نهندس بيئات ذكية تجمع الأتمتة والذكاء الاصطناعي والسحابة — لبناء
+                العمود الفقري الرقمي لمستقبل الكويت.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section
+    id="services"
+    dir="rtl"
+    class="relative py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden"
+  >
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-xs font-semibold uppercase tracking-wide text-indigo-700 mb-4"
+          >خدماتنا</span
+        >
+        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+          حلول <span
+            class="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent"
+            >تقنية متكاملة</span
+          >
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          من الأتمتة إلى الذكاء الاصطناعي — نقدم حلولاً شاملة للشركات.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          services.map((service: any, i: number) => (
+            <a
+              href={service.link}
+              class="service-card group relative p-6 rounded-3xl bg-white border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+              style={`--delay: ${i * 0.1}s`}
+            >
+              <div
+                class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white text-2xl mb-4 shadow-lg`}
+              >
+                {service.icon}
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                {service.title}
+              </h3>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                {service.desc}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section
+    dir="rtl"
+    class="relative py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-black overflow-hidden"
+    id="products"
+  >
+    <div class="absolute inset-0 opacity-30">
+      <div
+        class="absolute top-20 right-10 w-96 h-96 bg-emerald-500/20 rounded-full blur-[120px]"
+      >
+      </div>
+      <div
+        class="absolute bottom-20 left-10 w-80 h-80 bg-sky-500/20 rounded-full blur-[100px]"
+      >
+      </div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-wide text-emerald-400 mb-4"
+          >منتجاتنا</span
+        >
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+          ابتكارات <span
+            class="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent"
+            >صنع في الكويت</span
+          >
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          منتجات مدعومة بالذكاء الاصطناعي لتحويل طريقة عمل الشركات.
+        </p>
+      </div>
+      <a
+        href="/ar/products/qrkuwait"
+        class="group block mb-12 relative p-8 md:p-10 rounded-3xl bg-gradient-to-br from-emerald-600/20 via-teal-600/10 to-transparent border border-emerald-500/30 backdrop-blur-2xl transition-all duration-500 hover:border-emerald-400/50 hover:shadow-2xl hover:shadow-emerald-500/20"
+      >
+        <div class="relative flex flex-col lg:flex-row lg:items-center gap-8">
+          <div class="flex-shrink-0">
+            <div
+              class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-4xl shadow-xl shadow-emerald-500/30"
+            >
+              📱
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <span
+                class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider"
+                >منتج مميز</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-white/10 text-slate-300 text-xs font-medium"
+                >المطاعم / التجزئة</span
+              >
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+              كيو آر الكويت
+            </h3>
+            <p class="text-emerald-300 font-medium mb-3">منصة الطلب الذكية</p>
+            <p class="text-slate-400 leading-relaxed max-w-2xl">
+              نظام طلب الجيل القادم للمطاعم والبقالات في الكويت. العملاء يمسحون
+              ويطلبون ويدفعون — بدون تطبيق.
+            </p>
+          </div>
+        </div>
+      </a>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
+      >
+        {
+          products
+            .filter((p: any) => !p.featured)
+            .map((product: any) => (
+              <a
+                href={product.link}
+                class="group relative p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1"
+              >
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-2xl">{product.icon}</span>
+                  <span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+                    {product.category}
+                  </span>
+                </div>
+                <h4 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">
+                  {product.name}
+                </h4>
+                <p class="text-sm text-slate-400 leading-snug line-clamp-2">
+                  {product.tagline}
+                </p>
+              </a>
+            ))
+        }
+      </div>
+      <div class="mt-12 text-center">
+        <a
+          href="/ar/products"
+          class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold shadow-xl shadow-emerald-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/40 hover:scale-105"
+          >عرض جميع المنتجات</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section
+    dir="rtl"
+    class="relative py-24 bg-gradient-to-br from-sky-600 via-indigo-600 to-violet-700 overflow-hidden"
+  >
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
+        هل أنت مستعد للمستقبل؟
+      </h2>
+      <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+        تحدث مع خبرائنا واكتشف كيف يمكننا تحويل عملك بالتقنية الذكية.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/ar/contact"
+          class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-indigo-600 font-bold shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+          >احصل على استشارة مجانية</a
+        >
+        <a
+          href="https://wa.me/96599240074"
+          class="inline-flex items-center gap-3 px-8 py-4 rounded-full border-2 border-white/30 text-white font-semibold transition-all duration-300 hover:bg-white/10"
+          >واتساب: +965 9924 0074</a
+        >
+      </div>
+    </div>
+  </section>
+
   <FooterAr />
 </LayoutAr>
+
+<style>
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 25s ease-in-out infinite;
+  }
+  .orb-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(
+      135deg,
+      rgba(56, 189, 248, 0.3),
+      rgba(99, 102, 241, 0.2)
+    );
+    top: -10%;
+    right: -10%;
+  }
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(
+      135deg,
+      rgba(236, 72, 153, 0.25),
+      rgba(139, 92, 246, 0.2)
+    );
+    top: 50%;
+    left: -15%;
+    animation-delay: -5s;
+  }
+  .orb-3 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(
+      135deg,
+      rgba(16, 185, 129, 0.2),
+      rgba(6, 182, 212, 0.15)
+    );
+    bottom: -10%;
+    right: 30%;
+    animation-delay: -10s;
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-20px, 20px) scale(0.95);
+    }
+  }
+  .floating-icon {
+    position: absolute;
+    animation: floatIcon 8s ease-in-out infinite;
+    z-index: 5;
+  }
+  .floating-icon .icon-glow {
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0.4;
+  }
+  @keyframes floatIcon {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  .cyber-grid {
+    background-image:
+      linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(6, 182, 212, 0.6);
+    border-radius: 50%;
+    animation: particleFloat 15s infinite linear;
+  }
+  .particle:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+  }
+  .particle:nth-child(2) {
+    left: 30%;
+    animation-delay: -2s;
+    animation-duration: 18s;
+  }
+  .particle:nth-child(3) {
+    left: 50%;
+    animation-delay: -4s;
+    animation-duration: 14s;
+  }
+  .particle:nth-child(4) {
+    left: 70%;
+    animation-delay: -6s;
+    animation-duration: 20s;
+  }
+  .particle:nth-child(5) {
+    left: 85%;
+    animation-delay: -8s;
+    animation-duration: 16s;
+  }
+  .particle:nth-child(6) {
+    left: 95%;
+    animation-delay: -10s;
+    animation-duration: 13s;
+  }
+  @keyframes particleFloat {
+    0% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+  .badge-glow {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+  }
+  .text-glow {
+    text-shadow:
+      0 0 40px rgba(6, 182, 212, 0.5),
+      0 0 80px rgba(6, 182, 212, 0.3);
+  }
+  .hero-gradient-text {
+    background: linear-gradient(90deg, #06b6d4, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glitch {
+    position: relative;
+  }
+  .terminal-window {
+    box-shadow:
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(6, 182, 212, 0.15);
+  }
+  .terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: #06b6d4;
+    animation: blink 1s step-end infinite;
+    margin-right: 4px;
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  .tech-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  .tech-pill:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(6, 182, 212, 0.5);
+    color: #e2e8f0;
+    transform: translateY(-2px);
+  }
+  .tech-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+  @keyframes dotPulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  .scroll-indicator {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  .animate-scroll-bounce {
+    animation: scroll-bounce 1.5s ease-in-out infinite;
+  }
+  @keyframes scroll-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  .cta-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer 3s infinite;
+  }
+  @keyframes shimmer {
+    0% {
+      right: -100%;
+    }
+    100% {
+      right: 100%;
+    }
+  }
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+  .brand-scroll {
+    animation: scroll 30s linear infinite;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .service-card {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: var(--delay);
+    opacity: 0;
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

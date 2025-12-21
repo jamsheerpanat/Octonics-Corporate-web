@@ -9,14 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.7",
+    "@astrojs/mdx": "^4.3.12",
     "@astrojs/partytown": "^2.1.4",
-    "@astrojs/react": "^4.4.0",
+    "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.6.0",
     "@fontsource/tajawal": "^5.2.7",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
-    "astro": "^5.14.4",
+    "astro": "^5.16.2",
     "astro-icon": "^1.1.5",
     "astro-robots-txt": "^1.0.0",
     "framer-motion": "^12.23.24",

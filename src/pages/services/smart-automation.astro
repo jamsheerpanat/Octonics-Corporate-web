@@ -32,16 +32,139 @@ const page = {
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>{page.title}</title>
-    <meta name="description" content={page.description} />
-    <meta name="keywords" content={page.keywords.join(", ")} />
-    <meta property="og:title" content={page.title} />
-    <meta property="og:description" content={page.description} />
-    <meta property="og:image" content={page.image} />
-    <meta property="og:type" content="website" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
+  <meta charset="UTF-8" />
+
+  <!-- ======================== -->
+  <!-- 🔥 PRIMARY TITLE + DESC -->
+  <!-- ======================== -->
+  <title>Smart Home Automation Kuwait | KNX, Zigbee, Z-Wave, Wi-Fi, RTI | Octonics Innovations</title>
+
+  <meta name="description" content="Kuwait's KNX-Certified Smart Home & Building Automation experts. Wired KNX, DALI lighting, and wireless Zigbee, Z-Wave, Wi-Fi automation for villas & commercial buildings. Designed by certified automation engineers at Octonics Innovations.">
+
+  <!-- ======================== -->
+  <!-- 🔥 MAXIMUM KEYWORDS -->
+  <!-- ======================== -->
+  <meta name="keywords" content="
+    Smart Home Kuwait,
+    KNX Kuwait,
+    KNX Automation Kuwait,
+    DALI Kuwait,
+    Smart Lighting Kuwait,
+    Smart Villa Kuwait,
+    Building Automation Kuwait,
+    Zigbee Kuwait,
+    Z-Wave Kuwait,
+    Wi-Fi Automation Kuwait,
+    RTI Kuwait,
+    Smart Home Integrators Kuwait,
+    Home Automation Designers Kuwait,
+    Certified KNX Engineers Kuwait,
+    Luxury Villa Automation Kuwait,
+    Smart Sensors Kuwait,
+    Smart Switches Kuwait,
+    Wireless Smart Home Kuwait,
+    Hybrid KNX Systems Kuwait,
+    Best Smart Home Company Kuwait,
+    Octonics Smart Home Kuwait
+  ">
+
+  <!-- ======================== -->
+  <!-- 🔥 ARABIC SEO -->
+  <!-- ======================== -->
+  <meta name="description" lang="ar" content="أوكتونيكس — أفضل شركة سمارت هوم في الكويت. حلول KNX السلكية وZigbee وZ-Wave وWi-Fi للفلل والمباني الذكية. برمجة KNX احترافية، إضاءة DALI، وتحكم مركزي RTI.">
+
+  <!-- ======================== -->
+  <!-- GEO & CONTACT META -->
+  <!-- ======================== -->
+  <meta name="geo.region" content="KW" />
+  <meta name="geo.position" content="29.346069262076877;48.01252801196281" />
+  <meta name="ICBM" content="29.346069262076877, 48.01252801196281" />
+  <meta name="contact.phone" content="+96599240074" />
+  <meta name="contact.email" content="info@octonics.com" />
+
+  <!-- ======================== -->
+  <!-- OPEN GRAPH -->
+  <!-- ======================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Smart Home Automation Kuwait | KNX + Zigbee + Wi-Fi | Octonics" />
+  <meta property="og:description" content="Certified KNX, DALI2, Zigbee, Wi-Fi and RTI automation for villas & commercial buildings in Kuwait. Designed by certified automation engineers." />
+  <meta property="og:image" content={page.image} />
+  <meta property="og:locale" content="en_KW" />
+  <meta property="og:locale:alternate" content="ar_KW" />
+
+  <!-- ======================== -->
+  <!-- TWITTER -->
+  <!-- ======================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Smart Home Automation Kuwait | Octonics Innovations" />
+  <meta name="twitter:description" content="Wired KNX + wireless Zigbee/Z-Wave/Wi-Fi automation systems for Kuwait homes & offices." />
+  <meta name="twitter:image" content={page.image} />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ======================== -->
+  <!-- 🔥 STACKED JSON-LD (BEST PRACTICE) -->
+  <!-- ======================== -->
+
+  <!-- ORGANIZATION -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Octonics Innovations",
+      "url": "https://octonics.com",
+      "logo": "https://octonics.com/images/octonics-logo.png",
+      "telephone": "+96599240074",
+      "email": "info@octonics.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hawally",
+        "addressCountry": "KW"
+      },
+      "sameAs": [
+        "https://www.instagram.com/octonics.global",
+        "https://www.linkedin.com/company/octonicskw",
+        "https://www.facebook.com/octonics"
+      ]
+    }
+  </script>
+
+  <!-- SMART HOME SERVICE -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Smart Home Automation",
+      "name": "Smart Home Automation Systems in Kuwait",
+      "provider": {
+        "@type": "Organization",
+        "name": "Octonics Innovations"
+      },
+      "areaServed": "Kuwait",
+      "description": "Wired KNX automation, DALI lighting, Zigbee & Z-Wave wireless automation, Wi-Fi smart systems, and RTI control for villas and commercial buildings in Kuwait.",
+      "image": "https://octonics.com/images/smart-home-kuwait.jpg"
+    }
+  </script>
+
+  <!-- LOCAL BUSINESS -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Octonics Innovations",
+      "telephone": "+96599240074",
+      "image": "https://octonics.com/images/smart-home-kuwait.jpg",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 29.346069262076877,
+        "longitude": 48.01252801196281
+      },
+      "url": "https://octonics.com"
+    }
+  </script>
+
+  <!-- Existing styles untouched -->
+</head>
 
   <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
     <!-- HEADER -->
@@ -253,6 +376,53 @@ const page = {
         </a>
       </div>
     </section>
+
+<!-- ============================================================ -->
+<!-- 🔥 SEO CONTENT BLOCK (ENGLISH) -->
+<!-- ============================================================ -->
+<section class="max-w-5xl mx-auto px-6 py-20 text-slate-700 leading-relaxed">
+  <h2 class="text-3xl font-bold mb-6">Smart Home & Building Automation in Kuwait</h2>
+
+  <p class="mb-4 text-lg">
+    Octonics Innovations is Kuwait’s leading provider of <strong>KNX Certified Smart Home Automation</strong>,
+    delivering advanced wired and wireless solutions including <strong>Zigbee, Z-Wave, Wi-Fi, and RTI</strong>.
+    Our automation engineers build intelligent systems for villas, penthouses, apartments, offices,
+    retail spaces, and commercial buildings.
+  </p>
+
+  <p class="mb-4 text-lg">
+    With KNX as the backbone, and Zigbee/Wi-Fi as flexible retrofit options, Octonics designs hybrid systems
+    that combine stability, luxury, and intelligent control tailored for Kuwait’s climate and electrical standards.
+  </p>
+
+  <h3 class="text-2xl font-semibold mt-8 mb-4">Our Smart Automation Expertise</h3>
+  <ul class="list-disc pl-6 space-y-2 text-lg">
+    <li>Wired KNX automation for lighting, HVAC & shading</li>
+    <li>DALI2 smart lighting design with scene control</li>
+    <li>Wireless Zigbee, Z-Wave & Wi-Fi retrofit systems</li>
+    <li>RTI control interfaces for unified dashboards</li>
+    <li>Smart AV, multiroom audio, video matrixing</li>
+    <li>Hybrid KNX + Wireless automation architecture</li>
+    <li>Full home design, BOM, panel and commissioning</li>
+  </ul>
+</section>
+
+<!-- ============================================================ -->
+<!-- 🔥 SEO CONTENT BLOCK (ARABIC) -->
+<!-- ============================================================ -->
+<section class="max-w-5xl mx-auto px-6 py-16 bg-slate-100 rounded-xl" dir="rtl">
+  <h2 class="text-3xl font-bold mb-6 text-right">أفضل أنظمة سمارت هوم في الكويت</h2>
+
+  <p class="text-lg mb-4 text-right">
+    أوكتونيكس تقدّم حلولاً متقدمة للمنزل الذكي باستخدام <strong>KNX</strong> السلكي،
+    وتقنيات Zigbee وZ-Wave وWi-Fi للمباني والفلل القائمة بدون تكسير أو تمديد جديد.
+  </p>
+
+  <p class="text-lg mb-4 text-right">
+    لدينا مهندسين معتمدين في KNX يقدمون برمجة احترافية، مخططات هندسية،  
+    وتصميم أنظمة إضاءة DALI2 ومركزية RTI—مصممة لتناسب المنازل الكويتية.
+  </p>
+</section>
 
     <!-- FOOTER -->
     <Footer year={currentYear} />

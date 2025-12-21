@@ -1,0 +1,53 @@
+---
+/**
+ * ProductTimeline – implementation timeline visual
+ */
+interface Phase {
+    title: string;
+    description: string;
+    icon?: string;
+}
+const {
+    phases = [
+        {
+            title: "Discovery",
+            description: "Requirements gathering and data source mapping",
+        },
+        {
+            title: "Implementation",
+            description: "Connectors, AI model training, dashboard build",
+        },
+        {
+            title: "Testing",
+            description: "User acceptance, security audit, performance tuning",
+        },
+        {
+            title: "Go‑Live",
+            description: "Production rollout with training and support",
+        },
+    ],
+} = Astro.props;
+---
+
+<section class="py-20 bg-slate-50" id="timeline">
+    <div class="max-w-5xl mx-auto px-6">
+        <h2
+            class="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent"
+        >
+            Implementation Timeline
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {
+                phases.map((p, i) => (
+                    <div class="text-center p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                        <div class="text-2xl font-bold text-sky-600 mb-2">
+                            {i + 1}
+                        </div>
+                        <h3 class="font-semibold mb-1">{p.title}</h3>
+                        <p class="text-sm text-slate-600">{p.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductHero from "../../components/products/ProductHero.astro";
+import ProductFeatures from "../../components/products/ProductFeatures.astro";
+import ProductHowItWorks from "../../components/products/ProductHowItWorks.astro";
+import ProductUseCases from "../../components/products/ProductUseCases.astro";
+import ProductSecurity from "../../components/products/ProductSecurity.astro";
+import ProductPricing from "../../components/products/ProductPricing.astro";
+import ProductTimeline from "../../components/products/ProductTimeline.astro";
+import ProductFAQ from "../../components/products/ProductFAQ.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="OctoSales™ – AI Sales & Customer Intelligence Engine"
+  description="Convert leads faster with AI scoring and smart follow‑up."
+>
+  <Header />
+
+  <Breadcrumb items={[{ href: "/", label: "Home" }, { href: "/products", label: "Products" }, { href: "/products/octosales", label: "OctoSales™" }]} />
+
+  <ProductHero
+    productName="OctoSales™"
+    tagline="AI Sales & Customer Intelligence Engine"
+    description="Convert leads faster with AI scoring and smart follow‑up."
+    stats={[{ value: "AI", label: "Scoring" }, { value: "CRM", label: "Integrated" }, { value: "WhatsApp", label: "Outreach" }, { value: "Kuwait", label: "Local" }]}
+    gradientFrom="indigo-500"
+    gradientTo="violet-600"
+    icon="📈"
+  />
+
+  <section class="py-16 bg-white" id="pain-solution">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-indigo-500 to-violet-600 bg-clip-text text-transparent">The Problem & The Solution</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-indigo-600">Pain Points</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-600">
+            <li>Sales reps waste time on low‑quality leads.</li>
+            <li>Follow‑ups fall through the cracks.</li>
+            <li>No visibility into pipeline health.</li>
+            <li>Forecasts are unreliable.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-indigo-600">Solution</h3>
+          <p class="text-slate-600 leading-relaxed">OctoSales™ scores leads using AI, automates follow‑up sequences via email and WhatsApp, and gives managers real‑time pipeline dashboards and accurate forecasts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProductFeatures features={[
+    { icon: "🎯", title: "Lead Scoring", description: "AI ranks leads by conversion probability." },
+    { icon: "📧", title: "Automated Sequences", description: "Drip campaigns via email and WhatsApp." },
+    { icon: "📊", title: "Pipeline Dashboards", description: "Real‑time view of deals by stage." },
+    { icon: "🔮", title: "AI Forecasting", description: "Predict monthly/quarterly revenue." },
+    { icon: "📞", title: "Call Logging", description: "Log calls and notes directly in the CRM." },
+    { icon: "🔗", title: "Integrations", description: "Sync with HubSpot, Salesforce, or custom CRMs." },
+  ]} />
+
+  <ProductHowItWorks steps={[
+    { number: 1, title: "Import Leads", description: "Bring in leads from web forms, ads, or manual entry." },
+    { number: 2, title: "AI Scoring", description: "Machine learning assigns scores based on behavior." },
+    { number: 3, title: "Automate Outreach", description: "Trigger email/WhatsApp sequences for each segment." },
+    { number: 4, title: "Close & Forecast", description: "Track deals, log outcomes, and refine forecasts." },
+  ]} />
+
+  <ProductUseCases useCases={[
+    { industry: "Real Estate", icon: "🏠", description: "Nurture property inquiries to viewings." },
+    { industry: "B2B Services", icon: "🤝", description: "Manage long sales cycles with multiple stakeholders." },
+    { industry: "E‑Commerce", icon: "🛒", description: "Re‑engage abandoned carts and upsell." },
+    { industry: "Education", icon: "🎓", description: "Convert prospective students into enrollments." },
+  ]} />
+
+  <ProductSecurity items={[
+    { title: "RBAC", description: "Sales reps see only their leads.", icon: "🛡️" },
+    { title: "Audit Logs", description: "Track all CRM changes.", icon: "📜" },
+    { title: "Encryption", description: "AES‑256 at rest, TLS in transit.", icon: "🔐" },
+    { title: "Backups", description: "Daily snapshots with retention.", icon: "💾" },
+  ]} />
+
+  <ProductPricing />
+  <ProductTimeline />
+
+  <ProductFAQ faq={[
+    { q: "Can I import from my existing CRM?", a: "Yes, via CSV or direct API integration." },
+    { q: "How does AI scoring work?", a: "Models analyze engagement, demographics, and historical win data." },
+    { q: "Is WhatsApp outreach compliant?", a: "Yes, using official WhatsApp Business API with opt‑in." },
+    { q: "Can I customize email templates?", a: "Absolutely – full HTML editor with merge fields." },
+    { q: "What forecasting methods are used?", a: "Weighted pipeline and AI regression models." },
+  ]} />
+
+  <section class="py-20 bg-slate-100" id="lead-form">
+    <div class="max-w-4xl mx-auto px-6">
+      <LeadForm product="OctoSales™" />
+    </div>
+  </section>
+
+  <WhatsAppButton phone="+96599240074" />
+
+  <Footer />
+</Layout>

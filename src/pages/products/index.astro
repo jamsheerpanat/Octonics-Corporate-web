@@ -1,0 +1,79 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductCard from "../../components/products/ProductCard.astro"; // reusable card component
+---
+<Layout title="Octonics Products | Innovative AI Solutions" description="Explore Octonics' portfolio of AI‑powered enterprise solutions built for Kuwait. Premium, next‑gen products for smart homes, businesses, and digital transformation.">
+  <Header />
+
+  <!-- Hero -->
+  <section class="relative py-24 bg-gradient-to-br from-sky-900 via-slate-800 to-indigo-900 text-center text-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">Octonics Products — Built for Kuwait. Powered by AI.</h1>
+      <p class="text-xl md:text-2xl mb-8">Premium, AI‑driven platforms that accelerate digital transformation across industries.</p>
+      <a href="#products" class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 transition-colors font-semibold">
+        Book a demo in 15 minutes →
+      </a>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section id="products" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our AI‑Powered Portfolio</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ProductCard href="/products/octobrain" icon="🧠" name="OctoBrain™" tagline="AI Business Intelligence Command Center" description="A single command screen for owners to run the business using AI." />
+        <ProductCard href="/products/octoflow" icon="⚙️" name="OctoFlow™" tagline="Smart Operations & Workflow Automation Engine" description="Automate approvals and processes without chaos." />
+        <ProductCard href="/products/octoguard" icon="🛡️" name="OctoGuard™" tagline="AI Surveillance & Loss Prevention Suite" description="Turn your CCTV into a security and profit protection system." />
+        <ProductCard href="/products/octosense" icon="💡" name="OctoSense™" tagline="Smart Facility & Energy Intelligence Platform" description="Reduce energy waste with AI‑driven building intelligence." />
+        <ProductCard href="/products/octodesk" icon="💻" name="OctoDesk™" tagline="AI‑Powered IT & Support Command Center" description="Make your IT support faster, measurable, and proactive." />
+        <ProductCard href="/products/octoretail" icon="🛍️" name="OctoRetail™" tagline="AI Retail Intelligence System" description="Stop dead stock and grow sales with AI insights." />
+        <ProductCard href="/products/octohr" icon="👥" name="OctoHR™" tagline="AI Workforce Intelligence Platform" description="Measure productivity fairly and reduce attendance fraud." />
+        <ProductCard href="/products/octovault" icon="📂" name="OctoVault™" tagline="Smart Document & Compliance System" description="Never miss a renewal and never lose a document again." />
+        <ProductCard href="/products/octosales" icon="📈" name="OctoSales™" tagline="AI Sales & Customer Intelligence Engine" description="Convert leads faster with AI scoring and smart follow‑up." />
+        <ProductCard href="/products/octotwin" icon="🪞" name="OctoTwin™" tagline="Digital Twin for Businesses & Buildings" description="A 3D live view of your business operations." />
+      </div>
+    </div>
+  </section>
+
+  <!-- Light Comparison Table -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6 overflow-x-auto">
+      <table class="w-full table-auto border-collapse">
+        <thead class="bg-slate-100">
+          <tr>
+            <th class="p-3 text-left font-medium">Product</th>
+            <th class="p-3 text-left font-medium">Best For</th>
+            <th class="p-3 text-left font-medium">Deployment</th>
+            <th class="p-3 text-left font-medium">Integrations</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm text-slate-600">
+          <tr class="border-t">
+            <td class="p-3 font-semibold">OctoBrain™</td>
+            <td class="p-3">Executive decision‑making</td>
+            <td class="p-3">Cloud / On‑prem</td>
+            <td class="p-3">ERP, POS, HR, IoT</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-3 font-semibold">OctoFlow™</td>
+            <td class="p-3">Process automation</td>
+            <td class="p-3">SaaS</td>
+            <td class="p-3">Email, WhatsApp, ERP, Webhooks</td>
+          </tr>
+          <tr class="border-t"><td class="p-3 font-semibold">OctoGuard™</td><td class="p-3">Retail loss prevention</td><td class="p-3">On‑prem / Edge</td><td class="p-3">CCTV, AI, Access Control</td></tr>
+          <tr class="border-t"><td class="p-3 font-semibold">OctoSense™</td><td class="p-3">Energy & facility ops</td><td class="p-3">Hybrid</td><td class="p-3">KNX, DALI, HVAC, Meters</td></tr>
+          <tr class="border-t"><td class="p-3 font-semibold">OctoDesk™</td><td class="p-3">IT support & monitoring</td><td class="p-3">SaaS / On‑prem</td><td class="p-3">Ticketing, Asset DB, Remote</td></tr>
+          <tr class="border-t"><td class="p-3 font-semibold">OctoRetail™</td><td class="p-3">Retail inventory & sales</td><td class="p-3">Cloud</td><td class="p-3">POS, Footfall, Promotions</td></tr>
+          <tr class="border-t"><td class="p-3 font-semibold">OctoHR™</td><td class="p-3">Workforce analytics</td><td class="p-3">SaaS</td><td class="p-3">Attendance, Schedules, CCTV</td></tr>
+          <tr class="border-t"><td class="p-3 font-semibold">OctoVault™</td><td class="p-3">Document compliance</td><td class="p-3">Cloud / On‑prem</td><td class="p-3">OCR, e‑sign, Workflow</td></tr>
+          <tr class="border-t"><td class="p-3 font-semibold">OctoSales™</td><td class="p-3">Lead conversion</td><td class="p-3">SaaS</td><td class="p-3">CRM, WhatsApp, Email</td></tr>
+          <tr class="border-t"><td class="p-3 font-semibold">OctoTwin™</td><td class="p-3">Digital twin & simulation</td><td class="p-3">Hybrid</td><td class="p-3">3D Engine, IoT, Data Lake</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

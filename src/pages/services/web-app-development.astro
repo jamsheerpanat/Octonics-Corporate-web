@@ -6,22 +6,30 @@ import Footer from "../../components/Footer.astro";
 const currentYear = new Date().getFullYear();
 
 const page = {
-  title: "Web & App Development in Kuwait | Ultra-Fast, Modern Websites & Applications | Octonics Innovations",
+  title:
+    "Best Website Development Company in Kuwait | Modern Web Design Kuwait | Ultra-Fast SEO Websites | Octonics Innovations",
   description:
-    "Octonics Innovations builds next-gen, high-performance websites and web apps in Kuwait using Astro, Tailwind CSS, and modern frameworks. Blazing-fast, SEO-optimized, responsive, and intelligent digital experiences for enterprises and startups.",
+    "Octonics Innovations builds ultra-fast, SEO-dominating, modern websites in Kuwait using Astro, Tailwind, Next.js & React. Kuwait’s best-ranked web developers for business websites, mobile apps, e-commerce & enterprise digital platforms.",
   image: "/images/web-dev-hero.jpg",
   keywords: [
-    "Web Development Kuwait",
-    "App Development Kuwait",
+    "Website Development Kuwait",
+    "Best Website Design Kuwait",
+    "Top Website Company Kuwait",
+    "SEO Website Kuwait",
+    "Custom Website Kuwait",
+    "Business Website Kuwait",
+    "Corporate Website Kuwait",
+    "Web Application Kuwait",
+    "Web Designers Kuwait",
     "Astro Websites Kuwait",
     "Tailwind CSS Kuwait",
+    "Mobile Apps Kuwait",
+    "PWA Kuwait",
     "Next.js Kuwait",
-    "Modern Web Design Kuwait",
-    "Responsive Website Kuwait",
-    "SEO Optimized Website Kuwait",
-    "Progressive Web Apps Kuwait",
-    "UI UX Kuwait",
-    "Web Performance Kuwait",
+    "Ultra Fast Websites Kuwait",
+    "High Google Ranking Kuwait",
+    "Modern Website Kuwait",
+    "Kuwait IT Solutions",
     "Octonics Innovations Kuwait",
   ],
 };
@@ -37,28 +45,51 @@ const page = {
     <meta property="og:description" content={page.description} />
     <meta property="og:image" content={page.image} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_KW" />
+    <link rel="canonical" href="https://octonics.com/services/web-development" />
+    <meta name="geo.region" content="KW" />
+    <meta name="geo.position" content="29.346069;48.012528" />
+    <meta name="ICBM" content="29.346069, 48.012528" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- STRUCTURED DATA -->
     <script type="application/ld+json">
-      {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        name: "Web & App Development",
-        description:
-          "Modern web and app development in Kuwait — ultra-fast Astro + Tailwind websites, PWA apps, and enterprise dashboards by Octonics Innovations.",
-        areaServed: "Kuwait",
-        provider: {
-          "@type": "Organization",
-          name: "Octonics Innovations",
-          url: "https://octonics.com",
+      {JSON.stringify([
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Web & App Development Kuwait",
+          "description":
+            "Modern web and app development in Kuwait — ultra-fast Astro + Tailwind websites, PWA apps, and SEO ranking systems by Octonics Innovations.",
+          "areaServed": "Kuwait",
+          "provider": {
+            "@type": "Organization",
+            "name": "Octonics Innovations",
+            "url": "https://octonics.com",
+          },
         },
-        serviceType: "Web Development, App Development, SEO Optimization",
-      })}
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Octonics Innovations - Web Development Kuwait",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hawally",
+            "addressCountry": "KW",
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 29.346069262076877,
+            "longitude": 48.01252801196281,
+          },
+          "telephone": "+96599240074",
+          "url": "https://octonics.com",
+        },
+      ])}
     </script>
   </head>
 
   <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
-    <!-- HEADER -->
     <Header />
 
     <!-- HERO -->
@@ -67,118 +98,91 @@ const page = {
       class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-center text-white"
     >
       <div class="absolute inset-0">
-        <img src={page.image} alt="Modern Web Development Kuwait" loading="lazy"
-          class="h-full w-full object-cover opacity-80" />
+        <img
+          src={page.image}
+          alt="Modern Web Development Company Kuwait"
+          class="h-full w-full object-cover opacity-80"
+        />
         <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-900/80 to-sky-900/70"></div>
       </div>
 
-      <div class="relative z-10 mx-auto max-w-4xl px-4" data-animate>
+      <div class="relative z-10 mx-auto max-w-4xl px-4">
         <h1 class="text-5xl font-extrabold leading-tight sm:text-7xl">
-          Modern Web & App Development in Kuwait
+          Best Website Development Company in Kuwait
         </h1>
         <p class="mt-4 text-lg text-indigo-100">
-          We don’t just build websites — we <strong>engineer digital experiences</strong> that load lightning-fast, rank higher, and convert better.
+          We build <strong>ultra-fast websites</strong> engineered to dominate Google rankings,
+          attract customers, and power Kuwait’s next generation of businesses.
         </p>
-        <a href="/contact"
-          class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105">
-          Build Your Dream Website →
+
+        <a
+          href="/contact"
+          class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105 transition"
+        >
+          Build Your High-Ranking Website →
         </a>
       </div>
     </section>
 
-    <!-- ABOUT OUR STACK -->
-    <section class="mx-auto max-w-6xl px-4 py-24 sm:px-6" data-animate>
-      <div class="grid items-center gap-12 md:grid-cols-2">
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
-            Engineered for Performance. Designed for Impact.
-          </h2>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            At <strong>Octonics Innovations</strong>, every line of code and pixel is built for perfection.
-            We combine <strong>Astro</strong>’s blazing-fast static-first architecture,
-            <strong>Tailwind CSS</strong>’s precision, and <strong>Next.js</strong> scalability
-            to create intelligent web systems that deliver real results.
-          </p>
-          <ul class="mt-6 space-y-3 text-slate-700">
-            <li>• Astro + Tailwind for speed & aesthetics</li>
-            <li>• Next.js & React for scalable interactivity</li>
-            <li>• Edge-optimized SEO architecture</li>
-            <li>• Multilingual, accessible, and mobile-first</li>
-          </ul>
-        </div>
-        <figure>
-          <img src="/images/web-stack.jpg" alt="Astro Tailwind Kuwait" loading="lazy"
-            class="rounded-3xl shadow-2xl ring-1 ring-slate-200" />
-        </figure>
-      </div>
-    </section>
+    <!-- ====================================================== -->
+    <!-- SECTION 1: Why Businesses in Kuwait Choose Octonics -->
+    <!-- ====================================================== -->
 
-    <!-- PERFORMANCE HIGHLIGHTS -->
-    <section class="relative bg-gradient-to-r from-indigo-700 to-sky-700 py-24 text-white" data-animate>
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h3 class="text-3xl font-bold sm:text-4xl">Performance That Speaks for Itself</h3>
-        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
-          Our websites are not just visually stunning — they outperform 99% of sites globally.
-        </p>
-        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-8">
-          {[
-            ["⚡", "Load Time", "< 1s Avg"],
-            ["🚀", "Google Lighthouse", "99+ Score"],
-            ["📈", "SEO Performance", "Top 3 in SERP"],
-            ["🔒", "Security", "A+ SSL / CSP Compliant"],
-          ].map(([icon, title, value]) => (
-            <div class="flex flex-col items-center rounded-3xl bg-white/10 p-6 backdrop-blur-md ring-1 ring-white/10 transition hover:bg-white/20">
-              <div class="text-4xl">{icon}</div>
-              <h4 class="mt-2 text-lg font-semibold">{title}</h4>
-              <p class="mt-1 text-indigo-100 text-sm">{value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- OUR SOLUTIONS -->
-    <section class="mx-auto max-w-6xl px-4 py-24 sm:px-6" data-animate>
-      <h3 class="text-3xl font-bold text-slate-900 sm:text-4xl text-center">
-        Complete Web & App Solutions
-      </h3>
-      <p class="mx-auto mt-3 max-w-3xl text-center text-slate-600">
-        From corporate websites to enterprise platforms — we deliver future-proof digital ecosystems.
+    <section class="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+      <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl text-center">
+        Why Kuwait Businesses Choose Octonics Innovations
+      </h2>
+      <p class="mt-3 max-w-3xl mx-auto text-center text-slate-600">
+        We help companies across Kuwait—from small businesses to large enterprises—
+        build digital experiences that load <strong>faster, rank higher, and convert better</strong>.
       </p>
-      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          ["Corporate Websites", "Elegant, SEO-optimized sites built with Astro & Tailwind."],
-          ["Progressive Web Apps (PWA)", "Offline-ready, installable web apps that behave like native."],
-          ["E-Commerce Platforms", "High-speed storefronts integrated with payment & ERP systems."],
-          ["Custom Dashboards", "Data-driven tools built on React & Node APIs."],
-          ["Mobile App Development", "Cross-platform apps with React Native & Flutter."],
-          ["Headless CMS", "Flexible, enterprise-grade content systems using Strapi or Sanity."],
-        ].map(([t, d]) => (
+          [
+            "Unmatched Speed",
+            "Astro static-first websites that load in under 1 second — perfect for Kuwait’s SEO competition.",
+          ],
+          [
+            "Google-Optimized Architecture",
+            "Every page is built with schema markup, semantic HTML, optimized meta tags, and Kuwait-specific GEO SEO.",
+          ],
+          [
+            "Enterprise Development Quality",
+            "Astro, Tailwind, React, Next.js, and Node.js — the same technology stack used by world-leading platforms.",
+          ],
+        ].map(([title, desc]) => (
           <div class="rounded-3xl bg-white p-8 shadow-lg ring-1 ring-slate-200 hover:-translate-y-1 hover:shadow-2xl transition">
-            <h4 class="text-lg font-semibold text-indigo-700">{t}</h4>
-            <p class="mt-2 text-sm text-slate-600">{d}</p>
+            <h4 class="text-xl font-semibold text-indigo-700">{title}</h4>
+            <p class="mt-2 text-sm text-slate-600">{desc}</p>
           </div>
         ))}
       </div>
     </section>
 
-    <!-- DEVELOPMENT PROCESS -->
-    <section class="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-sky-900 py-24 text-white" data-animate>
-      <div class="mx-auto max-w-6xl px-4 text-center">
-        <h3 class="text-3xl font-bold sm:text-4xl">Our Development Process</h3>
-        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
-          Transparent, efficient, and collaborative — every project follows a clear workflow.
+    <!-- ====================================================== -->
+    <!-- SECTION 2: Kuwait SEO Advantage -->
+    <!-- ====================================================== -->
+
+    <section class="relative bg-gradient-to-r from-indigo-700 to-sky-700 py-24 text-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <h3 class="text-3xl font-bold sm:text-4xl text-center">
+          Built for Google — Dominating SEO in Kuwait
+        </h3>
+
+        <p class="mt-4 max-w-3xl mx-auto text-center text-indigo-100">
+          Your customers search on Google — and we build websites that appear in the
+          <strong>top 1–3 search results</strong> for high-value Kuwait keywords.
         </p>
-        <div class="mt-12 flex flex-col md:flex-row justify-center items-start md:items-center gap-10 text-left md:text-center">
+
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            ["🧭", "1. Strategy & Planning", "Understanding goals, audience, and success metrics."],
-            ["🎨", "2. Design & Prototype", "Wireframes, mockups, and UI systems built in Figma."],
-            ["⚙️", "3. Development", "Coding with Astro, Tailwind, React, and Node."],
-            ["🚀", "4. Deployment", "Optimized hosting on Vercel, Netlify, or Hostinger."],
-            ["📈", "5. Growth & SEO", "Post-launch optimization and analytics tracking."],
-          ].map(([icon, title, desc]) => (
-            <div class="flex-1 rounded-3xl bg-white/10 p-6 backdrop-blur-md ring-1 ring-white/10 hover:bg-white/20 transition">
-              <div class="text-3xl mb-2">{icon}</div>
+            ["Keyword-Optimized Pages", "Long-tail + local SEO for Kuwait markets"],
+            ["Schema Markup", "Full Service, Organization, and LocalBusiness schema"],
+            ["Lightning Performance", "< 1s load time improves SEO score dramatically"],
+            ["Mobile-First UX", "Optimized for Kuwait’s 80% mobile user base"],
+          ].map(([title, desc]) => (
+            <div class="rounded-3xl bg-white/10 p-6 backdrop-blur-md ring-1 ring-white/10 hover:bg-white/20 transition">
               <h4 class="text-lg font-semibold">{title}</h4>
               <p class="mt-1 text-indigo-100 text-sm">{desc}</p>
             </div>
@@ -187,20 +191,89 @@ const page = {
       </div>
     </section>
 
+    <!-- ====================================================== -->
+    <!-- SECTION 3: Features & Capabilities -->
+    <!-- ====================================================== -->
+
+    <section class="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+      <h3 class="text-3xl font-bold text-slate-900 sm:text-4xl text-center">
+        Everything Your Website Needs — Done Right
+      </h3>
+
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          ["Corporate Websites", "Premium designs for Kuwait companies"],
+          ["E-Commerce Kuwait", "KNET, MyFatoorah, TAP Payments integration"],
+          ["Booking Systems", "Salon, clinic, hotel, and service scheduling"],
+          ["Custom Web Apps", "Dashboards, CRMs, ERP integrations"],
+          ["Mobile Apps", "Flutter / React Native cross-platform"],
+          ["Landing Pages", "High-conversion marketing pages"],
+        ].map(([title, desc]) => (
+          <div class="rounded-3xl p-8 bg-white shadow-lg ring-1 ring-slate-200 hover:-translate-y-1 hover:shadow-2xl transition">
+            <h4 class="text-xl font-semibold text-indigo-700">{title}</h4>
+            <p class="mt-2 text-sm text-slate-600">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- SECTION 4: FAQ (Huge SEO Edge) -->
+    <!-- ====================================================== -->
+
+    <section class="relative bg-slate-900 py-24 text-white">
+      <div class="max-w-5xl mx-auto px-4">
+        <h3 class="text-3xl font-bold sm:text-4xl text-center">
+          Frequently Asked Questions — Website Development in Kuwait
+        </h3>
+
+        <div class="mt-12 space-y-8">
+          {[
+            [
+              "What is the cost of building a website in Kuwait?",
+              "Most Kuwait business websites range between 150 KD — 1200 KD depending on design, pages, and features.",
+            ],
+            [
+              "How long does it take to build a website?",
+              "Simple sites take 3–7 days. Corporate, e-commerce, or custom apps take 2–6 weeks.",
+            ],
+            [
+              "Do you provide SEO-optimized websites?",
+              "Yes — every site we build includes advanced SEO, schema, fast load times, and Kuwait GEO optimization.",
+            ],
+            [
+              "Which technologies do you use?",
+              "Astro, Tailwind CSS, React, Next.js, Node.js, MySQL, and cloud-optimized hosting.",
+            ],
+          ].map(([q, a]) => (
+            <div>
+              <h4 class="text-lg font-semibold text-sky-300">{q}</h4>
+              <p class="mt-2 text-slate-300">{a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="relative bg-gradient-to-r from-sky-500 to-indigo-600 py-20 text-white text-center">
-      <div class="mx-auto max-w-4xl px-4" data-animate>
-        <h3 class="text-3xl font-bold sm:text-4xl">Let’s Build the Future of the Web</h3>
+      <div class="mx-auto max-w-4xl px-4">
+        <h3 class="text-3xl font-bold sm:text-4xl">
+          Ready to Build Kuwait’s Fastest, Best Ranking Website?
+        </h3>
         <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
-          Your business deserves more than a website — it deserves a <strong>digital engine</strong> built for speed, precision, and intelligence.
+          Let’s create a website that elevates your brand, ranks #1, and drives real results.
         </p>
-        <a href="/contact" class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-indigo-700 shadow-lg hover:scale-105 transition">
+
+        <a
+          href="/contact"
+          class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-indigo-700 shadow-lg hover:scale-105 transition"
+        >
           Start Your Project →
         </a>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <Footer year={currentYear} />
   </body>
 </html>

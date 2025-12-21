@@ -1,0 +1,23 @@
+---
+/**
+ * ProductCard – reusable card used on the Products overview page
+ */
+interface Props {
+  href: string;
+  icon: string;
+  name: string;
+  tagline: string;
+  description: string;
+}
+
+const { href, icon, name, tagline, description } = Astro.props;
+---
+<a href={href} class="group block p-6 rounded-2xl bg-white border border-slate-200 hover:shadow-xl transition-shadow">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="text-3xl">{icon}</div>
+    <h3 class="text-xl font-semibold text-slate-900 group-hover:text-sky-600 transition-colors">{name}</h3>
+  </div>
+  <p class="text-slate-500 mb-2">{tagline}</p>
+  <p class="text-sm text-slate-600">{description}</p>
+  <div class="mt-4 text-sm font-medium text-sky-600 group-hover:underline">Explore →</div>
+</a>

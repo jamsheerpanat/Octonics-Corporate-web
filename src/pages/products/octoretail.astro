@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductHero from "../../components/products/ProductHero.astro";
+import ProductFeatures from "../../components/products/ProductFeatures.astro";
+import ProductHowItWorks from "../../components/products/ProductHowItWorks.astro";
+import ProductUseCases from "../../components/products/ProductUseCases.astro";
+import ProductSecurity from "../../components/products/ProductSecurity.astro";
+import ProductPricing from "../../components/products/ProductPricing.astro";
+import ProductTimeline from "../../components/products/ProductTimeline.astro";
+import ProductFAQ from "../../components/products/ProductFAQ.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="OctoRetail™ – AI Retail Intelligence System"
+  description="Stop dead stock and grow sales with AI insights."
+>
+  <Header />
+
+  <Breadcrumb items={[{ href: "/", label: "Home" }, { href: "/products", label: "Products" }, { href: "/products/octoretail", label: "OctoRetail™" }]} />
+
+  <ProductHero
+    productName="OctoRetail™"
+    tagline="AI Retail Intelligence System"
+    description="Stop dead stock and grow sales with AI insights."
+    stats={[{ value: "AI", label: "Demand" }, { value: "POS", label: "Integrated" }, { value: "Real‑Time", label: "Stock" }, { value: "Kuwait", label: "Local" }]}
+    gradientFrom="pink-500"
+    gradientTo="rose-600"
+    icon="🛒"
+  />
+
+  <section class="py-16 bg-white" id="pain-solution">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">The Problem & The Solution</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-pink-600">Pain Points</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-600">
+            <li>Dead stock ties up capital.</li>
+            <li>Stockouts lead to missed sales.</li>
+            <li>Manual demand planning is inaccurate.</li>
+            <li>No visibility into fast/slow movers.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-pink-600">Solution</h3>
+          <p class="text-slate-600 leading-relaxed">OctoRetail™ uses AI to forecast demand, optimize reorder points, and surface actionable insights so you can reduce waste and boost revenue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProductFeatures features={[
+    { icon: "📈", title: "Demand Forecasting", description: "AI predicts sales trends by SKU and location." },
+    { icon: "📦", title: "Smart Reordering", description: "Automatic purchase suggestions based on lead times." },
+    { icon: "🏷️", title: "Promo Analytics", description: "Measure uplift from discounts and campaigns." },
+    { icon: "🔍", title: "Dead Stock Alerts", description: "Identify slow movers before they become obsolete." },
+    { icon: "🛒", title: "POS Integration", description: "Real‑time sync with major POS systems." },
+    { icon: "📊", title: "Executive Dashboards", description: "KPIs for sales, margin, and inventory turnover." },
+  ]} />
+
+  <ProductHowItWorks steps={[
+    { number: 1, title: "Connect POS", description: "Integrate with your point‑of‑sale and inventory systems." },
+    { number: 2, title: "Enrich Data", description: "Add seasonality, promotions, and external factors." },
+    { number: 3, title: "AI Forecast", description: "Generate demand predictions for each SKU." },
+    { number: 4, title: "Act & Optimize", description: "Execute reorders and track performance." },
+  ]} />
+
+  <ProductUseCases useCases={[
+    { industry: "Supermarkets", icon: "🏪", description: "Optimize perishable stock and reduce shrinkage." },
+    { industry: "Fashion Retail", icon: "👗", description: "Plan seasonal buy and markdown timing." },
+    { industry: "Electronics", icon: "📱", description: "Manage fast‑moving tech inventory." },
+    { industry: "Pharmacies", icon: "💊", description: "Ensure availability of essential medicines." },
+  ]} />
+
+  <ProductSecurity items={[
+    { title: "RBAC", description: "Role‑based access to reports and settings.", icon: "🛡️" },
+    { title: "Audit Logs", description: "Track all data changes.", icon: "📜" },
+    { title: "Encryption", description: "AES‑256 at rest, TLS in transit.", icon: "🔐" },
+    { title: "Backups", description: "Daily snapshots with retention policies.", icon: "💾" },
+  ]} />
+
+  <ProductPricing />
+  <ProductTimeline />
+
+  <ProductFAQ faq={[
+    { q: "Which POS systems are supported?", a: "Major platforms like Lightspeed, Square, and custom ERPs via API." },
+    { q: "How accurate are forecasts?", a: "Typically 85–95% accuracy after initial learning period." },
+    { q: "Can I import historical data?", a: "Yes, via CSV or direct database connection." },
+    { q: "Is there a mobile app?", a: "Dashboards are fully responsive; a native app is planned." },
+    { q: "How long to see ROI?", a: "Most clients see measurable improvement within 3 months." },
+  ]} />
+
+  <section class="py-20 bg-slate-100" id="lead-form">
+    <div class="max-w-4xl mx-auto px-6">
+      <LeadForm product="OctoRetail™" />
+    </div>
+  </section>
+
+  <WhatsAppButton phone="+96599240074" />
+
+  <Footer />
+</Layout>

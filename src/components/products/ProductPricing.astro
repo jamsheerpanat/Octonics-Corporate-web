@@ -1,0 +1,73 @@
+---
+/**
+ * ProductPricing – pricing tier cards (no hard prices, just request quote)
+ */
+interface Tier {
+    name: string;
+    description: string;
+    features: string[];
+}
+
+const {
+    tiers = [
+        {
+            name: "Starter",
+            description: "Ideal for small teams or pilots",
+            features: ["Core modules", "Basic support", "Cloud deployment"],
+        },
+        {
+            name: "Pro",
+            description: "For growing businesses",
+            features: [
+                "All Starter features",
+                "Advanced AI models",
+                "Priority support",
+                "On‑prem optional",
+            ],
+        },
+        {
+            name: "Enterprise",
+            description: "Full‑scale digital transformation",
+            features: [
+                "All Pro features",
+                "Custom integrations",
+                "Dedicated success manager",
+                "SLA guarantees",
+            ],
+        },
+    ],
+} = Astro.props;
+---
+
+<section class="py-20 bg-slate-50" id="pricing">
+    <div class="max-w-5xl mx-auto px-6">
+        <h2
+            class="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent"
+        >
+            Pricing
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {
+                tiers.map((tier) => (
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-shadow">
+                        <h3 class="text-xl font-semibold mb-4 text-sky-600">
+                            {tier.name}
+                        </h3>
+                        <p class="mb-4 text-slate-600">{tier.description}</p>
+                        <ul class="list-disc pl-5 mb-6 space-y-1 text-slate-600">
+                            {tier.features.map((f) => (
+                                <li>{f}</li>
+                            ))}
+                        </ul>
+                        <a
+                            href="#lead-form"
+                            class="inline-block w-full text-center px-4 py-2 rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-medium hover:scale-105 transition-transform"
+                        >
+                            Request Quote
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
