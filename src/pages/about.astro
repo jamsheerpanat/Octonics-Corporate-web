@@ -19,170 +19,364 @@ const values = [
     desc: "From code to cables — precision defines us. Our engineers ensure accuracy and quality in every design, device, and line of code to deliver long-lasting smart systems.",
   },
 ];
+
+const services = [
+  {
+    title: "Web & App Development",
+    desc: "Building ultra-fast, SEO-optimized digital platforms using Astro, React, and Next.js.",
+    link: "/services/web-app-development",
+  },
+  {
+    title: "Custom ERP Systems",
+    desc: "Tailor-made business management software for Finance, HR, and Operations in Kuwait.",
+    link: "/services/custom-erp-development",
+  },
+  {
+    title: "Smart Home Automation",
+    desc: "KNX-certified smart solutions for lighting, cooling, and security control.",
+    link: "/services/smart-home-automation",
+  },
+  {
+    title: "IT Infrastructure",
+    desc: "Reliable networking, server management, and structured cabling for enterprises.",
+    link: "/services/it-infrastructure",
+  },
+];
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>About Octonics Innovations | Smart Automation & IT Solutions Kuwait</title>
+    <title>
+      About Octonics Innovations | Kuwait's Leading IT & Automation Agency
+    </title>
     <meta
       name="description"
-      content="Octonics Innovations is Kuwait’s next-generation smart automation and IT solutions company. KNX-certified and powered by AI, we deliver advanced ERP systems, automation, and infrastructure designed for Kuwait’s modern businesses."
+      content="Learn about Octonics Innovations, Kuwait's premier technology partner for custom web development, ERP systems, and KNX-certified smart automation. We combine global engineering with local expertise."
     />
     <meta
       name="keywords"
-      content="Octonics Innovations Kuwait, Smart Automation Kuwait, KNX Certified Kuwait, ERP Software Kuwait, IT Infrastructure Kuwait, AI Solutions Kuwait, IT Company Kuwait, Business Software Kuwait, KNX DALI Kuwait"
+      content="Octonics Innovations Kuwait, Best IT Company Kuwait, Web Development Agency Kuwait, Smart Home Automation Kuwait, Custom ERP Kuwait, KNX Certified Kuwait, IT Solutions Kuwait City"
     />
-    <meta property="og:title" content="About Octonics Innovations | Smart Automation & IT Solutions Kuwait" />
-    <meta property="og:description" content="Discover Octonics Innovations — a KNX-certified Kuwaiti technology company specializing in automation, ERP, IT infrastructure, and AI solutions. Built for Kuwait’s modern enterprises." />
+    <meta
+      property="og:title"
+      content="About Octonics Innovations | Kuwait's Leading IT & Automation Agency"
+    />
+    <meta
+      property="og:description"
+      content="Redefining smart technology in Kuwait. From high-ranking SEO websites to AI-powered ERPs and KNX automation, discover why businesses trust Octonics."
+    />
     <meta property="og:image" content="/images/about/og-about.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
-  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
-    <!-- HEADER -->
+  <body
+    class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative"
+  >
     <Header />
 
     <!-- HERO -->
     <section
-      id="hero"
-      class="relative isolate flex min-h-[90vh] items-center justify-center overflow-hidden text-center"
+      class="relative isolate flex min-h-[70vh] items-center justify-center overflow-hidden text-center"
     >
       <img
         src="/images/about/dark-octopus.jpg"
-        alt="Octonics Innovations Kuwait Office"
+        alt="Octonics Innovations Kuwait Technology"
         class="absolute inset-0 h-full w-full object-cover opacity-80"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-indigo-950/70 to-slate-900/90"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-950/80 to-slate-900/95"
+      >
+      </div>
 
-      <div class="relative z-10 max-w-4xl px-4 text-white sm:px-6" data-animate>
-        <h1 class="text-5xl font-extrabold leading-tight sm:text-6xl md:text-7xl">
-          About <span class="text-sky-400">Octonics</span> Innovations
+      <div class="relative z-10 max-w-5xl px-4 text-white sm:px-6">
+        <h1 class="text-5xl font-extrabold leading-tight sm:text-7xl mb-6">
+          Architecting <span class="text-sky-400">Digital Intelligence</span> in Kuwait
         </h1>
-        <p class="mx-auto mt-4 max-w-2xl text-slate-200 text-lg">
-          A KNX-certified, AI-powered technology company from Kuwait — redefining smart automation, ERP systems, and IT infrastructure for the region’s modern enterprises.
+        <p
+          class="mx-auto mt-4 max-w-3xl text-slate-200 text-xl leading-relaxed"
+        >
+          Octonics Innovations is a results-driven technology firm providing
+          high-performance Web, ERP, and Smart Automation solutions tailored for
+          the Kuwaiti market.
         </p>
       </div>
     </section>
 
-    <!-- PHILOSOPHY -->
-    <section
-      id="philosophy"
-      class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8"
-      data-animate
-    >
-      <div class="grid items-center gap-14 md:grid-cols-2">
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
-            The Story Behind the Name
-          </h2>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            The name <strong>“Octonics”</strong> originates from <em>Octo</em> — inspired by the intelligence and adaptability of the octopus. With eight dynamic arms working in perfect harmony, it represents how we integrate multiple disciplines like <b>Automation, ERP, AI, IT Infrastructure, and Cybersecurity</b> into one smart ecosystem.
-          </p>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            The suffix <em>-nics</em> comes from <strong>Electronics</strong> and <strong>Technics</strong>, symbolizing precision, innovation, and seamless dynamics.  
-            Together, <span class="text-sky-600 font-semibold">Octonics Innovations</span> stands for adaptive technology that evolves with people, environments, and enterprises.
-          </p>
+    <!-- MISSION & VISION -->
+    <section class="py-24 bg-white relative overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-20">
+          <div class="space-y-6">
+            <h2 class="text-4xl font-bold text-slate-900">
+              Our Strategic Purpose
+            </h2>
+            <div class="p-8 rounded-3xl bg-slate-50 border-l-4 border-blue-600">
+              <h3 class="text-2xl font-bold mb-3">Our Mission</h3>
+              <p class="text-slate-600 leading-relaxed">
+                To empower Kuwait's enterprises with adaptive, intelligent
+                technology that enhances efficiency, security, and
+                competitiveness in a rapidly evolving digital landscape.
+              </p>
+            </div>
+            <div class="p-8 rounded-3xl bg-slate-50 border-l-4 border-sky-400">
+              <h3 class="text-2xl font-bold mb-3">Our Vision</h3>
+              <p class="text-slate-600 leading-relaxed">
+                To become the cornerstone of Kuwait's digital transformation,
+                setting the standard for excellence in smart automation and
+                custom enterprise software.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <div
+              class="absolute -inset-4 bg-sky-200 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700"
+            >
+            </div>
+            <img
+              src="/images/about/octopus-tech.jpg"
+              alt="Innovation at Octonics"
+              class="relative rounded-[3rem] shadow-2xl z-10 w-full h-full object-cover"
+            />
+          </div>
         </div>
-        <figure class="relative">
-          <img
-            src="/images/about/octopus-tech.jpg"
-            alt="Octopus Inspiration for Octonics Innovations"
-            loading="lazy"
-            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
-          />
-          <figcaption
-            class="mt-2 text-center text-xs text-slate-500"
-          >
-            The octopus — a symbol of intelligence, adaptability, and control.
-          </figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- OPERATIONS -->
-    <section
-      class="relative bg-gradient-to-br from-sky-50 via-white to-indigo-50 py-24"
-      data-animate
-    >
-      <div class="mx-auto max-w-7xl grid gap-14 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
-        <figure>
+    <!-- PHILOSOPHY / THE NAME -->
+    <section id="philosophy" class="bg-slate-50 py-24">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+        <h2 class="text-3xl font-bold text-slate-900 sm:text-5xl mb-8">
+          Integrated Intelligence: The "Octo" Concept
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          Inspired by the <strong>Octopus</strong>—nature's most intelligent and
+          adaptive creature—the name <strong>"Octonics"</strong> represents our ability
+          to manage multiple complex domains simultaneously. Just as an octopus uses
+          eight arms in perfect coordination, we sync **Automation, ERP, AI, Cloud,
+          IT Infrastructure, Cybersecurity, Web, and Analytics** into one cohesive
+          system.
+        </p>
+        <p
+          class="text-lg text-slate-600 leading-relaxed font-medium text-sky-600"
+        >
+          Precision Engineering + Local Insight = Future-Proof Solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="py-24 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-5xl">
+            Our Excellence Verticals
+          </h2>
+          <p class="mt-4 text-slate-500">
+            Comprehensive technology services designed for Kuwait's unique
+            business climate.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            services.map((s) => (
+              <a
+                href={s.link}
+                class="group p-8 rounded-3xl bg-slate-50 hover:bg-white border border-transparent hover:border-blue-100 shadow-sm hover:shadow-xl transition-all duration-300"
+              >
+                <h3 class="text-xl font-bold mb-4 text-slate-900 group-hover:text-blue-600">
+                  {s.title}
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  {s.desc}
+                </p>
+                <span class="text-sm font-bold text-blue-600 flex items-center gap-2">
+                  Explore Service
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- THE OCTONICS ADVANTAGE -->
+    <section class="py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-bold mb-4">The Octonics Advantage</h2>
+          <p class="text-slate-400">
+            Why the most ambitious projects in Kuwait trust us.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12">
+          <div class="space-y-4">
+            <div class="text-sky-400 text-4xl font-black">01</div>
+            <h4 class="text-2xl font-bold">KNX Certified Expertise</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Unlike general contractors, we are KNX-certified specialists,
+              ensuring international standards for every automation project.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div class="text-sky-400 text-4xl font-black">02</div>
+            <h4 class="text-2xl font-bold">Kuwaiti Insight met Globally</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Headquartered in Kuwait with an R&D lab in India, we deliver
+              world-class engineering with a deep understanding of local laws
+              and customs.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div class="text-sky-400 text-4xl font-black">03</div>
+            <h4 class="text-2xl font-bold">Full-Stack Capability</h4>
+            <p class="text-slate-400 leading-relaxed">
+              From physical IT infrastructure and cabling to AI-driven ERP
+              dashboards, we manage the entire technology lifecycle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPERATIONS / GLOBAL PRESENCE -->
+    <section class="py-24 bg-white">
+      <div
+        class="mx-auto max-w-7xl grid gap-14 px-4 sm:px-6 md:grid-cols-2 lg:px-8 items-center"
+      >
+        <figure class="relative order-2 md:order-1">
+          <div
+            class="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-60"
+          >
+          </div>
           <img
             src="/images/about/india-lab.jpg"
-            alt="Octonics India Development Lab"
+            alt="Octonics Software Development R&D"
             loading="lazy"
-            class="rounded-3xl shadow-xl ring-1 ring-slate-200"
+            class="relative rounded-[2rem] shadow-2xl z-10"
           />
-          <figcaption class="mt-3 text-center text-xs text-slate-500">
-            Octonics Software Development Lab — KINFRA Techno Park, Calicut, India.
-          </figcaption>
+          <div class="mt-4 flex gap-4">
+            <div
+              class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold text-slate-500 uppercase tracking-widest"
+            >
+              KINFRA Techno Park
+            </div>
+            <div
+              class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold text-slate-500 uppercase tracking-widest"
+            >
+              R&D Center
+            </div>
+          </div>
         </figure>
 
-        <div class="flex flex-col justify-center">
-          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
-            Global Presence, Local Strength
+        <div class="flex flex-col justify-center order-1 md:order-2">
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-6">
+            Our Global R&D Engine
           </h2>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            Headquartered in <strong>Kuwait</strong> and powered by a full-scale <strong>R&D and development center in India</strong>, Octonics bridges regional insight with global engineering excellence.  
-            Our Calicut lab at <strong>KINFRA Techno Park</strong> hosts certified engineers specialized in software, AI, KNX automation, and smart infrastructure.
+          <p class="text-slate-600 leading-relaxed mb-6 text-lg">
+            Innovation never sleeps. Our state-of-the-art software development
+            hub at <strong>KINFRA Techno Park, Calicut (India)</strong> works in tandem
+            with our Kuwait team to provide 24/7 technical momentum.
           </p>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            This synergy allows us to deliver highly customized, scalable, and secure solutions — designed for Kuwait’s smart homes, enterprises, and government projects.
+          <p class="text-slate-600 leading-relaxed mb-8">
+            This collaborative pipeline ensures that our clients in Kuwait
+            benefit from the latest global tech trends, rapid prototyping, and
+            high-quality software testing.
           </p>
+          <div class="flex flex-wrap gap-4">
+            <span
+              class="flex items-center gap-2 text-sm font-bold text-slate-700 bg-slate-100 px-4 py-2 rounded-full"
+              >✓ Certified Engineers</span
+            >
+            <span
+              class="flex items-center gap-2 text-sm font-bold text-slate-700 bg-slate-100 px-4 py-2 rounded-full"
+              >✓ Advanced AI Lab</span
+            >
+            <span
+              class="flex items-center gap-2 text-sm font-bold text-slate-700 bg-slate-100 px-4 py-2 rounded-full"
+              >✓ 24/7 Monitoring</span
+            >
+          </div>
         </div>
       </div>
     </section>
-
-    
 
     <!-- VALUES -->
     <section
       id="values"
       class="relative bg-gradient-to-br from-indigo-700 via-sky-600 to-sky-500 py-24 text-white"
-      data-animate
     >
       <div class="mx-auto max-w-7xl px-4 sm:px-6 text-center lg:px-8">
-        <h2 class="text-3xl font-bold sm:text-4xl">Our Core Values</h2>
-        <p class="mx-auto mt-3 max-w-2xl text-indigo-100">
-          Every Octonics innovation begins with people, precision, and purpose.
+        <h2 class="text-4xl font-bold mb-4">Our Foundations</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-indigo-100 mb-16">
+          Every line of code and every sensor we install is guided by these
+          principles.
         </p>
 
-        <div
-          class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3"
-        >
-          {values.map((v) => (
-            <article
-              class="rounded-3xl bg-white/10 p-8 shadow-lg ring-1 ring-white/10 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-2xl"
-            >
-              <h3 class="text-xl font-semibold text-white">{v.title}</h3>
-              <p class="mt-2 text-sm text-indigo-100">{v.desc}</p>
-            </article>
-          ))}
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {
+            values.map((v) => (
+              <article class="p-10 rounded-[2.5rem] bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/10 transition-all group">
+                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-sky-300 transition-colors">
+                  {v.title}
+                </h3>
+                <p class="text-indigo-100 leading-relaxed">{v.desc}</p>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section
-      id="cta"
-      class="relative mx-auto max-w-7xl px-4 py-24 text-center sm:px-6 lg:px-8"
-      data-animate
-    >
+    <section id="cta" class="py-24 bg-white px-4 sm:px-6">
       <div
-        class="rounded-3xl bg-gradient-to-br from-indigo-600 to-sky-600 p-10 text-white shadow-2xl"
+        class="mx-auto max-w-6xl rounded-[3rem] bg-gradient-to-r from-blue-600 to-indigo-700 p-12 md:p-20 text-center text-white shadow-3xl shadow-blue-600/20"
       >
-        <h2 class="text-2xl font-bold sm:text-3xl">
-          Join Our Journey Towards Intelligent Innovation
+        <h2 class="text-3xl font-bold sm:text-5xl mb-6">
+          Scale Your Business with Strategy.
         </h2>
-        <p class="mt-3 text-indigo-100">
-          Partner with us for a smarter future — from automation to analytics, we design and build tomorrow’s intelligent systems today.
+        <p
+          class="mt-4 text-blue-100 text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Ready to implement next-gen technology in your organization? Partner
+          with Kuwait's most forward-thinking IT agency.
         </p>
         <a
           href="/contact"
-          class="mt-6 inline-flex rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:scale-105"
+          class="inline-flex items-center gap-3 rounded-2xl bg-white px-10 py-5 font-bold text-blue-900 shadow-xl transition-all hover:scale-105"
         >
-          Connect With Us
+          Consult an Expert
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+          >
         </a>
       </div>
     </section>

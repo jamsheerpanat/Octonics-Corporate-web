@@ -92,9 +92,12 @@ const ogImage = image ?? `${siteUrl}/images/og-home-ar.webp`;
     <link rel="alternate" hreflang="ar" href={`${siteUrl}${Astro.url.pathname}`} />
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}${Astro.url.pathname.replace('/ar', '')}`} />
     
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- 🚀 ICONS & FAVICONS -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
     <!-- ============================================================ -->
     <!-- META للمشاركة -->

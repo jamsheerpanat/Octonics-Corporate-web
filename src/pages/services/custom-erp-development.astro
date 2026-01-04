@@ -125,6 +125,97 @@ const service = {
       </div>
     </section>
 
+    <!-- CORE MODULES DETAIL -->
+    <section class="bg-white py-24 border-y border-slate-100">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 text-center">
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Comprehensive ERP Modules for Kuwaiti Enterprises</h2>
+          <p class="mt-4 text-slate-600">Our custom solutions cover every aspect of modern business operations in Kuwait.</p>
+        </div>
+        
+        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h4 class="text-xl font-bold">Financial Management</h4>
+            <p class="text-slate-600 text-sm">Advanced accounting, multi-currency support, automated invoicing, and real-time financial reporting compliant with Kuwaiti audit standards.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center text-green-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </div>
+            <h4 class="text-xl font-bold">Human Resources (HRMS)</h4>
+            <p class="text-slate-600 text-sm">Kuwait Labor Law compliant payroll, residency (Iqama) tracking, leave management, and employee performance portals.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+            </div>
+            <h4 class="text-xl font-bold">Supply Chain & Inventory</h4>
+            <p class="text-slate-600 text-sm">Warehouse management across multiple locations in Kuwait, real-time stock tracking, and automated procurement logic.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+            </div>
+            <h4 class="text-xl font-bold">CRM & Sales Automation</h4>
+            <p class="text-slate-600 text-sm">Lead tracking, customer profiles, sales pipeline management, and integration with local payment gateways like K-NET.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES WE SERVE -->
+    <section class="py-24 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-slate-900 mb-12">Who We Build For: Specialized Industries in Kuwait</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          {["Retail & E-commerce", "Construction & Engineering", "Oil & Gas Services", "Logistics & Transport", "Healthcare Facilities", "Trading & Distribution", "Real Estate Management", "Education & Schools"].map(industry => (
+            <span class="px-6 py-2 bg-white rounded-full border border-slate-200 text-slate-700 shadow-sm hover:border-blue-500 hover:text-blue-600 transition-colors cursor-default">
+              {industry}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPLIANCE SECTION -->
+    <section class="py-24 bg-white overflow-hidden relative">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+             <div class="p-8 bg-blue-600 rounded-[2.5rem] text-white shadow-2xl transform -rotate-2">
+                <h3 class="text-2xl font-bold mb-6">Fully Localized for Kuwait</h3>
+                <ul class="space-y-4 text-blue-100">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Kuwait Labor Law Integration:</strong> Automated calculation of indemnity, annual leave, and social security.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Bilingual Support:</strong> Seamlessly switch between Modern Standard Arabic and English interfaces.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Local Bank Integration:</strong> Direct connection with Kuwaiti banks for automated reconciliation.</span>
+                  </li>
+                </ul>
+             </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <h2 class="text-4xl font-bold text-slate-900 mb-6 leading-tight">Built with Global Standards, Local Expertise.</h2>
+            <p class="text-slate-600 text-lg mb-8">Implementing an ERP in Kuwait requires more than just code. It requires an understanding of the local business culture, legal requirements, and operational nuances.</p>
+            <div class="flex gap-4">
+                <div class="px-4 py-2 bg-slate-100 rounded-lg text-slate-700 font-semibold text-sm">VAT Ready</div>
+                <div class="px-4 py-2 bg-slate-100 rounded-lg text-slate-700 font-semibold text-sm">ISO Compliant</div>
+                <div class="px-4 py-2 bg-slate-100 rounded-lg text-slate-700 font-semibold text-sm">GDPR Aligned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- DEVELOPMENT PROCESS -->
     <section class="relative bg-gradient-to-r from-indigo-600 to-sky-600 py-24 text-white" data-animate>
       <div class="mx-auto max-w-7xl px-4 sm:px-6 text-center">
@@ -174,6 +265,36 @@ const service = {
             class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
           />
         </figure>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-24 bg-slate-50">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Custom ERP Development: Frequently Asked Questions</h2>
+        <div class="space-y-6">
+          <details class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+            <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none uppercase tracking-tight">
+              <span>Why choose custom ERP over Odoo or SAP in Kuwait?</span>
+              <span class="transition group-open:rotate-180"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed text-left">While popular platforms offer broad features, businesses in Kuwait often have unique workflows, local labor law needs, and specific K-NET/banking integrations that off-the-shelf systems can't handle without expensive and "bloated" customizations. Our custom ERPs are built lean, fast, and exactly for your needs.</p>
+          </details>
+          <details class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+            <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none uppercase tracking-tight">
+              <span>How long does it take to build a custom ERP system?</span>
+              <span class="transition group-open:rotate-180"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed text-left">A basic ERP system with core modules (Finance, HR) usually takes 3-4 months. More complex systems with inventory and production modules take 6-12 months. We use an agile approach, meaning you see and use features as we build them.</p>
+          </details>
+          <details class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+            <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none uppercase tracking-tight">
+              <span>Is our data secure and hosted in Kuwait?</span>
+              <span class="transition group-open:rotate-180"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed text-left">Yes. We offer both on-premise solutions (hosting on your servers in Kuwait) and hybrid cloud solutions with encrypted data backup. We prioritize data residency and privacy according to Kuwaiti business standards.</p>
+          </details>
+        </div>
       </div>
     </section>
 

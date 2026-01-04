@@ -1,210 +1,603 @@
 ---
 import "../../../styles/global.css";
-import Header from "../../../components/Header.astro";
+import Header from "../../../components/HeaderAr.astro";
 import FooterAr from "../../../components/FooterAr.astro";
 
 const currentYear = new Date().getFullYear();
 
 const page = {
-  title: "تطوير المواقع والتطبيقات في الكويت | مواقع سريعة وحديثة | Octonics Innovations",
+  title:
+    "أفضل شركة تطوير مواقع في الكويت | تصميم مواقع احترافي و SEO | أوكتونيكس إنوفيشنز",
   description:
-    "تقدم شركة أوكتونيكس إنوفيشنز خدمات تطوير مواقع وتطبيقات ويب حديثة عالية الأداء في الكويت باستخدام Astro وTailwind CSS وأحدث الأطر البرمجية. مواقع فائقة السرعة، محسّنة لمحركات البحث، ومتجاوبة لجميع الأجهزة.",
+    "ارتقِ بعملك مع أوكتونيكس، الشركة الرائدة في تطوير المواقع في الكويت. متخصصون في بناء مواقع Astro فائقة السرعة، متاجر إلكترونية مع K-NET، تطبيقات ويب مخصصة، واستراتيجيات SEO متقدمة لتصدر نتائج جوجل.",
   image: "/images/web-dev-hero.jpg",
+  keywords: [
+    "تطوير مواقع الكويت",
+    "تصميم مواقع الكويت",
+    "أفضل شركة مواقع في الكويت",
+    "تحسين محركات البحث الكويت",
+    "SEO الكويت",
+    "شركة برمجة الكويت",
+    "برمجة تطبيقات الكويت",
+    "مواقع الكترونية الكويت",
+    "تصميم متجر الكتروني الكويت",
+    "ربط كي نت",
+    "K-NET الكويت",
+    "Astro الكويت",
+    "Tailwind CSS الكويت",
+    "تطبيقات الجوال الكويت",
+    "تطوير ويب الكويت",
+    "أوكتونيكس إنوفيشنز",
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "كم تكلفة إنشاء موقع إلكتروني في الكويت؟",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "تتراوح تكلفة تطوير المواقع في الكويت عادةً من 150 دينار كويتي للمواقع التعريفية البسيطة إلى أكثر من 1,500 دينار كويتي للتطبيقات المخصصة والمتاجر الكبيرة. تعتمد التكلفة على التعقيد والمميزات المطلوبة.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "كيف يمكن لموقعي أن يتصدر نتائج بحث جوجل في الكويت؟",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "تطلب تصدر النتائج سرعة فائقة للموقع، محتوى ثنائي اللغة (عربي وإنجليزي) عالي الجودة، تحسين الكلمات المفتاحية المحلية، وبنية برمجية متوافقة مع معايير جوجل التقنية مثل Schema Markup.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "هل تقومون بربط بوابات الدفع المحلية مثل كي نت (K-NET)؟",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "نعم، نحن متخصصون في ربط حلول الدفع الكويتية مثل K-NET و MyFatoorah و Tap لضمان تجربة شراء سلسة لعملائك.",
+      },
+    },
+  ],
 };
 ---
 
 <html lang="ar" dir="rtl">
   <head>
+    <meta charset="UTF-8" />
     <title>{page.title}</title>
     <meta name="description" content={page.description} />
-    <meta
-      name="keywords"
-      content="تطوير مواقع الكويت, تصميم مواقع الكويت, تطبيقات الويب الكويت, تطوير تطبيقات الجوال الكويت, Astro الكويت, Tailwind CSS الكويت, مواقع سريعة, تحسين SEO الكويت, Octonics Kuwait"
-    />
+    <meta name="keywords" content={page.keywords.join(", ")} />
     <meta property="og:title" content={page.title} />
     <meta property="og:description" content={page.description} />
     <meta property="og:image" content={page.image} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_KW" />
+    <link
+      rel="canonical"
+      href="https://octonics.com/ar/services/web-app-development"
+    />
+    <meta name="geo.region" content="KW" />
+    <meta name="geo.placename" content="Kuwait City" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script type="application/ld+json">
-      {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        name: "تطوير المواقع والتطبيقات",
-        description:
-          "تطوير مواقع وتطبيقات ويب حديثة في الكويت باستخدام Astro وTailwind CSS من شركة أوكتونيكس إنوفيشنز — سرعة فائقة وتجربة مستخدم ذكية.",
-        areaServed: "Kuwait",
-        provider: {
-          "@type": "Organization",
-          name: "Octonics Innovations",
-          url: "https://octonics.com",
+    <!-- STRUCTURED DATA -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify([
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "تطوير المواقع والتطبيقات في الكويت",
+          description:
+            "حلول تطوير مواقع وتطبيقات جوال متميزة في الكويت. متخصصون في Astro و Next.js وتحسين محركات البحث للحصول على أعلى التصنيفات.",
+          areaServed: "Kuwait",
+          provider: {
+            "@type": "Organization",
+            name: "أوكتونيكس إنوفيشنز",
+            url: "https://octonics.com",
+          },
         },
-        serviceType: "تطوير مواقع, تطوير تطبيقات, تحسين SEO",
-      })}
-    </script>
+        faqSchema,
+      ])}
+    />
   </head>
 
-  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative">
+  <body
+    class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative text-right"
+  >
     <Header />
 
     <!-- HERO -->
     <section
-      id="hero"
-      class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-center text-white"
+      class="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden text-center text-white"
     >
       <div class="absolute inset-0">
         <img
           src={page.image}
-          alt="تطوير المواقع الحديثة في الكويت"
-          loading="lazy"
-          class="h-full w-full object-cover opacity-80"
+          alt="تطوير مواقع احترافي في مدينة الكويت"
+          class="h-full w-full object-cover opacity-70"
         />
         <div
-          class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-900/80 to-sky-900/70"
-        ></div>
+          class="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-indigo-900/90 to-sky-900/80"
+        >
+        </div>
       </div>
 
-      <div class="relative z-10 mx-auto max-w-4xl px-4" data-animate>
-        <h1 class="text-5xl font-extrabold leading-tight sm:text-7xl">
-          تطوير المواقع والتطبيقات الحديثة في الكويت
-        </h1>
-        <p class="mt-4 text-lg text-indigo-100">
-          نحن لا نبني مواقع فقط — نحن <strong>نُنشئ تجارب رقمية</strong> فائقة السرعة، محسّنة لمحركات البحث، وتجذب العملاء بذكاء.
-        </p>
-        <a
-          href="/ar/contact"
-          class="mt-8 inline-flex rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105"
+      <div class="relative z-10 mx-auto max-w-5xl px-4">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 text-sm font-bold uppercase tracking-widest mb-6 backdrop-blur-sm"
         >
-          ابنِ موقعك الآن →
-        </a>
+          الوكالة رقم #1 لتطوير المواقع في الكويت
+        </span>
+        <h1 class="text-5xl font-extrabold leading-tight sm:text-7xl mb-6">
+          تطوير <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-400"
+            >مواقع إلكترونية</span
+          > متميزة في الكويت
+        </h1>
+        <p
+          class="mt-4 text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed"
+        >
+          تصاميم مذهلة تلتقي مع هندسة برمجية عالية الأداء. نبني <strong
+            >مواقع تركز على الـ SEO</strong
+          > لتتصدر نتائج البحث في الكويت بذكاء.
+        </p>
+
+        <div class="mt-10 flex flex-wrap justify-center gap-4 text-center">
+          <a
+            href="/ar/contact"
+            class="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 font-bold text-white shadow-xl shadow-blue-600/20 transition-all hover:scale-105"
+          >
+            ناقش مشروعك معنا
+          </a>
+          <a
+            href="#solutions"
+            class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 font-bold text-white backdrop-blur-md border border-white/20 transition-all"
+          >
+            استعرض حلولنا
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- ABOUT OUR STACK -->
-    <section class="mx-auto max-w-6xl px-4 py-24 sm:px-6 text-right" data-animate dir="rtl">
-      <div class="grid items-center gap-12 md:grid-cols-2">
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
-            مصممة للأداء. مُهندسة للتأثير.
-          </h2>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            في <strong>أوكتونيكس إنوفيشنز</strong>، كل سطر من الكود وكل بكسل مصمم لتحقيق الكمال.
-            ندمج سرعة <strong>Astro</strong>، ودقة <strong>Tailwind CSS</strong>، وقوة <strong>Next.js</strong>
-            لبناء أنظمة ويب ذكية تُحقق نتائج حقيقية.
+    <!-- TRUST STATS -->
+    <section class="py-12 bg-white border-y border-slate-100">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-3xl font-bold text-blue-600">100%</div>
+            <div class="text-sm text-slate-500 uppercase font-semibold">
+              جاهز للـ SEO
+            </div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-blue-600">&lt;1 ثانية</div>
+            <div class="text-sm text-slate-500 uppercase font-semibold">
+              سرعة التحميل
+            </div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-blue-600">ثنائي اللغة</div>
+            <div class="text-sm text-slate-500 uppercase font-semibold">
+              عربي / إنجليزي
+            </div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-blue-600">24/7</div>
+            <div class="text-sm text-slate-500 uppercase font-semibold">
+              دعم فني
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE SERVICES DETAIL -->
+    <section id="solutions" class="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold text-slate-900 sm:text-5xl mb-4">
+          حلول رقمية متكاملة في الكويت
+        </h2>
+        <p class="max-w-2xl mx-auto text-slate-600 text-lg">
+          من المشاريع الصغيرة إلى الشركات الكبرى، نقدم خدمات ويب متخصصة في مدينة
+          الكويت وحولي وكافة المناطق.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Corp Site -->
+        <div
+          class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2"
+        >
+          <div
+            class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+              ></path></svg
+            >
+          </div>
+          <h3 class="text-2xl font-bold mb-4">مواقع الشركات</h3>
+          <p class="text-slate-600 mb-6 leading-relaxed text-right">
+            أنشئ حضوراً قوياً على الإنترنت بتصميمات واجهة مستخدم متميزة. نجسّد
+            جوهر علامتك التجارية مع ضمان أعلى معايير الأداء.
           </p>
-          <ul class="mt-6 space-y-3 text-slate-700">
-            <li>• Astro وTailwind لأقصى سرعة وجمال</li>
-            <li>• Next.js وReact لتفاعلية عالية وقابلية توسع</li>
-            <li>• بنية محسّنة لتحسين نتائج SEO</li>
-            <li>• تصميم متعدد اللغات ومتجاوب لجميع الأجهزة</li>
+          <ul class="text-sm text-slate-500 space-y-2 mb-8 text-right">
+            <li>✓ ربط أنظمة إدارة المحتوى المتقدمة</li>
+            <li>✓ تصميم متجاوب للهواتف</li>
+            <li>✓ أصول بصرية عالية الدقة</li>
           </ul>
         </div>
-        <figure>
-          <img
-            src="/images/web-stack.jpg"
-            alt="Astro Tailwind الكويت"
-            loading="lazy"
-            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
-          />
-        </figure>
-      </div>
-    </section>
 
-    <!-- PERFORMANCE HIGHLIGHTS -->
-    <section
-      class="relative bg-gradient-to-r from-indigo-700 to-sky-700 py-24 text-white"
-      data-animate
-    >
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h3 class="text-3xl font-bold sm:text-4xl">أداء يتحدث عن نفسه</h3>
-        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
-          مواقعنا ليست جميلة فقط — بل تتفوق في الأداء على 99٪ من المواقع حول العالم.
-        </p>
-        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-8">
-          {[
-            ["⚡", "سرعة التحميل", "أقل من ثانية واحدة"],
-            ["🚀", "تقييم Lighthouse", "99+ نقطة"],
-            ["📈", "أداء SEO", "ضمن أعلى 3 نتائج"],
-            ["🔒", "الأمان", "A+ SSL / معايير حماية قوية"],
-          ].map(([icon, title, value]) => (
-            <div class="flex flex-col items-center rounded-3xl bg-white/10 p-6 backdrop-blur-md ring-1 ring-white/10 transition hover:bg-white/20">
-              <div class="text-4xl">{icon}</div>
-              <h4 class="mt-2 text-lg font-semibold">{title}</h4>
-              <p class="mt-1 text-indigo-100 text-sm">{value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- OUR SOLUTIONS -->
-    <section class="mx-auto max-w-6xl px-4 py-24 sm:px-6 text-right" data-animate dir="rtl">
-      <h3 class="text-3xl font-bold text-slate-900 sm:text-4xl text-center">
-        حلول ويب وتطبيقات متكاملة
-      </h3>
-      <p class="mx-auto mt-3 max-w-3xl text-center text-slate-600">
-        من مواقع الشركات إلى الأنظمة المؤسسية — نقدم لك نظامًا رقميًا مستقبليًا شاملاً.
-      </p>
-      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          ["مواقع الشركات", "مواقع أنيقة ومحسّنة لمحركات البحث مبنية باستخدام Astro وTailwind."],
-          ["تطبيقات ويب تقدمية (PWA)", "تطبيقات ويب تعمل دون اتصال وتُثبت مثل تطبيقات الجوال."],
-          ["منصات التجارة الإلكترونية", "متاجر رقمية سريعة متكاملة مع أنظمة الدفع وERP."],
-          ["لوحات تحكم مخصصة", "أنظمة تحليل وإدارة بيانات مبنية على React وNode."],
-          ["تطوير تطبيقات الجوال", "تطبيقات متعددة الأنظمة باستخدام React Native وFlutter."],
-          ["أنظمة إدارة المحتوى (Headless CMS)", "أنظمة مرنة وقابلة للتوسع باستخدام Strapi أو Sanity."],
-        ].map(([t, d]) => (
-          <div class="rounded-3xl bg-white p-8 shadow-lg ring-1 ring-slate-200 hover:-translate-y-1 hover:shadow-2xl transition">
-            <h4 class="text-lg font-semibold text-indigo-700">{t}</h4>
-            <p class="mt-2 text-sm text-slate-600">{d}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- DEVELOPMENT PROCESS -->
-    <section
-      class="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-sky-900 py-24 text-white text-center"
-      data-animate
-    >
-      <div class="mx-auto max-w-6xl px-4">
-        <h3 class="text-3xl font-bold sm:text-4xl">مراحل تطويرنا</h3>
-        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
-          عملية واضحة وفعالة وتعاونية — نضمن لك تجربة تطوير شفافة ومنظمة.
-        </p>
+        <!-- E-com -->
         <div
-          class="mt-12 flex flex-col md:flex-row justify-center items-start md:items-center gap-10 text-center"
+          class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2"
         >
-          {[
-            ["🧭", "1. التخطيط والتحليل", "فهم الأهداف والجمهور ومؤشرات النجاح."],
-            ["🎨", "2. التصميم والنمذجة", "تصميم النماذج والواجهات باستخدام Figma."],
-            ["⚙️", "3. التطوير", "برمجة باستخدام Astro وTailwind وReact وNode."],
-            ["🚀", "4. النشر", "استضافة مثالية على Vercel أو Netlify أو Hostinger."],
-            ["📈", "5. التحسين والنمو", "تحسين الأداء وتحليل النتائج بعد الإطلاق."],
-          ].map(([icon, title, desc]) => (
-            <div class="flex-1 rounded-3xl bg-white/10 p-6 backdrop-blur-md ring-1 ring-white/10 hover:bg-white/20 transition">
-              <div class="text-3xl mb-2">{icon}</div>
-              <h4 class="text-lg font-semibold">{title}</h4>
-              <p class="mt-1 text-indigo-100 text-sm">{desc}</p>
-            </div>
-          ))}
+          <div
+            class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg
+            >
+          </div>
+          <h3 class="text-2xl font-bold mb-4">المتاجر الإلكترونية</h3>
+          <p class="text-slate-600 mb-6 leading-relaxed text-right">
+            بع منتجاتك في كافة أنحاء الكويت بمتجر إلكتروني يحقق أعلى مبيعات.
+            متكامل مع الخدمات اللوجستية المحلية وسرعة تدعم الـ 5G.
+          </p>
+          <ul class="text-sm text-slate-500 space-y-2 mb-8 text-right">
+            <li>✓ ربط كي نت (K-NET) و Tap</li>
+            <li>✓ إدارة المخزون</li>
+            <li>✓ ربط شركات الشحن المحلية</li>
+          </ul>
+        </div>
+
+        <!-- Custom Apps -->
+        <div
+          class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2"
+        >
+          <div
+            class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg
+            >
+          </div>
+          <h3 class="text-2xl font-bold mb-4">تطبيقات الويب</h3>
+          <p class="text-slate-600 mb-6 leading-relaxed text-right">
+            حلول برمجية خلفية معقدة، بوابات عملاء، ولوحات تحكم للمؤسسات. نبني
+            أدوات قوية تتوسع مع نمو أعمالك في الكويت.
+          </p>
+          <ul class="text-sm text-slate-500 space-y-2 mb-8 text-right">
+            <li>✓ هندسة React و Next.js</li>
+            <li>✓ مزامنة بيانات فورية</li>
+            <li>✓ استضافة سحابية آمنة</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="relative bg-gradient-to-r from-sky-500 to-indigo-600 py-20 text-white text-center">
-      <div class="mx-auto max-w-4xl px-4" data-animate>
-        <h3 class="text-3xl font-bold sm:text-4xl">لنصنع مستقبل الويب معًا</h3>
-        <p class="mt-3 text-indigo-100 max-w-2xl mx-auto">
-          عملك يستحق أكثر من موقع — إنه يحتاج إلى <strong>منصة رقمية ذكية</strong> مصممة للسرعة والدقة والتأثير.
+    <!-- SEO STRATEGY SECTION -->
+    <section
+      class="relative py-24 bg-slate-900 text-white overflow-hidden text-right"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl font-extrabold mb-8">
+              تصدر نتائج بحث جوجل في الكويت
+            </h2>
+            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+              بناء الموقع هو نصف المعركة فقط. الظهور للعملاء هو ما يحقق الأرباح.
+              في أوكتونيكس، نحن لا نقوم بالـ SEO فقط—بل نجعله جزءاً لا يتجزأ من
+              بنية موقعك.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div
+                  class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 font-bold"
+                >
+                  1
+                </div>
+                <div class="text-right">
+                  <h4 class="font-bold text-xl mb-1">إتقان الكلمات المحلية</h4>
+                  <p class="text-slate-400">
+                    نستهدف العبارات الأكثر بحثاً في السوق الكويتي باللغتين
+                    العربية والإنجليزية.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 font-bold"
+                >
+                  2
+                </div>
+                <div class="text-right">
+                  <h4 class="font-bold text-xl mb-1">بنية فائقة السرعة</h4>
+                  <p class="text-slate-400">
+                    تتفوق مواقعنا في اختبارات Core Web Vitals من جوجل بتقييمات
+                    95+، مما يمنحك أفضلية كبرى.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 font-bold"
+                >
+                  3
+                </div>
+                <div class="text-right">
+                  <h4 class="font-bold text-xl mb-1">
+                    التفوق في الـ SEO التقني
+                  </h4>
+                  <p class="text-slate-400">
+                    نستخدم Schema markup متقدم وهيكلة HTML برمجية تفضلها
+                    خوارزميات جوجل.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -inset-4 bg-blue-500/20 rounded-[3rem] blur-2xl"
+            >
+            </div>
+            <div
+              class="relative bg-slate-800 p-8 rounded-[3rem] border border-slate-700 shadow-2xl"
+            >
+              <div class="flex items-center gap-2 mb-6">
+                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+              </div>
+              <div class="space-y-4 text-right" dir="rtl">
+                <div class="h-4 w-3/4 bg-slate-700 rounded"></div>
+                <div class="h-4 w-full bg-slate-700 rounded"></div>
+                <div
+                  class="h-20 w-full bg-blue-600/20 rounded border border-blue-500/30 flex items-center justify-center"
+                >
+                  <span class="text-blue-400 font-mono text-sm"
+                    >تصنيف جوجل: #1 (الكويت)</span
+                  >
+                </div>
+                <div class="h-4 w-1/2 bg-slate-700 rounded"></div>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="h-12 bg-slate-700 rounded"></div>
+                  <div class="h-12 bg-slate-700 rounded"></div>
+                  <div class="h-12 bg-slate-700 rounded"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY STACK -->
+    <section class="py-24 bg-white text-center">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="text-3xl font-bold mb-16">تكنولوجيا عالمية. خبرة محلية.</h2>
+        <div
+          class="flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+        >
+          <span class="text-2xl font-black">ASTRO</span>
+          <span class="text-2xl font-black">NEXT.JS</span>
+          <span class="text-2xl font-black">REACT</span>
+          <span class="text-2xl font-black">NODE.JS</span>
+          <span class="text-2xl font-black">TAILWIND</span>
+          <span class="text-2xl font-black">POSTGRES</span>
+        </div>
+
+        <div
+          class="mt-20 max-w-4xl mx-auto grid md:grid-cols-2 gap-10 text-right"
+        >
+          <div class="p-8 bg-slate-50 rounded-3xl">
+            <h4 class="font-bold text-xl mb-4">
+              لماذا Astro للمواقع الكويتية؟
+            </h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              يعتبر Astro السلاح السري للـ SEO. فهو يوفر مواقع خالية من أكواد
+              جافا سكريبت غير الضرورية، مما يؤدي لسرعة تحميل فورية على شبكات الـ
+              5G في الكويت.
+            </p>
+          </div>
+          <div class="p-8 bg-slate-50 rounded-3xl">
+            <h4 class="font-bold text-xl mb-4">البرمجة الخاصة vs ووردبريس</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              على عكس مواقع ووردبريس التي غالباً ما تكون بطيئة وغير آمنة، حلولنا
+              البرمجية المخصصة خفيفة الوزن، آمنة للغاية، ومصممة خصيصاً لتناسب
+              متطلبات السوق الكويتي.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-24 bg-slate-50 border-t border-slate-100 text-right">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">
+          تطوير المواقع في الكويت: الأسئلة الشائعة
+        </h2>
+        <div class="space-y-6">
+          <details
+            class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200"
+          >
+            <summary
+              class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none"
+            >
+              <span>ما هو الجدول الزمني المتوسط لإتمام المشروع؟</span>
+              <span class="transition group-open:rotate-180"
+                ><svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                ></span
+              >
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+              تستغرق مواقع الشركات البسيطة حوالي أسبوع إلى أسبوعين. المتاجر
+              الإلكترونية المعقدة أو تطبيقات الويب المخصصة تستغرق عادةً من 4 إلى
+              8 أسابيع.
+            </p>
+          </details>
+          <details
+            class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200"
+          >
+            <summary
+              class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none"
+            >
+              <span
+                >هل تدعم المواقع اللغة العربية والواجهات من اليمين لليسار؟</span
+              >
+              <span class="transition group-open:rotate-180"
+                ><svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                ></span
+              >
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+              بالتأكيد. كل موقع نبنيه للسوق الكويتي يدعم اللغتين بشكل كامل
+              وبمحاذاة مثالية من اليمين إلى اليسار (RTL) مع خطوط عربية فائقة
+              الجودة.
+            </p>
+          </details>
+          <details
+            class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200"
+          >
+            <summary
+              class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none"
+            >
+              <span>من يملك الكود المصدري بعد الإطلاق؟</span>
+              <span class="transition group-open:rotate-180"
+                ><svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                ></span
+              >
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+              أنت تملك ذلك. نحن نمنح عملائنا ملكية فكرية كاملة بنسبة 100٪. نحن
+              نستخدم تقنيات مفتوحة المعايير ونسلمك كافة الأصول بعد الانتهاء.
+            </p>
+          </details>
+          <details
+            class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200"
+          >
+            <summary
+              class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none"
+            >
+              <span>هل تقدمون خدمات الاستضافة والصيانة في الكويت؟</span>
+              <span class="transition group-open:rotate-180"
+                ><svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                ></span
+              >
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+              نعم، نقدم استضافة سحابية متميزة مع شبكات توصيل محتوى تصل للكويت
+              مباشرة، بالإضافة لحزم صيانة شهرية للتحديثات الأمنية ومراقبة
+              الأداء.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section
+      class="relative bg-gradient-to-br from-blue-700 to-indigo-900 py-24 text-white text-center"
+    >
+      <div class="mx-auto max-w-4xl px-4">
+        <h3 class="text-4xl font-extrabold sm:text-5xl mb-6">
+          هل أنت مستعد لتكون رقم #1 في الكويت؟
+        </h3>
+        <p
+          class="mt-3 text-blue-100 text-xl font-medium max-w-2xl mx-auto mb-12"
+        >
+          توقف عن خسارة العملاء لمواقع بطيئة وقديمة. شريكك في النجاح، أوكتونيكس،
+          سيبني لك المستقبل الرقمي الذي تطمح إليه.
         </p>
+
         <a
           href="/ar/contact"
-          class="mt-8 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-indigo-700 shadow-lg hover:scale-105 transition"
+          class="inline-flex items-center gap-2 rounded-full bg-white px-10 py-5 text-lg font-bold text-blue-900 shadow-2xl shadow-black/20 hover:scale-105 transition active:scale-95"
         >
-          ابدأ مشروعك الآن →
+          اطلب عرض سعر مخصص
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 mx-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 8l-4 4m0 0l4 4m-4-4h18"></path></svg
+          >
         </a>
       </div>
     </section>

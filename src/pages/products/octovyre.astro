@@ -1,0 +1,263 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductHero from "../../components/products/ProductHero.astro";
+import ProductFeatures from "../../components/products/ProductFeatures.astro";
+import ProductHowItWorks from "../../components/products/ProductHowItWorks.astro";
+import ProductUseCases from "../../components/products/ProductUseCases.astro";
+import ProductIntegrations from "../../components/products/ProductIntegrations.astro";
+import ProductSecurity from "../../components/products/ProductSecurity.astro";
+import ProductPricing from "../../components/products/ProductPricing.astro";
+import ProductTimeline from "../../components/products/ProductTimeline.astro";
+import ProductFAQ from "../../components/products/ProductFAQ.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="OctoVyre™ – Intelligent Enterprise Operating System"
+  description="A next-generation enterprise intelligence platform designed to run, connect, and scale modern businesses."
+>
+  <Header />
+
+  <Breadcrumb
+    items={[
+      { href: "/", label: "Home" },
+      { href: "/products", label: "Products" },
+      { href: "/products/octovyre", label: "OctoVyre™" },
+    ]}
+  />
+
+  <ProductHero
+    productName="OctoVyre™"
+    tagline="Intelligent Enterprise Operating System"
+    description="A flagship enterprise product by Octonics Innovations. Unifying people, processes, finance, assets, and intelligence into one intelligent system."
+    stats={[
+      { value: "Unified", label: "Platform" },
+      { value: "AI-Ready", label: "Architecture" },
+      { value: "Real-Time", label: "Visibility" },
+      { value: "Scalable", label: "Enterprise" },
+    ]}
+    gradientFrom="violet-600"
+    gradientTo="indigo-600"
+    icon="🧠"
+    image="/images/octovyre_logo.png"
+  />
+
+  <section class="py-16 bg-white" id="pain-solution">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2
+        class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent"
+      >
+        The Problem & The Solution
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-violet-700">
+            Problem: Disconnected Systems
+          </h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-600">
+            <li>Multiple disconnected software tools create silos.</li>
+            <li>Manual spreadsheets fill system gaps, prone to error.</li>
+            <li>Delayed reports hide real-time operational reality.</li>
+            <li>ERPs store data but don’t actively guide operations.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-indigo-600">
+            Solution: A Unified Business OS
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+            OctoVyre™ acts as the **operational brain** of your organization. It
+            unifies operations, finance, workforce, and inventory into one
+            connected, intelligent platform that doesn't just record history—it
+            guides what happens next in real time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProductFeatures
+    features={[
+      {
+        icon: "⚙️",
+        title: "Operations Management",
+        description:
+          "Orchestrate tasks, streamline approvals, and monitor SLAs for smooth execution.",
+      },
+      {
+        icon: "💰",
+        title: "Finance & Cost Intelligence",
+        description:
+          "Track expenses, manage budgets, and analyze profitability linked directly to operations.",
+      },
+      {
+        icon: "👥",
+        title: "Human Capital & Workforce",
+        description:
+          "Align roles, track accountability, and visualize productivity across teams.",
+      },
+      {
+        icon: "📦",
+        title: "Inventory & Asset Intelligence",
+        description:
+          "Manage asset lifecycles and optimize inventory with predictive replenishment.",
+      },
+      {
+        icon: "🤝",
+        title: "Customer & CRM",
+        description:
+          "Centralize customer records and resolve issues with transparent workflow history.",
+      },
+      {
+        icon: "🧠",
+        title: "Embedded AI Intelligence",
+        description:
+          "Built-in predictive insights and smart recommendations for proactive decision making.",
+      },
+    ]}
+  />
+
+  <ProductHowItWorks
+    steps={[
+      {
+        number: 1,
+        title: "Map Your Process",
+        description:
+          "We analyze and map your core business workflows into the OctoVyre engine.",
+      },
+      {
+        number: 2,
+        title: "Connect Data",
+        description:
+          "Migrate existing data and integrate with your financial or legacy systems.",
+      },
+      {
+        number: 3,
+        title: "Go Live & Train",
+        description:
+          "Deploy the system to teams with role-specific dashboards and training.",
+      },
+      {
+        number: 4,
+        title: "AI Optimization",
+        description:
+          "As data flows, the AI engine begins identifying efficiencies and bottlenecks.",
+      },
+    ]}
+  />
+
+  <ProductUseCases
+    useCases={[
+      {
+        industry: "Mid-Sized Enterprises",
+        icon: "🏢",
+        description:
+          "Growing organizations needing structure, scalability, and unified control.",
+      },
+      {
+        industry: "Multi-Location Ops",
+        icon: "🌍",
+        description:
+          "Retail or service chains requiring centralized management across branches.",
+      },
+      {
+        industry: "Service Providers",
+        icon: "🛠️",
+        description:
+          "Businesses tracking complex jobs, assets, and service delivery.",
+      },
+      {
+        industry: "Manufacturing/Trading",
+        icon: "🏭",
+        description:
+          "Companies needing tight integration between inventory, sales, and ops.",
+      },
+    ]}
+  />
+
+  <ProductIntegrations
+    integrations={[
+      { name: "SAP ERP", src: "/images/integrations/sap.svg" },
+      { name: "Oracle NetSuite", src: "/images/integrations/oracle.svg" },
+      { name: "Microsoft Dynamics", src: "/images/integrations/dynamics.svg" },
+      { name: "Salesforce", src: "/images/integrations/salesforce.svg" },
+    ]}
+  />
+
+  <ProductSecurity
+    items={[
+      {
+        title: "Role-Based Access",
+        description: "Granular control across departments and teams.",
+        icon: "🛡️",
+      },
+      {
+        title: "Audit Logs",
+        description: "Immutable logs of every action for full accountability.",
+        icon: "📜",
+      },
+      {
+        title: "Data Ownership",
+        description:
+          "You retain full ownership and control of your organizational data.",
+        icon: "🔐",
+      },
+      {
+        title: "Secure Architecture",
+        description: "Enterprise-grade security standards built into the core.",
+        icon: "🏗️",
+      },
+      {
+        title: "Controlled Boundaries",
+        description: "Strict permission boundaries between functional modules.",
+        icon: "🚫",
+      },
+    ]}
+  />
+
+  <ProductPricing />
+  <ProductTimeline />
+
+  <ProductFAQ
+    faq={[
+      {
+        q: "Is OctoVyre an ERP?",
+        a: "It is a 'Business Operating System' that can function as an ERP or sit on top of legacy ERPs to handle actual operations and intelligence.",
+      },
+      {
+        q: "Can I customize workflows?",
+        a: "Yes, the platform is designed to adapt to your specific operational processes without breaking future updates.",
+      },
+      {
+        q: "Is it cloud-based or on-premise?",
+        a: "OctoVyre supports both secure cloud deployment and on-premise installation for sensitive data requirements.",
+      },
+      {
+        q: "How long does implementation take?",
+        a: "Typical deployment ranges from 4 to 12 weeks depending on the complexity of your processes and data migration needs.",
+      },
+      {
+        q: "Does it support Arabic interface?",
+        a: "Yes, OctoVyre is fully bilingual (English/Arabic) with native RTL support designed for the GCC market.",
+      },
+      {
+        q: "What kind of AI features are included?",
+        a: "It includes predictive analytics for inventory, anomaly detection for finance/ops, and smart recommendations for workflow optimization.",
+      },
+    ]}
+  />
+
+  <section class="py-20 bg-slate-100" id="lead-form">
+    <div class="max-w-4xl mx-auto px-6">
+      <LeadForm product="OctoVyre™" />
+    </div>
+  </section>
+
+  <WhatsAppButton phone="+96599240074" />
+
+  <Footer />
+</Layout>

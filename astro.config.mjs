@@ -10,6 +10,10 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://octonics.com",
   output: "static", // ✅ built-in static output
+  redirects: {
+    '/products/octoflow': '/products/octovyre',
+    '/ar/products/octoflow': '/ar/products/octovyre',
+  },
   integrations: [
     tailwind({ applyBaseStyles: true }),
     sitemap({

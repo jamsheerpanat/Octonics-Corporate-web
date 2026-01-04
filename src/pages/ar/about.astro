@@ -8,15 +8,38 @@ const currentYear = new Date().getFullYear();
 const values = [
   {
     title: "الابتكار",
-    desc: "نؤمن أن التكنولوجيا لازم تفكر قبل الوقت. كل حل من أوكتونيكس مصمم بعقلية متقدمة تجمع بين الذكاء، الأتمتة، والراحة لتجعل الحياة أسهل وأذكى.",
+    desc: "نؤمن في أوكتونيكس أن التكنولوجيا يجب أن تسبق الزمن. كل حل نقدمه مبني على الذكاء والبساطة والإبداع — لتمكين الأعمال في الكويت.",
   },
   {
-    title: "الشفافية والمصداقية",
-    desc: "نبني الثقة من خلال الوضوح، الصراحة، والعلاقات الطويلة الأمد — نضمن إن كل مشروع نقدمه يحقق رؤية العميل ويلتزم بأعلى المعايير العالمية.",
+    title: "النزاهة",
+    desc: "الثقة تُبنى من خلال الشفافية والشراكات طويلة الأمد. تلتزم مشاريعنا برؤية عملائنا مع مطابقة المعايير العالمية واحتياجات السوق الكويتي.",
   },
   {
-    title: "التميز والجودة",
-    desc: "من الكود إلى الكيبل — شغفنا بالتفاصيل يميزنا. فريقنا يضمن الدقة في كل تفصيلة تقنية، تصميم، وتنفيذ.",
+    title: "التميز",
+    desc: "من الأكواد البرمجية إلى البنية التحتية — الدقة هي هويتنا. يضمن مهندسونا الجودة في كل خط برمج وكل جهاز ذكي نقدمه.",
+  },
+];
+
+const services = [
+  {
+    title: "تطوير المواقع والتطبيقات",
+    desc: "بناء منصات رقمية فائقة السرعة ومتوافقة مع الـ SEO باستخدام Astro و React و Next.js.",
+    link: "/ar/services/web-app-development",
+  },
+  {
+    title: "أنظمة ERP المخصصة",
+    desc: "برمجيات مخصصة لإدارة الأعمال، المالية، الموارد البشرية، والعمليات في الكويت.",
+    link: "/ar/services/custom-erp-development",
+  },
+  {
+    title: "أتمتة المنازل الذكية",
+    desc: "حلول ذكية معتمدة من KNX للتحكم في الإضاءة، التكييف، وأنظمة الأمان.",
+    link: "/ar/services/smart-home-automation",
+  },
+  {
+    title: "البنية التحتية لتقنية المعلومات",
+    desc: "شبكات موثوقة، إدارة الخوادم، والتمديدات المنظمة للمؤسسات والشركات.",
+    link: "/ar/services/it-infrastructure",
   },
 ];
 ---
@@ -24,163 +47,334 @@ const values = [
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <title>عن أوكتونيكس إنوفيشنز | الأتمتة الذكية وحلول التقنية في الكويت</title>
+    <title>عن أوكتونيكس إنوفيشنز | شريكك التكنولوجي الرائد في الكويت</title>
     <meta
       name="description"
-      content="أوكتونيكس إنوفيشنز هي شركة كويتية متخصصة في الأتمتة الذكية، أنظمة KNX، البرمجيات ERP، الذكاء الاصطناعي، والبنية التحتية لتقنية المعلومات — مع مختبر تطوير متكامل في الهند."
+      content="تعرف على أوكتونيكس إنوفيشنز، الشريك التكنولوجي الأول في الكويت لتطوير المواقع، أنظمة ERP، والأتمتة الذكية المعتمدة من KNX. نجمع بين الخبرة العالمية والمعرفة المحلية."
     />
     <meta
       name="keywords"
-      content="أوكتونيكس الكويت, الأتمتة الذكية, KNX الكويت, ERP الكويت, شركة تقنية الكويت, الذكاء الاصطناعي الكويت, أوكتونيكس إنوفيشنز, كينفرا تكنو بارك"
+      content="أوكتونيكس إنوفيشنز الكويت، أفضل شركة تقنية في الكويت، وكالة تطوير مواقع، أتمتة المنازل الذكية، برمجة ERP، معتمد KNX، حلول تكنولوجية الكويت"
     />
-    <meta property="og:title" content="عن أوكتونيكس إنوفيشنز | الأتمتة الذكية وحلول التقنية في الكويت" />
-    <meta property="og:description" content="اكتشف أوكتونيكس إنوفيشنز — شركة كويتية معتمدة من KNX تعيد تعريف الأتمتة، ERP، والذكاء الاصطناعي من خلال مختبر تطوير عالمي في الهند." />
+    <meta
+      property="og:title"
+      content="عن أوكتونيكس إنوفيشنز | شريكك التكنولوجي الرائد في الكويت"
+    />
+    <meta
+      property="og:description"
+      content="إعادة تعريف التكنولوجيا الذكية في الكويت. من المواقع المتصدرة للـ SEO إلى أنظمة ERP المدعومة بالذكاء الاصطناعي، اكتشف لماذا تثق الشركات بواكتونيكس."
+    />
     <meta property="og:image" content="/images/about/og-about.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
-  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
-    <!-- الهيدر -->
+  <body
+    class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden relative text-right"
+  >
     <HeaderAr />
 
-    <!-- القسم الرئيسي -->
-    <section id="hero" class="relative isolate flex min-h-[90vh] items-center justify-center overflow-hidden text-center">
+    <!-- HERO -->
+    <section
+      class="relative isolate flex min-h-[70vh] items-center justify-center overflow-hidden text-center text-white"
+    >
       <img
         src="/images/about/dark-octopus.jpg"
-        alt="مكتب أوكتونيكس إنوفيشنز في الكويت"
+        alt="تقنيات أوكتونيكس إنوفيشنز الكويت"
         class="absolute inset-0 h-full w-full object-cover opacity-80"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-indigo-950/70 to-slate-900/90"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-950/80 to-slate-900/95"
+      >
+      </div>
 
-      <div class="relative z-10 max-w-4xl px-4 text-white sm:px-6" data-animate>
-        <h1 class="text-5xl font-extrabold leading-tight sm:text-6xl md:text-7xl">
-          عن <span class="text-sky-400">أوكتونيكس</span> إنوفيشنز
+      <div class="relative z-10 max-w-5xl px-4 sm:px-6">
+        <h1 class="text-5xl font-extrabold leading-tight sm:text-7xl mb-6">
+          هندسة <span class="text-sky-400">الذكاء الرقمي</span> في الكويت
         </h1>
-        <p class="mx-auto mt-4 max-w-2xl text-slate-200 text-lg">
-          شركة كويتية معتمدة من KNX ومزودة بتقنيات الذكاء الاصطناعي — تبني أنظمة المستقبل في الأتمتة، ERP، والبنية التحتية لتقنية المعلومات.
+        <p
+          class="mx-auto mt-4 max-w-3xl text-slate-200 text-xl leading-relaxed"
+        >
+          أوكتونيكس إنوفيشنز هي شركة تقنية رائدة تركز على النتائج، وتقدم حلول
+          الويب وأنظمة ERP والأتمتة الذكية المصممة خصيصاً للسوق الكويتي.
         </p>
       </div>
     </section>
 
-    <!-- الفلسفة -->
-    <section id="philosophy" class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8" data-animate>
-      <div class="grid items-center gap-14 md:grid-cols-2">
-        <div class="order-2 md:order-1">
-          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">الفلسفة وراء الاسم</h2>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            اسم <strong>«أوكتونيكس»</strong> مأخوذ من كلمة <em>Octo</em> المستوحاة من ذكاء الأخطبوط وقدرته على التكيّف.
-            بثمانية أذرع تعمل بتناغم تام، يرمز إلى طريقة عملنا في دمج تخصصات متعددة —
-            الأتمتة، ERP، الذكاء الاصطناعي، البنية التحتية، والأمن السيبراني — ضمن نظام ذكي موحد.
-          </p>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            أما اللاحقة <em>-nics</em> فهي من كلمات <strong>Electronics, Technics, Dynamics</strong> وتعبر عن الدقة والانسيابية.
-            معًا، تمثل <span class="text-sky-600 font-semibold">أوكتونيكس إنوفيشنز</span> التكنولوجيا القابلة للتطور مع الإنسان والأعمال.
-          </p>
-        </div>
+    <!-- MISSION & VISION -->
+    <section class="py-24 bg-white relative overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <div class="space-y-6 order-2 lg:order-1">
+            <h2 class="text-4xl font-bold text-slate-900">
+              أهدافنا الاستراتيجية
+            </h2>
+            <div class="p-8 rounded-3xl bg-slate-50 border-r-4 border-blue-600">
+              <h3 class="text-2xl font-bold mb-3">رسالتنا</h3>
+              <p class="text-slate-600 leading-relaxed">
+                تمكين المؤسسات والشركات في الكويت من خلال تكنولوجيا ذكية ومرنة
+                تعزز الكفاءة والأمن والقدرة التنافسية في مشهد رقمي متطور
+                باستمرار.
+              </p>
+            </div>
+            <div class="p-8 rounded-3xl bg-slate-50 border-r-4 border-sky-400">
+              <h3 class="text-2xl font-bold mb-3">رؤيتنا</h3>
+              <p class="text-slate-600 leading-relaxed">
+                أن نصبح حجر الزاوية في التحول الرقمي بالكويت، واضعين معايير
+                التميز في الأتمتة الذكية وبرمجيات الشركات المخصصة.
+              </p>
+            </div>
+          </div>
 
-        <figure class="relative order-1 md:order-2">
-          <img
-            src="/images/about/octopus-tech.jpg"
-            alt="الأخطبوط مصدر إلهام أوكتونيكس"
-            loading="lazy"
-            class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
-          />
-          <figcaption class="mt-2 text-center text-xs text-slate-500">
-            الأخطبوط — رمز الذكاء، التحكم، والقدرة على التكيّف.
-          </figcaption>
-        </figure>
+          <div class="relative group order-1 lg:order-2">
+            <div
+              class="absolute -inset-4 bg-sky-200 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700"
+            >
+            </div>
+            <img
+              src="/images/about/octopus-tech.jpg"
+              alt="الابتكار في أوكتونيكس"
+              class="relative rounded-[3rem] shadow-2xl z-10 w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- العمليات -->
-    <section class="relative bg-gradient-to-br from-sky-50 via-white to-indigo-50 py-24" data-animate>
-      <div class="mx-auto max-w-7xl grid gap-14 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
-        <figure>
+    <!-- PHILOSOPHY -->
+    <section id="philosophy" class="bg-slate-50 py-24 text-center">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-slate-900 sm:text-5xl mb-8">
+          الذكاء المتكامل: مفهوم الـ "Octo"
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          مستوحى من <strong>الأخطبوط</strong> — أذكى الكائنات الحية وأكثرها تكيّفاً
+          — يمثل اسم <strong>"أوكتونيكس"</strong> قدرتنا على إدارة مجالات تقنية معقدة
+          في وقت واحد. كما ينسق الأخطبوط أذرعه الثمانية بتناغم تام، نقوم نحن بمزامنة
+          **الأتمتة، ERP، الذكاء الاصطناعي، السحابة، البنية التحتية، الأمن السيبراني،
+          الويب، والتحليلات** في نظام واحد متماسك.
+        </p>
+        <p
+          class="text-lg text-slate-600 leading-relaxed font-medium text-sky-600"
+        >
+          هندسة دقيقة + رؤية محلية = حلول جاهزة للمستقبل.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="py-24 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-5xl">
+            تخصصات التميز لدينا
+          </h2>
+          <p class="mt-4 text-slate-500">
+            خدمات تكنولوجية شاملة مصممة لبيئة الأعمال الفريدة في الكويت.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            services.map((s) => (
+              <a
+                href={s.link}
+                class="group p-8 rounded-3xl bg-slate-50 hover:bg-white border border-transparent hover:border-blue-100 shadow-sm hover:shadow-xl transition-all duration-300"
+              >
+                <h3 class="text-xl font-bold mb-4 text-slate-900 group-hover:text-blue-600">
+                  {s.title}
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  {s.desc}
+                </p>
+                <span class="text-sm font-bold text-blue-600 flex items-center gap-2">
+                  استكشف الخدمة
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 transition-transform group-hover:-translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                    />
+                  </svg>
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- THE OCTONICS ADVANTAGE -->
+    <section class="py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-bold mb-4">مميزات أوكتونيكس</h2>
+          <p class="text-slate-400">لماذا تثق بنا كبرى المشاريع في الكويت.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12 text-right">
+          <div class="space-y-4">
+            <div class="text-sky-400 text-4xl font-black">01</div>
+            <h4 class="text-2xl font-bold text-white">خبرة معتمدة من KNX</h4>
+            <p class="text-slate-400 leading-relaxed">
+              لسنا مجرد مقاولين عامين، نحن متخصصون معتمدون دولياً في KNX، نضمن
+              المعايير العالمية لكل مشروع أتمتة.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div class="text-sky-400 text-4xl font-black">02</div>
+            <h4 class="text-2xl font-bold text-white">
+              رؤية كويتية بطابع عالمي
+            </h4>
+            <p class="text-slate-400 leading-relaxed">
+              يقع مقرنا الرئيسي في الكويت مع مختبر بحث وتطوير (R&D) في الهند،
+              نقدم هندسة عالمية المستوى مع فهم عميق للقوانين والعادات المحلية.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div class="text-sky-400 text-4xl font-black">03</div>
+            <h4 class="text-2xl font-bold text-white">
+              قدرة شاملة (Full-Stack)
+            </h4>
+            <p class="text-slate-400 leading-relaxed">
+              من البنية التحتية لتقنية المعلومات والتمديدات إلى لوحات تحكم ERP
+              المدعومة بالذكاء الاصطناعي، ندير دورة حياة التكنولوجيا بالكامل.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPERATIONS / GLOBAL PRESENCE -->
+    <section class="py-24 bg-white">
+      <div
+        class="mx-auto max-w-7xl grid gap-14 px-4 sm:px-6 md:grid-cols-2 lg:px-8 items-center"
+      >
+        <figure class="relative">
+          <div
+            class="absolute -top-6 -right-6 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-60"
+          >
+          </div>
           <img
             src="/images/about/india-lab.jpg"
-            alt="مختبر تطوير البرمجيات - كينفرا تكنو بارك الهند"
+            alt="بحث وتطوير البرمجيات في أوكتونيكس"
             loading="lazy"
-            class="rounded-3xl shadow-xl ring-1 ring-slate-200"
+            class="relative rounded-[2rem] shadow-2xl z-10"
           />
-          <figcaption class="mt-3 text-center text-xs text-slate-500">
-            مختبر تطوير البرمجيات – كينفرا تكنو بارك، كاليكوت، الهند.
-          </figcaption>
+          <div class="mt-4 flex gap-4 justify-end">
+            <div
+              class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold text-slate-500 uppercase tracking-widest"
+            >
+              KINFRA Techno Park
+            </div>
+            <div
+              class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold text-slate-500 uppercase tracking-widest"
+            >
+              مركز البحث والتطوير
+            </div>
+          </div>
         </figure>
 
         <div class="flex flex-col justify-center">
-          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">حضور عالمي بقوة محلية</h2>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            انطلاقاً من <strong>الكويت</strong> وبقوة فريق <strong>البحث والتطوير في الهند</strong>،
-            تجمع أوكتونيكس بين الفهم المحلي والاحتراف الهندسي العالمي.
-            يقع مختبرنا في <strong>كينفرا تكنو بارك – كاليكوت</strong>، ويضم مهندسين متخصصين في البرمجيات، الذكاء الاصطناعي، والأتمتة KNX.
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-6">
+            محرك البحث والتطوير العالمي لدينا
+          </h2>
+          <p class="text-slate-600 leading-relaxed mb-6 text-lg">
+            الابتكار لا يتوقف. يعمل مركز تطوير البرمجيات المتطور لدينا في <strong
+              >KINFRA Techno Park، كاليكوت (الهند)</strong
+            > بالتنسيق مع فريقنا في الكويت لتقديم زخم تقني على مدار الساعة.
           </p>
-          <p class="mt-4 text-slate-600 leading-relaxed">
-            معًا، نقدم حلولاً مخصصة وآمنة وقابلة للتوسع — تربط المنازل، الشركات، والمدن ضمن بيئة ذكية واحدة.
+          <p class="text-slate-600 leading-relaxed mb-8">
+            بضمن هذا التعاون استفادة عملائنا في الكويت من أحدث الاتجاهات التقنية
+            العالمية، والبرمجة السريعة، واختبارات البرمجيات عالية الجودة.
           </p>
+          <div class="flex flex-wrap gap-4">
+            <span
+              class="flex items-center gap-2 text-sm font-bold text-slate-700 bg-slate-100 px-4 py-2 rounded-full"
+              >✓ مهندسون معتمدون</span
+            >
+            <span
+              class="flex items-center gap-2 text-sm font-bold text-slate-700 bg-slate-100 px-4 py-2 rounded-full"
+              >✓ مختبر ذكاء اصطناعي متقدم</span
+            >
+            <span
+              class="flex items-center gap-2 text-sm font-bold text-slate-700 bg-slate-100 px-4 py-2 rounded-full"
+              >✓ مراقبة على مدار الساعة</span
+            >
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- الفريق -->
-    <section id="team" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 text-center" data-animate>
-      <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">فريقنا الهندسي</h2>
-      <p class="mx-auto mt-3 max-w-2xl text-slate-600">
-        شباب مبدعين ومعتمدين دوليًا — يجمعون بين الإبداع والدقة في مجالات الأتمتة، الذكاء الاصطناعي، والبرمجيات.
-      </p>
-
-      <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {[
-          { name: "جمشیر پانات", title: "مستشار تقني", img: "/images/team/jamsheer.jpg" },
-          { name: "مهندس الأتمتة الرئيسي", title: "أخصائي KNX & DALI", img: "/images/team/lead-eng.jpg" },
-          { name: "مهندس واجهات المستخدم", title: "مختبر التصميم – الهند", img: "/images/team/uiux.jpg" },
-          { name: "مطور البرمجيات", title: "مسؤول التسويق", img: "/images/team/dev.jpg" },
-        ].map((m) => (
-          <div class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl">
-            <img src={m.img} alt={m.name} loading="lazy" class="mx-auto h-24 w-24 rounded-full object-cover shadow-md" />
-            <h3 class="mt-4 text-lg font-semibold text-slate-900">{m.name}</h3>
-            <p class="text-sm text-slate-500">{m.title}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- القيم -->
-    <section id="values" class="relative bg-gradient-to-br from-indigo-700 via-sky-600 to-sky-500 py-24 text-white" data-animate>
+    <!-- VALUES -->
+    <section
+      id="values"
+      class="relative bg-gradient-to-br from-indigo-700 via-sky-600 to-sky-500 py-24 text-white"
+    >
       <div class="mx-auto max-w-7xl px-4 sm:px-6 text-center lg:px-8">
-        <h2 class="text-3xl font-bold sm:text-4xl">قيمنا الأساسية</h2>
-        <p class="mx-auto mt-3 max-w-2xl text-indigo-100">
-          أساس كل ابتكار في أوكتونيكس هو الإنسان، الدقة، والهدف.
+        <h2 class="text-4xl font-bold mb-4">قيمنا وجذورنا</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-indigo-100 mb-16">
+          كل سطر من الكود وكل مستشعر نقوم بتركيبه موجه بهذه المبادئ.
         </p>
 
-        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {values.map((v) => (
-            <article class="rounded-3xl bg-white/10 p-8 shadow-lg ring-1 ring-white/10 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-2xl">
-              <h3 class="text-xl font-semibold text-white">{v.title}</h3>
-              <p class="mt-2 text-sm text-indigo-100">{v.desc}</p>
-            </article>
-          ))}
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {
+            values.map((v) => (
+              <article class="p-10 rounded-[2.5rem] bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/10 transition-all group">
+                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-sky-300 transition-colors uppercase">
+                  {v.title}
+                </h3>
+                <p class="text-indigo-100 leading-relaxed">{v.desc}</p>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- تواصل -->
-    <section id="cta" class="relative mx-auto max-w-7xl px-4 py-24 text-center sm:px-6 lg:px-8" data-animate>
-      <div class="rounded-3xl bg-gradient-to-br from-indigo-600 to-sky-600 p-10 text-white shadow-2xl">
-        <h2 class="text-2xl font-bold sm:text-3xl">انضم لرحلتنا نحو الابتكار الذكي</h2>
-        <p class="mt-3 text-indigo-100">
-          شاركنا في بناء المستقبل — من الأتمتة إلى التحليلات، نصمم أنظمة الغد اليوم.
+    <!-- CTA -->
+    <section id="cta" class="py-24 bg-white px-4 sm:px-6">
+      <div
+        class="mx-auto max-w-6xl rounded-[3rem] bg-gradient-to-r from-blue-600 to-indigo-700 p-12 md:p-20 text-center text-white shadow-3xl shadow-blue-600/20"
+      >
+        <h2 class="text-3xl font-bold sm:text-5xl mb-6">
+          ارتقِ بأعمالك من خلال الاستراتيجية التقنية.
+        </h2>
+        <p
+          class="mt-4 text-blue-100 text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          هل أنت مستعد لتنفيذ تقنيات الجيل القادم في مؤسستك؟ شارك أكثر وكالات
+          التقنية تطوراً في الكويت.
         </p>
         <a
           href="/ar/contact"
-          class="mt-6 inline-flex rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:scale-105"
+          class="inline-flex items-center gap-3 rounded-2xl bg-white px-10 py-5 font-bold text-blue-900 shadow-xl transition-all hover:scale-105"
         >
-          تواصل معنا
+          استشر أحد خبرائنا
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 mx-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 8l-4 4m0 0l4 4m-4-4h18"></path></svg
+          >
         </a>
       </div>
     </section>
 
-    <!-- الفوتر -->
+    <!-- FOOTER -->
     <FooterAr year={currentYear} />
   </body>
 </html>

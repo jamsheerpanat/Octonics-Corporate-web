@@ -52,7 +52,7 @@ const mainLinks = [
         label: "OctoBrain™ — Business Intelligence",
         href: "/products/octobrain",
       },
-      { label: "OctoFlow™ — Workflow Automation", href: "/products/octoflow" },
+      { label: "OctoVyre™ — Enterprise OS", href: "/products/octovyre" },
       { label: "OctoGuard™ — AI Surveillance", href: "/products/octoguard" },
       {
         label: "OctoSense™ — Energy Intelligence",
@@ -185,26 +185,42 @@ const switchHref = isArabic
   <!-- MOBILE PANEL -->
   <div
     id="mobile-panel"
-    class="lg:hidden fixed left-0 right-0 top-[72px] sm:left-4 sm:right-4 sm:top-[80px] max-h-[calc(100vh-90px)] overflow-y-auto origin-top scale-y-0 opacity-0 rounded-none sm:rounded-2xl border-0 sm:border border-slate-200 bg-white p-4 sm:p-5 shadow-2xl transition-all duration-300 safe-area-padding z-[100]"
+    class="lg:hidden fixed left-2 right-2 top-[72px] sm:left-4 sm:right-4 sm:top-[80px] max-h-[calc(100vh-100px)] overflow-y-auto origin-top-right scale-95 opacity-0 invisible rounded-[2rem] border border-white/20 bg-white/90 backdrop-blur-2xl p-6 shadow-2xl transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] z-[100]"
   >
-    <ul
-      class="flex flex-col gap-2 sm:gap-4 text-base sm:text-sm font-semibold text-slate-800"
+    <div
+      class="mb-6 flex items-center justify-between opacity-50 px-2 uppercase tracking-[0.2em] text-[10px] font-bold text-slate-500"
     >
+      <span>Navigation Interface</span>
+      <span>v2.0</span>
+    </div>
+    <ul class="flex flex-col gap-3 font-bold text-slate-900">
       {
-        mainLinks.map((link) => (
-          <li>
+        mainLinks.map((link, idx) => (
+          <li style={`animation-delay: ${idx * 50}ms`} class="mobile-item">
             {link.submenu ? (
-              <details class="rounded-xl bg-white/70 overflow-hidden">
-                <summary class="cursor-pointer px-4 py-3 sm:px-3 sm:py-2 font-medium text-slate-800 flex justify-between items-center min-h-[48px]">
-                  {link.label}
-                  <span class="text-xs text-slate-500">▾</span>
+              <details class="group/mobile">
+                <summary class="list-none flex justify-between items-center p-4 rounded-2xl transition-colors active:bg-slate-100">
+                  <span class="text-lg">{link.label}</span>
+                  <svg
+                    class="w-4 h-4 transition-transform group-open/mobile:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
                 </summary>
-                <ul class="mt-2 space-y-1 sm:space-y-2 px-2 sm:px-4 pb-3 max-h-[300px] overflow-y-auto">
+                <ul class="pl-4 pr-2 py-2 space-y-1">
                   {link.submenu.map((sublink) => (
                     <li>
                       <a
                         href={isArabic ? `/ar${sublink.href}` : sublink.href}
-                        class="block rounded-lg px-4 py-3 sm:px-3 sm:py-2 text-sm hover:bg-slate-100 transition min-h-[44px] flex items-center"
+                        class="block p-3 rounded-xl text-slate-600 active:text-sky-600 active:bg-sky-50 transition-all text-sm"
                       >
                         {sublink.label}
                       </a>
@@ -215,7 +231,7 @@ const switchHref = isArabic
             ) : (
               <a
                 href={isArabic ? `/ar${link.href}` : link.href}
-                class="block rounded-lg px-4 py-3 sm:px-3 sm:py-2 hover:bg-slate-100 min-h-[48px] flex items-center"
+                class="block p-4 text-lg rounded-2xl active:bg-slate-100"
               >
                 {link.label}
               </a>
@@ -225,25 +241,39 @@ const switchHref = isArabic
       }
     </ul>
 
-    <!-- Mobile Language Switch -->
-    <div
-      class="flex flex-col sm:flex-row justify-between items-stretch gap-3 mt-5 pt-4 border-t border-slate-200"
-    >
+    <!-- Mobile Action Bar -->
+    <div class="mt-8 pt-6 border-t border-slate-200/50 space-y-3">
       <a
         href={switchHref}
-        class="flex-1 text-center rounded-full border border-slate-300 px-5 py-3 sm:py-2 font-semibold text-slate-700 hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-600 hover:text-white transition min-h-[48px] flex items-center justify-center"
+        class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 text-slate-700 font-bold"
       >
-        {isArabic ? "English" : "العربية"}
+        <span>Change Language</span>
+        <span
+          class="text-xs px-3 py-1 rounded-full bg-white border border-slate-200"
+          >{isArabic ? "English" : "العربية"}</span
+        >
       </a>
 
       <a
         href={isArabic ? "/ar/contact" : "/contact"}
-        class="flex-1 text-center rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-5 py-3 sm:py-2 text-white shadow-md transition hover:scale-105 min-h-[48px] flex items-center justify-center"
+        class="flex items-center justify-center p-5 rounded-[1.5rem] bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-black text-lg shadow-xl shadow-sky-500/20 active:scale-95 transition-transform"
       >
-        {isArabic ? "اتصل بنا" : "Contact Us"}
+        {isArabic ? "ابدأ مشروعك" : "Start a Project"}
       </a>
     </div>
   </div>
+
+  <style>
+    .mobile-item {
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.4s ease;
+    }
+    #mobile-panel:not(.opacity-0) .mobile-item {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
 
   <!-- SCROLL PROGRESS BAR -->
   <div
@@ -260,8 +290,9 @@ const switchHref = isArabic
     const navbar = document.getElementById("navbar");
 
     btn?.addEventListener("click", () => {
-      panel?.classList.toggle("scale-y-0");
+      panel?.classList.toggle("scale-95");
       panel?.classList.toggle("opacity-0");
+      panel?.classList.toggle("invisible");
     });
 
     window.addEventListener("scroll", () => {

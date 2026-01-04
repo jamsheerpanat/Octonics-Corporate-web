@@ -122,6 +122,97 @@ const service = {
       </div>
     </section>
 
+    <!-- وحدات النظام بالتفصيل -->
+    <section class="bg-white py-24 border-y border-slate-100 text-right">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 text-center">
+          <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">وحدات ERP شاملة للمؤسسات الكويتية</h2>
+          <p class="mt-4 text-slate-600">تغطي حلولنا المخصصة كل جانب من جوانب العمليات التجارية الحديثة في الكويت.</p>
+        </div>
+        
+        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h4 class="text-xl font-bold">الإدارة المالية</h4>
+            <p class="text-slate-600 text-sm">محاسبة متقدمة، دعم العملات المتعددة، فوترة تلقائية، وتقارير مالية فورية متوافقة مع معايير التدقيق الكويتية.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center text-green-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </div>
+            <h4 class="text-xl font-bold">الموارد البشرية (HRMS)</h4>
+            <p class="text-slate-600 text-sm">كشوف رواتب متوافقة مع قانون العمل الكويتي، تتبع الإقامات، إدارة الإجازات، وبوابات أداء الموظفين.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+            </div>
+            <h4 class="text-xl font-bold">سلاسل الإمداد والمخازن</h4>
+            <p class="text-slate-600 text-sm">إدارة المستودعات في مواقع متعددة في الكويت، تتبع المخزون في الوقت الفعلي، ومنطق الشراء التلقائي.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+            </div>
+            <h4 class="text-xl font-bold">CRM وأتمتة المبيعات</h4>
+            <p class="text-slate-600 text-sm">تتبع العملاء المحتملين، ملفات العملاء، إدارة قنوات المبيعات، والتكامل مع بوابات الدفع المحلية مثل K-NET.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الصناعات التي نخدمها -->
+    <section class="py-24 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-slate-900 mb-12">لمن نصمم: قطاعات متخصصة في الكويت</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          {["التجزئة والتجارة الإلكترونية", "الإنشاءات والهندسة", "خدمات النفط والغاز", "اللوجستيات والنقل", "المرافق الصحية", "التجارة والتوزيع", "إدارة العقارات", "التعليم والمدارس"].map(industry => (
+            <span class="px-6 py-2 bg-white rounded-full border border-slate-200 text-slate-700 shadow-sm hover:border-blue-500 hover:text-blue-600 transition-colors cursor-default">
+              {industry}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الامتثال المحلي -->
+    <section class="py-24 bg-white overflow-hidden relative text-right">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+             <div class="p-8 bg-blue-600 rounded-[2.5rem] text-white shadow-2xl transform rotate-2">
+                <h3 class="text-2xl font-bold mb-6">موطن بالكامل للكويت</h3>
+                <ul class="space-y-4 text-blue-100">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>قانون العمل الكويتي:</strong> حساب تلقائي لمكافأة نهاية الخدمة، الإجازات السنوية، والتأمينات الاجتماعية.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>دعم ثنائي اللغة:</strong> التبديل بسلاسة بين الواجهات العربية والإنجليزية.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>تكامل البنوك المحلية:</strong> اتصال مباشر مع البنوك الكويتية للتسويات الآلية.</span>
+                  </li>
+                </ul>
+             </div>
+          </div>
+          <div class="order-1 lg:order-2 text-right">
+            <h2 class="text-4xl font-bold text-slate-900 mb-6 leading-tight">بني بمعايير عالمية، وخبرة محلية.</h2>
+            <p class="text-slate-600 text-lg mb-8">يتطلب تنفيذ نظام ERP في الكويت أكثر من مجرد كود. يتطلب فهمًا لثقافة الأعمال المحلية والمتطلبات القانونية والفوارق التشغيلية.</p>
+            <div class="flex gap-4">
+                <div class="px-4 py-2 bg-slate-100 rounded-lg text-slate-700 font-semibold text-sm">جاهز لضريبة القيمة المضافة</div>
+                <div class="px-4 py-2 bg-slate-100 rounded-lg text-slate-700 font-semibold text-sm">متوافق مع ISO</div>
+                <div class="px-4 py-2 bg-slate-100 rounded-lg text-slate-700 font-semibold text-sm">متوافق مع GDPR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- عملية التطوير -->
     <section class="relative bg-gradient-to-r from-indigo-600 to-sky-600 py-24 text-white text-center" data-animate>
       <div class="mx-auto max-w-7xl px-4 sm:px-6">
@@ -130,7 +221,7 @@ const service = {
           منهجية شفافة ومرنة وتعاونية — لضمان نظام يتناسب تمامًا مع متطلبات عملك.
         </p>
 
-        <div class="mt-12 grid grid-cols-1 gap-10 md:grid-cols-4">
+        <div class="mt-12 grid grid-cols-1 gap-10 md:grid-cols-4 text-center">
           {[
             ["التحليل", "نقوم بتحليل سير العمل والأهداف والمشكلات التشغيلية."],
             ["التصميم", "نصمم الواجهة وتجربة المستخدم وهيكل قاعدة البيانات."],
@@ -171,6 +262,36 @@ const service = {
             class="rounded-3xl shadow-2xl ring-1 ring-slate-200"
           />
         </figure>
+      </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="py-24 bg-slate-50 text-right" dir="rtl">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">تطوير ERP المخصص: الأسئلة الشائعة</h2>
+        <div class="space-y-6">
+          <details class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+            <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none uppercase tracking-tight">
+              <span>لماذا أختار ERP مخصص بدلاً من Odoo أو SAP في الكويت؟</span>
+              <span class="transition group-open:rotate-180"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">بينما تقدم المنصات الشهيرة ميزات عامة، غالبًا ما يكون للشركات في الكويت سير عمل فريد، واحتياجات خاصة بقانون العمل المحلي، وتكاملات محددة مع K-NET/البنوك التي لا تستطيع الأنظمة الجاهزة التعامل معها دون تخصيصات مكلفة ومعقدة. أنظمتنا المخصصة تُبنى لتكون رشيقة وسريعة ومناسبة تمامًا لاحتياجاتك.</p>
+          </details>
+          <details class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+            <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none uppercase tracking-tight">
+              <span>كم من الوقت يستغرق بناء نظام ERP مخصص؟</span>
+              <span class="transition group-open:rotate-180"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">يستغرق نظام ERP الأساسي مع الوحدات الجوهرية (المالية، الموارد البشرية) عادةً من 3 إلى 4 أشهر. الأنظمة الأكثر تعقيدًا التي تشمل وحدات المخزون والإنتاج تستغرق من 6 إلى 12 شهرًا. نستخدم نهجًا مرنًا، مما يعني أنك ترى وتستخدم الميزات أثناء بنائها.</p>
+          </details>
+          <details class="group p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+            <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none uppercase tracking-tight">
+              <span>هل بياناتنا آمنة ومستضافة في الكويت؟</span>
+              <span class="transition group-open:rotate-180"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">نعم. نحن نقدم حلولاً داخلية (استضافة على خوادمك في الكويت) وحلول سحابية هجينة مع نسخ احتياطي مشفر للبيانات. نعطي الأولوية لإقامة البيانات وخصوصيتها وفقًا لمعايير الأعمال الكويتية.</p>
+          </details>
+        </div>
       </div>
     </section>
 

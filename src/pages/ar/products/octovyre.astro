@@ -1,0 +1,273 @@
+---
+import LayoutAr from "../../../layouts/Layout-ar.astro";
+import HeaderAr from "../../../components/HeaderAr.astro";
+import FooterAr from "../../../components/FooterAr.astro";
+import ProductHero from "../../../components/products/ProductHero.astro";
+import ProductFeatures from "../../../components/products/ProductFeatures.astro";
+import ProductHowItWorks from "../../../components/products/ProductHowItWorks.astro";
+import ProductUseCases from "../../../components/products/ProductUseCases.astro";
+import ProductIntegrations from "../../../components/products/ProductIntegrations.astro";
+import ProductSecurity from "../../../components/products/ProductSecurity.astro";
+import ProductPricing from "../../../components/products/ProductPricing.astro";
+import ProductTimeline from "../../../components/products/ProductTimeline.astro";
+import ProductFAQ from "../../../components/products/ProductFAQ.astro";
+import LeadForm from "../../../components/LeadForm.astro";
+// @ts-ignore
+import Breadcrumb from "../../../components/Breadcrumb.astro";
+import WhatsAppButton from "../../../components/WhatsAppButton.astro";
+---
+
+<LayoutAr
+  title="أوكتو فاير™ – نظام تشغيل المؤسسات الذكي"
+  description="منصة ذكاء مؤسسي من الجيل التالي مصممة لتشغيل وربط وتوسيع نطاق الأعمال الحديثة."
+>
+  <HeaderAr />
+
+  <Breadcrumb
+    items={[
+      { href: "/ar", label: "الرئيسية" },
+      { href: "/ar/products", label: "المنتجات" },
+      { href: "/ar/products/octovyre", label: "أوكتو فاير™" },
+    ]}
+  />
+
+  <ProductHero
+    productName="أوكتو فاير™"
+    tagline="نظام تشغيل المؤسسات الذكي"
+    description="منتج مؤسسي رائد من أوكتونيكس للابتكارات. توحيد الأفراد والعمليات والمالية والأصول والذكاء الاصطناعي في نظام واحد ذكي."
+    stats={[
+      { value: "منصة", label: "موحدة" },
+      { value: "جاهز", label: "للذكاء الاصطناعي" },
+      { value: "فوري", label: "رؤية شاملة" },
+      { value: "قابل", label: "للتوسع" },
+    ]}
+    gradientFrom="violet-600"
+    gradientTo="indigo-600"
+    icon="🧠"
+    image="/images/octovyre_logo.png"
+    isRTL={true}
+  />
+
+  <section class="py-16 bg-white" id="pain-solution" dir="rtl">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2
+        class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent"
+      >
+        المشكلة والحل
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-violet-700">
+            المشكلة: الأنظمة المنفصلة
+          </h3>
+          <ul class="list-disc pr-5 space-y-2 text-slate-600">
+            <li>أدوات برمجية متعددة ومنفصلة تخلق صوامع بيانات.</li>
+            <li>جداول البيانات اليدوية تملأ الفجوات ولكنها عرضة للأخطاء.</li>
+            <li>التقارير المتأخرة تخفي الواقع التشغيلي الفوري.</li>
+            <li>أنظمة ERP تخزن البيانات التاريخية لكن لا توجه العمليات الحالية.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-indigo-600">
+            الحل: نظام تشغيل موحد للأعمال
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+            يعمل أوكتو فاير™ كـ **العقل المدبر** لمؤسستك. فهو يوحد العمليات اليومية، والإدارة المالية، والقوى العاملة، والمخزون في منصة واحدة متصلة وذكية. لا يكتفي النظام بتسجيل ما حدث، بل يوجه **ما يجب أن يحدث** في الوقت الفعلي.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProductFeatures
+    title="القدرات الأساسية"
+    features={[
+      {
+        icon: "⚙️",
+        title: "إدارة العمليات",
+        description:
+          "تنظيم المهام، تبسيط تدفقات الموافقة، ومراقبة اتفاقيات مستوى الخدمة (SLA) لضمان تنفيذ سلس.",
+      },
+      {
+        icon: "💰",
+        title: "الذكاء المالي والتكاليف",
+        description:
+          "تتبع المصروفات، إدارة الميزانيات، وتحليل الربحية بربطها مباشرة بالعمليات التشغيلية.",
+      },
+      {
+        icon: "👥",
+        title: "رأس المال البشري",
+        description:
+          "مواءمة الأدوار، تتبع المسؤولية، وعرض إنتاجية الفرق بشكل مرئي وواضح.",
+      },
+      {
+        icon: "📦",
+        title: "ذكاء المخزون والأصول",
+        description:
+          "إدارة دورة حياة الأصول بالكامل وتحسين مستويات المخزون من خلال التنبؤ الذكي.",
+      },
+      {
+        icon: "🤝",
+        title: "إدارة علاقات العملاء",
+        description:
+          "مركزية سجلات العملاء وحل المشكلات والطلبات مع سجل تاريخي شفاف لكل التفاعلات.",
+      },
+      {
+        icon: "🧠",
+        title: "ذكاء اصطناعي مدمج",
+        description:
+          "رؤى تنبؤية وتوصيات ذكية مدمجة في النظام لاتخاذ قرارات استباقية وليس ردود فعل.",
+      },
+    ]}
+    isRTL={true}
+  />
+
+  <ProductHowItWorks
+    title="كيف يعمل النظام"
+    steps={[
+      {
+        number: 1,
+        title: "رسم العمليات",
+        description:
+          "نقوم بتحليل ورسم مسار تدفقات العمل الأساسية لمؤسستك داخل محرك أوكتو فاير.",
+      },
+      {
+        number: 2,
+        title: "ربط البيانات",
+        description:
+          "ترحيل البيانات الحالية والربط مع أي أنظمة مالية أو قديمة لضمان الاستمرارية.",
+      },
+      {
+        number: 3,
+        title: "الإطلاق والتدريب",
+        description:
+          "نشر النظام للفرق مع لوحات تحكم مخصصة لكل دور وظيفي وتدريب شامل.",
+      },
+      {
+        number: 4,
+        title: "التحسين بالذكاء الاصطناعي",
+        description:
+          "مع تدفق البيانات، يبدأ محرك الذكاء الاصطناعي في تحديد فرص الكفاءة ومعالجة الاختناقات.",
+      },
+    ]}
+    isRTL={true}
+  />
+
+  <ProductUseCases
+    title="لمن صمم أوكتو فاير؟"
+    useCases={[
+      {
+        industry: "المؤسسات المتوسطة",
+        icon: "🏢",
+        description:
+          "الشركات النامية التي تحتاج إلى هيكلة واضحة، قابلية للتوسع، وتحكم موحد.",
+      },
+      {
+        industry: "العمليات متعددة الفروع",
+        icon: "🌍",
+        description:
+          "شركات التجزئة أو الخدمات التي تتطلب إدارة مركزية صارمة عبر عدة فروع.",
+      },
+      {
+        industry: "مقدمي الخدمات",
+        icon: "🛠️",
+        description:
+          "الشركات التي تقوم بتتبع وظائف معقدة، صيانة أصول، وتسليم مشاريع وخدمات.",
+      },
+      {
+        industry: "التصنيع والتجارة",
+        icon: "🏭",
+        description:
+          "الشركات التي تحتاج إلى تكامل وثيق بين المخزون، المبيعات، والعمليات اللوجستية.",
+      },
+    ]}
+    isRTL={true}
+  />
+
+  <ProductIntegrations
+    title="تكامل مع أنظمتك"
+    integrations={[
+      { name: "SAP ERP", src: "/images/integrations/sap.svg" },
+      { name: "Oracle NetSuite", src: "/images/integrations/oracle.svg" },
+      { name: "Microsoft Dynamics", src: "/images/integrations/dynamics.svg" },
+      { name: "Salesforce", src: "/images/integrations/salesforce.svg" },
+    ]}
+    isRTL={true}
+  />
+
+  <ProductSecurity
+    title="الأمان والتحكم"
+    items={[
+      {
+        title: "صلاحيات مبنية على الأدوار",
+        description: "تحكم دقيق في الصلاحيات عبر الأقسام والفرق.",
+        icon: "🛡️",
+      },
+      {
+        title: "سجلات تدقيق",
+        description: "سجلات غير قابلة للتغيير لكل إجراء لضمان المساءلة الكاملة.",
+        icon: "📜",
+      },
+      {
+        title: "ملكية البيانات",
+        description: "تحتفظون بالملكية الكاملة والتحكم في بيانات مؤسستكم.",
+        icon: "🔐",
+      },
+      {
+        title: "بنية آمنة",
+        description: "معايير أمان مؤسسية مدمجة في صميم النظام.",
+        icon: "🏗️",
+      },
+      {
+        title: "حدود تنظيمية",
+        description: "فصل صارم للصلاحيات بين الوحدات الوظيفية المختلفة.",
+        icon: "🚫",
+      },
+    ]}
+    isRTL={true}
+  />
+
+  <ProductPricing isRTL={true} />
+  <ProductTimeline isRTL={true} />
+
+  <ProductFAQ
+    title="الأسئلة الشائعة"
+    faq={[
+      {
+        q: "هل أوكتو فاير نظام ERP؟",
+        a: "هو 'نظام تشغيل للأعمال' يمكن أن يعمل كبديل حديث للـ ERP أو كطبقة ذكية فوق أنظمة ERP القديمة لإدارة العمليات الفعلية.",
+      },
+      {
+        q: "هل يمكن تخصيص تدفقات العمل؟",
+        a: "نعم، المنصة مصممة للتكيف مع عملياتك التشغيلية الخاصة دون التأثير على التحديثات المستقبلية للنظام.",
+      },
+      {
+        q: "هل النظام سحابي أم محلي؟",
+        a: "أوكتو فاير يدعم النشر السحابي الآمن وأيضاً التثبيت المحلي (On-Premise) للمؤسسات ذات متطلبات البيانات الحساسة.",
+      },
+      {
+        q: "كم تستغرق عملية التنفيذ؟",
+        a: "تتراوح فترة النشر النموذجية من 4 إلى 12 أسبوعاً، اعتماداً على تعقيد العمليات وحجم البيانات المراد ترحيلها.",
+      },
+      {
+        q: "هل يدعم الواجهة العربية؟",
+        a: "نعم، أوكتو فاير ثنائي اللغة بالكامل (إنجليزي/عربي) مع دعم أصلي لاتجاه اليمين لليسار (RTL) مصمم خصيصاً لسوق الخليج.",
+      },
+      {
+        q: "ما هي ميزات الذكاء الاصطناعي؟",
+        a: "فيشمل تحليلات تنبؤية للمخزون، كشف الشذوذ في العمليات المالية، وتوصيات ذكية لتحسين سير العمل.",
+      },
+    ]}
+    isRTL={true}
+  />
+
+  <section class="py-20 bg-slate-100" id="lead-form" dir="rtl">
+    <div class="max-w-4xl mx-auto px-6">
+      <LeadForm product="أوكتو فاير™" />
+    </div>
+  </section>
+
+  <WhatsAppButton phone="+96599240074" />
+
+  <FooterAr />
+</LayoutAr>

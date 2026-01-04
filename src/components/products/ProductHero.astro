@@ -10,6 +10,7 @@ interface Props {
   gradientFrom?: string;
   gradientTo?: string;
   icon?: string;
+  image?: string;
   isRTL?: boolean;
 }
 
@@ -21,6 +22,7 @@ const {
   gradientFrom = "sky-500",
   gradientTo = "indigo-600",
   icon = "🧠",
+  image,
   isRTL = false,
 } = Astro.props;
 
@@ -28,48 +30,96 @@ const ctaDemo = isRTL ? "اطلب عرض تجريبي" : "Request Demo";
 const ctaWhatsApp = isRTL ? "تواصل عبر واتساب" : "WhatsApp Us";
 ---
 
-<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" dir={isRTL ? "rtl" : "ltr"}>
+<section
+  class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+  dir={isRTL ? "rtl" : "ltr"}
+>
   <!-- Animated background -->
   <div class="absolute inset-0">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-60"></div>
-    <div class={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-3xl bg-gradient-to-r from-${gradientFrom}/20 to-${gradientTo}/10`}></div>
-    <div class="absolute top-20 right-20 w-72 h-72 rounded-full bg-pink-500/10 blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
+    <div
+      class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-60"
+    >
+    </div>
+    <div
+      class={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-3xl bg-gradient-to-r from-${gradientFrom}/20 to-${gradientTo}/10`}
+    >
+    </div>
+    <div
+      class="absolute top-20 right-20 w-72 h-72 rounded-full bg-pink-500/10 blur-3xl animate-pulse"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl"
+    >
+    </div>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
     <!-- Product badge -->
-    <div class="inline-flex items-center gap-3 mb-6 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl">
-      <span class="text-2xl">{icon}</span>
-      <span class={`text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-${gradientFrom} to-${gradientTo} bg-clip-text text-transparent`}>
+    <div
+      class="inline-flex items-center gap-3 mb-6 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl"
+    >
+      {
+        image ? (
+          <div class="bg-white rounded-lg p-1">
+            <img
+              src={image}
+              alt={`${productName} Logo`}
+              class="h-8 w-auto object-contain"
+            />
+          </div>
+        ) : (
+          <span class="text-2xl">{icon}</span>
+        )
+      }
+      <span
+        class={`text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-${gradientFrom} to-${gradientTo} bg-clip-text text-transparent`}
+      >
         {isRTL ? "منتج أوكتونيكس" : "Octonics Product"}
       </span>
     </div>
 
     <!-- Product name -->
-    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 tracking-tight">
+    <h1
+      class="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 tracking-tight"
+    >
       {productName}
     </h1>
 
     <!-- Tagline -->
-    <p class={`text-xl md:text-2xl font-semibold mb-6 bg-gradient-to-r from-${gradientFrom} to-${gradientTo} bg-clip-text text-transparent`}>
+    <p
+      class={`text-xl md:text-2xl font-semibold mb-6 bg-gradient-to-r from-${gradientFrom} to-${gradientTo} bg-clip-text text-transparent`}
+    >
       {tagline}
     </p>
 
     <!-- Description -->
-    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+    <p
+      class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed"
+    >
       {description}
     </p>
 
     <!-- CTAs -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+    <div
+      class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+    >
       <a
         href="#lead-form"
         class={`group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-${gradientFrom} to-${gradientTo} text-white font-bold shadow-xl shadow-${gradientFrom}/25 transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
       >
         {ctaDemo}
-        <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        <svg
+          class="w-5 h-5 transition-transform group-hover:translate-x-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
         </svg>
       </a>
       <a
@@ -79,7 +129,9 @@ const ctaWhatsApp = isRTL ? "تواصل عبر واتساب" : "WhatsApp Us";
         class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-emerald-500/50 text-emerald-400 font-bold backdrop-blur-xl transition-all duration-300 hover:bg-emerald-500/10 hover:border-emerald-400"
       >
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+          ></path>
         </svg>
         {ctaWhatsApp}
       </a>
@@ -87,25 +139,37 @@ const ctaWhatsApp = isRTL ? "تواصل عبر واتساب" : "WhatsApp Us";
 
     <!-- Stats -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-      {stats.map((stat) => (
-        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
-          <div class={`text-3xl md:text-4xl font-black bg-gradient-to-r from-${gradientFrom} to-${gradientTo} bg-clip-text text-transparent`}>
-            {stat.value}
+      {
+        stats.map((stat) => (
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
+            <div
+              class={`text-3xl md:text-4xl font-black bg-gradient-to-r from-${gradientFrom} to-${gradientTo} bg-clip-text text-transparent`}
+            >
+              {stat.value}
+            </div>
+            <div class="text-sm text-slate-400 mt-1">{stat.label}</div>
           </div>
-          <div class="text-sm text-slate-400 mt-1">{stat.label}</div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 
   <!-- Bottom fade -->
-  <div class="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+  <div
+    class="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-white to-transparent"
+  >
+  </div>
 </section>
 
 <style>
   @keyframes pulse {
-    0%, 100% { opacity: 0.1; }
-    50% { opacity: 0.2; }
+    0%,
+    100% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.2;
+    }
   }
   .animate-pulse {
     animation: pulse 4s ease-in-out infinite;

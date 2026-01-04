@@ -58,7 +58,10 @@ const mainLinks = [
         href: "/ar/products/qrkuwait",
       },
       { label: "أوكتو براين — ذكاء الأعمال", href: "/ar/products/octobrain" },
-      { label: "أوكتو فلو — أتمتة العمليات", href: "/ar/products/octoflow" },
+      {
+        label: "أوكتو فاير — نظام تشغيل المؤسسات",
+        href: "/ar/products/octovyre",
+      },
       { label: "أوكتو جارد — المراقبة الذكية", href: "/ar/products/octoguard" },
       { label: "أوكتو سينس — ذكاء الطاقة", href: "/ar/products/octosense" },
       {
@@ -189,26 +192,42 @@ const switchHref = isArabic
   <!-- قائمة الجوال -->
   <div
     id="mobile-panel"
-    class="md:hidden fixed left-4 right-4 top-[80px] origin-top scale-y-0 opacity-0 rounded-2xl border border-white/20 bg-white/95 p-5 shadow-2xl backdrop-blur-2xl transition-all duration-300"
+    class="lg:hidden fixed left-2 right-2 top-[72px] sm:left-4 sm:right-4 sm:top-[80px] max-h-[calc(100vh-100px)] overflow-y-auto origin-top-left scale-95 opacity-0 invisible rounded-[2rem] border border-white/20 bg-white/90 backdrop-blur-2xl p-6 shadow-2xl transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] z-[100]"
   >
-    <ul
-      class="flex flex-col gap-4 text-sm font-semibold text-slate-800 text-right"
+    <div
+      class="mb-6 flex items-center justify-between opacity-50 px-2 uppercase tracking-[0.2em] text-[10px] font-bold text-slate-500"
     >
+      <span>واجهة التنقل الرقمية</span>
+      <span>v2.0</span>
+    </div>
+    <ul class="flex flex-col gap-3 font-bold text-slate-900 text-right">
       {
-        mainLinks.map((link) => (
-          <li>
+        mainLinks.map((link, idx) => (
+          <li style={`animation-delay: ${idx * 50}ms`} class="mobile-item">
             {link.submenu ? (
-              <details class="rounded-xl bg-white/70 overflow-hidden">
-                <summary class="cursor-pointer px-3 py-2 font-medium text-slate-800 flex justify-between items-center">
-                  {link.label}
-                  <span class="text-xs text-slate-500">▾</span>
+              <details class="group/mobile">
+                <summary class="list-none flex justify-between items-center p-4 rounded-2xl transition-colors active:bg-slate-100">
+                  <span class="text-lg">{link.label}</span>
+                  <svg
+                    class="w-4 h-4 transition-transform group-open/mobile:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
                 </summary>
-                <ul class="mt-2 space-y-2 px-4 pb-3">
+                <ul class="pr-4 pl-2 py-2 space-y-1">
                   {link.submenu.map((sublink) => (
                     <li>
                       <a
                         href={sublink.href}
-                        class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100 transition"
+                        class="block p-3 rounded-xl text-slate-600 active:text-sky-600 active:bg-sky-50 transition-all text-sm"
                       >
                         {sublink.label}
                       </a>
@@ -219,7 +238,7 @@ const switchHref = isArabic
             ) : (
               <a
                 href={link.href}
-                class="block rounded-lg px-3 py-2 hover:bg-slate-100"
+                class="block p-4 text-lg rounded-2xl active:bg-slate-100"
               >
                 {link.label}
               </a>
@@ -229,22 +248,39 @@ const switchHref = isArabic
       }
     </ul>
 
-    <div class="flex justify-between items-center mt-5">
+    <!-- Mobile Action Bar -->
+    <div class="mt-8 pt-6 border-t border-slate-200/50 space-y-3">
       <a
         href={switchHref}
-        class="flex-1 text-center rounded-full border border-slate-300 px-5 py-2 font-semibold text-slate-700 hover:bg-gradient-to-l hover:from-sky-500 hover:to-indigo-600 hover:text-white transition"
+        class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 text-slate-700 font-bold"
       >
-        English
+        <span>تغيير اللغة</span>
+        <span
+          class="text-xs px-3 py-1 rounded-full bg-white border border-slate-200"
+          >English</span
+        >
       </a>
 
       <a
         href="/ar/contact"
-        class="flex-1 mr-3 text-center rounded-full bg-gradient-to-l from-sky-500 to-indigo-600 px-5 py-2 text-white shadow-md transition hover:scale-105"
+        class="flex items-center justify-center p-5 rounded-[1.5rem] bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-black text-lg shadow-xl shadow-sky-500/20 active:scale-95 transition-transform"
       >
-        تواصل معنا
+        ابدأ مشروعك
       </a>
     </div>
   </div>
+
+  <style>
+    .mobile-item {
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.4s ease;
+    }
+    #mobile-panel:not(.opacity-0) .mobile-item {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
 
   <!-- شريط التمرير -->
   <div
@@ -261,8 +297,9 @@ const switchHref = isArabic
     const navbar = document.getElementById("navbar");
 
     btn?.addEventListener("click", () => {
-      panel?.classList.toggle("scale-y-0");
+      panel?.classList.toggle("scale-95");
       panel?.classList.toggle("opacity-0");
+      panel?.classList.toggle("invisible");
     });
 
     window.addEventListener("scroll", () => {
